@@ -9,7 +9,7 @@ var urlType = require('url');
 
 // --- Common ---
 var LINK_LEVEL = 3;
-var TARGET_URL = "https://tympanus.net/Development/MirrorEffect/";
+var TARGET_URL = "https://nasil7737.cafe24.com";
 var list = {};
 
 // Main
