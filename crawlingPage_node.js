@@ -1,16 +1,18 @@
 // Download all HTML page (Node.js)
+'use strict'
+
 // --- Module ---
-var client = require('cheerio-httpcli');
-var request = require('request');
-var URL = require('url');
-var fs = require('fs');
-var path = require('path');
-var urlType = require('url');
+const client = require('cheerio-httpcli');
+const request = require('request');
+const URL = require('url');
+const fs = require('fs');
+const path = require('path');
+const urlType = require('url');
 
 // --- Common ---
-var LINK_LEVEL = 3;
-var TARGET_URL = "https://nasil7737.cafe24.com";
-var list = {};
+const LINK_LEVEL = 3;
+const TARGET_URL = 'http://nasil7737.cafe24.com/';
+const list = {};
 
 // Main
 downloadRec(TARGET_URL, 0);
@@ -26,28 +28,28 @@ function downloadRec(url, level) {
     list[url] = true;
 
     // Original page Ignore external pages
-    var us = TARGET_URL.split("/");
+    let us = TARGET_URL.split('/');
     us.pop();
-    var base = us.join("/");
+    let base = us.join('/');
     if (url.indexOf(base) < 0) return;
 
     // Save html page
     client.fetch(url, {}, function(err, $, res) {
-        $("a").each(function(idx) {
+        $('a').each(function(idx) {
             // get <a> tag link
-            var href = $(this).attr('href');
+            let href = $(this).attr('href');
             if (!href) return;
             href = URL.resolve(url, href);
             // Ignore after '#'
-            href = href.replace(/\#.+$/, "");
+            href = href.replace(/\#.+$/, '');
             downloadRec(href, level + 1);
         });
 
         if (url.substr(url.length-1, 1) == '/') {
-           url += "index.html";
+           url += 'index.html';
         }
 
-        var savepath = url.split("/").slice(2).join("/");
+        let savepath = url.split('/').slice(2).join('/');
         checkSaveDir(savepath);
         console.log(savepath);
         fs.writeFileSync(savepath, $.html());
@@ -56,11 +58,11 @@ function downloadRec(url, level) {
 
 // Check exist Directory and create Directory
 function checkSaveDir(fname) {
-    var dir = path.dirname(fname);
-    var dirlist = dir.split("/");
-    var p = "";
-    for (var i in dirlist) {
-        p += dirlist[i] + "/";
+    let dir = path.dirname(fname);
+    let dirlist = dir.split('/');
+    let p = '';
+    for (let i in dirlist) {
+        p += dirlist[i] + '/';
         if (!fs.existsSync(p)) {
             fs.mkdirSync(p);
         }
@@ -70,13 +72,13 @@ function checkSaveDir(fname) {
 // save css file
 function saveCss(url) {
      client.fetch(url, {}, function(err, $,res) {
-        $("link").each(function(idx) {
-            var text = $(this).text();
-            var href = $(this).attr('href');
+        $('link').each(function(idx) {
+            let text = $(this).text();
+            let href = $(this).attr('href');
             if (!href) return;
             href = URL.resolve(url, href);
             if (href.match(/google|font|git/g) !== null) return;
-            var savepath = href.split("/").slice(2).join("/");
+            let savepath = href.split('/').slice(2).join('/');
             checkSaveDir(savepath);
             console.log(savepath);
             request(href).pipe(fs.createWriteStream(savepath));
@@ -87,13 +89,13 @@ function saveCss(url) {
 // save JS file
 function saveJS(url) {
      client.fetch(url, {}, function(err, $,res) {
-         $("script").each(function(idx) {
-            var text = $(this).text();
-            var href = $(this).attr('src');
+         $('script').each(function(idx) {
+            let text = $(this).text();
+            let href = $(this).attr('src');
             if (!href) return;
             href = URL.resolve(url, href);
             if (href.match(/google|font|git/g) !== null) return;
-            var savepath = href.split("/").slice(2).join("/");
+            let savepath = href.split('/').slice(2).join('/');
             checkSaveDir(savepath);
             console.log(savepath);
             request(href).pipe(fs.createWriteStream(savepath));
