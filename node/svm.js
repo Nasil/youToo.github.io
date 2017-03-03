@@ -4,10 +4,10 @@
 
 // Set server port
 let SERVER_PORT = 1337; 
-let FILE_CLIENT = __dirname + "/client-recognizer.html';
-let FILE_MODEL = __dirname + "/train.model";
+let FILE_CLIENT = __dirname + '/client-recognizer.html';
+let FILE_MODEL = __dirname + '/train.model'
 // Set svm-predict path
-let SVM_PREDICT = "~/libsvm/svm-predict"; 
+let SVM_PREDICT = '~/libsvm/svm-predict'; 
 let DIR_TEMP = __dirname;
 
 // module
