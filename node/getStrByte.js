@@ -5,8 +5,8 @@ let string = undefined; //테스트할 문자열
 
 // 문자열 초기화
 for(let j=0; j<10000; j++) {
-    //string = "한글백자인가요아닌가여맞나요한글백자인가요아닌가여맞나요한글백자인가요아닌가여맞나요한글백자인가요아";
-    string = "aflkejlgqlweqnlk1j2l451251262lvnlajviajeijgqoijweoqgijweoijgqoiwjeoiqf23blb23l";
+    string = "한글백자인가요아닌가여맞나요한글백자인가요아닌가여맞나요한글백자인가요아닌가여맞나요한글백자인가요아";
+    //string = "aflkejlgqlweqnlk1j2l451251262lvnlajviajeijgqoijweoqgijweoijgqoiwjeoiqf23blb23l";
 }
 let stringLength = string.length;
 let stringByteLength = 0;
@@ -37,7 +37,6 @@ if (sType === '1') {
     console.timeEnd("일반적인FOR방식");
 
     console.time("개선된FOR방식");
-    // 2048(2^11)로 나누었을때 몫이 있으면
     stringByteLength = (function(s,b,i,c){
         for(b=i=0;c=s.charCodeAt(i++);b+=c>>7?2:1);
         return b
@@ -62,6 +61,9 @@ if (sType === '1') {
     console.log(stringByteLength + " Bytes")
     console.timeEnd("일반적인FOR방식");
 
+    // 2048(2^11)로 나누었을때 몫이 있으면 3Byte
+    // 그보다 작은데 128로(2^7)로 나누었을때 몫이 있으면 2Byte
+    // 나머지는 1Byte
     console.time("개선된FOR방식");
     stringByteLength = (function(s,b,i,c){
         for(b=i=0;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1);
@@ -80,3 +82,6 @@ if (sType === '1') {
     console.log(stringByteLength + " Bytes");
     console.timeEnd("정규식방식");
 }
+
+// 결과 
+// 일반적인FOR방식 (2.011ms) -> 개선된FOR방식(0.155ms)
