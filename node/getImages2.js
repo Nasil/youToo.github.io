@@ -7,7 +7,7 @@ var events = require("events").EventEmitter;
 var util = require("util");
 var cheerio = require("cheerio");
 
-const TARGET_URL = 'http://www.secretlabel.co.kr/';
+const TARGET_URL = 'http://gaengs.co.kr';
 parseImg(TARGET_URL, 0)
 
 
@@ -30,13 +30,15 @@ function parseImg(utl, level) {
                 var current = previous + data;
                 current.replace(/<img[\S\s]*?>/ig, function(m){
                     let imageInfo = cheerio.load(m)("img")[0];
-                    let at = imageInfo.attribs;
+                    let at = imageInfo.attribs; // 에러 잡기
                     let name = path.basename(at.src, path.extname(at.src)); // img name
-                    let pullUrl = at.src;
+                    let pullUrl = utl + at.src;
                     let saveTo = path.dirname(require.main.filename)
                     let extension = path.extname(at.src); // img type
                     let savepath = saveTo + '\\' + name + extension;
+                    // 의미 있는 데이터만 추출
                     console.log(pullUrl);
+                    //fs.writeFileSync(savepath, pullUrl);
                 });
                 previous = data;
             });
