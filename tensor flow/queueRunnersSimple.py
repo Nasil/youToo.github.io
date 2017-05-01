@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 filename_queue = tf.train.string_input_producer(
-	['data_test_score.csv'], shuffle=False, name='filename_queue')
+	['data_test_score.csv', 'data_test_score2.csv'], shuffle=True, name='filename_queue')
 
 #1.Read File
 reader = tf.TextLineReader()
