@@ -1,0 +1,4 @@
+
+#mac 에서 tensorflow 설치 방법
+https://github.com/mokpro/tensorflow_examples/blob/master/README.md
+
