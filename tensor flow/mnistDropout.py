@@ -19,6 +19,7 @@ batch_size = 100
 X = tf.placeholder(tf.float32, [None, 784])
 Y = tf.placeholder(tf.float32, [None, 10])
 
+# more deep learning
 # dropout (keep_prob) rate  0.7 on training, but should be 1 for testing
 keep_prob = tf.placeholder(tf.float32)
 
@@ -88,3 +89,9 @@ r = random.randint(0, mnist.test.num_examples - 1)
 print("Label: ", sess.run(tf.argmax(mnist.test.labels[r:r + 1], 1)))
 print("Prediction: ", sess.run(
     tf.argmax(hypothesis, 1), feed_dict={X: mnist.test.images[r:r + 1], keep_prob: 1}))
+
+
+
+#('Accuracy:', 0.98320001)
+#('Label: ', array([7]))
+#('Prediction: ', array([7]))
