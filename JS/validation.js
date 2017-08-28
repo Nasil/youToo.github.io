@@ -128,7 +128,7 @@ var oValidation = {
             var bIsDate = oRegx.test(mVal);
             return mRuleVal === 'T' ? bIsDate : !bIsDate;
         },
-        // 33: [날짜] 해당 날짜보다 이전인지 체크
+        // [날짜] 해당 날짜보다 이전인지 체크
         lt_date : function (mVal, mRuleVal) {
 
             mRuleVal = mRuleVal === 'today' ? getFormatDate() : mRuleVal;
@@ -137,7 +137,7 @@ var oValidation = {
 
             return mVal < mRuleVal;
         },
-        // 34: [날짜] 해당 날짜보다 이인지 체크
+        // [날짜] 해당 날짜보다 이인지 체크
         gt_date : function (mVal, mRuleVal) {
 
             mRuleVal = mRuleVal === 'today' ? getFormatDate() : mRuleVal;
@@ -146,7 +146,7 @@ var oValidation = {
 
             return mVal > mRuleVal;
         },
-        // 35: [날짜] 해당 날짜와 동일한지 체크
+        // [날짜] 해당 날짜와 동일한지 체크
         eq_date : function (mVal, mRuleVal) {
 
             mRuleVal = mRuleVal === 'today' ? getFormatDate() : mRuleVal;
@@ -155,12 +155,12 @@ var oValidation = {
 
             return mVal === mRuleVal;
         },
-        // 36: 숫자 형식인지 체크합니다 (양수 O,  음수 O, 소수 X, 0으로시작하는 수 X)
+        // 숫자 형식인지 체크합니다 (양수 O,  음수 O, 소수 X, 0으로시작하는 수 X)
         is_number_nga: function (mVal, mRuleVal) {
             var bIsNumber = mVal == '0' || (/^-?[1-9]([0-9]+)?$/.test(mVal));
             return mRuleVal === 'T' ? bIsNumber : !bIsNumber;
         },
-        // 37: 숫자 형식인지 체크합니다 (양수 O,  음수 X, 소수 O, 0으로시작하는 수 X)
+        // 숫자 형식인지 체크합니다 (양수 O,  음수 X, 소수 O, 0으로시작하는 수 X)
         is_number_pos: function (mVal, mRuleVal) {
 
             var oRegExp = /^(\d+)((\.)?(\d+)?)?$/;
@@ -172,7 +172,7 @@ var oValidation = {
 
             return this.is_number(aMatch[1], mRuleVal);
         },
-        // 38: 숫자 형식인지 체크합니다 (양수 O,  음수 O, 소수 O, 0으로시작하는 수 X)
+        // 숫자 형식인지 체크합니다 (양수 O,  음수 O, 소수 O, 0으로시작하는 수 X)
         is_number_nga_pos: function (mVal, mRuleVal) {
 
             var oRegExp = /^(-?)(\d+)((\.)?(\d+)?)?$/;
@@ -183,6 +183,22 @@ var oValidation = {
             }
 
             return this.is_number(aMatch[2], mRuleVal);
+        },
+         checkNumberScope : function (val, oRule) {
+            var iMin = oRule['iMin'];
+            var iMax = oRule['iMax'];
+            // 값이 설정되지 않을 경우
+            if (this.isUndefined(iMin) && this.isUndefined(iMax)) {
+                console.error('Check Rule Error', oRule);
+                return false;
+            }
+            // 최대치와 초소치중 한개만 입력될 경우
+            if (this.isUndefined(iMax) === true) {
+                return parseInt(val) >= iMin;
+            } else if (this.isUndefined(iMin) === true) {
+                return parseInt(val) <= iMax;
+            }
+            return parseInt(val) >= iMin && parseInt(val) <= iMax;
         }
     },
     func : {
