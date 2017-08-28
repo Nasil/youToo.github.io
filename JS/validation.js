@@ -291,3 +291,126 @@ var oValidation = {
         }
     }
 };
+
+/**
+ * 숫자의 유효성 체크
+ */
+validation : {
+
+    /**
+     * check undefined
+     * @param val
+     * @returns {boolean}
+     */
+    isUndefined : function (val) {
+        return val === undefined || val === null;
+    },
+
+    /**
+     * 멀티로 유효성 체크 함
+     * @param val
+     * @param aRule
+     * @returns {boolean}
+     */
+    multiCheck : function (val, aRule) {
+        var self = this;
+        var mResult = true;
+        $.each(aRule, function (i, oRule) {
+            try {
+                if (self[oRule['rule']](val, oRule) === false) {
+                    mResult = oRule['msg'];
+                    return false;
+                }
+            } catch (e) {
+                console.error('Check Rule Error', oRule);
+                return false;
+            }
+        });
+        return mResult;
+    },
+
+    /**
+     * 빈값인지 체크
+     * @param val
+     * @returns {boolean}
+     */
+    checkNotEmpty : function (val) {
+        return val !== '';
+    },
+
+    /**
+     * 숫자 형태인지 체크
+     * @param val
+     * @returns {boolean}
+     */
+    checkIsNumber : function (val) {
+        return val === '0' || /^[1-9]\d*$/.test(val);
+    },
+
+    /**
+     * 범위에 포함되는지 체크
+     * @param val
+     * @param oRule
+     * @returns {boolean}
+     */
+    checkNumberScope : function (val, oRule) {
+
+        var iMin = oRule['iMin'];
+        var iMax = oRule['iMax'];
+
+        // 값이 설정되지 않을 경우
+        if (this.isUndefined(iMin) && this.isUndefined(iMax)) {
+            console.error('Check Rule Error', oRule);
+            return false;
+        }
+
+        // 최대치와 초소치중 한개만 입력될 경우
+        if (this.isUndefined(iMax) === true) {
+            return parseInt(val) >= iMin;
+        } else if (this.isUndefined(iMin) === true) {
+            return parseInt(val) <= iMax;
+        }
+
+        return parseInt(val) >= iMin && parseInt(val) <= iMax;
+    },
+
+    /**
+     * 단위별 체크
+     * @param val
+     * @param oRule
+     * @returns {boolean}
+     */
+    checkNumberDivide : function (val, oRule) {
+        var iDivide = oRule['iDivide'];
+
+        // 값이 설정되지 않을 경우
+        if (this.isUndefined(iDivide)) {
+            console.error('Check Rule Error', oRule);
+            return false;
+        }
+
+        return val % iDivide === 0;
+    },
+
+    /**
+     * 금칙어가 존재하는지 체크
+     * @param val
+     * @param oRule
+     * @returns {boolean}
+     */
+    checkNotInWord : function (val, oRule) {
+
+        var aWord = oRule['aWord'];
+
+        if (this.isUndefined(aWord) === true) {
+            console.error('Check Rule Error', oRule);
+            return false;
+        }
+
+        var bReturn = true;
+        $.each(aWord, function (i, sWord) {
+            return bReturn = (val.indexOf(sWord) === -1);
+        });
+        return bReturn;
+    }
+}
