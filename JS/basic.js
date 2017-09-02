@@ -29,3 +29,20 @@ console.log(typeof(e)) // string
 console.log(typeof(f)) // object
 console.log(typeof(aArr)) // object
 console.log(typeof(oObj)) // object
+
+var num=1;
+console.log(num);
+console.log(num++);
+console.log(num);
+
+var num2=1;
+console.log(num2);
+console.log(++num2);
+console.log(num2);
+
+console.log(Math.pow(2,3));
+console.log(Math.sqrt(16));
+console.log(Math.random());
+
+
+
