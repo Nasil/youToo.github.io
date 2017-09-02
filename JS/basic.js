@@ -14,8 +14,11 @@ var oObj = {
 };
 
 // object
-console.log(oObj.name);
-console.log(oObj["name"]);
+console.log(b); // undefined
+console.log(e); // 
+console.log(f); // null
+console.log(oObj.name); // haha
+console.log(oObj["age"]); // bb
 
 // type 
 console.log(typeof(a)) // number
@@ -26,4 +29,3 @@ console.log(typeof(e)) // string
 console.log(typeof(f)) // object
 console.log(typeof(aArr)) // object
 console.log(typeof(oObj)) // object
-
