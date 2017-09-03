@@ -1,3 +1,4 @@
+// Double click prevention
 var doubleSubmitFlag = false;
 function doubleSubmitCheck() {
     if (doubleSubmitFlag) {
@@ -7,3 +8,9 @@ function doubleSubmitCheck() {
         return false;
     }
 }
+
+// Jquery delegate one click 
+$(self.sNameSpace).undelegate('.select', 'change').delegate('.select', 'change', function () {   
+    // Change event execute
+}
+
