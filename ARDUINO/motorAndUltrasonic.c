@@ -3,7 +3,10 @@
  * L298N motor driver
  * DC motor 2
  */
- 
+/**
+ * 
+ * 
+ */
 #include <Servo.h>
 Servo LKservo;
 #define EA 3
@@ -60,22 +63,22 @@ int read_ultrasonic(void)
 void motor_con(int M1, int M2)
 {
   if (M1>0) { 
-    digitalWrite(M_IN1, motorA_vector);
-    digitalWrite(M_IN2, !motorA_vector);
+    digitalWrite(M_IN1, motorA_vector); // IN1 에 HIGH (motoA 가 0이면 LOW)
+    digitalWrite(M_IN2, !motorA_vector); // IN2 에 LOW (motoA 가 0이면 HIGH)
   } else if (M1<0) {
-    digitalWrite(M_IN1, !motorA_vector);
-    digitalWrite(M_IN2, motorA_vector);
+    digitalWrite(M_IN1, !motorA_vector); // IN1 에 LOW (motoA 가 0이면 HIGH)
+    digitalWrite(M_IN2, motorA_vector); // IN2 에 HIGH (motoA 가 0이면 LOW)
   } else {
     digitalWrite(M_IN1, LOW);
     digitalWrite(M_IN2, LOW);
   }
 
   if (M2>0) { 
-    digitalWrite(M_IN3, motorA_vector);
-    digitalWrite(M_IN4, !motorA_vector);
+    digitalWrite(M_IN3, motorB_vector);
+    digitalWrite(M_IN4, !motorB_vector);
   } else if (M2<0) {
-    digitalWrite(M_IN3, !motorA_vector);
-    digitalWrite(M_IN4, motorA_vector);
+    digitalWrite(M_IN3, !motorB_vector);
+    digitalWrite(M_IN4, motorB_vector);
   } else {
     digitalWrite(M_IN3, LOW);
     digitalWrite(M_IN4, LOW);
