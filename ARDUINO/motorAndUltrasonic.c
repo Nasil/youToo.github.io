@@ -3,10 +3,6 @@
  * L298N motor driver
  * DC motor 2
  */
-/**
- * 
- * 
- */
 #include <Servo.h>
 Servo LKservo;
 #define EA 3
