@@ -11,8 +11,8 @@ Servo LKservo;
 #define M_IN2 5
 #define M_IN3 13
 #define M_IN4 12
-#define echo 6
-#define trig 7
+#define echoPin 6
+#define trigPin 7
 #define servo_moter 3
 int motorA_vector = 1; // 모터 방향
 int motorB_vector = 1; // 모터 방향
@@ -25,38 +25,52 @@ void setup() {
   pinMode(M_IN2, OUTPUT);
   pinMode(M_IN3, OUTPUT);
   pinMode(M_IN4, OUTPUT);
-  pinMode(trig, OUTPUT);
-  pinMode(echo, OUTPUT);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600); // 통신속도 9600bps
   LKservo.attach(servo_moter); // 서보모터 핀 설정
   LKservo.write(90); // 서보모터 초기값 90도 
   delay(3000); // 첫 스타트 갑작스런 움직임을 막기 위한 3초 지연
 }
 
 void loop() {
-  if (read_ultrasonic() > 16) { // 거리가 16보다 크면 A,B 정회전하여 직진
-    motor_con(motor_speed, motor_speed);
-  } else if (read_ultrasonic() < 14) { // 거리가 14보다 작으면 A,B 역회전 하여 후진
-    motor_con(-motor_speed, -motor_speed);
+  float ultraTime = readUltrasonic();
+  if (ultraTime > 16) { // 거리가 16보다 크면 A,B 정회전하여 직진
+    motorControl(motor_speed, motor_speed);
+  } else if (ultraTime < 14) { // 거리가 14보다 작으면 A,B 역회전 하여 후진
+    motorControl(-motor_speed, -motor_speed);
   } else {
-    motor_con(0,0); // 정지
+    motorControl(0,0); // 정지
   }
 }
 
 /**
  * 초음파 센서 값 읽어오는 함수
  */
-int read_ultrasonic(void) 
+float readUltrasonic(void) 
 {
-  float return_time, howlong;
-  digitalWrite(trig, HIGH); // 초음파 발사
-  delay(5); // 0.05초 지연
-  digitalWrite(trig, LOW); // 초음파 발사 정지
-  return_time = pulseIn(echo, HIGH); // 돌아오는 시간
-  howlong = ((float)(340*return_time) / 10000) / 2; // 시간을 거리로 계산
-  return howlong;
+  float duration, distance;
+  
+  digitalWrite(trigPin, LOW);     // Trig 핀 Low
+  delayMicroseconds(2);           // 2us 유지
+  digitalWrite(trigPin, HIGH);    // Trig 핀 High
+  delayMicroseconds(10);          // 10us 유지
+  digitalWrite(trigPin, LOW);     //Trig 핀 Low
+
+  //Echo 핀으로 들어오는 펄스의 시간 측정
+  //pulseIn함수가 호출되고 펄스가 입력될 때까지의 시간. us단위로 값을 리턴.
+  duration = pulseIn(echoPin, HIGH);   
+  
+  //음파가 반사된 시간을 거리로 환산
+  //음파의 속도는 340m/s 이므로 1cm를 이동하는데 약 29us.
+  //따라서, 음파의 이동거리 = 왕복시간 / 1cm 이동 시간 / 2 이다.
+  distance = ((float)(340 * duration) / 10000) / 2; // 시간을 거리로 계산
+  Serial.print(distance);
+  
+  return distance;
 }
 
-void motor_con(int M1, int M2)
+void motorControl(int M1, int M2)
 {
   if (M1>0) { 
     digitalWrite(M_IN1, motorA_vector); // IN1 에 HIGH (motoA 가 0이면 LOW)
@@ -83,3 +97,4 @@ void motor_con(int M1, int M2)
   analogWrite(EA, abs(M1)); // M1 의 절대값으로 모터 속도 제어
   analogWrite(EB, abs(M2)); // M2 의 절대값으로 모터 속도 제어
 }
+
