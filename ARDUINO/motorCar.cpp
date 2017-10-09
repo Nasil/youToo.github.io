@@ -46,7 +46,7 @@ void loop() {
   } else {
      Serial.print("stop");Serial.print(ultraTime);
     motorControl(0,0); // 정지
-  }zw
+  }
 }
 
 
