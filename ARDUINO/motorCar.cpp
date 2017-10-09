@@ -1,3 +1,7 @@
+/**
+* Autometic Motor Car 
+*
+**/
 #include <Servo.h>
 Servo LKservo;
 #define EA 3
