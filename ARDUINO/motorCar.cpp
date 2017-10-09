@@ -1,13 +1,13 @@
-/**
-* Autometic Motor Car 
-*
-**/
 #include <Servo.h>
+#include <IRremote.h>
 Servo LKservo;
 #define EA 3
 #define EB 11
 #define M_IN1 4
 #define M_IN2 5
+#define R_Sensor 8
+#define C_Sensor 9
+#define L_Sensor 10
 #define M_IN3 13
 #define M_IN4 12
 #define echoPin 6
@@ -18,6 +18,9 @@ int motorB_vector = 1; // 모터 방향
 int motor_speed = 255; // 스피드
 int servoDegree = 30;
 int servoSign = 1;
+int RECV_PIN = 14;
+IRrecv irrecv(RECV_PIN);
+decode_results results;
 
 void setup() {
   pinMode(EA, OUTPUT);
@@ -28,27 +31,44 @@ void setup() {
   pinMode(M_IN4, OUTPUT);
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
+  pinMode(R_Sensor, INPUT);
+  pinMode(C_Sensor, INPUT);
+  pinMode(L_Sensor, INPUT);
   Serial.begin(9600); // 통신속도 9600bps
   LKservo.attach(servo_moter); // 서보모터 핀 설정
   LKservo.write(90); // 서보모터 초기값 90도 
+  irrecv.enableIRIn(); // Start the receiver
   delay(3000); // 첫 스타트 갑작스런 움직임을 막기 위한 3초 지연
 }
 
 void loop() {
+  if (irrecv.decode(&results)) {
+    int a = results.value;
+    Serial.println(a, HEX);
+    irrecv.resume();
+  }
+
   float ultraTime = readUltrasonic();
-  //servoCon(1);
-  if (ultraTime > 20) { // 거리가 x보다 크면 A,B 정회전하여 직진
-    Serial.print("go");Serial.print(ultraTime);
+  if (ultraTime > 20) { 
+    // 거리가 x보다 크면 A,B 정회전하여 직진
     motorControl(motor_speed, motor_speed);
-  } else if (ultraTime < 14) { // 거리가 x보다 작으면 A,B 역회전 하여 후진
-     Serial.print("back");Serial.print(ultraTime);
+    if (digitalRead(C_Sensor) == LOW) {
+      motorControl(motor_speed, motor_speed);  
+    } else if (digitalRead(L_Sensor) == LOW) {
+      motorControl(motor_speed, -motor_speed);  
+    } else if (digitalRead(R_Sensor) == LOW) {
+      motorControl(-motor_speed, motor_speed);
+    }
+  } else if (ultraTime < 14) { 
+    // 거리가 x보다 작으면 A,B 역회전 하여 후진
     motorControl(-motor_speed, -motor_speed);
   } else {
-     Serial.print("stop");Serial.print(ultraTime);
-    motorControl(0,0); // 정지
+    // 정지
+    motorControl(0,0); 
   }
-}
 
+  delay(100);
+}
 
 void servoCon(int trig)
 {
@@ -66,9 +86,6 @@ void servoCon(int trig)
   delay(100);  
 }
 
-/**
- * 초음파 센서 값 읽어오는 함수
- */
 float readUltrasonic(void) 
 {
   float duration, distance;
@@ -86,7 +103,7 @@ float readUltrasonic(void)
   //음파가 반사된 시간을 거리로 환산
   //음파의 속도는 340m/s 이므로 1cm를 이동하는데 약 29us.
   //따라서, 음파의 이동거리 = 왕복시간 / 1cm 이동 시간 / 2 이다.
-  distance = ((float)(340 * duration) / 10000) / 2; // 시간을 거리로 계산
+  distance = ((float)(340 * duration) / 10000) / 2;
   
   return distance;
 }
