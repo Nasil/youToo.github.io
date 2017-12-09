@@ -9,6 +9,9 @@ void show(int arr[], int n)
 	}
 }
 
+// 선택정렬 (작은것을 찾아서 앞에서부터 오름차순 정렬)
+// 복잡도 O(n^2)
+// 자리이동 횟수는 고정 3(n-1) 
 void selectionSort(int list[], int maxNum)
 {
 	int i, j, min, temp;
@@ -23,7 +26,7 @@ void selectionSort(int list[], int maxNum)
 			}
 		}
 
-		if (i != minIdx) {
+		if (i != minIdx) { // 이 조건이 들어가면 이동 횟수를 줄일수 있음
 			temp = list[i];
 			list[i] = list[minIdx];
 			list[minIdx] = temp;
@@ -33,6 +36,10 @@ void selectionSort(int list[], int maxNum)
 	//show(list, maxNum);
 }
 
+// 삽입정렬 (앞에서부터 차례로 비교해서 작은것이 있는경우 뽑았다가 그자리에 밀어 넣는 방식)
+// 복잡도 O(n^2)
+// 이동횟수 
+// 순서대로 있는 경우 유리함 (자리이동이 없기떄문에)
 void insersionSort(int list[], int maxNum)
 {
 	int i, j, temp, minVal;
@@ -49,6 +56,9 @@ void insersionSort(int list[], int maxNum)
 
 }
 
+// 버블정렬 (앞뒤로 비교해가면서 매번 swap를 하며 뒤에서부터 정렬)
+// 복잡도 O(n^2) = n-1 + n-2 + ... + 1
+// 이동횟수 O(n^2) = 3 * n^2
 void bubbleSort(int list[], int maxNum)
 {
 	int i, j, temp, minIdx;
