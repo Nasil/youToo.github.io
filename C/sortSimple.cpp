@@ -12,6 +12,7 @@ void show(int arr[], int n)
 // 선택정렬 (작은것을 찾아서 앞에서부터 오름차순 정렬)
 // 복잡도 O(n^2)
 // 자리이동 횟수는 고정 3(n-1) 
+// 값이 동일한게 있다면 상대적인 위치가 변경될수 있다 
 void selectionSort(int list[], int maxNum)
 {
 	int i, j, min, temp;
@@ -37,8 +38,8 @@ void selectionSort(int list[], int maxNum)
 }
 
 // 삽입정렬 (앞에서부터 차례로 비교해서 작은것이 있는경우 뽑았다가 그자리에 밀어 넣는 방식)
-// 복잡도 O(n^2)
-// 이동횟수 
+// 복잡도 : 최적 O(n), 평균&최악 O(n^2)
+// 이동횟수 : 복잡도 * 2(n-1) // 2번 올렸다 내리므로..
 // 순서대로 있는 경우 유리함 (자리이동이 없기떄문에)
 void insersionSort(int list[], int maxNum)
 {
@@ -57,8 +58,8 @@ void insersionSort(int list[], int maxNum)
 }
 
 // 버블정렬 (앞뒤로 비교해가면서 매번 swap를 하며 뒤에서부터 정렬)
-// 복잡도 O(n^2) = n-1 + n-2 + ... + 1
-// 이동횟수 O(n^2) = 3 * n^2
+// 복잡도 : 최적 O(n), 평균&최악 O(n^2) = n-1 + n-2 + ... + 1
+// 이동횟수 O(n^2) = 3 * 복잡도; // 각 반복별로 swap하기 떄문
 void bubbleSort(int list[], int maxNum)
 {
 	int i, j, temp, minIdx;
@@ -88,3 +89,7 @@ int main(void)
 
 	return 0;
 }
+
+// 비교보다 swap 가 메모리 & 속도를 더 잡아먹는다 
+// 복잡도가 비슷하다면 이동횟수가적을것을 선택한다 
+// 
