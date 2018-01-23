@@ -76,7 +76,3 @@ getPixel = function(imageData, x, y) {
 
 
 ```
-
-{code}
-
-2. qrcode reader
