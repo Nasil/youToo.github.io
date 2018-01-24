@@ -15,6 +15,10 @@
 
 ## Extract jpeg image data from a mjpeg stream
 
+[ node js ]
+https://github.com/kiran-g/node-mjpeg-streamer
+https://github.com/mmaelzer/mjpeg-camera
+
 
 ## Streaming Client
 * GStreamer
