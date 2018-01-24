@@ -1,3 +1,8 @@
+
+## Video container
+![video](https://i.stack.imgur.com/tAdMw.png)
+
+
 # 동영상의 품질을 결정하는 요소
 
 ## 초당 프레임수 (FPS)
