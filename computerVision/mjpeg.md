@@ -14,12 +14,11 @@
 
 ## Extract jpeg image data from a mjpeg stream
 [ node js ]
-- https://github.com/kiran-g/node-mjpeg-streamer
-- https://github.com/mmaelzer/mjpeg-camera
-- https://github.com/kevinGodell/pipe2jpeg
+ - https://github.com/kiran-g/node-mjpeg-streamer -> v4l2
+ - https://github.com/mmaelzer/mjpeg-camera
+ - https://github.com/kevinGodell/pipe2jpeg
  - ffmpeg 를 사용 하여 mjpeg 의 스트림된 데이터를 jpg 로 파싱 하는것 
-- https://github.com/bartbutenaers/node-red-contrib-multipart-stream-decoder
-
+ - https://github.com/bartbutenaers/node-red-contrib-multipart-stream-decoder
 
 ## 참고
 [raspi ffmpeg convert]
