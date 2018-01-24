@@ -32,10 +32,15 @@ https://github.com/kevinGodell/pipe2jpeg
 [ v4l2 issue ] 
 - https://github.com/raspberrypi/linux/issues/849
 
-## ffmpeg Streaming library
+## Streaming library
+- ffmpeg
 * https://namu.wiki/w/FFmpeg
 * 모든 동영상, 음악, 사진 포맷들의 디코딩과 인코딩을 목표로 만들어지고 있는 LGPL 또는 GPL 라이센스를 따르는 오픈소스 프로젝트. 
 * 거의 모든 스트리밍 클라이언트가 ffmpeg 를 사용함
+
+- avconv
+* ffmpeg에서 파생된 그룹 
+* https://libav.org/avconv.html
 
 ## Streaming Client
 * GStreamer
