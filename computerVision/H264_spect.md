@@ -22,7 +22,7 @@ https://www.itu.int/rec/T-REC-H.264-201704-I/en
 * 3bytes start pattern : 00000000 00000000 000000XX
 * 4bytes start pattern : 00000000 00000000 00000011 000000XX
 * 4bytes start pattern : 00000000 00000000 00000000 000000XX
-ex) raspberry camera로 raspivid 로 촬영을 해보니 '00 00 00 01' ALUN 이 분석 되었다.
+- ex) raspberry camera로 raspivid 로 촬영을 해보니 '00 00 00 01' ALUN 이 분석 되었다.
 
 ![Alt text](https://i.stack.imgur.com/9XEy4.png)
 ## H264 slice 구성
