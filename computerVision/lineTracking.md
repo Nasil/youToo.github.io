@@ -127,7 +127,7 @@ pi@raspberrypi:~/raspicam/build $ ./main
 
 
 
-3.  Line Follower opencv 
+##  3. Line Follower opencv 
 
 Open cv 를 사용한 다양한 방식이 있음 
 - https://github.com/abaeyens/image-processing/tree/master/RCJ_2014
@@ -138,17 +138,15 @@ https://github.com/tgilmour94/ros_amr
 ㄴ C++, canny & Houghtrasform  사용함 가장 전형적인 방법, 라인을 먼저 잡고 가운데 점을 포인트로 잡아서 화면을 따라가는 방식. 제일 구현이 쉬운듯
 
 
-영상처리 순서
-(전처리 → 차선인식 → 변환) 
+- 영상처리 순서 (전처리 → 차선인식 → 변환) 
 
 
-
-전처리 (이미지 노이즈 제거) 
+- 전처리 (이미지 노이즈 제거) 
 median filtering
 sharpening
 가우시안 필터 
 background 색상만 필터
-차선 인식
+- 차선 인식
 Canny edge detection 
 Houghtrasform 을 통해 특정한 점들의 연관성을 추출해냄 (직선 찾기)
 
