@@ -5,13 +5,9 @@ http://linuxism.tistory.com/1267
 https://www.itu.int/rec/T-REC-H.264-201704-I/en
 
 ## H264 구성
-- HSP (Sequence Parameter Set) 
-- PPS (H264 Picture parameter Set)
-- I slice
-- P slice
-
+![Alt text](http://1.bp.blogspot.com/-XoBw_6CfYVc/TsPg6tlJoXI/AAAAAAAAAKQ/XfP2VJeJ6aE/s400/bitstream_detailed.png)
 - h.264 확장자의 동영상을 stream analyzer 로 분석하면 
-- SPS -> PPS -> I Slice -> P Slice -> I Slice -> P Slice 순으로 보인다 
+- SPS(Sequence Parameter Set)  -> PPS(H264 Picture parameter Set) -> I Slice -> P Slice -> I Slice -> P Slice 순으로 보인다 
 
 ## H264 slice 구성
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/I_P_and_B_frames.svg/500px-I_P_and_B_frames.svg.png)
