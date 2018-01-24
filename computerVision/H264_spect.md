@@ -15,9 +15,22 @@ https://www.itu.int/rec/T-REC-H.264-201704-I/en
 - P 프레임 : (예측 된 그림)은 이전 프레임의 이미지 변화 만 유지합니다. 예를 들어, 자동차가 고정 된 배경을 가로 질러 움직이는 장면에서는 자동차의 움직임 만 인코딩해야합니다. 인코더는 변하지 않는 배경 픽셀을 P- 프레임에 저장할 필요가 없으므로 공간을 절약 할 수 있습니다. P 프레임은 델타 프레임이라고도합니다.
 - B 프레임 (Bidirectional predictive picture)은 현재 프레임과 앞뒤의 프레임 간의 차이를 사용하여 내용을 지정함으로써 훨씬 더 많은 공간을 절약합니다.
 
+## GOP
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/IBBPBB_inter_frame_group_of_pictures.svg/350px-IBBPBB_inter_frame_group_of_pictures.svg.png)
+
+- 일반적인 GOP (Group of Pictures) 구조는 IBBPBBP ... I- 프레임은 첫 번째 P- 프레임을 예측하는 데 사용되며이 두 프레임은 또한 첫 번째 및 두 번째 B- 프레임을 예측하는 데 사용됩니다. 두 번째 P- 프레임은 또한 첫 번째 I- 프레임을 사용하여 예측됩니다. 두 P- 프레임은 함께 결합하여 세 번째 및 네 번째 B- 프레임을 예측합니다. 그 계획은 다음 그림에 나와 있습니다.
+
+- 이 구조는 두 번째 및 세 번째 (B- 프레임)를 예측하기 위해 네 번째 프레임 (P- 프레임)이 필요하기 때문에 문제가 있음을 나타냅니다. 따라서 B 프레임 전에 P 프레임을 전송해야하므로 전송이 지연됩니다 (P 프레임을 유지해야 할 필요가 있음). 이 구조에는 다음과 같은 장점이 있습니다.
+
+- 가능한 커버리지 영역의 문제를 최소화합니다.
+P 프레임과 B 프레임은 I 프레임보다 적은 데이터를 필요로하므로 전송되는 데이터가 적습니다.
+그러나 약점이있다.
+
+- 그것은 디코더의 복잡성을 증가 시키므로 프레임을 재정렬하기 위해 더 많은 메모리가 필요합니다.
+보간 된 프레임들 (즉, B- 프레임들)은 증가 된 비트율을 의미하는 더 많은 모션 벡터들을 요구한다.
+
 ## 참고자료
 http://gentlelogic.blogspot.kr/2011/11/exploring-h264-part-2-h264-bitstream.html
 http://www.tvtechnology.com/multiformat/0112/h/avc-i-and-p-slice-encoding/239473
 https://en.wikipedia.org/wiki/Video_compression_picture_types
 https://en.wikipedia.org/wiki/Inter_frame
-
