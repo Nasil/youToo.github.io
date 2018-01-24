@@ -1,5 +1,5 @@
-## streaming 
-http://linuxism.tistory.com/1267
+## Streaming 
+(kor ver.) http://linuxism.tistory.com/1267
 
 ## ITU H264 document
 https://www.itu.int/rec/T-REC-H.264-201704-I/en
