@@ -8,6 +8,7 @@ https://www.itu.int/rec/T-REC-H.264-201704-I/en
 ![Alt text](http://1.bp.blogspot.com/-XoBw_6CfYVc/TsPg6tlJoXI/AAAAAAAAAKQ/XfP2VJeJ6aE/s400/bitstream_detailed.png)
 - h.264 확장자의 동영상을 stream analyzer 로 분석하면 
 - SPS(Sequence Parameter Set)  -> PPS(H264 Picture parameter Set) -> I Slice -> P Slice -> I Slice -> P Slice 순으로 보인다 
+- 슬라이스 헤더에는 슬라이스 유형, 슬라이스의 매크로 블록 유형, 슬라이스 프레임의 번호에 대한 정보가 들어 있습니다. 또한 헤더에는 참조 프레임 설정 및 수량화 매개 변수에 대한 정보가 들어 있습니다. 그리고 마침내 슬라이스 데이터(매크로 블록) 여기가 픽셀이 숨어있는 곳입니다.
 
 ## 메크로블록
 ![Alt text](http://1.bp.blogspot.com/-kTrtXc7xxDQ/TsPh6nctEYI/AAAAAAAAAKc/dyScSoiZtXs/s400/macroblock.png)
