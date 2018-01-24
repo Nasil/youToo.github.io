@@ -15,12 +15,14 @@ https://www.itu.int/rec/T-REC-H.264-201704-I/en
 - 매크로 블록은 개별 픽셀에 해당하는 휘도 및 색차 성분 집합을 포함하기 때문에 정보의 주요 전달자입니다. 
 - 세부 사항은 밝히지 않고, 비디오 디코딩은 휘도 및 색차 성분의 도움으로 픽셀 색상의 후속 복구로 비트 스트림에서 매크로 블록의 검색 및 검색으로 궁극적으로 축소된다는 결론을 내릴 수 있습니다. 다음은 단일 매크로 블록의 모습입니다.
 
-# NAL(Network Abstraction Layer)
+# NAL(Network Abstraction Layer) Unit
+![Alt text] (http://postfiles2.naver.net/data32/2008/3/12/33/h_264_stream_onlyou_4ever.jpg?type=w3)
 ![Alt text](https://i.stack.imgur.com/9XEy4.png)
 - NAL Unit 의 시작 패턴 
 * 3bytes start pattern : 00000000 00000000 000000XX
 * 4bytes start pattern : 00000000 00000000 00000011 000000XX
 * 4bytes start pattern : 00000000 00000000 00000000 000000XX
+ex) raspberry camera로 raspivid 로 촬영을 해보니 '00 00 00 01' ALUN 이 분석 되었다.
 
 ## H264 slice 구성
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/I_P_and_B_frames.svg/500px-I_P_and_B_frames.svg.png)
@@ -47,3 +49,4 @@ http://gentlelogic.blogspot.kr/2011/11/exploring-h264-part-2-h264-bitstream.html
 http://www.tvtechnology.com/multiformat/0112/h/avc-i-and-p-slice-encoding/239473
 https://en.wikipedia.org/wiki/Video_compression_picture_types
 https://en.wikipedia.org/wiki/Inter_frame
+http://blog.naver.com/PostView.nhn?blogId=onlyou_4ever&logNo=40048828597&from=search
