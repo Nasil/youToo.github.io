@@ -1,3 +1,6 @@
+# streaming 
+http://linuxism.tistory.com/1267
+
 # H264 구성
 - HSP (Sequence Parameter Set) 
 - PPS (H264 Picture parameter Set)
