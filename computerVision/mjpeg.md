@@ -1,5 +1,6 @@
 ## MJPEG란
 
+
 ## 분석
 #### 일단 MJPEG 가 라즈베리 파이 에서 가능한가 ? 
  - v4l2를 사용 하면 가능함 
@@ -20,6 +21,7 @@
  - ffmpeg 를 사용 하여 mjpeg 의 스트림된 데이터를 jpg 로 파싱 하는것 
  - https://github.com/bartbutenaers/node-red-contrib-multipart-stream-decoder
 
+
 ## 참고
 #### [raspi ffmpeg convert]
 - http://raspi.tv/2013/how-to-shoot-video-and-convert-it-to-something-you-can-edit-in-pinnacle-and-other-programs
@@ -30,6 +32,7 @@
 #### [ v4l2 issue ] 
 - https://github.com/raspberrypi/linux/issues/849
 
+
 ## Streaming library
 #### ffmpeg
  - https://namu.wiki/w/FFmpeg
@@ -39,6 +42,7 @@
 #### avconv
  - ffmpeg에서 파생된 그룹 
  - https://libav.org/avconv.html
+
 
 ## Streaming Client
 * GStreamer
