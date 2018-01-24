@@ -1,6 +1,9 @@
 # streaming 
 http://linuxism.tistory.com/1267
 
+# ITU H264 document
+https://www.itu.int/rec/T-REC-H.264-201704-I/en
+
 # H264 구성
 - HSP (Sequence Parameter Set) 
 - PPS (H264 Picture parameter Set)
