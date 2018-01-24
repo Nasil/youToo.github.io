@@ -9,6 +9,11 @@ https://www.itu.int/rec/T-REC-H.264-201704-I/en
 - h.264 확장자의 동영상을 stream analyzer 로 분석하면 
 - SPS(Sequence Parameter Set)  -> PPS(H264 Picture parameter Set) -> I Slice -> P Slice -> I Slice -> P Slice 순으로 보인다 
 
+## 메크로블록
+![Alt text](http://1.bp.blogspot.com/-kTrtXc7xxDQ/TsPh6nctEYI/AAAAAAAAAKc/dyScSoiZtXs/s400/macroblock.png)
+- 매크로 블록은 개별 픽셀에 해당하는 휘도 및 색차 성분 집합을 포함하기 때문에 정보의 주요 전달자입니다. 
+- 세부 사항은 밝히지 않고, 비디오 디코딩은 휘도 및 색차 성분의 도움으로 픽셀 색상의 후속 복구로 비트 스트림에서 매크로 블록의 검색 및 검색으로 궁극적으로 축소된다는 결론을 내릴 수 있습니다. 다음은 단일 매크로 블록의 모습입니다.
+
 ## H264 slice 구성
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/I_P_and_B_frames.svg/500px-I_P_and_B_frames.svg.png)
 - I 프레임 : (인트라 코딩 된 사진), JPG 또는 BMP 이미지 파일과 같은 전체 이미지. P 및 B 프레임은 이미지 정보 (프레임간에 변경되는 부분)의 일부만 보유하므로 I- 프레임보다 출력 파일에서 더 적은 공간이 필요합니다.
