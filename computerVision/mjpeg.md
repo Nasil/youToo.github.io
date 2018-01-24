@@ -1,5 +1,6 @@
 ## MJPEG란
-
+![mjpeg](http://cfile26.uf.tistory.com/image/1115CD344D75D47931D085)
+https://wiki.simplexi.com/display/devCSDGroup/%5BAGV%5D+H264
 
 ## 분석
 #### 일단 MJPEG 가 라즈베리 파이 에서 가능한가 ? 
