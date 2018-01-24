@@ -13,6 +13,8 @@
 
 
 
+## Extract jpeg image data from a mjpeg stream
+
 
 ## Streaming Client
 * GStreamer
