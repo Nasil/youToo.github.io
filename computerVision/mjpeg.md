@@ -1,8 +1,13 @@
 ## MJPEG란
+JPEG 영상들을 시간적으로 나열한 형식. 압축률은 JPEG과 동일(고화질 1:10 ∼ 1:20, 최대 1:30)
+
+## JPEG란
 ![mjpeg](http://cfile26.uf.tistory.com/image/1115CD344D75D47931D085)
-https://wiki.simplexi.com/display/devCSDGroup/%5BAGV%5D+H264
+
+- https://wiki.simplexi.com/display/devCSDGroup/%5BAGV%5D+H264
 
 ## 분석
+
 #### 일단 MJPEG 가 라즈베리 파이 에서 가능한가 ? 
  - v4l2를 사용 하면 가능함 
  - raspivid 의 옵션을 주면 가능하다고 함  
