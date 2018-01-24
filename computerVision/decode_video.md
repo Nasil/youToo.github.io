@@ -8,13 +8,24 @@
 [ node js - raspivid mjpeg fs watcher ] 
 - https://github.com/john-doherty/raspberry-pi-mjpeg-server/blob/master/raspberry-pi-mjpeg-server.js
 
+[ v4l2 issue ] 
+- https://github.com/raspberrypi/linux/issues/849
 
-## 참고문서에 자주 등장하는 것 
 
-[ mmal ] 
 
-[ gstream ] 
 
-[ ffmpeg ]
+## Streaming Client
+* GStreamer
+* Media Player Classic
+* MPEG4IP
+* MPlayer
+* QuickTime
+* RealPlayer
+* Skype
+* VLC media player
+* Winamp
+* Windows Media Player
+* Xine
+* MythTV via Freebox
 
 
