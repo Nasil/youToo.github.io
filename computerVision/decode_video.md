@@ -7,3 +7,14 @@
 
 [ node js - raspivid mjpeg fs watcher ] 
 - https://github.com/john-doherty/raspberry-pi-mjpeg-server/blob/master/raspberry-pi-mjpeg-server.js
+
+
+## 참고문서에 자주 등장하는 것 
+
+[ mmal ] 
+
+[ gstream ] 
+
+[ ffmpeg ]
+
+
