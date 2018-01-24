@@ -1,19 +1,19 @@
 ## MJPEG란
 
 ## 분석
-- 일단 MJPEG 가 라즈베리 파이 에서 가능한가 ? 
+#### 일단 MJPEG 가 라즈베리 파이 에서 가능한가 ? 
  - v4l2를 사용 하면 가능함 
  - raspivid 의 옵션을 주면 가능하다고 함  
 
-- JPEG 로 변환 했을시에 유리한 점은 무엇인가 ? 
+#### JPEG 로 변환 했을시에 유리한 점은 무엇인가 ? 
  - jpeg 로 변환 한다면 각 이미지에 데이터 bitmap 이 담겨 있기 때문에 이미지 처리가 가능함 
 
-- 고민되는 부분은 무엇인가?
+#### 고민되는 부분은 무엇인가?
  - 속도. MPEG -> JPEG -> Bitmat 처리 되는 부분이 오래걸리지 않는가?
 
 
 ## Extract jpeg image data from a mjpeg stream
-[ node js ]
+#### node js module
  - https://github.com/kiran-g/node-mjpeg-streamer -> v4l2
  - https://github.com/mmaelzer/mjpeg-camera
  - https://github.com/kevinGodell/pipe2jpeg
