@@ -14,7 +14,7 @@ sudo apt-get install libperl-dev
 sudo apt-get install libgtk2.0-dev
 
 
-./configure --prefix=/usr --without-qt --without-gtk --without-python --without-java CFLAGS=-DNDEBUG
+./configure --prefix=/usr --without-imagemagick --without-qt --without-gtk --without-python --without-java CFLAGS=-DNDEBUG
 make
 make install
 ```
