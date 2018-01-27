@@ -37,3 +37,13 @@ cd libtool-2.4.2
 make && sudo make install
 ```
 
+## 사용법
+
+- Makefile.am 작성
+- Makefile.in 
+
+```
+./configure
+make
+make install
+```
