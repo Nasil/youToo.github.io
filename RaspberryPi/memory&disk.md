@@ -36,5 +36,5 @@ du -sh * : 한단계 서브디렉토리 기준으로 보여준다.
 
 ```
 sudo raspi-config
- expand_roofs를 선택 후, select 메뉴를 선택하시면 SD메모리카드에서 자동으로 RESIZE 가 됩니다.
+expand_roofs를 선택 후, select 메뉴를 선택하시면 SD메모리카드에서 자동으로 RESIZE 가 됩니다.
 ```
