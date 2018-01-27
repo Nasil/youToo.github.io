@@ -1,3 +1,4 @@
+1. Zbar install
 ```
 *note: depends=('imagemagick' 'libxv' 'python2' 'gtk2' 'qt4' 'pygtk' 'v4l-utils') (apply for archlinux, use proper package with other distro. Something linke libv4l-devel alter v4l-utils)
 get package:
@@ -12,3 +13,22 @@ patch -p1 < v4l1.patch
 make
 make install
 ```
+
+2. imagemagick install
+```
+https://www.imagemagick.org/download/ImageMagick.tar.gz
+tar xvzf ImageMagick.tar.gz
+cd ImageMagick-7.0.7-22
+./configure
+make
+make install
+sudo ldconfig /usr/local/lib
+/usr/local/bin/convert logo: logo.gif
+make check
+```
+
+3. qt4 install
+```
+
+```
+
