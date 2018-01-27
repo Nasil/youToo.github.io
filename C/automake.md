@@ -1,4 +1,4 @@
-## download
+## Install
 
 1. m4 install
 ```
