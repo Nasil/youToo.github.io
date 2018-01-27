@@ -39,14 +39,27 @@ make && sudo make install
 
 ## 사용법
 
-Makefile.am 작성
+1. Makefile.am 작성
 ```
 $ autoscan
 $ mv configure.scan configure.ac
-configure.ac 수정
-$ autoreconf -i
-$ ./configure
-$ make
+```
+2. configure.ac 수정
+```
+AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+-> AC_INIT(Zbar, 1, aaa@naver.com)
+```
+3.
+```
+libtoolize --force
+aclocal
+autoheader
+automake --force-missing --add-missing
+autoconf
+./configure
+make
+make install
 ```
 
-Makefile.am 및 configure.ac 파일을 만든 후 autoreconf를 수행.
+### 그외 
+- make 시 오류들 : https://wiki.kldp.org/KoreanDoc/html/GNU-Make/GNU-Make-8.html
