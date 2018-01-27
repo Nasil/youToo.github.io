@@ -39,11 +39,14 @@ make && sudo make install
 
 ## 사용법
 
-- Makefile.am 작성
-- Makefile.in 
+Makefile.am 작성
+```
+$ autoscan
+$ mv configure.scan configure.ac
+configure.ac 수정
+$ autoreconf -i
+$ ./configure
+$ make
+```
 
-```
-./configure
-make
-make install
-```
+Makefile.am 및 configure.ac 파일을 만든 후 autoreconf를 수행.
