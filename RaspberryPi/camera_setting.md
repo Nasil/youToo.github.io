@@ -1,6 +1,6 @@
 
 ## Setting camera
-- 방법1 raspi-config 사용
+- 방법1 : raspi-config 사용
 ```
 raspi-config
 Interfacing Options
