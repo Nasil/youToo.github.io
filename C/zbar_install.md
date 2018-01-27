@@ -35,21 +35,4 @@ https://www.imagemagick.org/script/install-source.php
 
 
 3. qt4 install
-
-#### 방법1)
-```
-# sudo apt-get install "^qt4-"
-```
-http://luckyyowu.tistory.com/259
-
-#### 방법2)
-```
-sudo apt-get install qt4-dev-tools
-sudo apt-get install qtcreator
-sudo apt-get install gcc
-sudo apt-get install xterm
-sudo apt-get install git-core
-sudo apt-get install subversion
-
-```
-https://wiki.qt.io/Apt-get_Qt4_on_the_Raspberry_Pi
+http://webnautes.tistory.com/1120
