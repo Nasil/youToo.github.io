@@ -35,6 +35,7 @@ https://www.imagemagick.org/script/install-source.php
 
 
 3. qt4 install
+http://luckyyowu.tistory.com/259
 ```
 sudo apt-get install qt4-dev-tools
 sudo apt-get install qtcreator
