@@ -1,0 +1,14 @@
+```
+*note: depends=('imagemagick' 'libxv' 'python2' 'gtk2' 'qt4' 'pygtk' 'v4l-utils') (apply for archlinux, use proper package with other distro. Something linke libv4l-devel alter v4l-utils)
+get package:
+wget http://downloads.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2
+
+tar xvf zbar-0.10.tar.bz2 
+cd zbar-0.10
+put v4l1.path to the zbar-0.10 directory too
+patch -p1 < v4l1.patch
+
+./configure --prefix=/usr --without-qt --without-gtk --without-python --without-java CFLAGS=-DNDEBUG
+make
+make install
+```
