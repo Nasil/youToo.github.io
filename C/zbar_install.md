@@ -6,8 +6,13 @@ wget http://downloads.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2
 
 tar xvf zbar-0.10.tar.bz2 
 cd zbar-0.10
-put v4l1.path to the zbar-0.10 directory too
-patch -p1 < v4l1.patch
+
+sudo apt-get install libv4l-dev
+sudo ln -s /usr/include/libv4l1-videodev.h   /usr/include/linux/videodev.h
+
+sudo apt-get install libperl-dev
+sudo apt-get install libgtk2.0-dev
+
 
 ./configure --prefix=/usr --without-qt --without-gtk --without-python --without-java CFLAGS=-DNDEBUG
 make
