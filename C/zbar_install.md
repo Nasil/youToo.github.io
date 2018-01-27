@@ -35,4 +35,4 @@ https://www.imagemagick.org/script/install-source.php
 
 
 3. qt4 install
-http://webnautes.tistory.com/1120
+- http://webnautes.tistory.com/1120
