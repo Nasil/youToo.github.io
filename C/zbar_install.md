@@ -26,9 +26,17 @@ sudo ldconfig /usr/local/lib
 /usr/local/bin/convert logo: logo.gif
 make check
 ```
+https://www.imagemagick.org/script/install-source.php
+
 
 3. qt4 install
 ```
+sudo apt-get install qt4-dev-tools
+sudo apt-get install qtcreator
+sudo apt-get install gcc
+sudo apt-get install xterm
+sudo apt-get install git-core
+sudo apt-get install subversion
 
 ```
-
+https://wiki.qt.io/Apt-get_Qt4_on_the_Raspberry_Pi
