@@ -35,7 +35,14 @@ https://www.imagemagick.org/script/install-source.php
 
 
 3. qt4 install
+
+#### 방법1)
+```
+# sudo apt-get install "^qt4-"
+```
 http://luckyyowu.tistory.com/259
+
+#### 방법2)
 ```
 sudo apt-get install qt4-dev-tools
 sudo apt-get install qtcreator
