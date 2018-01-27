@@ -23,3 +23,4 @@ grep "bcm2835-v4l2" /etc/modules || echo "bcm2835-v4l2" >> /etc/modules // set f
 ls /dev/video0 // check
 ```
 
+https://github.com/raspberrypi/linux/blob/rpi-3.10.y/Documentation/video4linux/bcm2835-v4l2.txt
