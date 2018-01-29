@@ -1,4 +1,15 @@
 1. Zbar install
+
+- error : https://sourceforge.net/p/zbar/discussion/664596/thread/bca2fdc1/
+```
+sudo apt-get install libv4l-dev
+sudo ln -s /usr/include/libv4l1-videodev.h   /usr/include/linux/videodev.h
+
+sudo apt-get install libperl-dev
+sudo apt-get install libgtk2.0-dev
+```
+
+- install : 
 ```
 *note: depends=('imagemagick' 'libxv' 'python2' 'gtk2' 'qt4' 'pygtk' 'v4l-utils') (apply for archlinux, use proper package with other distro. Something linke libv4l-devel alter v4l-utils)
 get package:
@@ -7,16 +18,8 @@ wget http://downloads.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2
 tar xvf zbar-0.10.tar.bz2 
 cd zbar-0.10
 
-sudo apt-get install libv4l-dev
-sudo ln -s /usr/include/libv4l1-videodev.h   /usr/include/linux/videodev.h
-
-sudo apt-get install libperl-dev
-sudo apt-get install libgtk2.0-dev
-
-
 ./configure --prefix=/usr --without-imagemagick --without-qt --without-gtk --without-python --without-java CFLAGS=-DNDEBUG
-make
-make install
+make && make install
 ```
 
 2. imagemagick install
