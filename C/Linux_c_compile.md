@@ -1,16 +1,16 @@
-#c compile in Linux 
+# C compile in Linux 
 
 1. ./configure
 2. make
 3. make install
 
-## configure
+## 1. configure
 - configure는 시스템과 컴파일 환경을 조사해서 Makefile 을 만드는 역할을 합니다. 
 - Makefile은 실행파일을 생성시키기 위한 파일들간의 관계, 명령어등을 가지고 있는 스크립트입니다. 
 - configure는 여러 가지 옵션을 가지고 있으며 --prefix 옵션을 사용하여 설치될 디렉토리를 지정할 수 있습니다. 
 - configure --help 로 더 자세한 옵션을 알 수 있습니다.
 
-## make
+## 2. make
 - make는 configure 스크립트에 의해서 만들어진 Makefile 을 이용해서 실제 소스를 컴파일하여 실행 파일을 만드는 작업을 합니다. 
 - 리눅스의 C 언어 컴파일러인 gcc는 비주얼 C++ 같은 통합 환경 컴파일러와는 달리 
 - 컴파일 작업에 필요한 링크 옵션등을 사용자가 직접 지정해 주어야 하기 때문에 
@@ -18,13 +18,13 @@
 - 따라서 이러한 문제를 해결하기 위해 대규모 작업을 자동화하기 위한 make 를 사용하고 configure에 의해서 생성된 Makefile을 이용해서 복잡한 컴파일 과정을 자동으로 수행하게 됩니다. 
 - Makefile을 수정하여 컴파일 환경을 수정할 수도 있습니다.
 
-## make install
+## 3. make install
 - make install을 하면 만들어진 실행파일들을 적절한 시스템 디렉토리에 설치하게 됩니다. 
 - configure 에서 설정된 디렉토리로 복사를 하는 작업입니다. 
 - 보통 /usr/local/bin 디렉토리 아래에 설치가 됩니다.
 
 
-## make uninstall
+## 4. make uninstall
 - 소스로부터 생성된 패키지를 삭제하는 방법은 간단합니다. 
 - 보통 소스 패키지들은 /usr/local/ 디렉토리 아래에 설치가 되므로 설치한 패키지의 실행파일과 관련 파일들을 지우면 됩니다. 
 - 또 다른 방법은 컴파일을 하기위한 Makefile 을 가지고 있다면(압축을 푼 소스 디렉토리를 그대로 가지고 있다면 그 디렉로리 안에서) 다음과 같은 명령을 내리면 됩니다.
