@@ -8,10 +8,8 @@
 1. zbar install
 ```
 sudo apt-get install libv4l-dev
-sudo ln -s /usr/include/libv4l1-videodev.h   /usr/include/linux/videodev.h
-
-sudo apt-get install libperl-dev
-sudo apt-get install libgtk2.0-dev
+cd /usr/include/linux
+sudo ln -s ../libv4l1-videodev.h videodev.h
 ```
 ```
 *note: depends=('imagemagick' 'libxv' 'python2' 'gtk2' 'qt4' 'pygtk' 'v4l-utils') (apply for archlinux, use proper package with other distro. Something linke libv4l-devel alter v4l-utils)
