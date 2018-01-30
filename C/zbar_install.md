@@ -1,6 +1,10 @@
-1. Zbar install
+## Zbar 
 
-- error : https://sourceforge.net/p/zbar/discussion/664596/thread/bca2fdc1/
+#### error
+- https://sourceforge.net/p/zbar/discussion/664596/thread/bca2fdc1/
+- https://stackoverflow.com/questions/5842235/linux-videodev-h-no-such-file-or-directory-opencv-on-ubuntu-11-04
+
+#### Install
 ```
 sudo apt-get install libv4l-dev
 sudo ln -s /usr/include/libv4l1-videodev.h   /usr/include/linux/videodev.h
