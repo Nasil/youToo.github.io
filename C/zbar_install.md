@@ -5,6 +5,7 @@
 - https://stackoverflow.com/questions/5842235/linux-videodev-h-no-such-file-or-directory-opencv-on-ubuntu-11-04
 
 #### Install
+1. zbar install
 ```
 sudo apt-get install libv4l-dev
 sudo ln -s /usr/include/libv4l1-videodev.h   /usr/include/linux/videodev.h
@@ -12,8 +13,6 @@ sudo ln -s /usr/include/libv4l1-videodev.h   /usr/include/linux/videodev.h
 sudo apt-get install libperl-dev
 sudo apt-get install libgtk2.0-dev
 ```
-
-- install : 
 ```
 *note: depends=('imagemagick' 'libxv' 'python2' 'gtk2' 'qt4' 'pygtk' 'v4l-utils') (apply for archlinux, use proper package with other distro. Something linke libv4l-devel alter v4l-utils)
 get package:
