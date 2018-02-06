@@ -18,28 +18,8 @@ var PREWITT_Y_FILTER = [[-1, -1, -1],
                         [0, 0, 0],
                         [1, 1, 1]];
 
-var OPERATORS = { "sobel": {
-                    x: SOBEL_X_FILTER,
-                    y: SOBEL_Y_FILTER,
-                    len: SOBEL_X_FILTER.length
-                  },
-                  "roberts": {
-                    x: ROBERTS_X_FILTER,
-                    y: ROBERTS_Y_FILTER,
-                    len: ROBERTS_Y_FILTER.length
-                  },
-                  "prewitt": {
-                    x: PREWITT_X_FILTER,
-                    y: PREWITT_Y_FILTER,
-                    len: PREWITT_Y_FILTER.length
-                  }
-                };
-
 function gradient(frame, column, row) {
     console.time('Sobel Filter Time');
-
-    //let row = height;
-    //let column = width;
 
     var image_x = new Uint8ClampedArray(column * row);
     var image_y = new Uint8ClampedArray(column * row);
