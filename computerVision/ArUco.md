@@ -16,5 +16,7 @@
 ## Aruco source 
 - https://github.com/buildar/awe.js/
 - https://github.com/jcmellado/js-aruco
-- https://github.com/jcmellado/js-aruco/blob/master/src/aruco.js (GOOT :) 
+- https://github.com/jcmellado/js-aruco/blob/master/src/aruco.js (GOOD :) 
+- http://sourceforge.net/projects/opencvlibrary/
+- http://incubator.quasimondo.com/processing/fast_blur_deluxe.php
  
