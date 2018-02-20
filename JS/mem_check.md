@@ -4,20 +4,20 @@ process.memoryUsage () 메소드는 Node.js 프로세스의 메모리 사용량�
 
 ```
 console.log(process.memoryUsage());
-Dictionary 불러오기전
+
+//Dictionary 불러오기전
 { rss: 38039552,
 heapTotal: 15192064,
 heapUsed: 6823276,
 external: 400428 }
-Dictionary 불러온 후
+
+//Dictionary 불러온 후
 { rss: 38039552,
 heapTotal: 15192064,
 heapUsed: 6825100,
 external: 400428 }
 
-
-heapUsed : 1824 byte
-
+//heapUsed : 1824 byte
 
 ```
 
