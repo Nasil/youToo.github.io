@@ -4,7 +4,7 @@
 ![Alt text](http://cfile3.uf.tistory.com/image/276E5D47566A1CA3295C43)
 
 
-```
+```javascript
 "use strict";
 
 const co = require('co')
@@ -83,7 +83,7 @@ latency();
 exports.latency = latency;
 ```
 
-```
+```json
 { count: 5,
   times: [ 20, 21, 25, 26, 21 ],
   mean: 22.6,
