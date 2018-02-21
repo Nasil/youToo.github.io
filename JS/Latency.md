@@ -9,15 +9,11 @@
 
 const co = require('co')
 
-/**
- * Request latency
- */
- function latency() {
-    let times = [20,21,25,26,21];
-    latencyExec(times, 5).then(function (val) {
+function latency(times) {
+    latencyExec(times, times.length).then(function (val) {
         console.log(val);
     });
- }
+}
 
 const latencyExec = co.wrap(function *(times, n) {
   n = n || 50
@@ -29,6 +25,8 @@ const latencyExec = co.wrap(function *(times, n) {
     count: n,
     times,
     mean: mu,
+    min: Math.min.apply(null, times),
+    max: Math.max.apply(null, times),
     stdev: sigma,
     p95: p95(mu, sigma),
     p99: p99(mu, sigma)
@@ -78,16 +76,16 @@ function stdev( arr ) {
     return Math.sqrt( M2 / ( N-1 ) );
 }
 
-latency();
-
 exports.latency = latency;
 ```
 
 ```json
-{ count: 5,
-  times: [ 20, 21, 25, 26, 21 ],
-  mean: 22.6,
-  stdev: 2.701851217221259,
-  p95: 27.044545252328973,
-  p99: 28.88450593125665 }
+{ count: 10,
+  times: [ 16, 17, 10, 3, 5, 4, 4, 5, 4, 4 ],
+  mean: 7.2,
+  min: 3,
+  max: 17,
+  stdev: 5.266244708835067,
+  p95: 15.862972546033685,
+  p99: 19.449285192750366 }
 ```
