@@ -4,7 +4,7 @@
 ![Alt text](http://cfile3.uf.tistory.com/image/276E5D47566A1CA3295C43)
 
 
-'''
+```
 "use strict";
 
 const co = require('co')
@@ -81,7 +81,7 @@ function stdev( arr ) {
 latency();
 
 exports.latency = latency;
-'''
+```
 
 ```
 { count: 5,
