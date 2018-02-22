@@ -1,0 +1,2 @@
+- https://nodejs.org/ko/docs/guides/simple-profiling/
+- https://github.com/nhnent/fe.javascript/wiki/January-8---January-12,-2018
