@@ -1,3 +1,13 @@
+## LED  
+- 확산형 고휘도LED W5P-White	http://www.eleparts.co.kr/EPX33HU9	
+- BIWV-PW5C5T(Hyper Flux 5pie)	http://www.eleparts.co.kr/EPX33HUX
+- BIWV-PW5C3T(Super Flux 3pie)	http://www.eleparts.co.kr/EPX33DRC	
+- NBL-R5UW(5Ф Ultra White)	http://www.eleparts.co.kr/EPX33MHC
+- Neopixcel strip IP65 WS2812B 1개
+
+
+
+````c
 #include <Adafruit_NeoPixel.h>
 #define PIN 6
 
@@ -65,3 +75,4 @@ void setLED(int led) {
   digitalWrite(led,LOW);
   delay(offDelay); 
 }
+````
