@@ -127,7 +127,7 @@ function decode(matrix, pixelTotal, location){
         angle = (angleIdx === 3) ? 0 : (angleIdx + 1) * 90;
     }
 
-	// 시계 방향 : angleIdx * 90
+    // 시계 방향 : angleIdx * 90
     return {angle: angle, id: readId(rotateList[angleIdx], pixelTotal-2)};
 };
 
