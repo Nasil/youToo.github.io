@@ -87,7 +87,7 @@ function extract(image, location, pixelTotal, reverse) {
     for (i = 0; i < muxArr.length; i++) {
         matrix = BitMatrix.bitMatrix.createEmpty(location.dimension, location.dimension);
         centerPoint.x = muxArr[i][0] * ((location.pixelSize / 2) - 2);
-        centerPoint.y = muxArr[i][1] * ((location.pixelSize / 2) - 4); // 3
+        centerPoint.y = muxArr[i][1] * ((location.pixelSize / 2) - 3); //((location.pixelSize / 2) - 4)
         for (y = 0; y < location.dimension; y++) {
             for (x = 0; x < location.dimension; x++) {
                 xValue = x;
