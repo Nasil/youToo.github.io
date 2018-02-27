@@ -1,10 +1,10 @@
 ## How to ArUco Detect
 1. Locator 
-- Find 4 corner location
+ - Find 4 corner location
 2. Extractor
-- Extract marker bitmap
+ - Extract marker bitmap
 3. Decoder
-- Decode ArUco angle and data with hamming distance
+ - Decode ArUco angle and data with hamming distance
 
 ## TEST 
 - Test with pgm files or binary files
