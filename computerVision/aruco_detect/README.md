@@ -25,7 +25,7 @@ centerPoint.y = muxArr[i][1] * ((location.pixelSize / 2) - 3);
 - https://docs.opencv.org/3.1.0/d5/dae/tutorial_aruco_detection.html
 - http://iplimage.com/blog/approach-encodedecode-black-white-marker/
 - http://iplimage.com/blog/create-markers-aruco/
-- https://en.wikipedia.org/wiki/Hamming(7,4) → 에러 확인 해밍코드
+- https://en.wikipedia.org/wiki/Hamming(7,4) 
 #### ArUco Generator 
 - http://bhollis.github.io/aruco-marker/demos/angular.html
 - http://terpconnect.umd.edu/~jwelsh12/enes100/markergen.html
