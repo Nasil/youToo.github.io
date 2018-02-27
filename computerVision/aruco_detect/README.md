@@ -8,6 +8,7 @@
 
 ## TEST 
 - Test with pgm files or binary files
+- Generator : https://github.com/Nasil/youToo.github.io/blob/master/computerVision/aruco_detect/etc/generator.js
 
 ## Bug 
 - It does not recognize well when the angle is 45 degrees.
