@@ -293,6 +293,7 @@ function findDirection(coners, pixelTotal) {
         dimension1 = distance(coner[1], coner[3]);
         dimension2 = distance(coner[0], coner[2]);
         pixelSize = Math.max(Math.floor(dimension1/pixelTotal), Math.floor(dimension2/pixelTotal));
+        
         // TODO 카메라의 높이에 따른 bitSize 정해야함
         //if (pixelSize < 5 || pixelSize > 15) {
         //    continue;
