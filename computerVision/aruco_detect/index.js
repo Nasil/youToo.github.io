@@ -58,7 +58,7 @@ function detect(data, width, height, pixelTotal) {
     return false;
 }
 
-// TO-DO For Test
+// For Test
 detect('./imgBinary_5.pgm', 320, 240, 7);
 
 exports.detect = detect;
