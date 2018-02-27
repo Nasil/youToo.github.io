@@ -13,6 +13,14 @@ function squareToQuadrilateral(p1, p2, p3, p4) {
             a21: p3.x - p2.x,
             a22: p3.y - p2.y,
             a23: 0,
+            a31: p1.x,
+            a32: p1.y,
+            a33: 1,
+        };
+    }
+    else {
+        const dx1 = p2.x - p3.x;
+        const dx2 = p4.x - p3.x;
         const dy1 = p2.y - p3.y;
         const dy2 = p4.y - p3.y;
         const denominator = dx1 * dy2 - dx2 * dy1;
