@@ -12,6 +12,10 @@
 ## Bug 
 - It does not recognize well when the angle is 45 degrees.
 - You can adjust when you read the middle bits in the Extractor.
+```
+centerPoint.x = muxArr[i][0] * ((location.pixelSize / 2) - 2);
+centerPoint.y = muxArr[i][1] * ((location.pixelSize / 2) - 3); //((location.pixelSize / 2) - 4)
+```
  
 ## latency
 - 
