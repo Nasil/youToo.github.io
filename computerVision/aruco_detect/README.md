@@ -14,11 +14,10 @@
 - You can adjust when you read the middle bits in the Extractor.
 ```
 centerPoint.x = muxArr[i][0] * ((location.pixelSize / 2) - 2);
-centerPoint.y = muxArr[i][1] * ((location.pixelSize / 2) - 3); //((location.pixelSize / 2) - 4)
+centerPoint.y = muxArr[i][1] * ((location.pixelSize / 2) - 3); 
+// centerPoint.y = muxArr[i][1] * ((location.pixelSize / 2) - 4);
 ```
  
-## latency
-- 
 
 ## Resources
 #### ArUco detect
