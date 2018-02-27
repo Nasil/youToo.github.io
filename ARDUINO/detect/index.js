@@ -43,13 +43,10 @@ function detect(data, width, height, pixelTotal) {
         return false;
     }
 
-    console.log(location);
-
     // Extract & Read Marker
     for (i = 0; i < location.length; i++) {
         markerMatrixs = Extractor.extract(matrix, location[i], pixelTotal, true);
         for (j = 0; j < markerMatrixs.length; j++) {
-            viewMatrix(markerMatrixs[j]);
             markerData = Decoder.decode(markerMatrixs[j], pixelTotal, location[i]);
             if (markerData !== false) {
                 console.log(markerData);
@@ -61,21 +58,7 @@ function detect(data, width, height, pixelTotal) {
     return false;
 }
 
-function viewMatrix(matrix) {
-    let data = [];
-    for (let i = 0; i < 7; i++) {
-        for (let j = 0; j < 7; j++) {
-            data.push(matrix.get(i,j));
-        }
-        console.log(data);
-        data = [];
-    }
-    console.log("==========================");
-}
-
-
 // TO-DO For Test
 detect('./image/imgBinary_5.pgm', 320, 240, 7);
-//detect('./image/imgBinaryCorner_5.pgm', 320, 240, 7);
 
 exports.detect = detect;
