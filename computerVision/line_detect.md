@@ -1,12 +1,4 @@
-## Line Detection
-- BGR to Gray
-- Canny Edge Detection 
-- 가우시안 정규화 
-- 관심영역 필터링 
-- 허프 직선검출 
-- 라인 검출 
-- 라인 그리기
-
+# Line Detection
 
 ## 1. Edge Detection 알고리즘
 종류 | 장단점
@@ -16,14 +8,7 @@
 로버츠 마스크 | 소벨, 프리윗에 비해 매우 빠른 계산 속도<br> 주변과 관계없이 경계가 확실한 에지를 추출<br> 마스크의 크기가 작아 돌출한 화소값을 평균화 할 수 없으므로 잡음 해결 불가
 캐니 엣지 | 위의 엣지 검출 알고리즘들보다 가장 우월하다고함<br> 에러율이 낮음 (모든 엣지 검출)<br> 검출된 엣지의 중심 거리가 작음 (명확하고 선명한 선을 찾아냄)<br> 구현이 복잡하고 실행시간이 길다 (임계값 기울기 방법을 사용)
 
-
-#### 참고자료 
-- Gradient, Jacobian 행렬, Hessian 행렬, Laplacian : http://darkpgmr.tistory.com/132
-- edge 알고리즘 : http://blog.daum.net/trts1004/12109067
-- canny edge : http://carstart.tistory.com/188
-- canny edge source : http://www.pages.drexel.edu/~nk752/Research/cannyTut2.html
-
-#### sobel edge javascript
+#### sobel edge + gradient javascript
 ```javascript
 var SOBEL_X_FILTER = [[-1, 0, 1],
                         [-2, 0, 2],
@@ -78,6 +63,15 @@ function gradient(frame, column, row) {
     return frame;
 };
 ````
+
+#### canny edge
+- BGR to Gray -> Canny Edge Detection -> 가우시안 정규화 -> 관심영역 필터링 -> 허프 직선검출 -> 라인 검출 -> 라인 그리기
+
+#### 참고자료 
+- Gradient, Jacobian 행렬, Hessian 행렬, Laplacian : http://darkpgmr.tistory.com/132
+- edge 알고리즘 : http://blog.daum.net/trts1004/12109067
+- canny edge : http://carstart.tistory.com/188
+- canny edge source : http://www.pages.drexel.edu/~nk752/Research/cannyTut2.html
 
 ##  2. Hough Transformation
 - http://sams.epaiai.com/220588392347
