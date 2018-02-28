@@ -131,11 +131,11 @@ pi@raspberrypi:~/raspicam/build $ ./main
 
 Open cv 를 사용한 다양한 방식이 있음 
 - https://github.com/abaeyens/image-processing/tree/master/RCJ_2014
-ㄴ C++, 라인 트랙을 따라서 동그라미 4개가 라인 사이즈 및 가운데 점을 찾고 벗어나는 점을 찾아가는 방법
+	- C++, 라인 트랙을 따라서 동그라미 4개가 라인 사이즈 및 가운데 점을 찾고 벗어나는 점을 찾아가는 방법
 -https://github.com/CRM-UAM/VisionRace 
-ㄴ 파이썬, 라인 트랙을 따라서 4개로 split 한다음 가운데 점을 찍고 그 위치가 화면에서 벗어났는지 확인하는 방법
+	- 파이썬, 라인 트랙을 따라서 4개로 split 한다음 가운데 점을 찍고 그 위치가 화면에서 벗어났는지 확인하는 방법
 https://github.com/tgilmour94/ros_amr
-ㄴ C++, canny & Houghtrasform  사용함 가장 전형적인 방법, 라인을 먼저 잡고 가운데 점을 포인트로 잡아서 화면을 따라가는 방식. 제일 구현이 쉬운듯
+	- C++, canny & Houghtrasform  사용함 가장 전형적인 방법, 라인을 먼저 잡고 가운데 점을 포인트로 잡아서 화면을 따라가는 방식. 제일 구현이 쉬운듯
 
 
 - 영상처리 순서 (전처리 → 차선인식 → 변환) 
