@@ -3,8 +3,8 @@
 - 참고자료 : http://webnautes.tistory.com/916
 - 최신버전 : https://docs.opencv.org/3.4.0/
 - node opencv : https://github.com/peterbraden/node-opencv
-- ㄴopencv가 설치되어 있어야 함
-- 주의 ) 설치하는데 거의 2~3시간 걸림, 메모리 부족할수 있으니 처음 설치 전에 확인해야함
+	- opencv가 설치되어 있어야 함
+	- 주의 ) 설치하는데 거의 2~3시간 걸림, 메모리 부족할수 있으니 처음 설치 전에 확인해야함
 
 
 
@@ -154,8 +154,6 @@ Canny edge detection
 Houghtrasform 을 통해 특정한 점들의 연관성을 추출해냄 (직선 찾기)
 ````
 
-AGV에 가장 정합한 영상처리 알고리즘 및 처리방법 계속 찾는중..
-알고리즘 확인 후 nodeJS 로 변경할 예정 (제공되는 라이브러리도 별로 없고 안되는것도 많아서 더 찾아볼 필요가 있음)
 
 
 
