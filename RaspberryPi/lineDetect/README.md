@@ -2,7 +2,7 @@
 - This is Line Detect (sobel edge detection) for v4l2 (raspicam).
 - Using v4l2 https://linuxtv.org/downloads/v4l-dvb-apis/uapi/v4l/v4l2.html
 - You can save pgm original file and line detect output file.
-- Adjust setting
+- Adjust setting v4l2 camera
 ```
 frame_count // retry capture
 req_width  // cam width
