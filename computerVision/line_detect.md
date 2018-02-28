@@ -22,7 +22,7 @@
 - edge 알고리즘 : http://blog.daum.net/trts1004/12109067
 - canny edge : http://carstart.tistory.com/188
 
-#### 소벨 엣지 + Gradient
+#### sobel edge javascript
 ```javascript
 var SOBEL_X_FILTER = [[-1, 0, 1],
                         [-2, 0, 2],
