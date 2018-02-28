@@ -7,10 +7,10 @@
 - http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=10
 
 - 라인 방정식
-![Alt text](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722596_4368.gif)
-![](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722611_1638.png)
-![Alt text](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722635_9798.png)
-![Alt text](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722650_8469.png)
+![Alt text](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722596_4368.gif) <br/><br/>
+![](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722611_1638.png)<br/><br/>
+![Alt text](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722635_9798.png)<br/><br/>
+![Alt text](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722650_8469.png)<br/><br/>
 
 
 - 차선 검출 예제 :
