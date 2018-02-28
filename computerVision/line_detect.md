@@ -6,7 +6,7 @@
 - https://blog.naver.com/dusrb2003/220290145675
 - http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=10
 
-- 라인 방정식
+
 ![Alt text](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722596_4368.gif) <br/><br/>
 ![](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722611_1638.png)<br/><br/>
 ![Alt text](http://makeshare.org/data/editor/1602/cba7d75088069cd02a9535379e0eb2c0_1456722635_9798.png)<br/><br/>
