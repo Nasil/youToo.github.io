@@ -21,6 +21,7 @@
 - Gradient, Jacobian 행렬, Hessian 행렬, Laplacian : http://darkpgmr.tistory.com/132
 - edge 알고리즘 : http://blog.daum.net/trts1004/12109067
 - canny edge : http://carstart.tistory.com/188
+- canny edge source : http://www.pages.drexel.edu/~nk752/Research/cannyTut2.html
 
 #### sobel edge javascript
 ```javascript
@@ -96,6 +97,7 @@ function gradient(frame, column, row) {
 ## Example
 - 파이썬 Hough Transformation Example
     - https://github.com/HyOsori/Osori-SelfDrivingWithGTA5/wiki/%EA%B0%95%EC%A2%8C-6---OpenCV%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%B0%A8%EC%84%A0-%EA%B2%80%EC%B6%9C
+    
 
 
 
