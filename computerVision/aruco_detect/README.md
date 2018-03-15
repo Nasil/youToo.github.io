@@ -35,7 +35,7 @@ centerPoint.y = muxArr[i][1] * ((location.pixelSize / 2) - 3);
 #### Aruco source 
 - https://github.com/buildar/awe.js/
 - https://github.com/jcmellado/js-aruco
-- https://github.com/jcmellado/js-aruco/blob/master/src/aruco.js (GOOD :) 
+- https://github.com/jcmellado/js-aruco/blob/master/src/aruco.js 
 - http://sourceforge.net/projects/opencvlibrary/
 - http://incubator.quasimondo.com/processing/fast_blur_deluxe.php
  
