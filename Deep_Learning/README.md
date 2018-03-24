@@ -9,3 +9,6 @@
 
 
 # 퍼셉트론 -> 신경망
+
+
+- https://github.com/WegraLee/deep-learning-from-scratch
