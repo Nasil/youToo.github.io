@@ -1,5 +1,9 @@
 
-## 퍼셉트론 -> 신경망
+
+## SoftMax
+- SVM과 더불어 많이 쓰이는 Classifier.
+- Logistic regression classifier의 multiple class 에 대한 일반화 개념.
+- 각 class의 score를 받아서 normalized class probability(확률)들을 리턴한다.
 
 # 계단함수 vs 시그모이드 함수 vs reLu 함수
 - 공통점 : 비선형 함수이다
