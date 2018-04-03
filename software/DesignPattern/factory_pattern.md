@@ -44,7 +44,7 @@ public class ProductFactory extends SuperFactory {
   function saveProduct($sType) {
     switch($sType) {
       case "v1" : return new LocalSaveV1();
-      case "v2" : retrun new LocalSaveV2(); 
+      case "v2" : return new LocalSaveV2(); 
     }
     return null;
   }
