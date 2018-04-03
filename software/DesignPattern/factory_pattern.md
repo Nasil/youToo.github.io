@@ -1,7 +1,74 @@
 
-## 팩토리 메소드 패턴
--팩토리 메소드 패턴에서는 객체를 생성하기 위한 인터페이스를 정의하는데, 어떤 클래스의 인스턴스를 만들지는 서브클래서에서 결정하게 만든다.
 
+```php
+abstrct class Save {
+  protected function getProduct() {
+  }
+  
+  protected function getPost() {
+  }
+  
+  protected function getApi() {
+  }
+  
+  protected abstract mapping();
+}
+```
 
-## 추상 팩토리 패턴
-- 의존성 뒤집기 원칙 (Dependency Inversion Principle) 
+```php
+public class LocalSaveV1 extends Save {
+  //@Override
+  protected mapping() {
+    // mapping 
+    // market 
+ }
+}
+```
+```php
+public class LocalSaveV2 extends Save {
+  //@Override
+  protected mapping() {
+    // mapping 
+    // market 
+ }
+}
+```
+
+```php
+abstract class SuperFactory {
+  abstract saveProduct($sType);
+}
+```
+
+```php
+public class ProductFactory extends SuperFactory {
+  //@Override
+  function saveProduct($sType) {
+    switch($sType) {
+      case "v1" : return new LocalSaveV1();
+      case "v2" : retrun new LocalSaveV2(); 
+    }
+    return null;
+  }
+
+}
+```
+
+- main
+```php
+
+  public $oLocal1;
+  public $oLocal2;
+  public $oLocal3;
+
+  public function run() {
+    SuperFactory pf = new ProductFactory();
+    Save local1 = rf.saveProduct("local");
+    Save local2 = rf.saveProduct("local2");
+    Save local3 = rf.saveProduct("local3");
+
+    
+    local1.mapping();
+  }
+```
+
