@@ -20,7 +20,6 @@ public class LocalSaveV1 extends Save {
   //@Override
   protected mapping() {
     // mapping 
-    // market 
  }
 }
 ```
@@ -29,7 +28,6 @@ public class LocalSaveV2 extends Save {
   //@Override
   protected mapping() {
     // mapping 
-    // market 
  }
 }
 ```
