@@ -52,6 +52,8 @@ CREATE TABLE `t_validation` (
 ```
 mysqldump -uerp -p비번 db명 table명
 ```
+- csv
+mysql -uerp -p비번 db명 -e "select id, age, place from account where place = 'seoul';" | sed 's/\t/","/g;s/^/"/;s/$/"/;' > account_bak.csv
 
 ## 기타
 - Check index
