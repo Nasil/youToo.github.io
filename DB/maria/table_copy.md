@@ -48,6 +48,10 @@ CREATE TABLE `t_validation` (
 #### 2-1 csv 로 옮겨서 하기
 #### 2-2 insert 문을 복사해서 붙여넣기
 
+- mysqldump 는 왠만하면 쓰지말기 락걸림
+```
+mysqldump -uerp -p비번 db명 table명
+```
 
 ## 기타
 - Check index
