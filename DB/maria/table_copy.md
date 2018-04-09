@@ -45,15 +45,17 @@ CREATE TABLE `t_validation` (
 ```
  
 ### 2. Insert data
-#### 2-1 csv 로 옮겨서 하기
-#### 2-2 insert 문을 복사해서 붙여넣기
-
+#### 2-1 dump
 - mysqldump 는 왠만하면 쓰지말기 락걸림
 ```
 mysqldump -uerp -p비번 db명 table명
 ```
 - csv
 mysql -uerp -p비번 db명 -e "select id, age, place from account where place = 'seoul';" | sed 's/\t/","/g;s/^/"/;s/$/"/;' > account_bak.csv
+#### 2-2 insert 문을 복사해서 붙여넣기
+- export SQL INSERT statements
+https://stackoverflow.com/questions/3978326/get-insert-statement-for-existing-row-in-mysql?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
 
 ## 기타
 - Check index
