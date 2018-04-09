@@ -2,17 +2,15 @@
 
 
 ## 같은 서버에 있는 경우 
-- Table copy
+
+- To copy with indexes and triggers do these 2 queries:
 ```
-create table new_table_name like old_table_name
+CREATE TABLE newtable LIKE oldtable; 
+INSERT newtable SELECT * FROM oldtable;
 ```
-- Table & data copy
+- To copy just structure and data use this one:
 ```
-create table new_table_name select * from old_table_name
-```
-- Data copy
-```
-INSERT INTO [대상 테이블명] SELECT * FROM [원본 테이블명]  
+CREATE TABLE tbl_new AS SELECT * FROM tbl_old;
 ```
 - PK
 ```
