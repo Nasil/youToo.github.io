@@ -2,7 +2,7 @@
 
 
 ## 같은 서버에 있는 경우 
--Table copy
+- Table copy
 ```
 create table new_table_name like old_table_name
 ```
