@@ -22,7 +22,10 @@ ALTER TABLE 새로만든테이블 ADD PRIMARY KEY(지정할 컬럼명 )
 ```
 alter table new modify 지정할컬럼명 int auto_increment
 ```
-
+- Table Rename
+```
+RENAME TABLE old_table TO backup_table, new_table TO old_table;
+```
 
 ## 다른 서버에 있는 경우
 
