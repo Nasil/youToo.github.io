@@ -10,7 +10,7 @@ create table new_table_name like old_table_name
 ```
 create table new_table_name select * from old_table_name
 ```
--Data copy
+- Data copy
 ```
 INSERT INTO [대상 테이블명] SELECT * FROM [원본 테이블명]  
 ```
