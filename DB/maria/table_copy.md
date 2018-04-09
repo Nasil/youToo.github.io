@@ -10,6 +10,10 @@ create table new_table_name like old_table_name
 ```
 create table new_table_name select * from old_table_name
 ```
+-Data copy
+```
+INSERT INTO [대상 테이블명] SELECT * FROM [원본 테이블명]  
+```
 - PK
 ```
 ALTER TABLE 새로만든테이블 ADD PRIMARY KEY(지정할 컬럼명 )
