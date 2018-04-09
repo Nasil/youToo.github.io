@@ -29,20 +29,6 @@ RENAME TABLE old_table TO backup_table, new_table TO old_table;
 
 ### 1. Create Table 
 // Create statement
-```
-CREATE TABLE `t_validation` (
-  `validation_no` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'validation number',
-  `condition_type` varchar(30) NOT NULL COMMENT '조건 종류 (value-type, value, regex, symbol)',
-  `condition_value` varchar(50) NOT NULL COMMENT '조건 값 (>, >=, <, <=, ===, !==, in, not-in)',
-  `title` varchar(210) NOT NULL COMMENT '검증 조건명',
-  `description` varchar(300) DEFAULT NULL COMMENT '검증 조건 내용',
-  `is_deleted` enum('T','F') NOT NULL DEFAULT 'F' COMMENT '삭제여부',
-  `ins_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '등록일',
-  `upd_timestamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '수정일',
-  `del_timestamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '삭제일',
-  PRIMARY KEY (`validation_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COMMENT='검증 조건 테이블';
-```
  
 ### 2. Insert data
 #### 2-1 dump
