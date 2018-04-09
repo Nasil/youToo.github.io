@@ -3,12 +3,12 @@
 
 ## 같은 서버에 있는 경우 
 
-- To copy with indexes and triggers do these 2 queries:
+- To copy with indexes and triggers do these 2 queries (인덱스와 트리거로 복사하려면 다음 두 가지 쿼리를 수행하십시오.)
 ```
 CREATE TABLE newtable LIKE oldtable; 
 INSERT newtable SELECT * FROM oldtable;
 ```
-- To copy just structure and data use this one:
+- To copy just structure and data use this one: (구조와 데이터만 복사하려면이 것을 사용하십시오.)
 ```
 CREATE TABLE tbl_new AS SELECT * FROM tbl_old;
 ```
