@@ -1,8 +1,8 @@
 ## 기본 명령어
-> show dbs // DB 목록 확인
-> show collections // 컬렉션 확인
-> use admin // 
-> sh.status(); // shard 확인
+> show dbs // DB 목록 확인 </br>
+> show collections // 컬렉션 확인 </br>
+> use admin //  </br>
+> sh.status(); // shard 확인 </br>
 
 
 ## 기타
