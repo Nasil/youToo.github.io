@@ -8,6 +8,6 @@
 > db.runCommand({"buildinfo":1}) //환경구성
 > Object.bsonsize('쿼리'); // 다큐먼트 크기 
 > db.getCollection('collection_name').find({"id" : "hello"}).explain("executionStats"); // 실행계획
-
+> db.runCommand({"collStats":"db_name"}) // 통계데이터
 ## 기타
 > it // find 한 결과가 20줄이 넘어가는 경우 
