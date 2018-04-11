@@ -12,3 +12,7 @@
 > db.collection_name.stats() // 통계데이터</br>
 ## 기타
 > it // find 한 결과가 20줄이 넘어가는 경우 
+
+
+- mongoDB client 프로그램
+https://www.mongodb.com/download-center#compass
