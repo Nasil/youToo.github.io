@@ -9,5 +9,6 @@
 > Object.bsonsize('쿼리'); // 다큐먼트 크기 </br>
 > db.getCollection('collection_name').find({"id" : "hello"}).explain("executionStats"); // 실행계획</br>
 > db.runCommand({"collStats":"collection_name"}) // 통계데이터</br>
+> db.collection_name.stats() // 통계데이터</br>
 ## 기타
 > it // find 한 결과가 20줄이 넘어가는 경우 
