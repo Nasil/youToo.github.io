@@ -20,23 +20,19 @@ sudo apt-config
 
 # 로케일 설정
 
-I1 Change Locale
-    * en_US.UTF-8 UTF-8
-    * ko_KR.UTF-8 UTF-8
-    * default는 en_US.UTF-8
-I2 Change Timezone
-    * Asia/Seoul
-I3 Change Keyboard Layout
-    * Generic 105-key (Intl) PC
-    * Other > Korean > Korean - Korean (101/104 key compatible)
-    * Key to function as AltGr: The default for the keyboard layout
-    * Compose key: No compose key
-
+- I1 Change Locale
+   - en_US.UTF-8 UTF-8
+   - ko_KR.UTF-8 UTF-8
+   - default는 en_US.UTF-8
+- I2 Change Timezone
+   - Asia/Seoul
+- I3 Change Keyboard Layout
+   - Generic 105-key (Intl) PC
+   - Other > Korean > Korean - Korean (101/104 key compatible)
+   - Key to function as AltGr: The default for the keyboard layout
+   - Compose key: No compose key
 - 여기까지 완료 후 Finish > 재부팅
----------------------------------------------------------------
-
-- 재부팅 후 root 로 로그인 하고
-- 설정 세팅
+- 재부팅 후 root 로 로그인 하고 설정 세팅
 ```
 cp -a /etc/skel/.??* ~/
 source ~/.bashrc
