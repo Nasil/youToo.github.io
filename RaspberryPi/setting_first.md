@@ -139,7 +139,7 @@ Yes
 uim 선택 > OK
 OK
 // 재부팅
-//재부팅 완료 후 
+// 재부팅 완료 후 
 // 우측상단의 블루투스 아이콘 좌측에 - <-  모양의 아이콘이 있음. - 모양의 아이콘 우클릭 > Preference
 // Global settings > Input method deployment 에서 Specify default IM 체크
 // Default input method를 Byeoru 로 변경
