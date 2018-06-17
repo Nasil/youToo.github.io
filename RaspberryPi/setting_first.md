@@ -52,7 +52,7 @@ userdel -r pi
 ```
 ---------------------------------------------------------------
 # 업그레이드 
-``
+```
 apt-get update && apt-get -y upgrade && apt-get dist-upgrade -y
 apt-get autoremove && apt-get autoclean && apt-get clean
 ```
