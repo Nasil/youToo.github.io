@@ -125,13 +125,17 @@ apt-get install raspberrypi-ui-mods -y
 // 재부팅
 // 재부팅 완료 후 한글입력을 위한 패키지 설치
 // X-window의 터미널에서 (터미널 여는 단축키는 ctrl+alt+T)
- 
-// 폰트 - 개발용이므로 마음에 드는걸로 하거나 안해도 상관없음
+```
+
+# 폰트 
+- 개발용이므로 마음에 드는걸로 하거나 안해도 상관없음
+```
 apt-get install fonts-nanum-coding -y
- 
-// uim 설치
+```
+
+# uim 설치
+```
 apt-get install fonts-unfonts-core uim uim-byeoru -y
- 
 // uim 설치 완료 후
 시작메뉴 > Preferences > Input Method
 OK
@@ -139,36 +143,27 @@ Yes
 uim 선택 > OK
 OK
 // 재부팅
-
-재부팅 완료 후 
-
+//재부팅 완료 후 
 // 우측상단의 블루투스 아이콘 좌측에 - <-  모양의 아이콘이 있음. - 모양의 아이콘 우클릭 > Preference
- 
-Global settings > Input method deployment 에서 Specify default IM 체크
-Default input method를 Byeoru 로 변경
- 
+// Global settings > Input method deployment 에서 Specify default IM 체크
+// Default input method를 Byeoru 로 변경
 // 여기까지 하고 OK 버튼 눌러서 창을 닫으면 shift + space로 한영 변환
 // 한영키로 한영변환을 하고 싶다면 아래 설정 추가
 Byeoru key bindings 1 > [Byeoru] on > Edit
 Key: 부분을 클릭한 후 한영키 누름 > Add > Close
 [Byeoru] off 도 동일하게
- 
 // 한자변환은 F9가 기본값인데 한자키로 변환하고 싶다면 아래 설정 추가
 Byeoru key bindings 1 > [Byeoru] convert Hangul to Chinese characters > Edit
 Key: 부분을 클릭한 후 한자키 누름 > Add > Close
- 
 OK 버튼 클릭하면 설정 완료
+```
 
-
-시스템 폰트 수정
-메뉴 > Preferences > Appearance Settings > System > Font 에서 NanumGothicCoding 선택
-
-터미널은 termit 이란 걸 쓰는데 기본 폰트 설정을 하려면 아래처럼.
-
-
+# 시스템 폰트 수정
+- 메뉴 > Preferences > Appearance Settings > System > Font 에서 NanumGothicCoding 선택
+- 터미널은 termit 이란 걸 쓰는데 기본 폰트 설정을 하려면 아래처럼.
+```
 mkdir -p ~/.config/termit
 vi ~/.config/termit/rc.lua
- 
 // rc.lua 파일은 이렇게 하고 저장. 이후 termit 실행시 아래 설정을 따름.
 defaults = {}
 defaults.font = 'NanumGothicCoding'
@@ -176,14 +171,14 @@ setOptions(defaults)
 ```
 ---------------------------------------------------------------
 # chromium-browser 설치
-
+```
 apt-get install chromium-browser -y 
 // 확인
 chromium-browser --version
-
+```
 ---------------------------------------------------------------
 # node 설치 
-
+```
 // 아래 페이지로 가서 ARMv7 최신버전 링크를 알아내서 wget으로 받으면 됨.
 // https://nodejs.org/en/download/
     
@@ -201,24 +196,26 @@ cd /usr/local/bin
 ln -s /home/apps/nodejs/bin/node node
 ln -s /home/apps/nodejs/bin/npm npm
  
- 
 // 확인
 node --version
-
+```
 ---------------------------------------------------------------
 # 마우스 
+```
 // 마우스 커서를 숨겨주는 unclutter 설치
 apt-get install unclutter -y
-
+```
 
 ---------------------------------------------------------------
 
 # Rotate your monitor
 - To rotate your monitor you'll need to add the following line to /boot/config.txt using the following command sudo nano /boot/config.txt
-
+```
 display_rotate=1
+```
 ---------------------------------------------------------------
 # Disable screensaver and remove panel
+```
 vi /home/pi/.config/lxsession/LXDE-pi/autostart
 
 - Reccomended To disable the screensaver you'll want to comment out (with a '#') the @xscreensaver. You'll also want to add the following lines to that same file
@@ -227,29 +224,29 @@ vi /home/pi/.config/lxsession/LXDE-pi/autostart
 @xset -dpms
 @xset s noblank
 - Optional To remove the panel at the top of the screen to comment out the @lxpanel lines. If you want to be able to easily access the "menu" at the top of the screen do not do this step.
-
+```
 ---------------------------------------------------------------
 
 # Audio Output
 - Should you want to change the output from AUX (headphone jack) to HDMI or back again you can run the following:
-
+```
 // To output audio through the headphone jack:
 amixer cset numid=3 1
 // To force the audio back through HDMI you can run:
 amixer cset numid=3 2
-
+```
 ---------------------------------------------------------------
 
-// 패키지 저장소 정리
+# 패키지 저장소 정리
+```
 apt-get autoremove
 apt-get autoclean
 apt-get clean
- 
-// 전원 내리기
+```
+# 전원 내리기
+```
 poweroff
-
+```
 
 # 기타 
-
 - 외부 IP 접속 : http://ict-nroo.tistory.com/7
-- 
