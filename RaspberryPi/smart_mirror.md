@@ -27,8 +27,6 @@ $ bower install —allow-root
 sudo -i
 ```
 
-# 구글 스피치 설정
-
 # 유튜브 설정
 ```
 plugins/search/config.schema.json
@@ -39,3 +37,4 @@ plugins/search/config.schema.json
 ```
 
 # 한글 설정
+- https://cloud.google.com/speech-to-text/docs/languages
