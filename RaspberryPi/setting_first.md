@@ -109,12 +109,17 @@ ntpdate -u 3.kr.pool.ntp.org
 ```
 
 ---------------------------------------------------------------
-# git 설치  
+# Git 설치 
 ```
 apt-get install git-core
 git --version
+cd project 
+git init 
+echo ‘hello git’ > README 
+git add . 
+git commit -m ‘hello’ 
+git remote add origin ssh://git@[서버]:11022/home/git/project.git git push origin master
 ```
-
 ---------------------------------------------------------------
 #  x-window 설치 
 ```
