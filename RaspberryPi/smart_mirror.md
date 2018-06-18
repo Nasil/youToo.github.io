@@ -23,6 +23,9 @@ $ bower install —allow-root
 ```
 - https://stackoverflow.com/questions/42308879/npm-err-code-elifecycle?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
+# keyfile.json
+- https://github.com/google/google-auth-library-nodejs/issues/137
+
 ```
 sudo -i
 ```
