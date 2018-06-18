@@ -23,3 +23,16 @@ $ bower install —allow-root
 ```
 - https://stackoverflow.com/questions/42308879/npm-err-code-elifecycle?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
+
+# 구글 스피치 설정
+
+# 유튜브 설정
+```
+plugins/search/config.schema.json
+"key": {
+    "type": "string",
+    "title": "YouTube API Key"
+}
+```
+
+# 한글 설정
