@@ -30,6 +30,9 @@ $ bower install —allow-root
 sudo -i
 ```
 
+# 구글 스피치
+- http://jeongchul.tistory.com/544
+
 # 마이크설정
 - http://www.g7smy.co.uk/2013/08/recording-sound-on-the-raspberry-pi/
 - http://jeongchul.tistory.com/542
