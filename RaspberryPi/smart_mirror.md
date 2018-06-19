@@ -53,3 +53,5 @@ plugins/search/config.schema.json
 # 한글 설정
 - https://cloud.google.com/speech-to-text/docs/languages
 
+# wifi 설정
+- http://webnautes.tistory.com/903
