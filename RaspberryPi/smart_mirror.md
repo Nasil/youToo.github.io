@@ -30,6 +30,10 @@ $ bower install —allow-root
 sudo -i
 ```
 
+# 마이크설정
+- http://www.g7smy.co.uk/2013/08/recording-sound-on-the-raspberry-pi/
+
+
 # 유튜브 설정
 ```
 plugins/search/config.schema.json
@@ -41,3 +45,4 @@ plugins/search/config.schema.json
 
 # 한글 설정
 - https://cloud.google.com/speech-to-text/docs/languages
+
