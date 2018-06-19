@@ -4,6 +4,7 @@
 
 # 스마트 미러 설정
 - https://github.com/evancohen/smart-mirror
+- http://bluexmas.tistory.com/573
 
 ## 에러 나는 부분 따로 설치 
 ``` 
