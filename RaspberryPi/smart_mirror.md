@@ -32,7 +32,7 @@ sudo -i
 
 # 마이크설정
 - http://www.g7smy.co.uk/2013/08/recording-sound-on-the-raspberry-pi/
-
+- 설정후 마이크 볼륨을 켜줘야함
 
 # 유튜브 설정
 ```
