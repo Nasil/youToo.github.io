@@ -4,7 +4,6 @@
 
 # 스마트 미러 설정
 - https://github.com/evancohen/smart-mirror
-- http://bluexmas.tistory.com/573
 - http://forums.rasplay.org/topic/336/%EC%8A%A4%EB%A7%88%ED%8A%B8%EB%AF%B8%EB%9F%AC-%EC%9E%91%ED%92%88%EC%A4%91-%EC%9D%8C%EC%84%B1%EC%9D%B8%EC%8B%9D-%EB%AC%B8%EC%A0%9C%EC%9E%85%EB%8B%88%EB%8B%A4-%E3%85%A0%E3%85%A0/8
 - http://bluexmas.tistory.com/573
 
