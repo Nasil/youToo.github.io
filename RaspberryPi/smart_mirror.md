@@ -24,6 +24,11 @@ $ bower -v
 $ cd smart-mirror
 $ bower install —allow-root
 ```
+
+# 마이크 설정
+- http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=76
+
+
 - https://stackoverflow.com/questions/42308879/npm-err-code-elifecycle?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
 # keyfile.json
