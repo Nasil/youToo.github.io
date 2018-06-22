@@ -24,3 +24,7 @@ ls /dev/video0 // check
 ```
 
 https://github.com/raspberrypi/linux/blob/rpi-3.10.y/Documentation/video4linux/bcm2835-v4l2.txt
+
+
+# button stop motion
+- https://projects.raspberrypi.org/en/projects/push-button-stop-motion
