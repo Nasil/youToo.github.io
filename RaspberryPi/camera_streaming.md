@@ -1,6 +1,6 @@
 - http://thejackalofjavascript.com/rpi-live-streaming/
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +61,7 @@
 ```
 
 
-```
+```js
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
