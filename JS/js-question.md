@@ -48,7 +48,6 @@
 ## this는 JavaScript에서 어떻게 작동하는지 설명해주세요.
 ## prototype 기반 상속은 어떻게 하는지 설명해주세요.
 ## AMD와 CommonJS는 무엇이고, 이것들에 대해 어떻게 생각하시나요?
-
 ## null과 unedefined 그리고 undeclared의 차이점은 무엇인가요?
 ## 두개를 구분하기 위해서는 어떻게 하면 될까요?
 ## 익명함수(anonymous functions)는 주로 어떤 상황에서 사용하나요?
@@ -94,10 +93,11 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ## 동기방식과 비동기 방식 함수의 차이에 관해서 설명해주세요.
 ## event loop이란 무엇인가요?
 ## call stack과 task queue에 관해 설명해주세요.
-## function foo() {}와 var foo = function() {}에서 foo 의 차이가 무엇인지 설명해보세요.
+![Alt text](https://poiemaweb.com/img/event-loop.png)
+
 ## 클로져(Closure)는 무엇이며, 어떻게/왜 사용하는지 설명해주세요.
 
-## 클로져를 만들 때 선호하는 패턴은 무엇인가요? argyle (IIFEs에만 적용할 수 있다)
+## 클로져를 만들 때 선호하는 패턴은 무엇인가요?
 
 ## 다음 코드가 즉시 호출 함수 표현식(IIFE)로 동작하지 않는 이유에 관해서 설명해보세요:
 ```javascript
@@ -119,7 +119,8 @@ showName(); // No Name
 ```
 - 두 개의 괄호는 JS컴파일러에게 이 익명 함수를 바로 호출하라고 말합니다. 이것을 IIFE라고 부릅니다.
 - IIFE를 사용하는 주된 이유는 변수를 전역(global scope)으로 선언하는 것을 피하기 위해서 입니다
-- ES5 이하에서는 var 변수를 서넝ㄴ하면 전역변수가 되기 떄문에 전역을 오염시키지 않기 위해 사용되었으나, ES6에서 제공하는 let, const 선언은 지역변수이므로, 블록으로 묶어주기만 하면 IIFE패턴을 쓰지 않고도 전역을 오염시키지 않게 됩니다.
+- ES5 이하에서는 var 변수를 선언하면 전역변수가 되기 떄문에 전역을 오염시키지 않기 위해 사용되었으나
+- ES6에서 제공하는 let, const 선언은 블록 단위의 지역변수이므로, 블록으로 묶어주기만 하면 IIFE패턴을 쓰지 않고도 전역을 오염시키지 않게 됩니다.
 ```javascript
 // ES5
 (function(){
@@ -132,6 +133,9 @@ showName(); // No Name
     let b = 10;
 }
 ```
+
+## function foo() {}와 var foo = function() {}에서 foo 의 차이가 무엇인지 설명해보세요.
+- 첫번째는 함수 선언식이고 두번째는 함수 표현식으로 작성이 되었다.
 
 ## 함수선언식 vs 함수표현식
 - 함수 선언(declaration)은 미리 자바 스크립트의 실행 컨텍스트(execution context)에 로딩 되어 있으므로 언제든지 호출할 수 있지만, 표현식(Expression)은 인터프리터가 해당 라인에 도달 하였을때만 실행이 됩니다.
@@ -156,6 +160,7 @@ alert(foo); // "foo" is not defined.
 (function foo () {});
 alert(foo); // "foo" is not defined.
 ```
+
 ## "호이스팅(Hoisting)"에 대해서 설명하세요.
  - 변수 범위 (Variable Scope) : JS는 함수 수준의 범위를 가지고 있습니다. 지역변수 > 전역변수 우선권을 가집니다.
  - 호이스팅 (Hoisting) :  변수의 정의가 그 범위에 따라 선언과 할당으로 분리되는 것을 의미합니다.
