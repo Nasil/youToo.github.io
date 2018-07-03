@@ -2,7 +2,7 @@
 ### event delegation?
 - 이벤트위임 (event delegation) 은 각 자식요소에 핸들러를 반인딩 하는 대신 하나의 부모 요소에 이벤트 핸들러를 반인딩하는 방법입니다.
 - Dom 트리에 자식 요소를 추가하더라도 이벤트 처리는 부모 요소에 위임 되었기 때문에 새로운 핸들러를 다시 반인딩할 필요가 없습니다.
-```
+```html
 <!DOCTYPE html>
 <html>
 <body>
@@ -111,7 +111,7 @@ function myName() {
 // 함수 선언은 변수명을 덮어 씁니다.
 console.log(typeof myName); // function
 ```
-```
+```javascript
 // 하지만, 변수에 값이 할당될 경우에는 반대로 변수가 함수선언을 덮어 씁니다.
 var myName = "Richard";
 function myName() {
@@ -120,11 +120,10 @@ function myName() {
 console.log(typeof myName); //string
 ```
 - “strict mode”에서 최초의 선언없이 변수에 값을 할당하려 한다면 오류가 발생합니다
-```
+
 ### let, var, const의 차이점에 관해서 설명해주세요.
-- var
-    - function-scope
-```
+- var : function-scope
+```javascript
 // 이미 만들어진 변수이름으로 재선언했는데 아무런 문제가 발생하지 않는다.
 var a = 'test'
 var a = 'test2'
@@ -133,7 +132,8 @@ var a = 'test2'
 c = 'test'
 var c
 ```
-- let, const : block-scope
+- let : block-scope
+- const : block-scope
 
 
 ---------------------------------------------------------------------------------------------
