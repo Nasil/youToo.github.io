@@ -104,12 +104,12 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 function foo(){ }();
 ```
 ## IIFE(Immediately Invoked Function Expressions)로 만들기 위해서는 어떻게 해야 하나요?
-```
+```javascript
 (foo = function(){
     }
 ) ();
 ```
-```
+```javascript
 (showName = function (name) {
   console.log(name || "No Name")
   }
@@ -120,7 +120,7 @@ showName(); // No Name
 - 두 개의 괄호는 JS컴파일러에게 이 익명 함수를 바로 호출하라고 말합니다. 이것을 IIFE라고 부릅니다.
 - IIFE를 사용하는 주된 이유는 변수를 전역(global scope)으로 선언하는 것을 피하기 위해서 입니다
 - ES5 이하에서는 var 변수를 서넝ㄴ하면 전역변수가 되기 떄문에 전역을 오염시키지 않기 위해 사용되었으나, ES6에서 제공하는 let, const 선언은 지역변수이므로, 블록으로 묶어주기만 하면 IIFE패턴을 쓰지 않고도 전역을 오염시키지 않게 됩니다.
-```
+```javascript
 // ES5
 (function(){
     var a = 5;
