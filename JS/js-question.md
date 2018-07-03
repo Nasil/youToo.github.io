@@ -48,12 +48,9 @@
 ## this는 JavaScript에서 어떻게 작동하는지 설명해주세요.
 ## prototype 기반 상속은 어떻게 하는지 설명해주세요.
 ## AMD와 CommonJS는 무엇이고, 이것들에 대해 어떻게 생각하시나요?
-## 다음 코드가 즉시 호출 함수 표현식(IIFE)로 동작하지 않는 이유에 관해서 설명해보세요: function foo(){ }();.
-## IIFE로 만들기 위해서는 어떻게 해야 하나요?
+
 ## null과 unedefined 그리고 undeclared의 차이점은 무엇인가요?
 ## 두개를 구분하기 위해서는 어떻게 하면 될까요?
-## 클로져(Closure)는 무엇이며, 어떻게/왜 사용하는지 설명해주세요.
-## 클로져를 만들 때 선호하는 패턴은 무엇인가요? argyle (IIFEs에만 적용할 수 있다)
 ## 익명함수(anonymous functions)는 주로 어떤 상황에서 사용하나요?
 ## 당신의 코드를 어떻게 구성하는지? (모듈 패턴, 전통적 상속)
 ## 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점은 무엇인가요?
@@ -98,6 +95,67 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ## event loop이란 무엇인가요?
 ## call stack과 task queue에 관해 설명해주세요.
 ## function foo() {}와 var foo = function() {}에서 foo 의 차이가 무엇인지 설명해보세요.
+## 클로져(Closure)는 무엇이며, 어떻게/왜 사용하는지 설명해주세요.
+
+## 클로져를 만들 때 선호하는 패턴은 무엇인가요? argyle (IIFEs에만 적용할 수 있다)
+
+## 다음 코드가 즉시 호출 함수 표현식(IIFE)로 동작하지 않는 이유에 관해서 설명해보세요:
+```javascript
+function foo(){ }();
+```
+## IIFE(Immediately Invoked Function Expressions)로 만들기 위해서는 어떻게 해야 하나요?
+```
+(foo = function(){
+    }
+) ();
+```
+```
+(showName = function (name) {
+  console.log(name || "No Name")
+  }
+) (); // No Name
+showName("Rich"); // Rich
+showName(); // No Name
+```
+- 두 개의 괄호는 JS컴파일러에게 이 익명 함수를 바로 호출하라고 말합니다. 이것을 IIFE라고 부릅니다.
+- IIFE를 사용하는 주된 이유는 변수를 전역(global scope)으로 선언하는 것을 피하기 위해서 입니다
+- ES5 이하에서는 var 변수를 서넝ㄴ하면 전역변수가 되기 떄문에 전역을 오염시키지 않기 위해 사용되었으나, ES6에서 제공하는 let, const 선언은 지역변수이므로, 블록으로 묶어주기만 하면 IIFE패턴을 쓰지 않고도 전역을 오염시키지 않게 됩니다.
+```
+// ES5
+(function(){
+    var a = 5;
+})();
+
+// ES6
+{
+    const a = 5;
+    let b = 10;
+}
+```
+
+## 함수선언식 vs 함수표현식
+- 함수 선언(declaration)은 미리 자바 스크립트의 실행 컨텍스트(execution context)에 로딩 되어 있으므로 언제든지 호출할 수 있지만, 표현식(Expression)은 인터프리터가 해당 라인에 도달 하였을때만 실행이 됩니다.
+- 즉, 함수 선언을 조건에 따라 '할당'하거나 '생성' 또는 '괄호' 연산자로 그루핑하여 표현식으로 나타낼 수 있습니다.
+- 함수 선언식은 호이스팅에 영향을 받지만, 함수 표현식은 호이스팅에 영향을 받지 않는다.
+- 함수 표현식은 클로져로 사용되고 콜백으로 사용이 가능하다.
+```javascript
+foo(); // success!
+// 함수 선언식
+function foo() {
+    alert('foo');
+}
+
+foo(); // "foo" is not defined.
+// 함수 표현식 (함수 선언 할당)
+var foo = function() {
+    alert('foo');
+};
+
+// 함수 표현식 (함수 선언 괄호로 그루핑)
+alert(foo); // "foo" is not defined.
+(function foo () {});
+alert(foo); // "foo" is not defined.
+```
 ## "호이스팅(Hoisting)"에 대해서 설명하세요.
  - 변수 범위 (Variable Scope) : JS는 함수 수준의 범위를 가지고 있습니다. 지역변수 > 전역변수 우선권을 가집니다.
  - 호이스팅 (Hoisting) :  변수의 정의가 그 범위에 따라 선언과 할당으로 분리되는 것을 의미합니다.
@@ -132,7 +190,7 @@ var a = 'test2'
 c = 'test'
 var c
 ```
-- let, const : block-scoped 단위로 hoisting이 된다.
+- let, const : block-scoped 단위로 hoisting이 된다. ES5에서 생겨났다.
 ```javascript
 // immutable 여부에 따라 let은 변수에 재할당이 가능하지만, const는 변수 재선언, 재할당 모두 불가능하다.
 // let
@@ -153,9 +211,10 @@ let c
 // const 선언과 동시에 값을 할당 해야한다.
 const aa // Missing initializer in const declaration
 ```
--  javascript에 tdz가 필요한 이유는 동적언어이다 보니깐 runtime type check 가 필요해서이다.
-
+- javascript에 tdz가 필요한 이유는 동적언어이다 보니깐 runtime type check 가 필요해서이다.
+- TDZ: 변수 선언(호이스팅에 의해 스코프 상단으로 끌어올려진 부분)부터 변수의 할당을 만나기 전 부분까지 형성이 되는 구간
 ---------------------------------------------------------------------------------------------
 ## 참고
 - https://poiemaweb.com/js-event
 - http://chanlee.github.io/2013/12/10/javascript-variable-scope-and-hoisting/
+- https://github.com/airbnb/javascript
