@@ -157,5 +157,5 @@ const aa // Missing initializer in const declaration
 
 ---------------------------------------------------------------------------------------------
 ## 참고
-## https://poiemaweb.com/js-event
-## https://poiemaweb.com/js-event
+- https://poiemaweb.com/js-event
+- http://chanlee.github.io/2013/12/10/javascript-variable-scope-and-hoisting/
