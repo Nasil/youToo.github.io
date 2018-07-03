@@ -1,5 +1,5 @@
-## JS
-### event delegation?
+# JS
+## event delegation?
 - 이벤트위임 (event delegation) 은 각 자식요소에 핸들러를 반인딩 하는 대신 하나의 부모 요소에 이벤트 핸들러를 반인딩하는 방법입니다.
 - Dom 트리에 자식 요소를 추가하더라도 이벤트 처리는 부모 요소에 위임 되었기 때문에 새로운 핸들러를 다시 반인딩할 필요가 없습니다.
 ```html
@@ -32,73 +32,73 @@
 </html>
 ```
 
-### 브라우저는 단일 쓰레드(single-thread)에서 이벤트 드리븐(event-driven) 방식으로 동작한다.
-### 단일 쓰레드는 쓰레드가 하나뿐이라는 의미이며 이말은 곧 하나의 작업(task)만을 처리할 수 있다는 것을 의미한다.
-### 하지만 실제로 동작하는 웹 애플리케이션은 많은 task가 동시에 처리되는 것처럼 느껴진다.
-### 이처럼 자바스크립트의 동시성(Concurrency)을 지원하는 것이 바로 이벤트 루프(Event Loop)이다.
-### Call stack : 작업이 요청되면 요청된 작업은 순차 적으로 call stack 에 쌓이고 실행된다. 자바스크립트는 단 하나의 call stack 을 처리한다. (single thread 임)
-### Heap : 동적으로 생성된 객체 인스텀스가 할당되는 영역
-### Event Queue : 비동기 처리 함수가 보관 되는 영역으로 이벤트 루프에 의해 특정시점 (call stack이 비어있을때) 순차적으로 call stack으로 이동되어 진다.
-### Event Loop : 브라우저 (혹은 Node.js) 가 처리  call stack 내에서 현재 실행중인 task가 있는지 그리고 Event Queue에 task가 있는지 반복 확인 한다. 만약 call stack이 비어 있다면 Event Queue 내의 task가 call stack 으로 이동하고 실행 시킨다.
-### 자바스크립트 엔진 영역 : call stack, Heap
-### 브라우저, 노드 영역 : Event Loop, Event Queue
-### 자바스크립트 엔진은 단순히 작업이 요청되면 Call Stack을 사용하여 요청된 작업을 순차적으로 실행할 뿐이다.
-### 동시성(Concurrency)을 지원하기 위해 필요한 비동기 요청(이벤트를 포함) 처리는 자바스크립트 엔진을 구동하는 환경 즉 브라우저(또는 Node.js)가 담당한다.
-### event bubbling ?
-### this는 JavaScript에서 어떻게 작동하는지 설명해주세요.
-### prototype 기반 상속은 어떻게 하는지 설명해주세요.
-### AMD와 CommonJS는 무엇이고, 이것들에 대해 어떻게 생각하시나요?
-### 다음 코드가 즉시 호출 함수 표현식(IIFE)로 동작하지 않는 이유에 관해서 설명해보세요: function foo(){ }();.
-### IIFE로 만들기 위해서는 어떻게 해야 하나요?
-### null과 unedefined 그리고 undeclared의 차이점은 무엇인가요?
-### 두개를 구분하기 위해서는 어떻게 하면 될까요?
-### 클로져(Closure)는 무엇이며, 어떻게/왜 사용하는지 설명해주세요.
-### 클로져를 만들 때 선호하는 패턴은 무엇인가요? argyle (IIFEs에만 적용할 수 있다)
-### 익명함수(anonymous functions)는 주로 어떤 상황에서 사용하나요?
-### 당신의 코드를 어떻게 구성하는지? (모듈 패턴, 전통적 상속)
-### 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점은 무엇인가요?
-### 다음 코드의 차이점은 무엇인가요?
+## 브라우저는 단일 쓰레드(single-thread)에서 이벤트 드리븐(event-driven) 방식으로 동작한다.
+## 단일 쓰레드는 쓰레드가 하나뿐이라는 의미이며 이말은 곧 하나의 작업(task)만을 처리할 수 있다는 것을 의미한다.
+## 하지만 실제로 동작하는 웹 애플리케이션은 많은 task가 동시에 처리되는 것처럼 느껴진다.
+## 이처럼 자바스크립트의 동시성(Concurrency)을 지원하는 것이 바로 이벤트 루프(Event Loop)이다.
+## Call stack : 작업이 요청되면 요청된 작업은 순차 적으로 call stack 에 쌓이고 실행된다. 자바스크립트는 단 하나의 call stack 을 처리한다. (single thread 임)
+## Heap : 동적으로 생성된 객체 인스텀스가 할당되는 영역
+## Event Queue : 비동기 처리 함수가 보관 되는 영역으로 이벤트 루프에 의해 특정시점 (call stack이 비어있을때) 순차적으로 call stack으로 이동되어 진다.
+## Event Loop : 브라우저 (혹은 Node.js) 가 처리  call stack 내에서 현재 실행중인 task가 있는지 그리고 Event Queue에 task가 있는지 반복 확인 한다. 만약 call stack이 비어 있다면 Event Queue 내의 task가 call stack 으로 이동하고 실행 시킨다.
+## 자바스크립트 엔진 영역 : call stack, Heap
+## 브라우저, 노드 영역 : Event Loop, Event Queue
+## 자바스크립트 엔진은 단순히 작업이 요청되면 Call Stack을 사용하여 요청된 작업을 순차적으로 실행할 뿐이다.
+## 동시성(Concurrency)을 지원하기 위해 필요한 비동기 요청(이벤트를 포함) 처리는 자바스크립트 엔진을 구동하는 환경 즉 브라우저(또는 Node.js)가 담당한다.
+## event bubbling ?
+## this는 JavaScript에서 어떻게 작동하는지 설명해주세요.
+## prototype 기반 상속은 어떻게 하는지 설명해주세요.
+## AMD와 CommonJS는 무엇이고, 이것들에 대해 어떻게 생각하시나요?
+## 다음 코드가 즉시 호출 함수 표현식(IIFE)로 동작하지 않는 이유에 관해서 설명해보세요: function foo(){ }();.
+## IIFE로 만들기 위해서는 어떻게 해야 하나요?
+## null과 unedefined 그리고 undeclared의 차이점은 무엇인가요?
+## 두개를 구분하기 위해서는 어떻게 하면 될까요?
+## 클로져(Closure)는 무엇이며, 어떻게/왜 사용하는지 설명해주세요.
+## 클로져를 만들 때 선호하는 패턴은 무엇인가요? argyle (IIFEs에만 적용할 수 있다)
+## 익명함수(anonymous functions)는 주로 어떤 상황에서 사용하나요?
+## 당신의 코드를 어떻게 구성하는지? (모듈 패턴, 전통적 상속)
+## 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점은 무엇인가요?
+## 다음 코드의 차이점은 무엇인가요?
 ```
 function Person(){} var person = Person() var person = new Person()
 ```
-### .call과 .apply의 차이점은 무엇인가요?
-### Function.prototype.bind을 설명하세요.
-### document.write()는 언제 사용하나요?
-### UA 문자열을 이용하여 기능 검출(feature detection)과 기능 추론(feature inference)의 차이점을 설명하세요.
-### AJAX에 관해 가능한 한 자세히 설명하세요.
-### AJAX를 사용했을 때의 장단점에 대해 설명해주세요.
-### JSON이 어떻게 동작 되는지 설명하세요. (그리고 AJAX와 어떻게 다른지 설명하세요.)
-### 기존에 JavaScript 템플릿을 사용한 적이 있나요? 만약에 있다면, 어떠한 방식으로 사용했는지 말씀해주세요.
-### 이벤트 버블링(Event Bubbling)에 대해서 설명하세요.
-### "속성(Attribute)"와 "요소(property)"의 차이가 무엇인가요?
-### 내장된 JavaScript 객체를 확장하는 것이 좋지 않은 이유는 무엇인가요?
-### document load event와 DOMContentLoaded event의 차이점은 무엇인가요?
-### ==와 ===의 차이점은 무엇인가요?
-### JavaScript의 "동일출처정책(the same-origin policy)"에 대해서 설명하세요.
-### 다음 코드를 동작하게 만드세요.
+## .call과 .apply의 차이점은 무엇인가요?
+## Function.prototype.bind을 설명하세요.
+## document.write()는 언제 사용하나요?
+## UA 문자열을 이용하여 기능 검출(feature detection)과 기능 추론(feature inference)의 차이점을 설명하세요.
+## AJAX에 관해 가능한 한 자세히 설명하세요.
+## AJAX를 사용했을 때의 장단점에 대해 설명해주세요.
+## JSON이 어떻게 동작 되는지 설명하세요. (그리고 AJAX와 어떻게 다른지 설명하세요.)
+## 기존에 JavaScript 템플릿을 사용한 적이 있나요? 만약에 있다면, 어떠한 방식으로 사용했는지 말씀해주세요.
+## 이벤트 버블링(Event Bubbling)에 대해서 설명하세요.
+## "속성(Attribute)"와 "요소(property)"의 차이가 무엇인가요?
+## 내장된 JavaScript 객체를 확장하는 것이 좋지 않은 이유는 무엇인가요?
+## document load event와 DOMContentLoaded event의 차이점은 무엇인가요?
+## ==와 ===의 차이점은 무엇인가요?
+## JavaScript의 "동일출처정책(the same-origin policy)"에 대해서 설명하세요.
+## 다음 코드를 동작하게 만드세요.
 ```
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
-### 삼항식(Ternary statement)을 사용하는 이유는 무엇이고, 그것을 표현하기 위한 연산자 단어는 무엇인가요?
-### use strict;은 무엇이고, 사용했을 때 장단점에 관해서 설명해주세요.
-### 100번 반복되는 반복문이 있습니다. 3의 배수일 때는 fizz, 5의 배수일 때는 buzz, 3과 5의 공배수일 때는 fizzbuzz가 출력되는 코드를 작성해보세요.
-### 전역 scope를 사용했을 때 장단점에 관해 설명해주세요.
-### 때때로 load event를 사용하는 이유에 관해 설명해주세요. 또 단점이 있다면 대안에 대해서도 설명해주세요.
-### SPA에서 SEO에 유리하도록 만들기 위한 방법에 대해 설명해주세요.
-### Promise를 사용해 본 경험이 있나요?
-### Promise가 콜백 대비 장/단점은 무엇인지 설명해주세요.
-### JavaScript의 작동방식의 장단점에 관해 설명해주세요.
-### JavaScript를 디버깅할 때 사용하는 도구가 있으면 설명해주세요.
-### 객체 안의 속성과 배열의 아이템을 순회할 때 사용하는 문법에 관해 설명해주세요.
-### mutable object와 immutable object에 관해 설명해주세요.
-### JavaScript에서 immutable 객체의 예를 들어보세요.
-### immutability의 장/단점은 무엇인가요?
-### 자신의 코드에서 불변성(immutability를) 어떻게 달성할 수 있나요?
-### 동기방식과 비동기 방식 함수의 차이에 관해서 설명해주세요.
-### event loop이란 무엇인가요?
-### call stack과 task queue에 관해 설명해주세요.
-### function foo() {}와 var foo = function() {}에서 foo 의 차이가 무엇인지 설명해보세요.
-### "호이스팅(Hoisting)"에 대해서 설명하세요.
+## 삼항식(Ternary statement)을 사용하는 이유는 무엇이고, 그것을 표현하기 위한 연산자 단어는 무엇인가요?
+## use strict;은 무엇이고, 사용했을 때 장단점에 관해서 설명해주세요.
+## 100번 반복되는 반복문이 있습니다. 3의 배수일 때는 fizz, 5의 배수일 때는 buzz, 3과 5의 공배수일 때는 fizzbuzz가 출력되는 코드를 작성해보세요.
+## 전역 scope를 사용했을 때 장단점에 관해 설명해주세요.
+## 때때로 load event를 사용하는 이유에 관해 설명해주세요. 또 단점이 있다면 대안에 대해서도 설명해주세요.
+## SPA에서 SEO에 유리하도록 만들기 위한 방법에 대해 설명해주세요.
+## Promise를 사용해 본 경험이 있나요?
+## Promise가 콜백 대비 장/단점은 무엇인지 설명해주세요.
+## JavaScript의 작동방식의 장단점에 관해 설명해주세요.
+## JavaScript를 디버깅할 때 사용하는 도구가 있으면 설명해주세요.
+## 객체 안의 속성과 배열의 아이템을 순회할 때 사용하는 문법에 관해 설명해주세요.
+## mutable object와 immutable object에 관해 설명해주세요.
+## JavaScript에서 immutable 객체의 예를 들어보세요.
+## immutability의 장/단점은 무엇인가요?
+## 자신의 코드에서 불변성(immutability를) 어떻게 달성할 수 있나요?
+## 동기방식과 비동기 방식 함수의 차이에 관해서 설명해주세요.
+## event loop이란 무엇인가요?
+## call stack과 task queue에 관해 설명해주세요.
+## function foo() {}와 var foo = function() {}에서 foo 의 차이가 무엇인지 설명해보세요.
+## "호이스팅(Hoisting)"에 대해서 설명하세요.
  - 변수 범위 (Variable Scope) : JS는 함수 수준의 범위를 가지고 있습니다. 지역변수 > 전역변수 우선권을 가집니다.
  - 호이스팅 (Hoisting) :  변수의 정의가 그 범위에 따라 선언과 할당으로 분리되는 것을 의미합니다.
 호이스트 되었을때, 함수 선언은 변수선언을 덮어 씁니다.
@@ -121,7 +121,7 @@ console.log(typeof myName); //string
 ```
 - “strict mode”에서 최초의 선언없이 변수에 값을 할당하려 한다면 오류가 발생합니다
 
-### let, var, const의 차이점에 관해서 설명해주세요.
+## let, var, const의 차이점에 관해서 설명해주세요.
 - var : function-scope
 ```javascript
 // 이미 만들어진 변수이름으로 재선언했는데 아무런 문제가 발생하지 않는다.
@@ -138,5 +138,5 @@ var c
 
 ---------------------------------------------------------------------------------------------
 ## 참고
-### https://poiemaweb.com/js-event
-### https://poiemaweb.com/js-event
+## https://poiemaweb.com/js-event
+## https://poiemaweb.com/js-event
