@@ -223,3 +223,4 @@ const aa // Missing initializer in const declaration
 - https://poiemaweb.com/js-event
 - http://chanlee.github.io/2013/12/10/javascript-variable-scope-and-hoisting/
 - https://github.com/airbnb/javascript
+- https://www.sitepoint.com/optimization-auditing-a-deep-dive-into-chromes-dev-console/
