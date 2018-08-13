@@ -1,5 +1,5 @@
 ## JS
-## event delegation?
+## 1. event delegation?
 - 이벤트위임 (event delegation) 은 각 자식요소에 핸들러를 반인딩 하는 대신 하나의 부모 요소에 이벤트 핸들러를 반인딩하는 방법입니다.
 - Dom 트리에 자식 요소를 추가하더라도 이벤트 처리는 부모 요소에 위임 되었기 때문에 새로운 핸들러를 다시 반인딩할 필요가 없습니다.
 ```html
@@ -44,66 +44,66 @@
 - 자바스크립트 엔진은 단순히 작업이 요청되면 Call Stack을 사용하여 요청된 작업을 순차적으로 실행할 뿐이다.
 - 동시성(Concurrency)을 지원하기 위해 필요한 비동기 요청(이벤트를 포함) 처리는 자바스크립트 엔진을 구동하는 환경 즉 브라우저(또는 Node.js)가 담당한다.
 
-## event bubbling ?
-## this는 JavaScript에서 어떻게 작동하는지 설명해주세요.
-## prototype 기반 상속은 어떻게 하는지 설명해주세요.
-## AMD와 CommonJS는 무엇이고, 이것들에 대해 어떻게 생각하시나요?
-## null과 unedefined 그리고 undeclared의 차이점은 무엇인가요?
-## 두개를 구분하기 위해서는 어떻게 하면 될까요?
-## 익명함수(anonymous functions)는 주로 어떤 상황에서 사용하나요?
-## 당신의 코드를 어떻게 구성하는지? (모듈 패턴, 전통적 상속)
-## 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점은 무엇인가요?
-## 다음 코드의 차이점은 무엇인가요?
+## 2. event bubbling ?
+## 3. this는 JavaScript에서 어떻게 작동하는지 설명해주세요.
+## 4. prototype 기반 상속은 어떻게 하는지 설명해주세요.
+## 5. AMD와 CommonJS는 무엇이고, 이것들에 대해 어떻게 생각하시나요?
+## 6. null과 unedefined 그리고 undeclared의 차이점은 무엇인가요?
+## 7. 두개를 구분하기 위해서는 어떻게 하면 될까요?
+## 8. 익명함수(anonymous functions)는 주로 어떤 상황에서 사용하나요?
+## 9. 당신의 코드를 어떻게 구성하는지? (모듈 패턴, 전통적 상속)
+## 10. 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점은 무엇인가요?
+## 11. 다음 코드의 차이점은 무엇인가요?
 ```
 function Person(){} var person = Person() var person = new Person()
 ```
-## .call과 .apply의 차이점은 무엇인가요?
-## Function.prototype.bind을 설명하세요.
-## document.write()는 언제 사용하나요?
-## UA 문자열을 이용하여 기능 검출(feature detection)과 기능 추론(feature inference)의 차이점을 설명하세요.
-## AJAX에 관해 가능한 한 자세히 설명하세요.
-## AJAX를 사용했을 때의 장단점에 대해 설명해주세요.
-## JSON이 어떻게 동작 되는지 설명하세요. (그리고 AJAX와 어떻게 다른지 설명하세요.)
-## 기존에 JavaScript 템플릿을 사용한 적이 있나요? 만약에 있다면, 어떠한 방식으로 사용했는지 말씀해주세요.
-## 이벤트 버블링(Event Bubbling)에 대해서 설명하세요.
-## "속성(Attribute)"와 "요소(property)"의 차이가 무엇인가요?
-## 내장된 JavaScript 객체를 확장하는 것이 좋지 않은 이유는 무엇인가요?
-## document load event와 DOMContentLoaded event의 차이점은 무엇인가요?
-## ==와 ===의 차이점은 무엇인가요?
-## JavaScript의 "동일출처정책(the same-origin policy)"에 대해서 설명하세요.
-## 다음 코드를 동작하게 만드세요.
+## 12. .call과 .apply의 차이점은 무엇인가요?
+## 13. Function.prototype.bind을 설명하세요.
+## 14. document.write()는 언제 사용하나요?
+## 15. UA 문자열을 이용하여 기능 검출(feature detection)과 기능 추론(feature inference)의 차이점을 설명하세요.
+## 16. AJAX에 관해 가능한 한 자세히 설명하세요.
+## 17. AJAX를 사용했을 때의 장단점에 대해 설명해주세요.
+## 18. JSON이 어떻게 동작 되는지 설명하세요. (그리고 AJAX와 어떻게 다른지 설명하세요.)
+## 19. 기존에 JavaScript 템플릿을 사용한 적이 있나요? 만약에 있다면, 어떠한 방식으로 사용했는지 말씀해주세요.
+## 20. 이벤트 버블링(Event Bubbling)에 대해서 설명하세요.
+## 21. "속성(Attribute)"와 "요소(property)"의 차이가 무엇인가요?
+## 22. 내장된 JavaScript 객체를 확장하는 것이 좋지 않은 이유는 무엇인가요?
+## 23. document load event와 DOMContentLoaded event의 차이점은 무엇인가요?
+## 24. ==와 ===의 차이점은 무엇인가요?
+## 25. JavaScript의 "동일출처정책(the same-origin policy)"에 대해서 설명하세요.
+## 26. 다음 코드를 동작하게 만드세요.
 ```
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
-## 삼항식(Ternary statement)을 사용하는 이유는 무엇이고, 그것을 표현하기 위한 연산자 단어는 무엇인가요?
-## use strict;은 무엇이고, 사용했을 때 장단점에 관해서 설명해주세요.
-## 100번 반복되는 반복문이 있습니다. 3의 배수일 때는 fizz, 5의 배수일 때는 buzz, 3과 5의 공배수일 때는 fizzbuzz가 출력되는 코드를 작성해보세요.
-## 전역 scope를 사용했을 때 장단점에 관해 설명해주세요.
-## 때때로 load event를 사용하는 이유에 관해 설명해주세요. 또 단점이 있다면 대안에 대해서도 설명해주세요.
-## SPA에서 SEO에 유리하도록 만들기 위한 방법에 대해 설명해주세요.
-## Promise를 사용해 본 경험이 있나요?
-## Promise가 콜백 대비 장/단점은 무엇인지 설명해주세요.
-## JavaScript의 작동방식의 장단점에 관해 설명해주세요.
-## JavaScript를 디버깅할 때 사용하는 도구가 있으면 설명해주세요.
-## 객체 안의 속성과 배열의 아이템을 순회할 때 사용하는 문법에 관해 설명해주세요.
-## mutable object와 immutable object에 관해 설명해주세요.
-## JavaScript에서 immutable 객체의 예를 들어보세요.
-## immutability의 장/단점은 무엇인가요?
-## 자신의 코드에서 불변성(immutability를) 어떻게 달성할 수 있나요?
-## 동기방식과 비동기 방식 함수의 차이에 관해서 설명해주세요.
-## event loop이란 무엇인가요?
-## call stack과 task queue에 관해 설명해주세요.
+## 27. 삼항식(Ternary statement)을 사용하는 이유는 무엇이고, 그것을 표현하기 위한 연산자 단어는 무엇인가요?
+## 28. use strict;은 무엇이고, 사용했을 때 장단점에 관해서 설명해주세요.
+## 29. 100번 반복되는 반복문이 있습니다. 3의 배수일 때는 fizz, 5의 배수일 때는 buzz, 3과 5의 공배수일 때는 fizzbuzz가 출력되는 코드를 작성해보세요.
+## 30. 전역 scope를 사용했을 때 장단점에 관해 설명해주세요.
+## 31. 때때로 load event를 사용하는 이유에 관해 설명해주세요. 또 단점이 있다면 대안에 대해서도 설명해주세요.
+## 32. SPA에서 SEO에 유리하도록 만들기 위한 방법에 대해 설명해주세요.
+## 33. Promise를 사용해 본 경험이 있나요?
+## 34. Promise가 콜백 대비 장/단점은 무엇인지 설명해주세요.
+## 35. JavaScript의 작동방식의 장단점에 관해 설명해주세요.
+## 36. JavaScript를 디버깅할 때 사용하는 도구가 있으면 설명해주세요.
+## 37. 객체 안의 속성과 배열의 아이템을 순회할 때 사용하는 문법에 관해 설명해주세요.
+## 38. mutable object와 immutable object에 관해 설명해주세요.
+## 39. JavaScript에서 immutable 객체의 예를 들어보세요.
+## 40. immutability의 장/단점은 무엇인가요?
+## 41. 자신의 코드에서 불변성(immutability를) 어떻게 달성할 수 있나요?
+## 42. 동기방식과 비동기 방식 함수의 차이에 관해서 설명해주세요.
+## 43. event loop이란 무엇인가요?
+## 44. call stack과 task queue에 관해 설명해주세요.
 ![Alt text](https://poiemaweb.com/img/event-loop.png)
 
-## 클로져(Closure)는 무엇이며, 어떻게/왜 사용하는지 설명해주세요.
+## 45. 클로져(Closure)는 무엇이며, 어떻게/왜 사용하는지 설명해주세요.
 
-## 클로져를 만들 때 선호하는 패턴은 무엇인가요?
+## 46. 클로져를 만들 때 선호하는 패턴은 무엇인가요?
 
-## 다음 코드가 즉시 호출 함수 표현식(IIFE)로 동작하지 않는 이유에 관해서 설명해보세요:
+## 47. 다음 코드가 즉시 호출 함수 표현식(IIFE)로 동작하지 않는 이유에 관해서 설명해보세요:
 ```javascript
 function foo(){ }();
 ```
-## IIFE(Immediately Invoked Function Expressions)로 만들기 위해서는 어떻게 해야 하나요?
+## 48. IIFE(Immediately Invoked Function Expressions)로 만들기 위해서는 어떻게 해야 하나요?
 ```javascript
 (foo = function(){
     }
@@ -134,10 +134,10 @@ showName(); // No Name
 }
 ```
 
-## function foo() {}와 var foo = function() {}에서 foo 의 차이가 무엇인지 설명해보세요.
+## 49. function foo() {}와 var foo = function() {}에서 foo 의 차이가 무엇인지 설명해보세요.
 - 첫번째는 함수 선언식이고 두번째는 함수 표현식으로 작성이 되었다.
 
-## 함수선언식 vs 함수표현식
+## 50. 함수선언식 vs 함수표현식
 - 함수 선언(declaration)은 미리 자바 스크립트의 실행 컨텍스트(execution context)에 로딩 되어 있으므로 언제든지 호출할 수 있지만, 표현식(Expression)은 인터프리터가 해당 라인에 도달 하였을때만 실행이 됩니다.
 - 즉, 함수 선언을 조건에 따라 '할당'하거나 '생성' 또는 '괄호' 연산자로 그루핑하여 표현식으로 나타낼 수 있습니다.
 - 함수 선언식은 호이스팅에 영향을 받지만, 함수 표현식은 호이스팅에 영향을 받지 않는다.
@@ -161,7 +161,7 @@ alert(foo); // "foo" is not defined.
 alert(foo); // "foo" is not defined.
 ```
 
-## "호이스팅(Hoisting)"에 대해서 설명하세요.
+## 51. "호이스팅(Hoisting)"에 대해서 설명하세요.
  - 변수 범위 (Variable Scope) : JS는 함수 수준의 범위를 가지고 있습니다. 지역변수 > 전역변수 우선권을 가집니다.
  - 호이스팅 (Hoisting) :  변수의 정의가 그 범위에 따라 선언과 할당으로 분리되는 것을 의미합니다.
 호이스트 되었을때, 함수 선언은 변수선언을 덮어 씁니다.
@@ -184,7 +184,7 @@ console.log(typeof myName); //string
 ```
 - “strict mode”에서 최초의 선언없이 변수에 값을 할당하려 한다면 오류가 발생합니다
 
-## let, var, const의 차이점에 관해서 설명해주세요.
+## 52. let, var, const의 차이점에 관해서 설명해주세요.
 - var : function-scoped로 hoisting 된다.
 ```javascript
 // 이미 만들어진 변수이름으로 재선언했는데 아무런 문제가 발생하지 않는다.
