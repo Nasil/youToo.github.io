@@ -216,6 +216,7 @@ let c
 // const 선언과 동시에 값을 할당 해야한다.
 const aa // Missing initializer in const declaration
 ```
+- var가 전역변수 혹은 var 없이 선언을 하면 Window 객체의 속성이 되지만, let 과 const 는 Window 객체의 속성이 
 - javascript에 tdz가 필요한 이유는 동적언어이다 보니깐 runtime type check 가 필요해서이다.
 - TDZ: 변수 선언(호이스팅에 의해 스코프 상단으로 끌어올려진 부분)부터 변수의 할당을 만나기 전 부분까지 형성이 되는 구간
 ---------------------------------------------------------------------------------------------
