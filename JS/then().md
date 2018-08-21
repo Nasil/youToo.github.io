@@ -57,3 +57,4 @@ const a = async () => {
 - ES 모듈을 지원하는 브라우저에도 동일한 인수가 적용됩니다. 
 
 번역 : https://mathiasbynens.be/notes/async-stack-traces
+참고 : https://philipwalton.com/articles/deploying-es2015-code-in-production-today/
