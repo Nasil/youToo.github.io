@@ -46,7 +46,7 @@ const a = async () => {
 - 포인터를 저장하는 것은 전체 스택 추적을 저장하는 것보다 적은 메모리를 필요로합니다. 🚀👍
 
 # 권장사항
-- 겉보기에는 "구문 설탕"인 대부분의 ECMAScript 기능과 마찬가지로 async / await는 그 이상입니다.
+- 겉보기에는 "just syntax sugar"인 대부분의 ECMAScript 기능과 마찬가지로 async / await는 그 이상입니다.
 - 다음 권장 사항을 따르면 JavaScript 엔진을 사용하여보다 효율적이고 메모리 효율적인 방식으로 스택 추적을 처리 할 수 있습니다.
 - async / desugared 약속을 기다립니다.
 - babel-preset-env를 사용하면 불필요한 비동기 / 기다리기를 피할 수 있습니다.
