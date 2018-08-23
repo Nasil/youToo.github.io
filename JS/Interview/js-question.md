@@ -61,7 +61,33 @@
 ```
 function Person(){} var person = Person() var person = new Person()
 ```
-## 12. .call과 .apply의 차이점은 무엇인가요?
+## 12. .call과 .apply .bind의 차이점은 무엇인가요?
+- 셋 다 context를 조정한다.
+- call(), apply() 는 바로 호출하고, bind()는 바로 호출하지 않는다.
+- call()은 파라미터를 콤마로 구분해서 일일이 넣어준다.
+```javascript
+function sum(num1, num2){     
+  return num1 + num2 
+}
+function callSum(num1, num2){     
+  return sum.call(this, num1, num2)    // 각 매개변수를 넘긴다 
+}
+callSum(10, 10)    // 20
+```
+- apply()는 파라미터를 배열로 넘긴다.
+```javascript
+function sum(num1, num2){     
+  return num1 + num2 
+}
+function applySum1(num1, num2){     
+  return sum.apply(this, [num1, num2])    // 배열을 넘긴다 
+}
+function applySum2(num1, num2){     
+  return sum.apply(this, arguments)    // arguments 객체를 넘긴다 
+}
+applySum1(10, 10)    // 20 
+applySum2(10, 10)    // 20
+```
 ## 13. Function.prototype.bind을 설명하세요.
 ## 14. document.write()는 언제 사용하나요?
 ## 15. UA 문자열을 이용하여 기능 검출(feature detection)과 기능 추론(feature inference)의 차이점을 설명하세요.
