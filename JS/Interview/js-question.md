@@ -46,6 +46,7 @@
 
 ## 2. event bubbling ?
 ## 3. this는 JavaScript에서 어떻게 작동하는지 설명해주세요.
+- 웹브라우저에서 전역변수의 this 는 window 객체를 가르킨다. nodeJs에서는 global 객체를 
 ## 4. prototype 기반 상속은 어떻게 하는지 설명해주세요.
 ## 5. AMD와 CommonJS는 무엇이고, 이것들에 대해 어떻게 생각하시나요?
 - https://d2.naver.com/helloworld/12864
