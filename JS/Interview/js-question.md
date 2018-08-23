@@ -66,6 +66,7 @@ function Person(){} var person = Person() var person = new Person()
 - 셋 다 context를 조정한다.
 - bind()는 새로운 함수 인스턴스를 생성한다. 즉, 바로 호출 하지 않고 context가 조정된 함수를 반환한다는 의미.
 - bind()는 함수를 리턴하는 반면 call(),apply()는 실행값을 바로 리턴한다.
+```javascript
 var obj = { num: 33 };
 function double(){     
   return this.num * 2 
