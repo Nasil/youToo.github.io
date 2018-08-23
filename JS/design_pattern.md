@@ -1,6 +1,6 @@
 
 
-- constructor 
+- constructor pattern
 ```
 var ConstructorName = (function() {
     'use strict';
@@ -59,5 +59,3 @@ var name = (function() {
 
 name(); // hello Get This
 ```
-
-- 
