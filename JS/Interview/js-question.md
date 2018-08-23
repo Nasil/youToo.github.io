@@ -115,6 +115,13 @@ https://johnresig.com/blog/ecmascript-5-strict-mode-json-and-more/
 ```javascript
 function foo(){ }();
 ```
+ 괄호가 빠져있습니다
+```javascript
+(function foo(){
+     console.log("Hello JS")
+ })();
+```
+
 ## 48. IIFE(Immediately Invoked Function Expressions)로 만들기 위해서는 어떻게 해야 하나요?
 ```javascript
 (foo = function(){
