@@ -101,6 +101,7 @@ https://johnresig.com/blog/ecmascript-5-strict-mode-json-and-more/
 ## 38. mutable object와 immutable object에 관해 설명해주세요.
 ## 39. JavaScript에서 immutable 객체의 예를 들어보세요.
 ## 40. immutability의 장/단점은 무엇인가요?
+- https://poiemaweb.com/js-immutability
 ## 41. 자신의 코드에서 불변성(immutability를) 어떻게 달성할 수 있나요?
 ## 42. 동기방식과 비동기 방식 함수의 차이에 관해서 설명해주세요.
 ## 43. event loop이란 무엇인가요?
