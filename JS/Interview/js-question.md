@@ -50,6 +50,9 @@
 ## 5. AMD와 CommonJS는 무엇이고, 이것들에 대해 어떻게 생각하시나요?
 - https://d2.naver.com/helloworld/12864
 ## 6. null과 unedefined 그리고 undeclared의 차이점은 무엇인가요?
+- null : 변수를 선언하고, 'null'이라는 빈 값을 할당한 경우이다.
+- unedefined : 변수를 선언만 하고 값을 할당하지 않음. 즉, 자료형이 결정되지 않은 상태이다.
+- undeclared : 변수를 선언 안하였는데 값을 할당한 경우 (strict 모드에서는 에러가 난다)
 ## 7. 두개를 구분하기 위해서는 어떻게 하면 될까요?
 ## 8. 익명함수(anonymous functions)는 주로 어떤 상황에서 사용하나요?
 ## 9. 당신의 코드를 어떻게 구성하는지? (모듈 패턴, 전통적 상속)
