@@ -48,6 +48,7 @@
 ## 3. this는 JavaScript에서 어떻게 작동하는지 설명해주세요.
 ## 4. prototype 기반 상속은 어떻게 하는지 설명해주세요.
 ## 5. AMD와 CommonJS는 무엇이고, 이것들에 대해 어떻게 생각하시나요?
+- https://d2.naver.com/helloworld/12864
 ## 6. null과 unedefined 그리고 undeclared의 차이점은 무엇인가요?
 ## 7. 두개를 구분하기 위해서는 어떻게 하면 될까요?
 ## 8. 익명함수(anonymous functions)는 주로 어떤 상황에서 사용하나요?
