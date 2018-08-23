@@ -60,7 +60,9 @@
 ## 10. 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점은 무엇인가요?
 ## 11. 다음 코드의 차이점은 무엇인가요?
 ```
-function Person(){} var person = Person() var person = new Person()
+function Person(){} 
+var person = Person() 
+var person = new Person()
 ```
 ## 12. .call과 .apply .bind의 차이점은 무엇인가요?
 - 셋 다 context를 조정한다.
