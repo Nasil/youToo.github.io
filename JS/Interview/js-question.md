@@ -81,20 +81,6 @@ double.apply(this);  // 6
 double.call(obj);    // 66 
 double.apply(obj);   // 66
 ```
-```javascript
-var foolycooly = {
-    name: "FoolyCooly",
-    introduce: function(){
-        return "I'm " + this.name
-    }
-}
-
-console.log(foolycooly.introduce());    // "I'm foolycooly"
-//var func = foolycooly.introduce;
-//console.log(func());    // Uncaught TypeError: Cannot read property 'name' of undefined
-var funcBind = foolycooly.introduce.bind(foolycooly);
-console.log(funcBind());     // "I'm foolycooly"
-```
 - call()은 파라미터를 콤마로 구분해서 일일이 넣어준다.
 ```javascript
 function sum(num1, num2){     
@@ -121,6 +107,20 @@ applySum2(10, 10)    // 20
 ```
 - http://codepitcher.tistory.com/4
 ## 13. Function.prototype.bind을 설명하세요.
+```javascript
+var foolycooly = {
+    name: "FoolyCooly",
+    introduce: function(){
+        return "I'm " + this.name
+    }
+}
+
+console.log(foolycooly.introduce());    // "I'm foolycooly"
+//var func = foolycooly.introduce;
+//console.log(func());    // Uncaught TypeError: Cannot read property 'name' of undefined
+var funcBind = foolycooly.introduce.bind(foolycooly);
+console.log(funcBind());     // "I'm foolycooly"
+```
 ## 14. document.write()는 언제 사용하나요?
 ## 15. UA 문자열을 이용하여 기능 검출(feature detection)과 기능 추론(feature inference)의 차이점을 설명하세요.
 ## 16. AJAX에 관해 가능한 한 자세히 설명하세요.
