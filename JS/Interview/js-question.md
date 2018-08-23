@@ -91,7 +91,7 @@ console.log(foolycooly.introduce());    // "I'm foolycooly"
 //var func = foolycooly.introduce;
 //console.log(func());    // Uncaught TypeError: Cannot read property 'name' of undefined
 var funcBind = foolycooly.introduce.bind(foolycooly);
-console.log(funcBind());
+console.log(funcBind());     // "I'm foolycooly"
 ```
 - call()은 파라미터를 콤마로 구분해서 일일이 넣어준다.
 ```javascript
