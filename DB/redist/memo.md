@@ -1,0 +1,8 @@
+- http://bcho.tistory.com/654
+- Redis 공식 문서 -  http://redis.io/documentation
+- Redis Monitoring Tool - http://charsyam.wordpress.com/2012/06/20/redis-monitoring-tool-redislive-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/
+- Redis Common Use Case -  http://highscalability.com/blog/2011/7/6/11-common-web-use-cases-solved-in-redis.html
+- 웹기반 redis Test 콘솔 - http://try.redis-db.com/ (IE 브라우져에서 동작 안될때 많음, 크롬 권장)
+- IBM developer works redis tutorial -  http://www.ibm.com/developerworks/kr/library/j-javadev2-22/index.htm
+- redis presentation - http://simonwillison.net/static/2010/redis-tutorial/
+- redis clustering (2012.07 현재 지원하지 않음-구현 예정인 기능) -  http://redis.io/presentation/Redis_Cluster.pdf
