@@ -28,7 +28,16 @@ console.log(c()); //"두번째 a"가 출력
 ```
 # 렉시컬(lexical) 영역
 - 실행시의 변수관리는 렉시컬(lexical) 영역을 기준으로 함수를 실행 단계가 아닌 정의단계에서 유효범위를 설정
-- ex) 함수 범위를 벗어난 변수를 선언전에 부르는 경우 undefined
+- var 의 선언 위치에 따라 그리고 중복 선언에 따라 undefined 가 되버림
+```javascript
+var name = "Michael Jackson";
+function showCelebrityName() {
+    console.log(name); // undefined
+    var name = "Johnny Evers";
+    console.log(name); // Johnny Evers
+}
+showCelebrityName();
+```
 ```javascript
 var name = "Michael Jackson";
 function showCelebrityName() {
@@ -41,13 +50,14 @@ showCelebrityName();
 ```javascript
 var name = "Michael Jackson";
 function showCelebrityName() {
-    console.log(name); // undefined
-    var name = "Johnny Evers";
-    console.log(name); // Johnny Evers
+    console.log(name); // Michael Jackson
+    var age = "12";
+    console.log(name); // Michael Jackson
+    console.log(age); // 12
 }
 showCelebrityName();
 ```
-=> 두개의 차이!! 지역 변수 var 의 선언에 따라 undefined 가 됨
+
 
 # 호이스팅
 ```javascript
