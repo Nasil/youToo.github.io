@@ -29,14 +29,13 @@ console.log(c()); //"두번째 a"가 출력
 - 실행시의 변수관리는 렉시컬(lexical) 영역을 기준으로 함수를 실행 단계가 아닌 정의단계에서 유효범위를 설정
 - ex) 함수 범위를 벗어난 변수를 선언전에 부르는 경우 undefined
 ```javascript
-var x = "global";
-function f () {
-    alert(x);            //undefined 출력
-    
-    var x = "local";    //지역변수 "local" 선언
-    
-    alert(x);            //"local" 출력
+var name = "Michael Jackson";
+function showCelebrityName() {
+    console.log(name); // undefined
+     var name = "Jack";
+     console.log(name); // Jack
 }
+showCelebrityName();
 ```
 - ex) 선언이 된 후에 함수 범위를 벗어난 변수를 부르는 경우라서 undefined는 아니지만 호이스팅 되버리는 예제
 ```javascript
