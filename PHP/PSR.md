@@ -70,6 +70,9 @@ Log::error('Bar');
 ## PSR-4 오토로더 
 - PSR-0을 대체하는 새로운 오토로딩 표준입니다.
 - FQCN(Fully Qualified Class Name) 을 규정하고 있음
+```
+\<NamespaceName>(\<SubNamespaceNames>)*\<ClassName>
+```
 - 컴포저는 vendor/autoload.php 파일을 생성 해주므로 개발자는 한줄만 추가하면 됨 
 ```
 <?php
