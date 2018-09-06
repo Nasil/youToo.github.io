@@ -94,6 +94,7 @@ console.log(name); // Jack
 
 # 스코프 체인
 - 하위함수에서 상위함수로의 부모/자식 관계가 정의된 것을 스코프 체인이라한다.
+http://blog.javarouka.me/2012/01/closure.html
 ```
 var a = 10;
 
