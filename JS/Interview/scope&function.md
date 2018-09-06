@@ -98,13 +98,14 @@ console.log(name); // Jack
 var a = 10;
 
 function outFunc() {
-    console.log(a)
+    console.log(a); // 10
     var b = 2;
     function inFunc() {
-        console.log(a+b);    
+        console.log(a+b); // 12
     }
     inFunc();
 }
 
 outFunc();
 ```
+- outFunc 호출 하면 outFunc를 실행하면서 inFunc의 호출명령을 읽으면서 inFunc가 실행된다. inFunc 는 전역의 a, outFunc의 b 이용.
