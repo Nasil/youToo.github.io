@@ -2,7 +2,7 @@
 ### JS 는 함수 단위로 변수(var)를 관리한다 (let, const 제외)
 ### 하위함수에서 상위함수로의 부모/자식 관계가 정의된 것을 스코프 체인이라한다.
 
-- 함수 단위로 변수를 관리
+# 함수 단위로 변수를 관리
 ```javascript
 var a = 1;
 function f () {
@@ -15,7 +15,7 @@ function f () {
     return c;  
 }
 ```
-- 중복 선언이 가능
+# 중복 선언이 가능
 ```javascript
 function c () {
     var a = "첫번째 a";
@@ -26,7 +26,7 @@ function c () {
  
 console.log(c()); //"두번째 a"가 출력
 ```
-- 실행시의 변수관리는 렉시컬(lexical) 영역을 기준으로 함수를 실행 단계가 아닌 정의단계에서 유효범위를 설정
+# 실행시의 변수관리는 렉시컬(lexical) 영역을 기준으로 함수를 실행 단계가 아닌 정의단계에서 유효범위를 설정
 - ex) 함수 범위를 벗어난 변수를 선언전에 부르는 경우 undefined
 ```javascript
 var name = "Michael Jackson";
@@ -59,6 +59,7 @@ function showOrdinaryPersonName() {
      console.log(name);
 }
 ```
+=> 두 예재의 차이점이 무엇일까......
 
 - 호이스팅
 ```javascript
