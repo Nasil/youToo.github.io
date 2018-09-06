@@ -1,8 +1,8 @@
 
-- JS 는 함수 단위로 변수(var)를 관리한다 (let, const 제외)
-- 하위함수에서 상위함수로의 부모/자식 관계가 정의된 것을 스코프 체인이라한다.
+
 
 # 함수 단위로 변수를 관리
+- JS 는 함수 단위로 변수(var)를 관리한다 (let, const 제외)
 ```javascript
 var a = 1;
 function f () {
@@ -90,4 +90,21 @@ if (name) {
 }
 // name은 여전히 전역변수이며 if문에서 변경되었습니다.
 console.log(name); // Jack
+```
+
+# 스코프 체인
+- 하위함수에서 상위함수로의 부모/자식 관계가 정의된 것을 스코프 체인이라한다.
+```
+var a = 10;
+
+function outFunc() {
+    console.log(a)
+    var b = 2;
+    function inFunc() {
+        console.log(a+b);    
+    }
+    inFunc();
+}
+
+outFunc();
 ```
