@@ -45,7 +45,8 @@ class Foo extends Bar implements FooInterface
 ## PSR-3 로깅 표준
 - Psr\Log\LoggerInterface 인터페이스를 정의하고 이를 구현하도록 하고 있습니다
 - 로깅 장치(파일, 소켓, 데이타베이스등)에 상관없이 애플리케이션 로그를 남기기 위한 표준입니다. 
-- 다른 로깅 프레임워크를 사용해도 애플리케이션 수정이 없도록 Psr\Log\LoggerInterface 인터페이스를 정의하고 이를 구현하도록 하고 있습니다. debug, info, notice, warning, error, critical, alert, emergency, log 총 아홉 개의 메소드를 지정하고 있으며 9번째 메소드인 log 를 제외하고 레벨에 따라 해당 메소드를 호출하면 됩니다.
+- 다른 로깅 프레임워크를 사용해도 애플리케이션 수정이 없도록 Psr\Log\LoggerInterface 인터페이스를 정의하고 이를 구현하도록 하고 있습니다. 
+- debug, info, notice, warning, error, critical, alert, emergency, log 총 아홉 개의 메소드를 지정하고 있으며 9번째 메소드인 log 를 제외하고 레벨에 따라 해당 메소드를 호출하면 됩니다.
 - log 메소드는 파라미터로 레벨을 지정할 수 있도록 정의되어 있습니다. PSR-3 를 구현한 가장 유명한 PHP 라이브러리는 
 - MonoLog(https://github.com/Seldaek/monolog) 로 다음과 같이 로그 객체를 만들고 로그를 기록할 수 있습니다.
 ```php
