@@ -19,6 +19,8 @@
 - 기본적으로 프로세스당 최소 1개의 스레드를 가지고 있고 그것을 메인 스레드라고 합니다.
 - 프로세스는 1개 이상의 스레드를 가질수 있으며 멀티스레드라고 합니다.
 - 위에서 설명한 Context Switching은 사실 프로세스가 가지고 있는 스레드를 처리하는 과정입니다.
+- 스레드는 프로세스 내에서 각각 Stack만 따로 할당을 받고 Code, Data, Heap 영역을 공유합니다.
+![](https://magi82.github.io/images/2017-2-6-process-thread/03.png)
 
 ## 참조 
 - https://magi82.github.io/process-thread/
