@@ -1,6 +1,6 @@
 
-### JS 는 함수 단위로 변수(var)를 관리한다 (let, const 제외)
-### 하위함수에서 상위함수로의 부모/자식 관계가 정의된 것을 스코프 체인이라한다.
+- JS 는 함수 단위로 변수(var)를 관리한다 (let, const 제외)
+- 하위함수에서 상위함수로의 부모/자식 관계가 정의된 것을 스코프 체인이라한다.
 
 # 함수 단위로 변수를 관리
 ```javascript
@@ -47,7 +47,7 @@ function showCelebrityName() {
 }
 showCelebrityName();
 ```
-=> 두개의 차이!! 지역 변수 var 의 선언에 따라 undefined 가 
+=> 두개의 차이!! 지역 변수 var 의 선언에 따라 undefined 가 됨
 
 # 호이스팅
 ```javascript
