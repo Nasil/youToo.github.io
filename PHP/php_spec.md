@@ -4,7 +4,7 @@
 - php 7 => 
 
 
-## fist-class function
+## Function
 - php 는 일급함수 (fist-class function)을 지원합니다
 - 함수가 변수에 할당 될 수 있음
 - 사용자 정의함수, 내장함수 모두 변수에 의해서 참조될수 있고 동적으로 호출될수 있다.
