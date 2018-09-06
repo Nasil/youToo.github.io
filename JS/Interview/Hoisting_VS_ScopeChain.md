@@ -26,7 +26,8 @@ function c () {
  
 console.log(c()); //"두번째 a"가 출력
 ```
-# 실행시의 변수관리는 렉시컬(lexical) 영역을 기준으로 함수를 실행 단계가 아닌 정의단계에서 유효범위를 설정
+# 렉시컬(lexical) 영역
+- 실행시의 변수관리는 렉시컬(lexical) 영역을 기준으로 함수를 실행 단계가 아닌 정의단계에서 유효범위를 설정
 - ex) 함수 범위를 벗어난 변수를 선언전에 부르는 경우 undefined
 ```javascript
 var name = "Michael Jackson";
