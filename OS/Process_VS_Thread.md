@@ -40,8 +40,10 @@ Context Switching 에 대한 오버헤드가 줄어 듭니다.
 ```
 
 ## 멀티쓰레드시 싱글톤 패턴 
-- 하나의 인스턴스만 존재해야하는 경우 Singleton 패턴을 사용한다. Multi Thread 환경에서 Thread-safe 하게 적용하고 싶은 경우
+- 하나의 인스턴스만 존재해야하는 경우 Singleton 패턴을 사용한다. 
+- Multi Thread 환경에서 Thread-safe 하게 적용하고 싶은 경우
 - 메서드에 Singleton 클래스의 getInstance() 메서드에 synchronized 키워드를 추가하는 건 역할에 비해서 동기화 오버헤드가 심하다고 생각한다.
+
 1. Enum 방법
 ```
 public enum Singleton {
@@ -49,7 +51,8 @@ public enum Singleton {
 }
 ```
 - Enum은 인스턴스가 여러 개 생기지 않도록 확실하게 보장해주고 복잡한 직렬화나 리플렉션 상황에서도 직렬화가 자동으로 지원된다는 이점이 있다
-- Enum의 초기화는 컴파일 타임에 결정이 되므로 매번 메서드 등을 호출할 때 Context 정보를 넘겨야 하는 비효율적인 상황이 발생할 수 있다. 결론은 Enum은 효율적인 이디엄이지만 상황에 따라 사용이 어려울 수도 있다는 점이다.
+- Enum의 초기화는 컴파일 타임에 결정이 되므로 매번 메서드 등을 호출할 때 Context 정보를 넘겨야 하는 비효율적인 상황이 발생할 수 있다. 
+- 결론은 Enum은 효율적인 이디엄이지만 상황에 따라 사용이 어려울 수도 있다는 점이다.
 
 2. LazyHolder
 ```
