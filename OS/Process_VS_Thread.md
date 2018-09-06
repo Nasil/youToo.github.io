@@ -38,5 +38,36 @@ Context Switching 에 대한 오버헤드가 줄어 듭니다.
 서로 데이터를 사용하다가 충돌이 일어날 가능성이 있습니다.
 디버깅이 다소 까다로워 집니다. (버그 생성될 가능성 증가)
 ```
+
+## 멀티쓰레드시 싱글톤 패턴 
+- 하나의 인스턴스만 존재해야하는 경우 Singleton 패턴을 사용한다. Multi Thread 환경에서 Thread-safe 하게 적용하고 싶은 경우
+- 메서드에 Singleton 클래스의 getInstance() 메서드에 synchronized 키워드를 추가하는 건 역할에 비해서 동기화 오버헤드가 심하다고 생각한다.
+1. Enum 방법
+```
+public enum Singleton {
+  INSTANCE;  
+}
+```
+- Enum은 인스턴스가 여러 개 생기지 않도록 확실하게 보장해주고 복잡한 직렬화나 리플렉션 상황에서도 직렬화가 자동으로 지원된다는 이점이 있다
+- Enum의 초기화는 컴파일 타임에 결정이 되므로 매번 메서드 등을 호출할 때 Context 정보를 넘겨야 하는 비효율적인 상황이 발생할 수 있다. 결론은 Enum은 효율적인 이디엄이지만 상황에 따라 사용이 어려울 수도 있다는 점이다.
+
+2. LazyHolder
+```
+public class Singleton {
+  private Singleton() {}
+  public static Singleton getInstance() {
+    return LazyHolder.INSTANCE;
+  }
+  
+  private static class LazyHolder {
+    private static final Singleton INSTANCE = new Singleton();  
+  }
+}
+```
+- 객체가 필요할 때로 초기화를 미루는 것이다. Lazy Initialization이라고도 한다. 
+- Singleton 클래스에는 LazyHolder 클래스의 변수가 없기 때문에 Singleton 클래스 로딩 시 LazyHolder 클래스를 초기화하지 않는다. 
+- LazyHolder 클래스는 Singleton 클래스의 getInstance() 메서드에서 LazyHolder.INSTANCE를 참조하는 순간 Class가 로딩되며 초기화가 진행된다. 
+- Class를 로딩하고 초기화하는 시점은 thread-safe를 보장하기 때문에 volatile이나 synchronized 같은 키워드가 없어도 thread-safe 하면서 성능도 보장하는 아주 훌륭한 이디엄이라고 할 수 있다.
+
 ## 참조 
 - https://magi82.github.io/process-thread/
