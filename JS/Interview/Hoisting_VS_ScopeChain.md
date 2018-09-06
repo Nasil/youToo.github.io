@@ -32,8 +32,8 @@ console.log(c()); //"두번째 a"가 출력
 var name = "Michael Jackson";
 function showCelebrityName() {
     console.log(name); // undefined
-     var name = "Jack";
-     console.log(name); // Jack
+    name = "Johnny Evers";
+    console.log(name); // Johnny Evers
 }
 showCelebrityName();
 ```
