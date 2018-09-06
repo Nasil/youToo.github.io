@@ -32,13 +32,24 @@ console.log(c()); //"두번째 a"가 출력
 ```javascript
 var name = "Michael Jackson";
 function showCelebrityName() {
-    console.log(name); // undefined
+    console.log(name); // Michael Jackson
     name = "Johnny Evers";
     console.log(name); // Johnny Evers
 }
 showCelebrityName();
 ```
-- ex) 선언이 된 후에 함수 범위를 벗어난 변수를 부르는 경우라서 undefined는 아니지만 호이스팅 되버리는 예제
+```javascript
+var name = "Michael Jackson";
+function showCelebrityName() {
+    console.log(name); // undefined
+    var name = "Johnny Evers";
+    console.log(name); // Johnny Evers
+}
+showCelebrityName();
+```
+=> 두개의 차이!! 지역 변수 var 의 선언에 따라 undefined 가 
+
+# 호이스팅
 ```javascript
 // 지역변수를 var키워드로 선언하지 않았을 경우, 그것은 전역-범위(global-scope)가 됩니다.
 var name = "Michael Jackson";
@@ -60,9 +71,6 @@ function showOrdinaryPersonName() {
      console.log(name);
 }
 ```
-=> 두 예재의 차이점이 무엇일까......
-
-- 호이스팅
 ```javascript
 var name = "Richard";
 // 아래의 if문은 name변수에 대한 지역-범위를 생성하지 않습니다.
