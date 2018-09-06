@@ -10,6 +10,9 @@
 - 사용자 정의함수, 내장함수 모두 변수에 의해서 참조될수 있고 동적으로 호출될수 있다.
 - 함수는 다른 함수의 인자로 전달될수 있고 함수가 다른 함수를 리턴하는 것도 가능합니다.
 
+
+## 익명함수
+http://php.net/functions.anonymous
 ```php
 <?php
 $input = array(1, 2, 3, 4, 5, 6);
@@ -56,3 +59,24 @@ print_r($output); // 3보다 큰 숫자만 출력된다.
 - $min 변수를 클로저에 들여올 때는 초기 바인딩(early binding)이 사용됩니다. (역주: 클로저가 만들어질 때 $min 변수가 클로저 스코프로 “복사”되어서 이후에 외부의 $min 값이 변경되어도 클로저의 $min은 변경되지 않습니다.) 
 - 지연 바인딩(late binding)을 사용하는 클로저를 만들려면 변수를 클로저로 들여올 때 참조를 사용해야합니다(‘use’에서 변수에 참조를 사용). 
 - 웹 어플리케이션 개발 시에 PHP를 이용한 템플릿을 만들거나 입력 검증 라이브러리를 만들 때 클로저를 이용한 익명 함수가 사용되었다고 한다면, 클로저를 정의할 때 캡처한 변수의 값은 나중에 익명 함수가 호출될 때 읽어와서 사용해야 합니다.
+
+## 내장 함수
+http://php.net/functions.anonymous
+```
+<?php
+
+namespace Foobar;
+
+class Foo {
+    static public function test($name) {
+        print "Hello {$name}!\n";
+    }
+}
+
+// As of PHP 5.3.0
+call_user_func_array(__NAMESPACE__ .'\Foo::test', array('Hannes')); // Hello Hannes!
+
+// As of PHP 5.3.0
+call_user_func_array(array(__NAMESPACE__ .'\Foo', 'test'), array('Philip')); // Hello Philip!
+
+```
