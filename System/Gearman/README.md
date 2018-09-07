@@ -1,3 +1,4 @@
+http://mobicon.tistory.com/86
 
 # Gearman
 - Gearman 기반 애플리케이션은 클라이언트, 작업자 및 작업 서버의 세 부분으로 구성됩니다. 
