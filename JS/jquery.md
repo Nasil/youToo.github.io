@@ -8,4 +8,5 @@
 
 ## Why Removing jQuery
 - https://githubengineering.com/removing-jquery-from-github-frontend/
+- https://www.tokyobranch.net/archives/6598
 - https://www.zerocho.com/category/jQuery/post/57b356d4d841141500b31e1e
