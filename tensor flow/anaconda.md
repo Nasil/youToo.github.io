@@ -27,7 +27,10 @@
 - 텐서플로우 설치 되어 있는지 확인
 ```
 In [1]: import tensorflow as tf
-In [2]:
+In [2]: 
+hello = tf.constant("hello tensorflow")
+sess = tf.Session()
+print(sess.run(hello))
 ```
 
 - 참조 : https://steemit.com/it/@sukjunko/38ndhz-sj
