@@ -3,8 +3,10 @@
 
 
 ## Anaconda 설치 
+- https://www.anaconda.com/download/
 - 기존에 파이썬이 있는경우 파이썬 삭제 먼저 해야함
-- 설치 후 Anaconda Prompt 실행
+- 설치중 path 자동 설정 해야함
+- 설치 완료 후 Anaconda Prompt 실행
 ```
 // conda update
 > conda update -n base conda
