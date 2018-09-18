@@ -7,9 +7,9 @@
 - 설치 후 Anaconda Prompt 실행
 ```
 // conda update
->conda update -n base conda
+> conda update -n base conda
 // python update
->conda update --all
+> conda update --all
 // pip update
 > python -m pip install --upgrade pip
 
