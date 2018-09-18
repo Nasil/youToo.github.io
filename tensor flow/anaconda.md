@@ -26,8 +26,6 @@
 ```
 - 텐서플로우 설치 되어 있는지 확인
 ```
->ipython
-...
 In [1]: import tensorflow as tf
 In [2]:
 ```
