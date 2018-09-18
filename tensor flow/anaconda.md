@@ -18,11 +18,11 @@
 > activate tensorflow
 > conda install jupyter
 > conda install scipy
+> conda install nb_conda
 > pip install tensorflow-gpu // only cpu -> pip install tensorflow
 
 // jupyter 
 > jupyter notebook
-> conda install nb_conda
 ```
 - 텐서플로우 설치 되어 있는지 확인
 ```
