@@ -1,7 +1,7 @@
 ![](https://t1.daumcdn.net/cfile/tistory/2623B333576CC00037)
 
 
-# 
+# 서브쿼리
 ### SELECT 절
 - 스칼라 쿼리
 - 서브 쿼리 결과 값이 1행
