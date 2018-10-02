@@ -15,9 +15,10 @@ SELECT * FROM emp INNER JOIN dept ON emp.deptno = dept.deptno
 ```
 select * from emp NATURAL JOIN dept
 ```
-### CROSS JOIN
+### CROSS JOIN (카테시안 조인)
 - 조인에 참여한 테이블들의 모든 데이터 추출
 - M x N
+- 마리아 DB에서는 on 조건을 추가하면 inner join 이고 on 조건을 제외하면 cross join이 된다
 
 # OUTER JOIN 종류
 ### LEFT OUTER JOIN
