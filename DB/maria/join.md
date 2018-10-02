@@ -23,7 +23,8 @@ select * from emp NATURAL JOIN dept
 ### LEFT OUTER JOIN
 ### RIGHT OUTER JOIN
 ### FULL OUTER JOIN 
-- 같은 이름을 가진 컬럼은 한번만 추출
+- 중복 데이터 한번만 추출 (= UNION)
+- 참고로 UNION ALL 은 중복 컬럼도 컬럼 수 만큼 추출
 
 # 서브쿼리
 ### SELECT 절
