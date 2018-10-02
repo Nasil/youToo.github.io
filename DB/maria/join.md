@@ -17,7 +17,13 @@ select * from emp NATURAL JOIN dept
 ```
 ### CROSS JOIN
 - 조인에 참여한 테이블들의 모든 데이터 추출
+- M x N
 
+# OUTER JOIN 종류
+### LEFT OUTER JOIN
+### RIGHT OUTER JOIN
+### FULL OUTER JOIN 
+- 같은 이름을 가진 컬럼은 한번만 추출
 
 # 서브쿼리
 ### SELECT 절
