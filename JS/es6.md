@@ -1,4 +1,4 @@
-## ES6란?
+## ES6?
 
 
 # 왜 써야하는가?
@@ -17,7 +17,7 @@ ES6 호환성 테이블(ECMAScript 6 compatibility table)(2018년 3월 기준)�
 ```
 - jquery와 같은 무거운 프레임워크 없이 자바스크립트 만으로 개발을 할 수 있을것입니다. jquery와 같이 편한 기능들을 es에 담고 개발자들의 요구사항들을 받아들여 발전해가고 있습니다. (Promise, Arrows ... )
 
-### JavaScript Engines
+# JavaScript Engines
 ```
 V8 - Google, Opera
 Rhino - Mozilla
@@ -35,7 +35,7 @@ JavascriptCore - Safari
 
 
 
-## 달라진 문법은?
+# 달라진 문법은?
 
 1. use strict
 - strict 모드는 ES5(ECMA Script 5)에 추가된 키워드입니다. 
