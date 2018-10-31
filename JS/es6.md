@@ -111,3 +111,4 @@ const aa // Missing initializer in const declaration
 #### 참고
 - http://sanghaklee.tistory.com/54 [이상학의 개발블로그]
 - https://blog.perfectacle.com/2016/11/10/es6-scope/#TDZ
+- https://d2.naver.com/helloworld/7495331
