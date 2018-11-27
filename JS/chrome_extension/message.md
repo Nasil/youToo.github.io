@@ -1,7 +1,7 @@
 # Background apge와 통신하기
 
 
-1. use getBackgroundPage
+### use getBackgroundPage
 - popup.js
 ```javascript
 let chromeBackgroundPage = chrome.extension.getBackgroundPage();
@@ -14,7 +14,7 @@ function deactivate() {
 }
 ```
 
-2. use chrome.extension.onConnect.addListener
+### use chrome.extension.onConnect.addListener
 - popup.js
 ```javascript
 let port = chrome.extension.connect({
@@ -38,7 +38,7 @@ chrome.extension.onConnect.addListener(function (port) {
 ```
 
 
-3. chrome.tabs.sendMessage
+### chrome.tabs.sendMessage
 - popup.js
 ```javascript
 chrome.storage.local.get({
