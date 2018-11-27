@@ -1,4 +1,4 @@
-- Background apge와 통신하기
+1) Background apge와 통신하기
 
 
 1. use getBackgroundPage
@@ -21,6 +21,7 @@ function deactivate() {
 ```javascript
 chrome.extension.onConnect.addListener(function (port) {
     console.log("popup Connected .....");
+    console.log(port.name, port.sender.id);
     port.onMessage.addListener(function (msg) {
         console.log("popup message recieved : " + msg);
         port.postMessage("Hi Popup.js");
