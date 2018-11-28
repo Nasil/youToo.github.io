@@ -1,6 +1,6 @@
 버그가 발생되었다 
 
-윈도우에서 하면 성공하고 리눅스에서 하면 실패 
+윈도우에서 하면 성공하고 리눅스에서 하면 실패 :(
 ```
 $sOrgOtpName = '한글';
 $aVal = strtolower($sOrgOtpName);
