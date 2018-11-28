@@ -17,6 +17,7 @@ SYSFONT="latarcyrheb-sun16"
 ```
 ### 해결 방안 2)
 - http://php.net/manual/en/function.setlocale.php
+- http://coffeenix.net/doc/misc/locale.html
 ```
 setlocale(LC_CTYPE,'C');
 ```
