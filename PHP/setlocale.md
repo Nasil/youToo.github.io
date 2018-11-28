@@ -5,8 +5,8 @@
 $sOrgOtpName = '한글';
 $aVal = strtolower($sOrgOtpName);
 var_dump($aVal);
-// 윈도우 한글
-// 리눅스 ??? ?????
+// 윈도우 : 한글
+// 리눅스 : ??? ?????
 ```
 
 ### 해결 방안 1) vi /etc/sysconfig/i18n 
@@ -20,7 +20,7 @@ SYSFONT="latarcyrheb-sun16"
 ```
 setlocale(LC_CTYPE,'C');
 ```
-###해결 방안 3) php.ini
+### 해결 방안 3) php.ini
 ```
 default_charset="UTF-8"
 ````
