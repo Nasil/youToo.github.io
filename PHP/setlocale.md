@@ -20,11 +20,6 @@ SYSFONT="latarcyrheb-sun16"
 ```
 setlocale(LC_CTYPE,'C');
 ```
-### 해결 방안 3) php.ini
-```
-default_charset="UTF-8"
-````
-
 
 ### 결론
 - 1번방안은 시스템팀에 확인해야하므로 그냥 소스단에서 해결방안 2번으로 해결하였다.
