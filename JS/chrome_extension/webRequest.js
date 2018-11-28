@@ -1,4 +1,5 @@
 (function () {
+    //https://developer.chrome.com/extensions/webRequest
     const tabStorage = {};
     const networkFilters = {
         urls: [
