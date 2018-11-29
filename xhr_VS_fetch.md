@@ -1,5 +1,10 @@
-// XMLHttpRequest RESTful (GET, POST, PUT, DELETE)
+## fetch API
+https://medium.com/@kkak10/javascript-fetch-api-e26bfeaad9b6
 
+
+## XHR example
+```javascript
+// XMLHttpRequest RESTful (GET, POST, PUT, DELETE)
 // Get all users
 var url  = "http://localhost:8080/api/v1/users";
 var xhr  = new XMLHttpRequest()
@@ -87,3 +92,4 @@ xhr.onload = function () {
 	}
 }
 xhr.send(null);
+```
