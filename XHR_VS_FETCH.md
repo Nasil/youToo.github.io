@@ -1,4 +1,4 @@
-## fetch API
+## Fetch API
 https://medium.com/@kkak10/javascript-fetch-api-e26bfeaad9b6
 
 
