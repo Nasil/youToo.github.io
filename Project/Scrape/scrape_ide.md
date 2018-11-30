@@ -1,4 +1,4 @@
-# 스크래핑을 하기 위한 IDE 툴 
+# 스크래핑을 하기 위한 IDE 툴 제작
 
 ### 개발 배경
 - 셀레니움 IDE를 사용하려고 했으나 업무의 입맛에 맞게 수정 변경 하기가 어려웠다.
@@ -14,4 +14,4 @@
 
 
 
-
+![Alt text](https://github.com/Nasil/youToo.github.io/blob/master/Project/Scrape/url.png "Optional title")
