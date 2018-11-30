@@ -16,11 +16,9 @@
 
 ![Alt text](https://github.com/Nasil/youToo.github.io/blob/master/Project/Scrape/url.png "Optional title")
 
-- 팝업 화면은 업무 보안상 공개는 불가능 하나 core 부분 소스를 다음에도 유용하게 쓰기 위하여 남긴다.
+- 전체 팝업 화면은 업무 보안상 공개는 불가능 하나 core 부분 소스를 다음에도 유용하게 쓰기 위하여 남긴다.
 
 ``` javascript
-// background.js
-
 // background.js
 
 let tabs = {};
