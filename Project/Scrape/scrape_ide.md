@@ -18,9 +18,124 @@
 
 - 팝업 화면은 업무 보안상 공개는 불가능 하나 core 부분 소스를 다음에도 유용하게 쓰기 위하여 남긴다.
 
+``` javascript
+// background.js
 
-#### 탭 url 관리
-```
+// background.js
+
+let tabs = {};
+chrome = this.browser || this.chrome;
+const inspectFile = 'js/inspect.js';
+const activeIcon = 'on.png';
+const defaultIcon = 'off.png';
+
+const inspect = {
+    toggleActivate: function (id, type, icon) {
+        this.id = id;
+        chrome.tabs.executeScript(id, {file: inspectFile}, function () {
+            chrome.tabs.sendMessage(id, {action: type});
+        }.bind(this));
+        chrome.browserAction.setIcon({tabId: id, path: {19: "icons/" + icon}});
+    },
+    loadPopup: function () {
+        chrome.windows.create({
+            url: chrome.extension.getURL('popup.html'),
+            type: 'popup',
+            width: Math.max(1200, parseInt(('1200'), 10)),
+            height: Math.max(900, parseInt(('900'), 10))
+        });
+    }
+};
+
+function deactivate(tabId) {
+    console.log("close popup : " + tabId);
+    inspect.toggleActivate(tabId, 'deactivate', defaultIcon);
+}
+
+function toggle(tab) {
+    if (isSupportedProtocol(tab.url)) {
+        chrome.storage.local.set({url: tab.url, tab: tab.id}, function () {console.log(tab.url, tab.id);});
+        if (!tabs[tab.id]) {
+            tabs[tab.id] = Object.create(inspect);
+            // xpath 수집
+            inspect.toggleActivate(tab.id, 'activate', activeIcon);
+            // 팝업 켜기
+            inspect.loadPopup(tab.id);
+        } else {
+            inspect.toggleActivate(tab.id, 'deactivate', defaultIcon);
+            for (let tabId in tabs) {
+                if (tabId == tab.id) {
+                    delete tabs[tabId];
+                }
+            }
+        }
+    }
+}
+
+function saveActiveTab(curTab) {
+    if (curTab.url && isSupportedProtocol(curTab.url)) {
+        chrome.runtime.sendMessage({action: "changeUrl", url: curTab.url}, function (response) {});
+        chrome.storage.local.set({
+            url: curTab.url,
+            tab: curTab.id
+        }, function () {
+            console.log('Change URl', curTab.url, curTab.id);
+        });
+    }
+}
+
+function dataSniffing() {
+    const networkFilters = {
+        urls: [
+            "*://google.com/*"
+        ]
+    };
+
+    chrome.webRequest.onBeforeSendHeaders.addListener(
+        function (details) {
+            for (let i = 0; i < details.requestHeaders.length; ++i) {
+                if (details.requestHeaders[i].name === 'User-Agent') {
+                    details.requestHeaders.splice(i, 1);
+                    break;
+                }
+            }
+            return sendPopup(details);
+        },
+        networkFilters,
+        ["blocking", "requestHeaders"]
+    );
+
+    chrome.webRequest.onBeforeRequest.addListener(
+        function (details) {
+            if (details.method === "POST" || details.method === "PATCH" || details.method === "GET") {
+                return sendPopup(details);
+            }
+        },
+        networkFilters,
+        ["blocking", "requestBody"]
+    );
+}
+
+// 팝업에 데이터 전송 
+function sendPopup(details) {
+    let port = chrome.extension.connect({
+        name: "popup"
+    });
+    port.postMessage(details);
+}
+
+function isSupportedProtocol(urlString) {
+    const supportedProtocols = ["https:", "http:", "file:"];
+    const url = document.createElement('a');
+    url.href = urlString;
+    return supportedProtocols.indexOf(url.protocol) != -1;
+}
+
+chrome.browserAction.onClicked.addListener(toggle);
+
+// 서버단에서 실행되는 http 스니핑 
+dataSniffing();
+
 // url 이 변경 되는 경우 감지
 chrome.tabs.onUpdated.addListener(function (tabs, changeInfo, tab) {
     if (changeInfo.status === 'complete') {
@@ -37,46 +152,7 @@ chrome.tabs.onActivated.addListener(function (activeInfo) {
     });
 });
 
-// 현재 탭을 chrome.storage 에 저장하고 popup 창에 전송 
-function saveActiveTab(curTab) {
-    if (curTab.url && isSupportedProtocol(curTab.url)) {
-        chrome.runtime.sendMessage({action: "changeUrl", url: curTab.url}, function (response) {});
-
-        chrome.storage.local.set({
-            url: curTab.url,
-            tab: curTab.id
-        }, function () {
-            console.log('Change URl', curTab.url, curTab.id);
-        });
-    }
-}
-
-// 크롬 익스텐션 xpath 수집 실행 on/off
-function toggle(tab) {
-    if (isSupportedProtocol(tab.url)) {
-        chrome.storage.local.set({url: tab.url, tab: tab.id}, function () {console.log(tab.url, tab.id);});
-        if (!tabs[tab.id]) {
-            tabs[tab.id] = Object.create(inspect);
-            // xpath 수집
-            inspect.toggleActivate(tab.id, 'activate', activeIcon);
-            // 팝업
-            inspect.loadPopup(tab.id);
-        } else {
-            inspect.toggleActivate(tab.id, 'deactivate', defaultIcon);
-            for (let tabId in tabs) {
-                if (tabId == tab.id) {
-                    delete tabs[tabId];
-                }
-            }
-        }
-    }
-}
-
-// 유효성 검증
-function isSupportedProtocol(urlString) {
-    const supportedProtocols = ["https:", "http:", "file:"];
-    const url = document.createElement('a');
-    url.href = urlString;
-    return supportedProtocols.indexOf(url.protocol) != -1;
-}
 ```
+
+- 시연을 했는데 사용성이 너무 좋다고 평가 받았다.
+- 역시 기능보다.. 보여지는게 무시못하는거 같다. 역시 bootstrap.css 짱  :smile:
