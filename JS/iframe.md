@@ -15,6 +15,10 @@ window.frames[0].document; // iframe의 window의 document객체
 document.getElementById('iframeA'); // iframe 엘리먼트
 
 document.getElementById('iframeA').contentWindow.document; // iframe의 window의 document객체
+
+$('iframe').get(1).id
+$('iframe').get(1).name
+
 ```
 
 ### iframe객체의 window
