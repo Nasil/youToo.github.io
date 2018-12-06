@@ -6,6 +6,14 @@
 </body>
 ```
 
+### ifrme 이 있는지 mouse hover가 될때 찾기
+```
+// ifrme 체크
+$('iframe').hover(function () {
+    console.log($(this)[0].id);
+}, function () {});
+```
+
 ### iframe 접근
 ```
 window.frames.length; // 1
