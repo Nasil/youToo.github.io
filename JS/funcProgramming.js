@@ -52,3 +52,13 @@ var ageCheck = function(user) {
 console.log(
 	_filter(users, ageCheck)
 );
+
+
+// 자바스크립트 이벤트 위임
+ let buttons = document.querySelectorAll('button');
+buttons.forEach(function (button) {
+	button.addEventListener('click', function (e) {
+		let id = button.getAttribute('id');
+		console.log(id);
+	});
+});
