@@ -55,10 +55,13 @@ console.log(
 
 
 // 자바스크립트 이벤트 위임
- let buttons = document.querySelectorAll('button');
+- 참고 : https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/
+```javascript
+let buttons = document.querySelectorAll('button');
 buttons.forEach(function (button) {
 	button.addEventListener('click', function (e) {
 		let id = button.getAttribute('id');
 		console.log(id);
 	});
 });
+```
