@@ -54,14 +54,53 @@ console.log(
 );
 
 
+
+// 참고 : https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/
 // 자바스크립트 이벤트 위임
-- 참고 : https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/
-```javascript
-let buttons = document.querySelectorAll('button');
-buttons.forEach(function (button) {
-	button.addEventListener('click', function (e) {
-		let id = button.getAttribute('id');
-		console.log(id);
+var divs = document.querySelectorAll('div');
+divs.forEach(function(div) {
+	div.addEventListener('click', logEvent);
+});
+function logEvent(event) {
+	console.log(event.currentTarget.className); // 자식 노드로 부터 부모 노드 출력
+}
+
+// 자바스크립트 이벤트 캡처
+var divs = document.querySelectorAll('div');
+divs.forEach(function(div) {
+	div.addEventListener('click', logEvent, {
+		capture: true // default 값은 false입니다.
 	});
 });
+function logEvent(event) {
+	console.log(event.currentTarget.className); // 부모 노드부터 자식 노드로 출력
+}
+
+// stopPropagation 이벤트 위임
+divs.forEach(function(div) {
+	div.addEventListener('click', logEvent);
+});
+function logEvent(event) {
+	event.stopPropagation();
+	console.log(event.currentTarget.className); // 맨끝 자식 노드 하나만 나옴
+}
+// stopPropagation 이벤트 캡처
+divs.forEach(function(div) {
+	div.addEventListener('click', logEvent, {
+		capture: true // default 값은 false입니다.
+	});
+});
+function logEvent(event) {
+	event.stopPropagation();
+	console.log(event.currentTarget.className);  // 맨처음 부모 노드 하나만 나옴
+}
+
+// 자바스크립트 테스트 예제
+var result = sum(1, 2);
+var expected = 5;
+
+if (result !== expected) {
+	throw new Error(result + ' is not equal to ' + expected);
+}
 ```
+
