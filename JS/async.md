@@ -1,4 +1,76 @@
-# Asynchronous stack traces: why await beats .then()
+# javascript promise
+https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
+
+- Promise 함수
+```
+function getData() {
+  return new Promise(function (resolve, reject) {
+    $.get('url 주소/products/1', function (response) {
+      if (response) {
+        resolve(response);
+      }
+      reject(new Error("Request is failed"));
+    });
+  });
+}
+
+// Fulfilled 또는 Rejected의 결과 값 출력
+getData().then(function (data) {
+  console.log(data); // response 값 출력
+}).catch(function (err) {
+  console.error(err); // Error 출력
+});
+```
+
+- Promis 체인
+```
+getData(userInfo)
+  .then(parseValue)
+  .then(auth)
+  .then(diaplay);
+  
+var userInfo = {
+  id: 'test@abc.com',
+  pw: '****'
+};
+
+function parseValue() {
+  return new Promise({
+    // ...
+  });
+}
+function auth() {
+  return new Promise({
+    // ...
+  });
+}
+function display() {
+  return new Promise({
+    // ...
+  });
+}
+
+```
+
+- Primis 에러 처리
+```
+// catch()로 오류를 감지하는 코드
+function getData() {
+  return new Promise(function (resolve, reject) {
+    resolve('hi');
+  });
+}
+
+getData().then(function (result) {
+  console.log(result); // hi
+  throw new Error("Error in then()");
+}).catch(function (err) {
+  console.log('then error : ', err); // then error :  Error: Error in then()
+});
+```
+
+
+Asynchronous stack traces: why await beats .then()
 
 - promises를 직접 사용하는 것과 비교할 때 비동기식으로 개발자가 코드를 읽을 수있을뿐만 아니라 JavaScript 엔진에서도 흥미로운 최적화가 가능합니다! 
 - 이 업적은 비동기 코드에 대한 스택 추적을 포함하는 최적화 중 하나입니다.
