@@ -15,6 +15,6 @@ https://facebook.github.io/react-native/docs/getting-started
 ## UPGRAGE
 ```
 npm install -g react-native-git-upgrade
-react-native-git-upgrade
+react-native upgrade
 ```
 
