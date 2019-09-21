@@ -1,6 +1,5 @@
 /r  -> 윈도우 복사
 /n  -> scp file move 
-nshyun  -> by100 -> inset.moontori.sql
 
 cd ~ 
 cd insert_moongori.sql 
