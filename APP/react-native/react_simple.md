@@ -33,29 +33,26 @@ ReactDOM.render(<App name="test" number={5}>Hi React</App>, document.getElementB
 ```js
 class Counter extends React.Component {
   constructor(props) {
-    super(pops);
-    this.state = {
-      value: 0
-    };
-    this.handleClick=this.handleClick.bind(this);
-  }
+    super(props);
+    this.state = { value: 0 };
+    this.countHandle = this.countHandle.bind(this);
+  };
   
-  handleClick() {
+  countHandle() {
     this.setState({
       value:this.state.value + 1
     });
-  }
-  
+  };
+   
   render() {
     return (
       <div>
-        <h2>{this.state.value}</h2>
-        <button onClick={this.handleClick}>Click Me</button>
+        <div>{this.state.value}</div>
+        <button onClick={this.countHandle}>Click Me</button>
       </div>
     );
   }
 }
-
 
 class App extends React.Component {
   render() {
@@ -64,7 +61,6 @@ class App extends React.Component {
     );
   }
 }
-
 
 ReactDOM.render(<App/>, document.getElementById("root"));
 ```
