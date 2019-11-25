@@ -20,6 +20,7 @@
   - img :src="url2"
 - v-for="todo in todos"
 - v-model="value"
+- v-on:click === @click
 
 
 ```html
