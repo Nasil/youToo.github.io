@@ -40,19 +40,21 @@
     <ul>
       <li v-for="(todo, index) in todos">{{ index + 1 }} {{ todo.text }}</li>
     </ul>
-    <h1 v-if="value > 5">value가 5보다 크군요</h1>
-    <h1 v-else-if="value === 5">값이 5네요</h1>
-    <h1 v-else>value가 5보다 작아요</h1>
     <h2 v-once>초기 값: {{ value }}</h2>
     <h2>현재 값: {{ value }}</h2>
+    <input type="text" v-model="value"/>
+    <h3 v-if="value > 5">value가 5보다 크군요</h3>
+    <h3 v-else-if="value === 5">값이 5네요</h3>
+    <h3 v-else>value가 5보다 작아요</h1>
     <h3 v-pre>{{ 이건 그대로 렌더링해줘요 }}</h3>
-    
     <h1>카운터: {{ number }}</h1>
     <span v-text="name" v-show="visible"></span>
     <button @click="increment">증가</button>
     <button @click="decrement">감소</button>
-    <p></p>
-    <img v-bind:src="feelsgood"/>
+    <button v-on:click="increment">증가2</button>
+    <button v-on:click="decrement">감소2</button>
+    <h3><input type="checkbox" v-model="smile"/>강아지</h3>
+    <img v-bind:src="smile ? feelsgood : feelsbad"/>
   </div>
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </body>
@@ -67,12 +69,14 @@ var app = new Vue({
       { text: 'Webpack2 알아보기' },
       { text: '사이드 프로젝트 진행하기' }
     ],
+    modelName: '',
     number: 0,
     name: '버튼: ',
     visible: false,
     value : 5,
     smile : true,
-    feelsgood: 'https://t1.daumcdn.net/cfile/tistory/24283C3858F778CA2E'
+    feelsgood: 'https://t1.daumcdn.net/cfile/tistory/24283C3858F778CA2E',
+    feelsbad: ''
   },
   // app 뷰 인스턴스를 위한 메소드들
   methods: {
