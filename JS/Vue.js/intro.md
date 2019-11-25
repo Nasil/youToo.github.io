@@ -19,7 +19,7 @@
   - img v-bind:src="url1"
   - img :src="url2"
 - v-for="todo in todos"
-
+- v-model="value"
 
 
 ```html
