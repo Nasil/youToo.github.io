@@ -1,4 +1,17 @@
 
+## Loop
+```
+let a = ['a', 'b', 'c', 'd' ];
+// ES6 
+for ( var val of a ) {
+    console.log( val );
+} // "a" "b" "c" "d"
+// pre-ES6 
+for ( var idx in a ) {
+    console.log( idx );
+}  // 0 1 2 3
+```
+
 ### 변수 서로 변경
 ```
 let a = 'world', b = 'hello'
