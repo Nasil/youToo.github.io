@@ -17,20 +17,20 @@ isObjectEmpty(undefined);      // false
 ```
 
 ```js
-function isObjectEmpty2(value) {
+function isEmpty(value) {
   return value? false : true;
 }
 
-isObjectEmpty2({});             // false
-isObjectEmpty2(new Object());   // false
-isObjectEmpty2(new String());   // false 
-isObjectEmpty2(new Number());   // false 
-isObjectEmpty2(new Boolean());  // false 
-isObjectEmpty2(new Array());    // false 
-isObjectEmpty2(new RegExp());   // false 
-isObjectEmpty2(new Function()); // false 
-isObjectEmpty2(new Date());     // false 
-isObjectEmpty2(null);           // true
-isObjectEmpty2(undefined);      // true
+isEmpty({});             // false
+isEmpty(new Object());   // false
+isEmpty(new String());   // false 
+isEmpty(new Number());   // false 
+isEmpty(new Boolean());  // false 
+isEmpty(new Array());    // false 
+isEmpty(new RegExp());   // false 
+isEmpty(new Function()); // false 
+isEmpty(new Date());     // false 
+isEmpty(null);           // true
+isEmpty(undefined);      // true
 
 ```
