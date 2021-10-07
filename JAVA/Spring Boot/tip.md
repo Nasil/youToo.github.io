@@ -12,4 +12,5 @@ start.spring.io
 - restartedMain 으로 컴파일 실행시 로그에 뜨는 지 확인
 
 ## @Slf4j
-''  log.info(article.toString());
+```java
+log.info(article.toString());
