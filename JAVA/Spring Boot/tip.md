@@ -30,3 +30,9 @@ Preferences > Build, Execution, Deployment > Build Tools > Gradle
 Build and run using: Gradle IntelliJ IDEA
 Run tests using: Gradle IntelliJ IDEA
 ```
+
+## Compile 방법
+- ./gradlew clean build
+- cd build
+- cd libs
+- java -jar {}.jar // 자바 파일 (배포파일)
