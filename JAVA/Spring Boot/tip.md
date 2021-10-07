@@ -38,6 +38,6 @@ Run tests using: Gradle IntelliJ IDEA
    [window] : ./gradlew.bat build
 * 혹시 에러가 난다면 ./gradlew clean build, ./gradlew.bat clean build (빌드된 파일 지웠다가 다시 빌드 실행)
 4. cd build로 빌드 폴더로 이동
-5. cd libs -> ll -> hello-spring-0.0.1-SNAPSHOT.jar 파일 확인
-6. java -var hello-spring-0.0.1-SNAPSHOT.jar 로 자바 실행
+5. cd libs -> ll -> {}.jar 파일 확인
+6. java -var {}.jar 로 자바 실행
 * 서버 중지: ls -arlth
