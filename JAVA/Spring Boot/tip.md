@@ -14,3 +14,4 @@ start.spring.io
 ## @Slf4j
 ```java
 log.info(article.toString());
+```
