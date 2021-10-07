@@ -32,7 +32,12 @@ Run tests using: Gradle IntelliJ IDEA
 ```
 
 ## Compile 방법
-- ./gradlew clean build
-- cd build
-- cd libs
-- java -jar {}.jar // 자바 파일 (배포파일)
+1. 프로젝트 경로로 이동
+2. ll 혹은 ls -al 입력
+3. [macOS] : ./gradlew build
+   [window] : ./gradlew.bat build
+* 혹시 에러가 난다면 ./gradlew clean build, ./gradlew.bat clean build (빌드된 파일 지웠다가 다시 빌드 실행)
+4. cd build로 빌드 폴더로 이동
+5. cd libs -> ll -> hello-spring-0.0.1-SNAPSHOT.jar 파일 확인
+6. java -var hello-spring-0.0.1-SNAPSHOT.jar 로 자바 실행
+* 서버 중지: ls -arlth
