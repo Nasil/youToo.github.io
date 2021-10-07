@@ -12,8 +12,9 @@
 
 ## 자동 컴파일
 - implementation 'org.springframework.boot:spring-boot-devtools'
+- spring-boot-devtools 라이브러리를 추가하면, html 파일을 컴파일만 해주면 서버 재시작 없이 View 파일 변경이 가능하다.
+- 인텔리J 컴파일 방법: 메뉴 build Recompile
 - restartedMain 으로 컴파일 실행시 로그에 뜨는 지 확인
-- Build Recompile
 
 ## @Slf4j
 ```java
@@ -24,7 +25,8 @@ log.info(article.toString());
 - 최근 IntelliJ 버전은 Gradle로 실행을 하는 것이 기본 설정이다. 이렇게 하면 실행속도가 느리다. 다음과
 - 같이 변경하면 자바로 바로 실행해서 실행속도가 더 빠르다.
 ```
-Preferences Build, Execution, Deployment Build Tools Gradle
+Preferences > Build, Execution, Deployment > Build Tools > Gradle
+
 Build and run using: Gradle IntelliJ IDEA
 Run tests using: Gradle IntelliJ IDEA
 ```
