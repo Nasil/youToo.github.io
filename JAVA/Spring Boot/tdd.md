@@ -1,0 +1,23 @@
+## intellij tdd 설정 방법
+https://velog.io/@max9106/IntelliJ-Live-Template
+
+## Gradle 
+```
+dependencies {
+implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+implementation 'org.springframework.boot:spring-boot-starter-validation'
+implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+implementation 'org.springframework.boot:spring-boot-starter-web'
+compileOnly 'org.projectlombok:lombok'
+runtimeOnly 'com.h2database:h2'
+annotationProcessor 'org.projectlombok:lombok'
+testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//JUnit4 로 동작하게 하려면
+testImplementation("org.junit.vintage:junit-vintage-engine") {
+exclude group: "org.hamcrest", module: "hamcrest-core"
+}
+}
+test {
+useJUnitPlatform()
+}
+```
