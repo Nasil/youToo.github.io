@@ -5,11 +5,6 @@
 ## 다른 프로젝트 import
 - File -> Open -> 해당 프로젝트의 build.gradle을 선택해주세요. 그 다음에 선택창이 뜨는데, Open as Project를 선택해주세요
 
-## lombok 플러그인 다운로드 후 
-1. Prefrences plugin lombok 검색 실행 (재시작)
-2. Prefrences Annotation Processors 검색 Enable annotation processing 체크 (재시작)
-3. 임의의 테스트 클래스를 만들고 @Getter, @Setter 확인
-
 ## 자동 컴파일
 - implementation 'org.springframework.boot:spring-boot-devtools'
 - spring-boot-devtools 라이브러리를 추가하면, html 파일을 컴파일만 해주면 서버 재시작 없이 View 파일 변경이 가능하다.
