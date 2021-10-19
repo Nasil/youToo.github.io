@@ -9,7 +9,13 @@ public LocaleResolver localeResolver() {
 }
 ```
 
+```yml
+spring:
+  messages:
+      basename: messages
 ```
+
+```java
 @Autowired
 private MessageSource messageSource;
 
