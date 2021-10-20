@@ -3,8 +3,9 @@ implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.
 implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 ```
 
+API 자동으로 문서 만들어짐
 - http://localhost:8088/swagger-ui.html
-
+- http://localhost:8088/api-docs
 
 
 ```
