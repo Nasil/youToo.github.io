@@ -30,4 +30,20 @@ public ResponseEntity<EntityModel<User>> retrieveUser(@PathVariable int id) {
 
     return ResponseEntity.ok(entityModel);
 }
+
+// 전체 사용자 목록
+@GetMapping("/users2")
+public ResponseEntity<CollectionModel<EntityModel<User>>> retrieveUserList2() {
+    List<EntityModel<User>> result = new ArrayList<>();
+    List<User> users = userDaoService.findAll();
+
+    for (User user : users) {
+        EntityModel entityModel = EntityModel.of(user);
+        entityModel.add(linkTo(methodOn(this.getClass()).retrieveAllUsers()).withSelfRel());
+
+        result.add(entityModel);
+    }
+
+    return ResponseEntity.ok(CollectionModel.of(result, linkTo(methodOn(this.getClass()).retrieveAllUsers()).withSelfRel()));
+}
 ```
