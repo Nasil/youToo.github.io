@@ -6,3 +6,5 @@
 ```
 implementation 'org.springframework.data:spring-data-rest-hal-browser:3.3.7.RELEASE'
 ```
+
+http://localhost:8088/browser/index.html#/
