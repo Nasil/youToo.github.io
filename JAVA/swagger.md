@@ -1,6 +1,5 @@
 ```
-implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
-implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+implementation "io.springfox:springfox-boot-starter:3.0.0"
 ```
 
 API 자동으로 문서 만들어짐
