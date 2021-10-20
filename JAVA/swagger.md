@@ -3,8 +3,8 @@ implementation "io.springfox:springfox-boot-starter:3.0.0"
 ```
 
 API 자동으로 문서 만들어짐
-- http://localhost:8088/swagger-ui.html
-- http://localhost:8088/api-docs
+- http://localhost:8088/swagger-ui/
+- http://localhost:8088/v2/api-docs/
 
 
 ```
