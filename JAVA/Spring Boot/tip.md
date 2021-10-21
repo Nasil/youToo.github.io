@@ -1,6 +1,5 @@
 - 스프링 부트 스타터(https://start.spring.io/)
-- 사용 기능: web, thymeleaf, jpa, h2, lombok, validation
-
+-
 
 ## 다른 프로젝트 import
 - File -> Open -> 해당 프로젝트의 build.gradle을 선택해주세요. 그 다음에 선택창이 뜨는데, Open as Project를 선택해주세요
@@ -10,11 +9,6 @@
 - spring-boot-devtools 라이브러리를 추가하면, html 파일을 컴파일만 해주면 서버 재시작 없이 View 파일 변경이 가능하다.
 - 인텔리J 컴파일 방법: 메뉴 build Recompile
 - restartedMain 으로 컴파일 실행시 로그에 뜨는 지 확인
-
-## @Slf4j
-```java
-log.info(article.toString());
-```
 
 ## IntelliJ
 - 최근 IntelliJ 버전은 Gradle로 실행을 하는 것이 기본 설정이다. 이렇게 하면 실행속도가 느리다. 다음과
