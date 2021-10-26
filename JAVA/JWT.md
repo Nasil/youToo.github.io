@@ -20,6 +20,7 @@ implementation 'org.springframework.boot:spring-boot-starter-security'
 ```
 
 ```
+// SecurityConfig
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
