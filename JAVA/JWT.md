@@ -15,4 +15,20 @@
 - 토큰이 클라이언트에 저장, 서버에서 클라이언트의 토큰을 조작 할 수 없음 
 
 
+```
+implementation 'org.springframework.boot:spring-boot-starter-security'
+```
 
+```
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/hello-world").permitAll()
+                .anyRequest().authenticated();
+    }
+}
+
+```
