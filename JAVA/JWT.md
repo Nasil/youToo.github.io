@@ -42,3 +42,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 }
 
 ```
+
+예제 : https://github.com/SilverNine/spring-boot-jwt-tutorial
