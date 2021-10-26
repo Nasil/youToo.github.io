@@ -17,12 +17,21 @@
 
 ```
 implementation 'org.springframework.boot:spring-boot-starter-security'
+
+implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
+runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
+runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
 ```
 
-```
-// SecurityConfig
+```java
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring()
+                .antMatchers("/h2-console/**", "/favicon.ico");
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
