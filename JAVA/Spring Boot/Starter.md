@@ -1,5 +1,10 @@
+## Start
 - 스프링 부트 스타터(https://start.spring.io/)
--
+
+## Java 가 안잡힐 경우
+- File > Project structure > Project 에 SDK 잘 잡혔는지 확인
+- File > Project structure > SDKs 에 SDK 잘 잡혔는지 확인 
+
 
 ## 다른 프로젝트 import
 - File -> Open -> 해당 프로젝트의 build.gradle을 선택해주세요. 그 다음에 선택창이 뜨는데, Open as Project를 선택해주세요
