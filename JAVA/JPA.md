@@ -124,7 +124,7 @@ String teanName = team.getName();
 
 ```
 
-## flush
+## flush (쓰기지연 SQL 저장소 -> JDBC 에 반영)
 - em.flush() : 직접 호출 
 - 트랜잭션 커밋 : 플러시 자동 호출 
 - JPQL 쿼리 실행 : 플러시 자동 호출
