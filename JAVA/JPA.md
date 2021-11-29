@@ -42,7 +42,7 @@ pringln(m1 == m2) // true -> same
 ## JPA 성능 최적화
 - DB Isolation Level 이 Read Commit 이어도 애플리케이션에서 Repeatable Read 보장
 
-## 쓰기 지연
+## 트랜잭션을 지원하는 쓰기 지연(transactional write-behind)
 - 트랜잭션을 커밋할때까지 insert sql 을 모음
 - JDBC BATCH SQL 기능을 이용하여 한번에 sql 전송
 ```
