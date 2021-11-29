@@ -91,10 +91,10 @@ String teanName = team.getName();
             em.persist(memberB); // 영속됨, 1차 캐시 저장 & 쓰기지연 SQL 저장소에 저장
 
             // Fine list
-            List<Member> findMembers = em.createQuery("select m from Member as m", Member.class)
+            List<Member> findMembers = em.createQuery("select m from Member as m", Member.class) 
                     .setFirstResult(0)
                     .setMaxResults(10)
-                    .getResultList();
+                    .getResultList(); // JPQL 쿼리
             for (Member m : findMembers) {
                 System.out.println(m);
             }
