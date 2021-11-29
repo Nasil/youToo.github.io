@@ -106,7 +106,7 @@ String teanName = team.getName();
             System.out.println("find name : " + findMember.getName());
 
             // Modify
-            findMember.setName("HelloJPA"); // Dirty Checking, 1차 캐시에서 스냅샷 비교
+            findMember.setName("HelloJPA"); // Dirty Checking, 1차 캐시에서 스냅샷 비교 후 플러시
 
             // Delete
             em.remove(findMember);
