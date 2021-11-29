@@ -22,3 +22,10 @@
 ## Spring Data JPA
 - Spring module 을 이용하여 JPA 구현 
 - JPA 를 추상화한 Repository 인터페이스 제공 
+
+
+## CRUD
+- 저장: jpa.persist(member)
+- 조회: Member member = jpa.find(memberId)
+- 수정: member.setName(“변경할 이름”)
+- 삭제: jpa.remove(member
