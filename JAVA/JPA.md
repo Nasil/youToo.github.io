@@ -74,5 +74,5 @@ String teanName = team.getName();
 - Oracle 10g : org.hibernate.dialect.Oracle10gDialect 
 - MySQL : org.hibernate.dialect.MySQL5InnoDBDialect 
  
-## JPA 동작
+## JPA 영속성 컨텍스트 (persistence)
 - 
