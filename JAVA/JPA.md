@@ -89,10 +89,13 @@ String teanName = team.getName();
 
         try {
             // Insert
-            Member member = new Member();
-            member.setName("HelloB");
-            em.persist(member); // 영속
-            tx.commit();
+            Member memberA = new Member();
+            Member memberB = new Member();
+            memberA.setName("HelloA");
+            memberB.setName("HelloB:);
+            em.persist(memberA); // 영속됨, 1차 캐시 저장 & 쓰기지연 SQL 저장소에 저장
+            em.persist(memberB); // 영속됨, 1차 캐시 저장 & 쓰기지연 SQL 저장소에 저장
+            tx.commit(); // 쓰기지연 SQL 저장소에 한번에 반영
 
             // Fine list
             List<Member> findMembers = em.createQuery("select m from Member as m", Member.class)
