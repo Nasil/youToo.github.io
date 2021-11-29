@@ -14,6 +14,7 @@
 
 ## Hibernate
 - JPA의 구현체, 인터페이스를 직접 구현한 라이브러리
+- EJB - 엔티티 빈(자바 표준) --망--> 하이버네이트 (오픈 소스) --개선--> JPA(자바 표준)
 
 ## Spring Data JPA
 - Spring module 을 이용하여 JPA 구현 
