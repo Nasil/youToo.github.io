@@ -69,7 +69,7 @@ Team team = member.getTeam();
 String teanName = team.getName(); 
 ```
 
-## Dialect : 하이버네이트는 40가지 이상의 데이터베이스 방언 지원
+## Dialect : 하이버네이트는 40가지 이상의 데이터베이스 방언(특이성) 지원
 - H2 : org.hibernate.dialect.H2Dialect 
 - Oracle 10g : org.hibernate.dialect.Oracle10gDialect 
 - MySQL : org.hibernate.dialect.MySQL5InnoDBDialect 
