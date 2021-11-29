@@ -29,3 +29,12 @@
 - 조회: Member member = jpa.find(memberId)
 - 수정: member.setName(“변경할 이름”)
 - 삭제: jpa.remove(member)
+
+## 동일한 트랜잭션에서 조회한 엔티티는 같음을 보장
+```
+String memberId = "100";
+Member member1 = jpa.find(Member.class, memberId);
+Member member2 = jpa.find(Member.class, memberId);
+member1 == member2; //같다.
+```
+
