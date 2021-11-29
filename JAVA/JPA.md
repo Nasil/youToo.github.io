@@ -28,4 +28,4 @@
 - 저장: jpa.persist(member)
 - 조회: Member member = jpa.find(memberId)
 - 수정: member.setName(“변경할 이름”)
-- 삭제: jpa.remove(member
+- 삭제: jpa.remove(member)
