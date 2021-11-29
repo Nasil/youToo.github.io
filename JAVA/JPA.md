@@ -30,11 +30,15 @@
 - 수정: member.setName(“변경할 이름”)
 - 삭제: jpa.remove(member)
 
-## 동일한 트랜잭션에서 조회한 엔티티는 같음을 보장
+## 같은 트랜잭션 안에서는 같은 엔티티를 반환
 ```
 String memberId = "100";
-Member member1 = jpa.find(Member.class, memberId);
-Member member2 = jpa.find(Member.class, memberId);
-member1 == member2; //같다.
+Member member1 = jpa.find(Member.class, memberId); // SQL
+Member member2 = jpa.find(Member.class, memberId); // 캐시 (1차 캐시와 동일(identity)성 보장)
+
+pringln(m1 == m2) // true -> same
 ```
+
+## JPA 성능 최적화
+- DB Isolation Level 이 Read Commit 이어도 애플리케이션에서 Repeatable Read 보장
 
