@@ -75,4 +75,53 @@ String teanName = team.getName();
 - MySQL : org.hibernate.dialect.MySQL5InnoDBDialect 
  
 ## JPA 영속성 컨텍스트 (persistence)
-- 
+```
+    /**
+     * JPA 원래 호출방법 (spring framework 를 이용하지 않고)
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        tx.begin();
+
+        try {
+            // insert
+            Member member = new Member();
+            member.setName("HelloB");
+            em.persist(member); // 영속
+            tx.commit();
+
+            //
+            List<Member> findMembers = em.createQuery("select m from Member as m", Member.class)
+                    .setFirstResult(0)
+                    .setMaxResults(10)
+                    .getResultList();
+            for (Member m : findMembers) {
+                System.out.println(m);
+            }
+
+
+            // find
+            Member findMember = em.find(Member.class, 1L);
+            System.out.println("find id : " + findMember.getId());
+            System.out.println("find name : " + findMember.getName());
+
+            // modify
+            findMember.setName("HelloJPA");
+
+            // delete
+            em.remove(findMember);
+
+        } catch (Exception e) {
+            tx.rollback();
+        } finally {
+            em.close();
+        }
+        emf.close();
+
+    }
+
+```
