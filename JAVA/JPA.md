@@ -24,12 +24,6 @@
 - JPA 를 추상화한 Repository 인터페이스 제공 
 
 
-## CRUD
-- 저장: jpa.persist(member)
-- 조회: Member member = jpa.find(memberId)
-- 수정: member.setName(“변경할 이름”)
-- 삭제: jpa.remove(member)
-
 ## 같은 트랜잭션 안에서는 같은 엔티티를 반환
 ```
 String memberId = "100";
