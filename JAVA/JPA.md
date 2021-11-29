@@ -36,7 +36,7 @@ String memberId = "100";
 Member member1 = jpa.find(Member.class, memberId); // SQL
 Member member2 = jpa.find(Member.class, memberId); // 캐시 (1차 캐시와 동일(identity)성 보장)
 
-pringln(m1 == m2) // true -> same
+pringln(m1 == m2) // true -> same (영속 엔티티의 동일성 보장)
 ```
 
 ## JPA 성능 최적화
