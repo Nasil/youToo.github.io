@@ -133,3 +133,8 @@ em.setFlushMode(FlushModeType.COMMIT)
 ```
 - FlushModeType.AUTO : 커밋이나 쿼리를 실행할 때 플러시 (기본값) 
 - FlushModeType.COMMIT : 커밋할 때만 플러시
+
+## 준영속
+- em.detach(entity) : 특정 엔티티만 준영속 상태로 전환 
+- em.clear() : 영속성 컨텍스트를 완전히 초기화 
+- em.close() : 영속성 컨텍스트를 종료
