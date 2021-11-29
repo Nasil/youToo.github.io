@@ -111,7 +111,7 @@ String teanName = team.getName();
             // Delete
             em.remove(findMember);
             
-            tx.commit(); // 쓰기지연 SQL 저장소에 한번에 반영
+            tx.commit(); // 쓰기지연 SQL 저장소에 한번에 반영 flush
 
         } catch (Exception e) {
             tx.rollback();
@@ -123,3 +123,9 @@ String teanName = team.getName();
     }
 
 ```
+
+## flush
+- em.flush() : 직접 호출 
+- 트랜잭션 커밋 : 플러시 자동 호출 
+- JPQL 쿼리 실행 : 플러시 자동 호출
+
