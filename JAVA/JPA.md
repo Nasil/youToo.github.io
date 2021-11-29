@@ -88,13 +88,13 @@ String teanName = team.getName();
         tx.begin();
 
         try {
-            // insert
+            // Insert
             Member member = new Member();
             member.setName("HelloB");
             em.persist(member); // 영속
             tx.commit();
 
-            //
+            // Fine list
             List<Member> findMembers = em.createQuery("select m from Member as m", Member.class)
                     .setFirstResult(0)
                     .setMaxResults(10)
@@ -104,15 +104,15 @@ String teanName = team.getName();
             }
 
 
-            // find
+            // Find one
             Member findMember = em.find(Member.class, 1L);
             System.out.println("find id : " + findMember.getId());
             System.out.println("find name : " + findMember.getName());
 
-            // modify
+            // Modify
             findMember.setName("HelloJPA");
 
-            // delete
+            // Delete
             em.remove(findMember);
 
         } catch (Exception e) {
