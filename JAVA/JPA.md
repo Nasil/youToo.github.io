@@ -128,4 +128,8 @@ String teanName = team.getName();
 - em.flush() : 직접 호출 
 - 트랜잭션 커밋 : 플러시 자동 호출 
 - JPQL 쿼리 실행 : 플러시 자동 호출
-
+```
+em.setFlushMode(FlushModeType.COMMIT)
+```
+- FlushModeType.AUTO : 커밋이나 쿼리를 실행할 때 플러시 (기본값) 
+- FlushModeType.COMMIT : 커밋할 때만 플러시
