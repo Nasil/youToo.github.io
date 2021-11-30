@@ -138,3 +138,21 @@ em.setFlushMode(FlushModeType.COMMIT)
 - em.detach(entity) : 특정 엔티티만 준영속 상태로 전환 
 - em.clear() : 영속성 컨텍스트를 완전히 초기화 
 - em.close() : 영속성 컨텍스트를 종료
+
+## @Entity
+- @Entity가 붙은 클래스는 JPA가 관리, 엔티티라 한다. 
+- JPA를 사용해서 테이블과 매핑할 클래스는 @Entity 필수
+- 기본 생성자 필수(파라미터가 없는 public 또는 protected 생성자) 
+- final 클래스, enum, interface, inner 클래스 사용X 
+- 저장할 필드에 final 사용 X
+
+## @Table 
+- ibernate.hbm2ddl.auto 기능을 쓰면 스키마 자동 생성 
+- @Table(uniqueConstraints = {@UniqueConstraint( name = "NAME_AGE_UNIQUE", columnNames = {"NAME", "AGE"} )})
+
+## @Column(nullable = false, length = 10)
+- 필드와 컬럼 매핑: @Column
+- 기본 키 매핑: @Id
+- 연관관계 매핑: @ManyToOne,@JoinColumn
+
+
