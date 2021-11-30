@@ -147,11 +147,10 @@ em.setFlushMode(FlushModeType.COMMIT)
 - 저장할 필드에 final 사용 X
 
 ## @Table 
-- ibernate.hbm2ddl.auto 기능을 쓰면 스키마 자동 생성 // 개발 로컬서버에서만 사용할 것을 권장
+- ibernate.hbm2ddl.auto 기능을 쓰면 스키마 자동 생성 (DDL 가능) // 개발 로컬서버에서만 사용할 것을 권장
 - @Table(uniqueConstraints = {@UniqueConstraint( name = "NAME_AGE_UNIQUE", columnNames = {"NAME", "AGE"} )})
-
-## @Column 
-- 필드와 컬럼 매핑: @Column(nullable = false, length = 10)
+- @Column(nullable = false, length = 10)
+- @Column(unique = true, length = 10)
 - 기본 키 매핑: @Id
 - 연관관계 매핑: @ManyToOne,@JoinColumn
 
