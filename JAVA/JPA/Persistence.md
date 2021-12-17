@@ -71,6 +71,7 @@ em.setFlushMode(FlushModeType.COMMIT)
 
 
 ##  
+저장 후 아래 입력후 조회 
 - em.flush
 - em.clear
 
