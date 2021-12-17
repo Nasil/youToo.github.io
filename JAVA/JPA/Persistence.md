@@ -71,7 +71,7 @@ em.setFlushMode(FlushModeType.COMMIT)
 
 
 ##  
-저장 후 아래 입력후 조회 
+저장 후 DB에 진짜로 넣기 (안하면 1차 캐시에 있게됨)
 - em.flush
 - em.clear
 
