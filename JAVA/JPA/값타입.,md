@@ -1,0 +1,25 @@
+## 값 타입 
+
+### 기본값 타임 : 
+- 자바 기본 타입 : int, double
+  - ex) 회원을 삭제하면 이름, 나이 필드도 함께 삭제
+  - 값을 복사하기 때문에 공유가 안됨.
+- 래퍼 클래스 : Integer, Long
+- String 
+  - 공유 가능한 객체이지만 변경 x 
+
+
+### 임베디드 타입
+```
+@Embeddable
+public class Address {
+  private String city;
+  private String street;
+  private String zipcode;
+  
+  // 기본 생성자 필수
+}
+```
+
+
+### 컬렉션 값 타입 
