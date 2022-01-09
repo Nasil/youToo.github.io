@@ -46,6 +46,13 @@ SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.TEAM_ID=t.id and t.name
 JPQL: SELECT m, t FROM Member m LEFT JOIN Team t on m.username = t.name
 SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.username = t.name
 ```
+### 패치 조인
+```
+// [JPQL]
+select m from Member m join fetch m.team 
+// [SQL]
+SELECT M.*, T.* FROM MEMBER M INNER JOIN TEAM T ON M.TEAM_ID=T.ID
+```
 
 ### 서브쿼리
 ```
@@ -71,14 +78,6 @@ select m from Member m where m.team = ANY (select t from Team t);
 // Oerder N : Member 1 
 select o.member from Order o; // sql : select m.* from Orders o inner join Member m on o.member_id = m.id
 //컬렉션 값 연관 경로: 묵시적 내부 조인 발생, 탐색X, @OneToMany, @ManyToMany 
-```
-
-### 패치 조인
-```
-// [JPQL]
-select m from Member m join fetch m.team 
-// [SQL]
-SELECT M.*, T.* FROM MEMBER M INNER JOIN TEAM T ON M.TEAM_ID=T.ID
 ```
 
 ### 타입
