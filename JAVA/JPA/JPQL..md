@@ -21,7 +21,7 @@ Lint<Member> result = em.createQuery("select m from Member m", Member.class).get
 List<Address> result = em.createQuery("select m.address from Member m", Address.class).getResultList();
 
 // SELECT m.username, m.age FROM Member m -> 스칼라 타입 프로젝션
-List<MemberDTO> result = em.createQuery("select new jpql.MemberDTO(m.username, m.age) from Member m", MemberDTO.class).getResultList();
+List<MemberDTO> result = em.createQuery("select new {경로}.MemberDTO(m.username, m.age) from Member m", MemberDTO.class).getResultList();
 MemberDTO memberDTO = result.get(0);
 System.out.println(memberDTO.getUsername());
 System.out.println(memberDTO.getAge());
