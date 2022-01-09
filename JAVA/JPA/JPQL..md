@@ -60,6 +60,9 @@ select m from Member m where m.team = ANY (select t from Team t);
 - SELECT 절(스칼라서브쿼리)도 가능 - 하이버네이트에서 지원
 - FROM 절의 서브 쿼리(인라인뷰)는 현재 JPQL에서 불가능,  조인으로 풀 수 있으면 풀어서 해결
 
+### 타입
+- ENUM: jpabook.MemberType.Admin (패키지명 포함) 
+
 ## QueryDSL 
 - 오픈소스
 ```
