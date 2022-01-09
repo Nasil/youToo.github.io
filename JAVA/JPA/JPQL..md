@@ -51,6 +51,9 @@ SQL: SELECT m.*, t.* FROM Member m JOIN Team t ON m.username = t.name
 JPQL: SELECT m from Member m join fetch m.team 
 SQL: SELECT M.*, T.* FROM MEMBER M INNER JOIN TEAM T ON M.TEAM_ID=T.ID
 ```
+- 페치 조인을 사용할 때만 연관된 엔티티도 함께 조회(즉시 로딩) 
+- 페치 조인은 객체 그래프를 SQL 한번에 조회하는 개념
+
 
 ### 서브쿼리
 ```
