@@ -60,6 +60,19 @@ select m from Member m where m.team = ANY (select t from Team t);
 - SELECT 절(스칼라서브쿼리)도 가능 - 하이버네이트에서 지원
 - FROM 절의 서브 쿼리(인라인뷰)는 현재 JPQL에서 불가능,  조인으로 풀 수 있으면 풀어서 해결
 
+
+### 
+```
+//상태필드
+
+//연관 필드
+//단일 값 연관 경로: 묵시적 내부 조인(inner join) 발생, 탐색O, @ManyToOne, @OneToOne 
+select o.member from Order o; // sql : select m.* from Orders o inner join Member m on o.member_id = m.id
+
+
+//컬렉션 값 연관 경로: 묵시적 내부 조인 발생, 탐색X, @OneToMany, @ManyToMany 
+```
+
 ### 타입
 - ENUM: jpabook.MemberType.Admin (패키지명 포함) 
 
