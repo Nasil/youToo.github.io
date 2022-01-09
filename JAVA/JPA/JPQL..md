@@ -10,6 +10,7 @@ Query query = em.createQuery("SELECT m.username, m.age from Member m"); // 반�
 ```
 
 ### Select
+```
 // SELECT m FROM Member m -> 엔티티 프로젝션
 Lint<Member> result = em.createQuery("select m from Member m", Member.class).getResultList();
 
