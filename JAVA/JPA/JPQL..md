@@ -50,6 +50,16 @@ JPQL: SELECT m, t FROM Member m LEFT JOIN Team t on m.username = t.name
 SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.username = t.name
 ```
 
+### 서브쿼리
+```
+//팀A 소속인 회원 
+select m from Member m where exists (select t from m.team t where t.name = ‘팀A');
+//전체 상품 각각의 재고보다 주문량이 많은 주문들
+select o from Order o where o.orderAmount > ALL (select p.stockAmount from Product p);
+// 어떤 팀이든 팀에 소속된 회원
+select m from Member m where m.team = ANY (select t from Team t);
+```
+
 ## QueryDSL 
 - 오픈소스
 ```
