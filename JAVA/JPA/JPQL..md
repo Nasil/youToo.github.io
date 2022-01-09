@@ -61,7 +61,8 @@ select m from Member m where m.team = ANY (select t from Team t);
 - FROM 절의 서브 쿼리(인라인뷰)는 현재 JPQL에서 불가능,  조인으로 풀 수 있으면 풀어서 해결
 
 
-### 
+### 묵시적 조인 vs 명시적 조인
+- 명시적 조인 쓸것.
 ```
 //상태필드
 
@@ -69,9 +70,12 @@ select m from Member m where m.team = ANY (select t from Team t);
 //단일 값 연관 경로: 묵시적 내부 조인(inner join) 발생, 탐색O, @ManyToOne, @OneToOne 
 // Oerder N : Member 1 
 select o.member from Order o; // sql : select m.* from Orders o inner join Member m on o.member_id = m.id
-
-
 //컬렉션 값 연관 경로: 묵시적 내부 조인 발생, 탐색X, @OneToMany, @ManyToMany 
+```
+
+### 패치 조인
+```
+
 ```
 
 ### 타입
