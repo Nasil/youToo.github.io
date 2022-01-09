@@ -75,7 +75,10 @@ select o.member from Order o; // sql : select m.* from Orders o inner join Membe
 
 ### 패치 조인
 ```
-
+// [JPQL]
+select m from Member m join fetch m.team 
+// [SQL]
+SELECT M.*, T.* FROM MEMBER M INNER JOIN TEAM T ON M.TEAM_ID=T.ID
 ```
 
 ### 타입
