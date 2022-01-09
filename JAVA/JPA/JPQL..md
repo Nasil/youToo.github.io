@@ -56,6 +56,9 @@ select o from Order o where o.orderAmount > ALL (select p.stockAmount from Produ
 // 어떤 팀이든 팀에 소속된 회원
 select m from Member m where m.team = ANY (select t from Team t);
 ```
+- JPA는 WHERE, HAVING 절에서만 서브 쿼리 사용 가능
+- SELECT 절(스탈라서브쿼리)도 가능
+- FROM 절의 서브 쿼리(인라인뷰)는 현재 JPQL에서 불가능,  조인으로 풀 수 있으면 풀어서 해결
 
 ## QueryDSL 
 - 오픈소스
