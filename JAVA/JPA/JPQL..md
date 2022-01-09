@@ -38,7 +38,13 @@ String jpql = "select m from Member m order by m.name desc";
  .setMaxResults(20)
  .getResultList();
 ```
-  
+
+### Join
+```
+JPQL:SELECT m, t FROM Member m LEFT JOIN m.team t on t.name = 'A' 
+SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.TEAM_ID=t.id and t.name='A'
+```
+
 
 ## QueryDSL 
 - 오픈소스
