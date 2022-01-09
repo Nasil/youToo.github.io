@@ -67,6 +67,7 @@ select m from Member m where m.team = ANY (select t from Team t);
 
 //연관 필드
 //단일 값 연관 경로: 묵시적 내부 조인(inner join) 발생, 탐색O, @ManyToOne, @OneToOne 
+// Oerder N : Member 1 
 select o.member from Order o; // sql : select m.* from Orders o inner join Member m on o.member_id = m.id
 
 
