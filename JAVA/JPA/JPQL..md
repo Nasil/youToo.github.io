@@ -9,6 +9,7 @@ Member result = query,getSingleResult(); // 결과가 정확히 하나일 때 �
 Query query = em.createQuery("SELECT m.username, m.age from Member m"); // 반환 타입이 명확하지 않을 때 사용
 ```
 
+### Select
 - SELECT m FROM Member m -> 엔티티 프로젝션
 ```
 Lint<Member> result = em.createQuery("select m from Member m", Member.class).getResultList();
@@ -29,6 +30,14 @@ System.out.println(memberDTO.getUsername());
 System.out.println(memberDTO.getAge());
 ```
 
+### Paging
+```java
+String jpql = "select m from Member m order by m.name desc";
+ List<Member> resultList = em.createQuery(jpql, Member.class)
+ .setFirstResult(10)
+ .setMaxResults(20)
+ .getResultList();
+```
   
 
 ## QueryDSL 
