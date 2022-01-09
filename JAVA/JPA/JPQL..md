@@ -38,20 +38,18 @@ String jpql = "select m from Member m order by m.name desc";
 
 ### Join
 ```
-JPQL:SELECT m, t FROM Member m LEFT JOIN m.team t on t.name = 'A' 
-SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.TEAM_ID=t.id and t.name='A'
+JPQL:SELECT m, t FROM Member m JOIN m.team t on t.name = 'A' 
+SQL: SELECT m.*, t.* FROM Member m JOIN Team t ON m.TEAM_ID=t.id and t.name='A'
 ```
 ### 연관관계 없는 엔티티 외부 조인
 ```
-JPQL: SELECT m, t FROM Member m LEFT JOIN Team t on m.username = t.name
-SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.username = t.name
+JPQL: SELECT m, t FROM Member m JOIN Team t on m.username = t.name
+SQL: SELECT m.*, t.* FROM Member m JOIN Team t ON m.username = t.name
 ```
 ### 패치 조인
 ```
-// [JPQL]
-select m from Member m join fetch m.team 
-// [SQL]
-SELECT M.*, T.* FROM MEMBER M INNER JOIN TEAM T ON M.TEAM_ID=T.ID
+JPQL: select m from Member m join fetch m.team 
+SQL: SELECT M.*, T.* FROM MEMBER M INNER JOIN TEAM T ON M.TEAM_ID=T.ID
 ```
 
 ### 서브쿼리
