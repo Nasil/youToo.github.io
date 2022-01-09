@@ -9,6 +9,20 @@ Member result = query,getSingleResult(); // 결과가 정확히 하나일 때 �
 Query query = em.createQuery("SELECT m.username, m.age from Member m"); // 반환 타입이 명확하지 않을 때 사용
 ```
 
+- SELECT m FROM Member m -> 엔티티 프로젝션
+```
+Lint<Member> result = em.createQuery("select m from Member m", Member.class).getResultList();
+```
+- SELECT m.team FROM Member m -> 엔티티 프로젝션
+```
+// 묵시적말고 명시적 조인 사용할것
+```
+- SELECT m.address FROM Member m -> 임베디드 타입 프로젝션
+```
+List<Address> result = em.createQuery("select m.address from Member m", Address.class).getResultList();
+```
+- SELECT m.username, m.age FROM Member m -> 스칼라 타입 프로젝션
+
 
   
 
