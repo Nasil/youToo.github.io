@@ -1,6 +1,6 @@
 ## String 연산
 
-```
+```java
 String data = "ABC";
 data += "DEF"; // 주의!!! ABCDEF 라는 새로운 객체가 생성됨, +를 많이 쓰면 String 객체가 그만큼 늘어남.
 System.out.println(data);
