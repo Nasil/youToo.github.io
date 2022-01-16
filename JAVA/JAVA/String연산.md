@@ -52,10 +52,10 @@ while (st.hasMoreElements()) {
 ```java
 String str = "test programming";
 str = str.replace("test", "java");
-System.out.println(str);
+System.out.println(str); // java programming
 
 str = str.substring(0, 4);
-System.out.println(str);
+System.out.println(str); // java
 ```
 
 ## String 대소문자 변환 및 비교
@@ -68,4 +68,11 @@ System.out.println(lowerStr);
 if (upperStr.equalsIgnoreCase(lowerStr)) {
     System.out.println("대소문자 구분안하고 동일");
 }
+```
+
+## charAt
+```
+String subject = "자바 프로그래밍";
+char charValue = subject.charAt(3); // 0~
+System.out.println(charValue); // 프
 ```
