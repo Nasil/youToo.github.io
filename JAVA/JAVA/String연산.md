@@ -57,3 +57,15 @@ System.out.println(str);
 str = str.substring(0, 4);
 System.out.println(str);
 ```
+
+## String 대소문자 변환 및 비교
+```java
+String str = "java";
+String upperStr = str.toUpperCase();
+System.out.println(upperStr);
+String lowerStr = str.toLowerCase();
+System.out.println(lowerStr);
+if (upperStr.equalsIgnoreCase(lowerStr)) {
+    System.out.println("대소문자 구분안하고 동일");
+}
+```
