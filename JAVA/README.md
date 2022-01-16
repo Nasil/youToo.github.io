@@ -1,6 +1,6 @@
 # JAVA 
 
-- JVM  : 소스파일(.java) ===컴파일===> 바이트코드파일(.class) ===JVM구동(OS별)====> 기계어
+- 실행순서 : 소스파일(.java) ===컴파일===> 바이트코드파일(.class) ===JVM구동(OS별)====> 기계어
 - JRE(JAVA Runtime Environment) 설치되어 있는 OS 에서는 실행 가능
 - JDK = JRE (JVM + 표준 클래스 라이브러리) + 개발 도구
 
