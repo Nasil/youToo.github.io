@@ -88,3 +88,8 @@ String subject = "자바 프로그래밍";
 char charValue = subject.charAt(3); // 0~
 System.out.println(charValue); // 프
 ```
+
+## trim
+```java
+System.out.println(" test ".trim());
+```
