@@ -30,7 +30,7 @@ sb.delete(6, 13);
 System.out.println(sb.length());
 ```
 
-## String split
+## String explode
 ```java
  String str = "문자1|문자2|문자3";
 
