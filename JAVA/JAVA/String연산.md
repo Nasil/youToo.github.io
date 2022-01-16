@@ -29,3 +29,21 @@ System.out.println(sb.length());
 sb.delete(6, 13);
 System.out.println(sb.length());
 ```
+
+## String split
+```java
+ String str = "문자1|문자2|문자3";
+
+// 방법1
+StringTokenizer st = new StringTokenizer(str, "|");
+int maxLength = st.countTokens();
+for (int i = 0; i < maxLength; i++) {
+    System.out.println(st.nextToken());
+}
+
+// 방법2
+st = new StringTokenizer(str, "|");
+while (st.hasMoreElements()) {
+    System.out.println(st.nextToken());
+}
+```
