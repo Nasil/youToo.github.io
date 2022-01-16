@@ -47,3 +47,13 @@ while (st.hasMoreElements()) {
     System.out.println(st.nextToken());
 }
 ```
+
+## String replace
+```java
+String str = "test programming";
+str = str.replace("test", "java");
+System.out.println(str);
+
+str = str.substring(0, 4);
+System.out.println(str);
+```
