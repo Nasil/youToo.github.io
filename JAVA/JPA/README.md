@@ -15,6 +15,15 @@
 - 대중적인 언어에는 대부분 ORM 기술이 존재
 
 
+## ORM
+- mybatis
+- JDBC 
+- JPA
+
+https://gmlwjd9405.github.io/2018/12/25/difference-jdbc-jpa-mybatis.html
+
+
+
 ## Hibernate
 - JPA의 구현체, 인터페이스를 직접 구현한 라이브러리
 - EJB - 엔티티 빈(자바 표준) --망--> 하이버네이트 (오픈 소스) --개선--> JPA(자바 표준)
