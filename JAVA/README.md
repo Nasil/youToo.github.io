@@ -46,4 +46,4 @@
 - Spring boot 외장 톰켓을 사용할 경우 : Ultimate 버전으로 사용 (비쌈)
 
 ### Spring boot
-https://start.spring.io/ 설정후 GNERATE
+- https://start.spring.io/ 설정후 GNERATE
