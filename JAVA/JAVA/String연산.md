@@ -93,3 +93,13 @@ System.out.println(charValue); // 프
 ```java
 System.out.println(" test ".trim());
 ```
+
+## 정규식
+```java
+String req = "^[0-9]+$";
+String data = "23423523";
+boolean result = Pattern.matches(req, data);
+if (result) {
+    System.out.println("숫자만 있음");
+}
+```
