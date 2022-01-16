@@ -104,7 +104,35 @@ if (result) {
 }
 ```
 
-## Byte -> String
+## Byte
+```java
+String str = "안녕하세요";
+
+// 기본 문자셋
+byte[] bytes = str.getBytes();
+System.out.println("utf-8 byte length : " + bytes.length);
+String str2 = new String(bytes);
+System.out.println("byte -> string : " + str2);
+
+// utf-8
+byte[] bytesUtf8 = str.getBytes(StandardCharsets.UTF_8);
+System.out.println("utf-8 byte length : " + bytesUtf8.length);
+String strUtf8 = new String(bytesUtf8, StandardCharsets.UTF_8);
+System.out.println("byte -> string : " + strUtf8);
+
+try {
+    // EUC-KR
+    byte[] bytesEucKr = str.getBytes("EUC-KR");
+    System.out.println("\"EUC-KR\" byte length : " + bytesEucKr.length);
+    String strEucKr = new String(bytesEucKr, "EUC-KR");
+    System.out.println("byte -> string : " + strEucKr);
+
+} catch (UnsupportedEncodingException e) {
+    e.printStackTrace();
+}
+```
+
+## Byte[] -> String
 ```java
 byte[] bytes = {72, 101, 108, 108, 111, 13, 10};
 String str1 = new String(bytes);
