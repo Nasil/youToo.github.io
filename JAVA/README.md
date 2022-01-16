@@ -19,7 +19,7 @@
 2. 실행 : java Application
 
 
-# 
+# JAVA Setting
 
 ## OpenJDK 다운로드
 - https://www.azul.com/downloads/?os=macos&architecture=arm-64-bit&package=jdk
