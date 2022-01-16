@@ -1,4 +1,4 @@
-# JAVA 환경 
+# JAVA 
 
 - JVM  : 소스파일(.java) ===컴파일===> 바이트코드파일(.class) ===JVM구동(OS별)====> 기계어
 - JRE(JAVA Runtime Environment) 설치되어 있는 OS 에서는 실행 가능
