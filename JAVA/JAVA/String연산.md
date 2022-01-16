@@ -73,8 +73,17 @@ if (upperStr.equalsIgnoreCase(lowerStr)) {
 }
 ```
 
-## charAt
+## String 찾기
+```java
+String str = "자바 프로그래밍";
+int location = str.indexOf("프로그래밍"); // 0~ 찾은 첫번째 수
+System.out.println(location); // 3
+int locationEmpty = str.indexOf("없음");
+System.out.println(locationEmpty); // -1
 ```
+
+## charAt
+```java
 String subject = "자바 프로그래밍";
 char charValue = subject.charAt(3); // 0~
 System.out.println(charValue); // 프
