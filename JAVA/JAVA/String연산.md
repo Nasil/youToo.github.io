@@ -104,40 +104,30 @@ if (result) {
 }
 ```
 
-## Byte
+## String get byte
 ```java
 String str = "안녕하세요";
 
 // 기본 문자셋
 byte[] bytes = str.getBytes();
-System.out.println("utf-8 byte length : " + bytes.length);
+System.out.println("utf-8 byte length : " + bytes.length); // 15
 String str2 = new String(bytes);
-System.out.println("byte -> string : " + str2);
+System.out.println("byte -> string : " + str2); // 안녕하세요
 
 // utf-8
 byte[] bytesUtf8 = str.getBytes(StandardCharsets.UTF_8);
-System.out.println("utf-8 byte length : " + bytesUtf8.length);
+System.out.println("utf-8 byte length : " + bytesUtf8.length); // 15
 String strUtf8 = new String(bytesUtf8, StandardCharsets.UTF_8);
-System.out.println("byte -> string : " + strUtf8);
+System.out.println("byte -> string : " + strUtf8); // 안녕하세요
 
 try {
     // EUC-KR
     byte[] bytesEucKr = str.getBytes("EUC-KR");
-    System.out.println("\"EUC-KR\" byte length : " + bytesEucKr.length);
+    System.out.println("\"EUC-KR\" byte length : " + bytesEucKr.length); // 10
     String strEucKr = new String(bytesEucKr, "EUC-KR");
-    System.out.println("byte -> string : " + strEucKr);
+    System.out.println("byte -> string : " + strEucKr);  // 안녕하세요
 
 } catch (UnsupportedEncodingException e) {
     e.printStackTrace();
 }
-```
-
-## Byte[] -> String
-```java
-byte[] bytes = {72, 101, 108, 108, 111, 13, 10};
-String str1 = new String(bytes);
-System.out.println(str1); // Hello
-
-String str2 = new String(bytes, 2, 2);
-System.out.println(str2); // ll
 ```
