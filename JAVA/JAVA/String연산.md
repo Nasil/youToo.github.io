@@ -103,3 +103,13 @@ if (result) {
     System.out.println("숫자만 있음");
 }
 ```
+
+## Byte -> String
+```java
+byte[] bytes = {72, 101, 108, 108, 111, 13, 10};
+String str1 = new String(bytes);
+System.out.println(str1); // Hello
+
+String str2 = new String(bytes, 2, 2);
+System.out.println(str2); // ll
+```
