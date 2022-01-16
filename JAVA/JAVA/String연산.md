@@ -82,7 +82,7 @@ int locationEmpty = str.indexOf("없음");
 System.out.println(locationEmpty); // -1
 ```
 
-## charAt
+## String 위치로 찾기
 ```java
 String subject = "자바 프로그래밍";
 char charValue = subject.charAt(3); // 0~
