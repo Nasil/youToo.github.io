@@ -53,7 +53,10 @@ while (st.hasMoreElements()) {
 String str = "test programming";
 str = str.replace("test", "java");
 System.out.println(str); // java programming
+```
 
+## String 자르기
+```java
 str = str.substring(0, 4);
 System.out.println(str); // java
 ```
