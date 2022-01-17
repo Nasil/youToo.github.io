@@ -76,3 +76,6 @@ public class CarDto {
 CarDto carDto = CarDto.from(car); // 정적 팩토리 메서드를 쓴 경우
 //CarDto carDto = new CarDto(car.getName(), car.getPosition); // 생성자를 쓴 경우 다 내용을 드러내야함
 ```
+
+
+-https://tecoble.techcourse.co.kr/post/2020-05-26-static-factory-method/ 
