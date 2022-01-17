@@ -60,3 +60,18 @@ public class Level { // Basic, Intermediate, Advanced 클래스가 Level라는 �
   ...
 }
 ```
+- 
+```java
+public class CarDto {
+  private String name;
+  private int position;
+
+  pulbic static CarDto from(Car car) {
+    return new CarDto(car.getName(), car.getPosition());
+  }
+}
+
+
+// Car -> CatDto 로 변환
+CarDto carDto = CarDto.from(car);
+```
