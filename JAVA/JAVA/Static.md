@@ -78,4 +78,4 @@ CarDto carDto = CarDto.from(car); // 정적 팩토리 메서드를 쓴 경우
 ```
 
 
--https://tecoble.techcourse.co.kr/post/2020-05-26-static-factory-method/ 
+- https://tecoble.techcourse.co.kr/post/2020-05-26-static-factory-method/ 참조 
