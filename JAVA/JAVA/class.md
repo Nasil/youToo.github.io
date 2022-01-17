@@ -1,0 +1,9 @@
+# 오버로딩(Overloading)
+- 매개변수의 타입과 개수, 순서가 같은 경우가 오버로딩
+```
+car(){}
+car(String model){}
+car(String model, String color){}
+//car(String color, String model){} // 오버로딩 아님
+car(String model, String color, int maxSpeed){}
+```
