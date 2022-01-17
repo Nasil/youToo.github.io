@@ -60,7 +60,7 @@ public class Level { // Basic, Intermediate, Advanced 클래스가 Level라는 �
   ...
 }
 ```
-- 
+- entity -> DTO 변환
 ```java
 public class CarDto {
   private String name;
@@ -73,5 +73,6 @@ public class CarDto {
 
 
 // Car -> CatDto 로 변환
-CarDto carDto = CarDto.from(car);
+CarDto carDto = CarDto.from(car); // 정적 팩토리 메서드를 쓴 경우
+//CarDto carDto = new CarDto(car.getName(), car.getPosition); // 생성자를 쓴 경우 다 내용을 드러내야함
 ```
