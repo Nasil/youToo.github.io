@@ -17,6 +17,8 @@ static { // 정적 블록
 
 # 정적 팩토리 메서드
 - 캐싱
+- enum과 같이 자주 사용되는 요소의 개수가 정해져있다면 해당 개수만큼 미리 생성해놓고 조회(캐싱)할 수 있는 구조로 만들수 있다. 
+- 정적 팩터리 메서드와 캐싱구조를 함께 사용하면 매번 새로운 객체를 생성할 필요가 없어진다
 ```java
 public class LottoNumber {
   private static final int MIN_LOTTO_NUMBER = 1;
