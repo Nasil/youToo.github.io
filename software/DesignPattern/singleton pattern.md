@@ -30,3 +30,11 @@ public class Singleton {
     }
 }
 ```
+
+## 동등 비교 
+```
+Singleton obj1 = Singleton.getInstance();
+Singleton obj2 = Singleton.getInstance();
+
+if (obj1 === obj2) { // 동일
+```
