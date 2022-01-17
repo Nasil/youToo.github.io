@@ -17,7 +17,7 @@ static { // 정적 블록
 
 # 정적 팩토리 메서드
 - 캐싱
-```
+```java
 public class LottoNumber {
   private static final int MIN_LOTTO_NUMBER = 1;
   private static final int MAX_LOTTO_NUMBER = 45;
@@ -43,7 +43,7 @@ public class LottoNumber {
 }
 ```
 - 하위 클래스 호출
-```
+```java
 public class Level { // Basic, Intermediate, Advanced 클래스가 Level라는 상위 타입을 상속받고 있는 구조
   ...
   public static Level of(int score) { // 하위 호출
