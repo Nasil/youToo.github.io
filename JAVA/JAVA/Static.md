@@ -14,3 +14,47 @@ static { // 정적 블록
     method2(); // static 이 아닌 메소드 호출 불가
 }
 ```
+
+# 정적 팩토리 메서드
+- 캐싱
+```
+public class LottoNumber {
+  private static final int MIN_LOTTO_NUMBER = 1;
+  private static final int MAX_LOTTO_NUMBER = 45;
+
+  private static Map<Integer, LottoNumber> lottoNumberCache = new HashMap<>();
+
+  static {
+    IntStream.range(MIN_LOTTO_NUMBER, MAX_LOTTO_NUMBER)
+                .forEach(i -> lottoNumberCache.put(i, new LottoNumber(i)));
+  }
+
+  private int number;
+
+  private LottoNumber(int number) {
+    this.number = number;
+  }
+
+  public LottoNumber of(int number) {  // LottoNumber를 반환하는 정적 팩토리 메서드
+    return lottoNumberCache.get(number);
+  }
+
+  ...
+}
+```
+- 하위 클래스 호출
+```
+public class Level { // Basic, Intermediate, Advanced 클래스가 Level라는 상위 타입을 상속받고 있는 구조
+  ...
+  public static Level of(int score) { // 하위 호출
+    if (score < 50) {
+      return new Basic();
+    } else if (score < 80) {
+      return new Intermediate();
+    } else {
+      return new Advanced();
+    }
+  }
+  ...
+}
+```
