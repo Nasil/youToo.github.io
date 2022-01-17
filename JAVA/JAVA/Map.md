@@ -1,4 +1,4 @@
-```
+```java
 System.out.println("========== HASHMAP=========");
 Map<Key, String> hashMap = new HashMap<Key, String>();
 Map<String, String> hashTable = new Hashtable<String, String>();
