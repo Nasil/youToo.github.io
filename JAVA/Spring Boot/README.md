@@ -1,6 +1,9 @@
 # Spring Framework 
 - 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크. 
 - EJB(Enterprise Java Beans:시스템 구현을 위한 서버측 컴포넌트 모델) 컨테이너 사용으로 인한 개발 생선성과 유지 보수성 저하와 테스트와 배포의 어려움을 해결하기 위해 개발되었다. 
+- Spring은 자바 객체와 라이브러리들을 관리해주며, 톰캣과 같은 WAS 가 내장되어 있어 자바 웹 어플리케이션을 구동할 수 있습니다.
+- Spring은 경량 컨테이너로 자바 객체를 직접 Spring 안에서 관리합니다. 객체의 생성 및 소멸과 같은 생명 주기(Life cycle)을 관리하며, Spring 컨테이너에서 필요한 객체를 가져와 사용합니다.
+
 
 # Spring Boot
 - CoC: Convention over Configuration : 일일히 관련 라이브러리를 찾아 추가할 필요 없이 spring-boot-starter-web을 추가하면 관련 라이브러리를 받아온다.
