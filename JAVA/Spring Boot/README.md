@@ -10,3 +10,4 @@
 - 단독으로 실행이 가능한 JAR: WAR 파일로 패키징 해야하는 웹 프로젝트와 달리, 내장 Tomcat을 지원하기 때문에 JAR파일로 패키징 하여 웹 애플리케이션 실행 가능하다. 
 
  
+![](http://melonicedlatte.com/assets/images/2021_3Q/spring_architect.png)
