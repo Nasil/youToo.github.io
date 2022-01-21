@@ -1,3 +1,8 @@
+- thymeleaf 공식 사이트: https://www.thymeleaf.org/
+- 스프링 공식 튜토리얼: https://spring.io/guides/gs/serving-web-content/
+- 스프링부트 메뉴얼: https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-developing-web-applications.html#boot-features-spring-mvc-template-engines
+
+
 # Spring Framework 
 - 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크. 
 - EJB(Enterprise Java Beans:시스템 구현을 위한 서버측 컴포넌트 모델) 컨테이너 사용으로 인한 개발 생선성과 유지 보수성 저하와 테스트와 배포의 어려움을 해결하기 위해 개발되었다. 
