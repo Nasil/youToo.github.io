@@ -42,3 +42,10 @@ Run tests using: Gradle IntelliJ IDEA
 
 ## 실행
 - 확인(`http://localhost:8080')
+
+## 포트변경
+application.yml
+```
+server:
+  port: 8088
+```
