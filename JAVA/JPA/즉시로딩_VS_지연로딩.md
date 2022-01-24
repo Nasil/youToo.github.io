@@ -9,3 +9,7 @@
 - 즉시 로딩은 JPQL에서 N+1 문제를 일으킨다. 
 - @ManyToOne, @OneToOne은 기본이 즉시 로딩 -> LAZY로 설정
 - @OneToMany, @ManyToMany는 기본이 지연 로딩
+
+
+## 전략
+- 연관된 엔티티를 함께 DB에서 조회해야 하면, fetch join 또는 엔티티 그래프 기능을 사용한다.
