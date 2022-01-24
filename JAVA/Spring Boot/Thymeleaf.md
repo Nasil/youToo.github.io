@@ -5,3 +5,41 @@
 boot-features-developing-web-applications.html#boot-features-spring-mvc-templateengines
 
 # 심플 예제
+- resources\templates\index.html
+```HTML
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+Hello
+<a href="/hello">hello</a>
+</body>
+</html>
+```
+- resources\templates\hello.html
+```HTML
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'안녕하세요! ' + ${data}" >안녕하세요. 손님</p>
+</body>
+</html>
+```
+- cont
+```java
+@Controller
+public class HelloController {
+    @GetMapping("hello")
+    public String hello(Model model) {
+        model.addAttribute("data", "hello!!");
+        return "hello"; // templates/hello.html
+    }
+}
+```
