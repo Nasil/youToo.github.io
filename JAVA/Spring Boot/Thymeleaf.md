@@ -32,7 +32,7 @@ Hello
 </body>
 </html>
 ```
-- cont
+- Controller
 ```java
 @Controller
 public class HelloController {
