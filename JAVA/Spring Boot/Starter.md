@@ -56,5 +56,7 @@ server:
 
 
 ## Gradlew 빌드 실행
+```
 ./gradlew clean build
 java ~.jar // 실행
+```
