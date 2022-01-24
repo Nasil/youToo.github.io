@@ -36,6 +36,9 @@ Run tests using: Gradle IntelliJ IDEA
 * 서버 중지: ls -arlth
 
 
+## 많이 쓰는 Dependencies
+- web, thymeleaf, jpa, h2, lombok, validation, devtools, log4j2
+- build.gradle 참조
 
 ## 실행
 - 확인(`http://localhost:8080')
