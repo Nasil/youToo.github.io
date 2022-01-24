@@ -53,3 +53,8 @@ server:
 ## 리컴파일 (서버 재시작 않하고 view 파일 변경)
 - spring-boot-devtools 라이브러리를 추가하면, html 파일을 컴파일만 해주면 서버 재시작 없이 View 파일 변경이 가능하다.
 - 인텔리J 컴파일 방법: 메뉴 build Recompile
+
+
+## Gradlew 빌드 실행
+./gradlew clean build
+java ~.jar // 실행
