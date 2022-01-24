@@ -65,6 +65,8 @@ class MemberRepositoryTest {
 
         //then
         assertEquals(member, memberRepository.find(savedId));
+        assertEquals(savedId, findMember.getId());
+        assertEquals(member, findMember); // 중요! 같음 영속성 컨텍스트이기 때문에 (1차캐시), select skip 함
     }
 }
 ```
