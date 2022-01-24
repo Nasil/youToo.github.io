@@ -34,3 +34,7 @@ Run tests using: Gradle IntelliJ IDEA
 5. cd libs -> ll -> {}.jar 파일 확인
 6. java -var {}.jar 로 자바 실행
 * 서버 중지: ls -arlth
+
+
+## 많이 쓰는 Dependencies
+- web, thymeleaf, jpa, h2, lombok, validation, devtools
