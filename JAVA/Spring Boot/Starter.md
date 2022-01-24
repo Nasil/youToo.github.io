@@ -38,3 +38,4 @@ Run tests using: Gradle IntelliJ IDEA
 
 ## 많이 쓰는 Dependencies
 - web, thymeleaf, jpa, h2, lombok, validation, devtools
+- build.gradle 참조
