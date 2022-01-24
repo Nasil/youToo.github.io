@@ -1,6 +1,18 @@
 ## intellij tdd 설정 방법
 https://velog.io/@max9106/IntelliJ-Live-Template
 
+- Live Template
+```java
+@Test
+public void $methodName$() throws Exception { 
+    //given 
+    $END$ 
+    //when 
+     
+    //then 
+}
+```
+
 ## Gradle 
 ```
 dependencies {
