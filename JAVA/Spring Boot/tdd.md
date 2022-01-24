@@ -42,3 +42,28 @@ test {
 # intellij TDD 파일 생성 단축키
 - ctrl + shift + t
 
+# Junit5 예제
+```java
+@SpringBootTest
+@Transactional
+class MemberRepositoryTest {
+
+    @Autowired
+    MemberRepository memberRepository;
+
+
+    @Test
+    public void save() throws Exception {
+        //given
+        Member member = new Member();
+        member.setName("memberA");
+
+        //when
+        Long savedId = memberRepository.save(member);
+        Member findMember = memberRepository.find(savedId);
+
+        //then
+        assertEquals(member, memberRepository.find(savedId));
+    }
+}
+```
