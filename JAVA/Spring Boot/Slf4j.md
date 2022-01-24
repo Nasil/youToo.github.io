@@ -19,5 +19,8 @@ public class TestController {
 }
 ```
 
-## Logback
-https://livenow14.tistory.com/64
+## Slf4j 란?
+
+
+## 로그라이브러리 : Logback vs Log4j
+
