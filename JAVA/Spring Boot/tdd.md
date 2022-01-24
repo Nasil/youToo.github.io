@@ -53,6 +53,7 @@ class MemberRepositoryTest {
 
 
     @Test
+    @Rollback(false) // 직접 실행
     public void save() throws Exception {
         //given
         Member member = new Member();
