@@ -1,5 +1,7 @@
 # DI(Dependency Injection)이란? 
-- Inversion of Control 이라고도 하는 의존 관계 주입(Dependency Injection)이라고도 하며, 
+- DI(Dependency Injection)란 스프링이 다른 프레임워크와 차별화되어 제공하는 의존 관계 주입 기능으로, 객체를 직접 생성하는 게 아니라 외부에서 생성한 후 주입 시켜주는 방식이다.
+- Inversion of Control 이라고도 하는 의존 관계 주입(Dependency Injection)
+- DI(의존성 주입)를 통해서 모듈 간의 결합도가 낮아지고 유연성이 높아진다.
 - 어떤 객체가 사용하는 의존 객체를 직접 만들어 사용하는게 아니라, 주입 받아 사용하는 방법이다. (new 연산자를 이용해서 객체를 생성하는 것이라고 생각하면 된다)
 
 # 스프링 IoC 컨테이너란?
