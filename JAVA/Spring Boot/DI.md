@@ -82,7 +82,7 @@ public class SampleController {
 - 단일 생성자에 한해 @Autowired를 붙이지 않아도 된다.
 - null을 주입하지 않는 한 NullPointerException 은 발생하지 않는다.
 - final 을 사용할 수 있다. final의 장점은 객체가 불변하도록 할 수 있는 점으로, 누군가가 Controller 내부에서 Service 객체를 바꿔치기 할 수 없다는 점이다.
-- 환 의존성을 알 수 있다.
+- 순환 의존성을 알 수 있다.
 
 
 
