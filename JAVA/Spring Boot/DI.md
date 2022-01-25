@@ -7,6 +7,16 @@
 - 애플리케이션 컴포넌트의 중앙 저장소이다.
 - 빈 설정 소스로 부터 빈 정의를 읽어들이고, 빈을 구성하고 제공한다.
 - 빈들의 의존 관계를 설정해준다.(객체의 생성을 책임지고, 의존성을 관리한다)
+### BeanFactory
+- 스프링 빈 컨테이너에 접근하기 위한 최상위 인터페이스이다.
+- Bean 객체를 생성하고 관리하는 인터페이스이다. 디자인패턴의 일종인 팩토리 패턴을 구현한 것이다. BeanFactory 컨테이너는 구동될 때 Bean 객체를 생성하는 것이 아니라. 클라이언트의 요청이 있을 때(getBean()) 객체를 생성한다.
+
+### ApplicationContext
+- ListableBeanFactory(BeanFactory에 하위 인터페이스이며, Bean을 Listable하게 보관하는 인터페이스를 말한다. 대표적으로 DefaultListableBeanFactory 클래스)를 상속하고 있으며,
+- 여러 기능(ResourceLoader, ApplicationEventPublisher, MessageSource, Bean Lifecycle)을 추가로 제공한다.
+- BeanFactory를 상속받은 interface이며, ApplicationContext 컨테이너는 구동되는 시점에 등록된 Bean 객체들을 스캔하여 객체화한다
+
+ 
  
 
 # 강한 결합 vs 느슨한 결합
