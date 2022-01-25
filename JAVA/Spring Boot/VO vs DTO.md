@@ -14,6 +14,7 @@
 @Entity
 @Getter
 //@Setter // VO 나 ENTITY 클래스에서는 setter 지양
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 생성자 제약 (생성자로 생성하지 않고 createOrderItem 로 생성하도록 제약)
 public class OrderItem {
 
     @Id
