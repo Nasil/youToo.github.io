@@ -57,12 +57,32 @@ public class SampleController {
 - 주입이 필요한 객체가 주입이 되지 않아도 얼마든지 객체를 생성할 수 있다는 것이 문제다.
 
 ### Constructor Injection
+```
+@Component
+public class SampleService {
+    private SampleDAO sampleDAO;
+ 
+    @Autowired
+    public SampleService(SampleDAO sampleDAO) {
+        this.sampleDAO = sampleDAO;
+    }
+}
 
+@Component
+public class SampleController {
 
-### @Autowired
-- BookService와 BookRepository가 둘다 Bean으로 등록되어 있을 때 
-- BookService의 생성자만 만들어주면 스프링 IoC 컨테이너가 BookRepository에 의존성 주입을 알아서 해준다.
-- 스프링 4.3 이후부터는 단일 생성자인 경우는 @Autowired를 사용하지 않아도 된다
+	private final SampleService sampleService = new SampleService(new SampleDAO());
+    
+	...
+}
+```
+- Spring Framework Reference에서 권장하는 방법은 생성자를 통한 주입이다.
+- 생성자를 사용하는 방법이 좋은 이유는 필수적으로 사용해야하는 의존성 없이는 Instance를 만들지 못하도록 강제할 수 있기 때문이다.
+- Spring 4.3버전부터는 Class를 완벽하게 DI Framework로부터 분리할 수 있다.
+- 단일 생성자에 한해 @Autowired를 붙이지 않아도 된다.
+- null을 주입하지 않는 한 NullPointerException 은 발생하지 않는다.
+- final 을 사용할 수 있다. final의 장점은 객체가 불변하도록 할 수 있는 점으로, 누군가가 Controller 내부에서 Service 객체를 바꿔치기 할 수 없다는 점이다.
+- 환 의존성을 알 수 있다.
 
 
 
