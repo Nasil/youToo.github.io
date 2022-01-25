@@ -56,9 +56,26 @@ public class OrderItem {
     }
 }
 ```
+# DTO(Data Transfer Object)
+-       전송되는 데이터의 컨테이너이다.
 
+-       VO와 동일하게 데이터를 저장하여 사용하도록 하는 부분에서 필요하다.
+
+-       VO와 비교를 하여 보면 DTO는 같은 시스템에서 사용되는 것이 아닌 다른 시스템으로 전달하는 작업을 처리하는 객체이다.
+
+-       Layer간의 통신 용도로 오가는 객체를 말하기도 한다.
+
+-       현재의 개발 환경에서 보통 데이터는 다음과 같이 흐름으로 이동한다.
+
+n   서버 측 : Database Column Data -> DTO -> API(JSON or XML) -> Client
+
+n   클라이언트 측 : Server -> API(JSON or XML) -> DTO -> View or Local Database System
+
+
+
+출처: https://ijbgo.tistory.com/9 [한량 개발자]
 
 
 참조)
--https://limdingdong.tistory.com/15
--https://ijbgo.tistory.com/9
+- https://limdingdong.tistory.com/15
+- https://ijbgo.tistory.com/9
