@@ -21,13 +21,45 @@
 - BeanFactory를 상속받은 interface이며, ApplicationContext 컨테이너는 구동되는 시점에 등록된 Bean 객체들을 스캔하여 객체화한다
 
  
- 
-
 # 강한 결합 vs 느슨한 결합
+- 객체 내부에서 다른 객체를 생성하는 것은 강한 결합도를 가지는 구조이다. A 클래스 내부에서 B 라는 객체를 직접 생성하고 있다면, B 객체를 C 객체로 바꾸고 싶은 경우에 A 클래스도 수정해야 하는 방식이기 때문에 강한 결합이다.
+- 객체를 주입 받는다는 것은 외부에서 생성된 객체를 인터페이스를 통해서 넘겨받는 것이다. 이렇게 하면 결합도를 낮출 수 있고, 런타임시에 의존관계가 결정되기 때문에 유연한 구조를 가진다.
+- SOLID 원칙에서 O 에 해당하는 Open Closed Principle 을 지키기 위해서 디자인 패턴 중 전략 패턴을 사용하게 되는데, 생성자 주입을 사용하게 되면 전략 패턴을 사용하게 된다.
+
+# 의존성 주입 종류
+- 의존성 주입의 종류로는 Field Injection, Setter Injection, Constructor Injection 방법이 있다.
+
+### Field Injection
+```java
+@Component
+public class SampleController {
+    @Autowired
+    private SampleService sampleService;
+}
+```
+- Field Injection은 읽기 쉽고, 사용하기 편하다는 것 말고는 장점이 없다.
+
+### Setter Injection
+```
+@Component
+public class SampleController {
+    private SampleService sampleService;
+ 
+    @Autowired
+    public void setSampleService(SampleService sampleService) {
+        this.sampleService = sampleService;
+    }
+}
+```
+- Setter Injection으로 의존관계 주입은 런타임시에 할 수 있도록 낮은 결합도를 가지게 구현되었다.
+- 하지만 Setter Injection을 통해서 Service의 구현체를 주입해주지 않아도 Controller 객체는 생성이 가능하다.
+- Controller 객체가 생성가능하다는 것은 내부에 있는 Service의 method 호출이 가능하다는 것인데, set을 통해 Service의 구현체를 주입해주지 않았으므로, NullPointerException 이 발생한다.
+- 주입이 필요한 객체가 주입이 되지 않아도 얼마든지 객체를 생성할 수 있다는 것이 문제다.
+
+### Constructor Injection
 
 
-# 
-
+### @Autowired
 - BookService와 BookRepository가 둘다 Bean으로 등록되어 있을 때 
 - BookService의 생성자만 만들어주면 스프링 IoC 컨테이너가 BookRepository에 의존성 주입을 알아서 해준다.
 - 스프링 4.3 이후부터는 단일 생성자인 경우는 @Autowired를 사용하지 않아도 된다
