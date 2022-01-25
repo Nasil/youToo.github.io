@@ -26,7 +26,8 @@
 - 셋팅
     - 이클립스 keymap
     - tdd live template
-    - 단축키: ctrl+f(console find), alt+insert(생성자,override 등 함수 자동 생성), ctrl+shift+t (find text class), alt+shift+m (extract class)
+    - 단축키: ctrl+f(console find), alt+insert(생성자,override 등 함수 자동 생성), ctrl+shift+t (find text class), alt+shift+m (extract class), ctrl+p (set function value)
 
 ### Spring boot
 - https://start.spring.io/ 설정후 GNERATE
+- https://github.com/Nasil/youToo.github.io/blob/master/JAVA/Spring%20Boot/Starter.md
