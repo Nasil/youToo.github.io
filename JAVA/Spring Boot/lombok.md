@@ -13,3 +13,11 @@
 - @ToString(exclude = "password")
 - @EqualsAndHashCode(callSuper = true) =  equals와 hashCode
 - @Data = @Getter, @Setter, @RequiredArgsConstructor, @ToString, @EqualsAndHashCode
+
+
+## protected 기본 생성자
+```
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+
+protected OrderItem() {    } // 같은 
+```
