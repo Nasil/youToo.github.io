@@ -40,7 +40,7 @@ public class SampleController {
 - Field Injection은 읽기 쉽고, 사용하기 편하다는 것 말고는 장점이 없다.
 
 ### Setter Injection
-```
+```java
 @Component
 public class SampleController {
     private SampleService sampleService;
@@ -57,7 +57,7 @@ public class SampleController {
 - 주입이 필요한 객체가 주입이 되지 않아도 얼마든지 객체를 생성할 수 있다는 것이 문제다.
 
 ### Constructor Injection
-```
+```java
 @Component
 public class SampleService {
     private SampleDAO sampleDAO;
