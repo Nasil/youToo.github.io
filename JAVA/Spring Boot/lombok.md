@@ -19,5 +19,5 @@
 ```
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 
-protected OrderItem() {    } // 같은 
+protected OrderItem() {    } // 같은 내용 
 ```
