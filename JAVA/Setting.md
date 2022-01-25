@@ -23,6 +23,10 @@
 - Intellij : https://www.jetbrains.com/idea/download/#section=windows (Community 버전으로 다운로드)
 - Spring boot 내장 톰켓을 사용할 경우 : Community 버전으로 사용
 - Spring boot 외장 톰켓을 사용할 경우 : Ultimate 버전으로 사용 (비쌈)
+- 셋팅
+    - 이클립스 keymap
+    - tdd live template
+    - 단축키: ctrl+f(console find), alt+insert(생성자,override 등 함수 자동 생성), ctrl+shift+t (find text class)
 
 ### Spring boot
 - https://start.spring.io/ 설정후 GNERATE
