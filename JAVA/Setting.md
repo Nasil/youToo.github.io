@@ -24,7 +24,6 @@
 - Spring boot 내장 톰켓을 사용할 경우 : Community 버전으로 사용
 - Spring boot 외장 톰켓을 사용할 경우 : Ultimate 버전으로 사용 (비쌈)
 - 셋팅
-    - 이클립스 keymap
     - tdd live template
     - 단축키: ctrl+f(console find), alt+insert(생성자,override 등 함수 자동 생성), ctrl+shift+t (find text class), alt+shift+m (extract class), ctrl+p (set function value)
 
