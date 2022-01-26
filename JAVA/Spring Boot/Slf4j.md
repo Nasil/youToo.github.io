@@ -22,5 +22,5 @@ public class TestController {
 ## Slf4j 란?
 
 
-## 로그라이브러리 : Logback vs Log4j
+## 로그라이브러리 : Log4j vs Logback vs Log4j2
 
