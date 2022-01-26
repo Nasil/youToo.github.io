@@ -5,6 +5,7 @@
 - 기본 생성자 필수(파라미터가 없는 public 또는 protected 생성자) 
 - final 클래스, enum, interface, inner 클래스 사용X 
 - 저장할 필드에 final 사용 X
+- 외부에 제공하는 API에는 그대로 노출 하지 x 
 
 ## @Table 
 - ibernate.hbm2ddl.auto 기능을 쓰면 스키마 자동 생성 (DDL 가능) // 개발 로컬서버에서만 사용할 것을 권장
