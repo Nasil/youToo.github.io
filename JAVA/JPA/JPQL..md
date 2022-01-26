@@ -84,14 +84,3 @@ select o.member from Order o; // sql : select m.* from Orders o inner join Membe
 ### 타입
 - ENUM: jpabook.MemberType.Admin (패키지명 포함) 
 
-## QueryDSL 
-- 오픈소스
-```
-JPAFactoryQuery query = new JPAQueryFactory(em);
-QMember m = QMember.member; 
-List<Member> list = 
-  query.selectFrom(m)
- .where(m.age.gt(18)) 
- .orderBy(m.name.desc())
- .fetch();
-```
