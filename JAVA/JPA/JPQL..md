@@ -1,6 +1,6 @@
 ## JPQL
 
-```
+```java
 TypedQuery<Member> query =  em.createQuery("SELECT m FROM Member m", Member.class); // 반환 타입이 명확할 때 사용
 
 Member result = query.query.getResultList(); // 결과가 하나 이상일 때 리스트 반환, 결과가 없으면 빈 리스트 반환
@@ -10,7 +10,7 @@ Query query = em.createQuery("SELECT m.username, m.age from Member m"); // 반�
 ```
 
 ### Select
-```
+```java
 // SELECT m FROM Member m -> 엔티티 프로젝션
 Lint<Member> result = em.createQuery("select m from Member m", Member.class).getResultList();
 
