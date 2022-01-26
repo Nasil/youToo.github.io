@@ -1,6 +1,6 @@
 ## QueryDSL 
 - 오픈소스
-```
+```java
 JPAFactoryQuery query = new JPAQueryFactory(em);
 QMember m = QMember.member; 
 List<Member> list = 
