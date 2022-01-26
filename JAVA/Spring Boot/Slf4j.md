@@ -32,4 +32,6 @@ public class TestController {
 - log4j2 전에 개발된 로깅프로그램으로 log4j에서 향상된 성능과 필터링 옵션을 제공합니다. 
 - slf4j도 지원합니다. 그리고 자동 리로드도 가능합니다.
 -  자동 리로드 : Linux 서버 내에서 log4j를 사용할 시 log level을 변경하게 되면, 서버를 재가동하여 변경 사항을 적용해줘야 하는 반면에 logback은 서버를 재가동할 필요 없이 즉각 자동 리로드를 지원해줍니다.
+-  spring boot 환경의 경우 spring-boot-starter-web > spring-boot-starter-logging에 기본적으로 logback 구현체가 포함되어 있습니다. 그렇기 때문에 spring boot 환경에서 로깅 프레임워크를 따로 설정하지 않으면 logback이 기본으로 적용됩니다.
+
 ### Log4j2
