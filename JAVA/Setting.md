@@ -25,7 +25,7 @@
 - Spring boot 외장 톰켓을 사용할 경우 : Ultimate 버전으로 사용 (비쌈)
 - 셋팅
     - tdd live template https://github.com/Nasil/youToo.github.io/blob/master/JAVA/Spring%20Boot/tdd.md
-    - 단축키: alt+insert(생성자,override 등 함수 자동 생성), ctrl+shift+t (find test class), alt+shift+m (extract class), ctrl+alt+p (set function value)
+    - 단축키: alt+insert(생성자,override 등 함수 자동 생성), ctrl+shift+t (find test class), ctrl+alt+m (extract class), ctrl+alt+p (set function value)
 
 ### Spring boot
 - https://github.com/Nasil/youToo.github.io/blob/master/JAVA/Spring%20Boot/Starter.md
