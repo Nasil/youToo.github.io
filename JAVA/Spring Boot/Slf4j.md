@@ -20,7 +20,8 @@ public class TestController {
 ```
 
 # Slf4j 란?
-- Logger 추상체로 slf4j는 logback이나 log4j2와 같은 프레임워크의 인터페이스의 역할을 해주기 때문에  로깅 구현체가 바뀌더라도 생각보다 어렵지않게 변경할 수 있습니다. 기능이 너무 단순하여 실제로는 사용할 필요가 없긴합니다. 
+- slf4j는 로깅에 대한 추상 레이어로 logback, log4j2 같은 로깅 프레임워크의 인터페이스 역할을 하며, slf4j를 이용하면 코드를 일정하게 유지하면서 구현체의 전환 (다른 프레임워크로의 전환)을 쉽고 간단하게 할 수 있습니다.
+- logback, log4j2는 slf4j의 구현체
 
 # 로그라이브러리 : Log4j vs Logback vs Log4j2
 
