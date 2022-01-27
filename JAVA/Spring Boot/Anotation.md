@@ -1,5 +1,5 @@
 
-# Componenet
+# Class annotation
 - @Repository
 - @Component
 - @Service
@@ -9,7 +9,7 @@
     - @Bean
     - @ConfigurationProperties
     
-@CompoenetScan 을 통해 ApplicationContext 를 적재
+
 
 
 ### @Controller
