@@ -10,3 +10,5 @@
     - @ConfigurationProperties
     
 
+# Method annotation
+- @PostConstruct
