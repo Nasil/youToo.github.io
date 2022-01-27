@@ -37,7 +37,6 @@ public String orderList(@ModelAttribute("orderSearch") OrderSearch orderSearch, 
 ```
 - 클라이언트가 전송하는 multipart/form-data 형태의 HTTP Body 내용과 HTTP 파라미터의 값들을 생성자나 Setter를 통해 주입하기 위해 사용
 - @ModelAttribute에는 매핑시키는 파라미터의 타입이 객체의 타입과 일치하는지를 포함한 다양한 검증(Validiation) 작업이 추가적으로 진행 됨
-- 
 
 ### @PathVariable
 ```java
