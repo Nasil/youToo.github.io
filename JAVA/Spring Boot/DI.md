@@ -91,6 +91,7 @@ public class MemberApiController {
 
 ```
 - final의 장점은 객체가 불변하도록 할 수 있는 점으로, 누군가가 Controller 내부에서 Service 객체를 바꿔치기 할 수 없다는 점이다.
-- RequiredArgsConstructor 이렇게 하면 final 에 대한 단일 생성자를 생성하게 되고 autowired 는 생략 할수 있으므로 소스가 간결해짐
+- RequiredArgsConstructor 를 하면 해당 클래스의 리포지토리(repository)는 빈으로 등록이 가능한 존재이므로, @Autowired 어노테이션 없이 의존성 주입이 이루어지게 되어 생.
+- RequiredArgsConstructor : 초기화 되지않은 final 필드나, @NonNull 이 붙은 필드에 대해 생성자를 생성해줌 (한생성자에 해당 변수 모두 몰아서)
 
 참조 : https://velog.io/@gillog/Spring-DIDependency-Injection
