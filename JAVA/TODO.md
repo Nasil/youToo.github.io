@@ -1,5 +1,6 @@
 - exception
 - Junit5
+- @CompoenetScan 을 통해 ApplicationContext 를 적재
 - java <T> class
 ```java
 @GetMapping("/v2/members")
