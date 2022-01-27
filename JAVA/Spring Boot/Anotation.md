@@ -4,6 +4,7 @@
 - @Repository
 - @Component
 - @Service
+- @Data
 - @Controller & @RestController
 - @Configuration
     - @Bean
