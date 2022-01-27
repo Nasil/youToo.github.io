@@ -81,9 +81,16 @@ public class SampleController {
 - Spring 4.3버전부터는 Class를 완벽하게 DI Framework로부터 분리할 수 있다.
 - 단일 생성자에 한해 @Autowired를 붙이지 않아도 된다.
 - null을 주입하지 않는 한 NullPointerException 은 발생하지 않는다.
-- final 을 사용할 수 있다. final의 장점은 객체가 불변하도록 할 수 있는 점으로, 누군가가 Controller 내부에서 Service 객체를 바꿔치기 할 수 없다는 점이다.
 - 순환 의존성을 알 수 있다.
 
+```java
+@RequiredArgsConstructor
+public class MemberApiController {
 
+    private final MemberService memberService;
+
+```
+- final의 장점은 객체가 불변하도록 할 수 있는 점으로, 누군가가 Controller 내부에서 Service 객체를 바꿔치기 할 수 없다는 점이다.
+- RequiredArgsConstructor 이렇게 하면 final 에 대한 단일 생성자를 생성하게 되고 autowired 는 생략 할수 있으므로 소스가 간결해짐
 
 참조 : https://velog.io/@gillog/Spring-DIDependency-Injection
