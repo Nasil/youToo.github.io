@@ -12,3 +12,4 @@
 
 # Method annotation
 - @PostConstruct
+- @PreDestroy
