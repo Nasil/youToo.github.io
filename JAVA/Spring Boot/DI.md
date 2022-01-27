@@ -91,7 +91,7 @@ public class MemberApiController {
 
 ```
 - final의 장점은 객체가 불변하도록 할 수 있는 점으로, 누군가가 Controller 내부에서 Service 객체를 바꿔치기 할 수 없다는 점이다.
-- RequiredArgsConstructor 를 하면 해당 클래스의 리포지토리(repository)는 빈으로 등록이 가능한 존재이므로, @Autowired 어노테이션 없이 의존성 주입이 이루어지게 되어 생.
+- 어떠한 빈(Bean)에 생성자가 오직 하나만 있고, 생성자의 파라미터 타입이 빈으로 등록 가능한 존재라면 이 빈은 @Autowired 어노테이션 없이도 의존성 주입이 가능하기 때문에 위와 같이 소스가 간결해짐.
 - RequiredArgsConstructor : 초기화 되지않은 final 필드나, @NonNull 이 붙은 필드에 대해 생성자를 생성해줌 (한생성자에 해당 변수 모두 몰아서)
 
 참조 : https://velog.io/@gillog/Spring-DIDependency-Injection
