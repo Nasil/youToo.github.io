@@ -12,10 +12,9 @@ public String order(@RequestParam("memberId") Long memberId,
     return "redirect:/orders";
 }
 ```
-- 필수여부 true 이기 때문에 기본적으로 반드시 해당 파라미터가 전송이 되어야 한다.
-- 해당 파라미터가 전송이 되지 않으면 400 Error 발생됨 
-- 중요한 변수가 아니라면 required 값을 false 로 설정 할수 있음
-- 해당 파라미터가 없을 경우 default value 옵션 설정 할수 있음
+- 1개의 HTTP 파라미터를 얻기 위해 사용됨
+- 필수여부 true 이기 때문에 기본적으로 반드시 해당 파라미터가 전송이 되어야 한다. 해당 파라미터가 전송이 되지 않으면 400 Error 발생됨 
+- 중요한 변수가 아니라면 required 값을 false 로 설정 할수 있음. 해당 파라미터가 없을 경우 default value 옵션 설정 할수 있음
 
 ### @RequestBody
 - JSON 형태의 HTTP Body 내용을 java object로 변환 해줌
