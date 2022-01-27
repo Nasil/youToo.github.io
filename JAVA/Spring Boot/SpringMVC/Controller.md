@@ -6,6 +6,13 @@
 
 ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2BnED%2Fbtqybg36Dak%2F3HgL3gUKHBSOmyeM4hIn00%2Fimg.png)
 
-출처: https://mangkyu.tistory.com/49 [MangKyu's Diary]
+
 ### @RestController = @Controller + @ResponseBody
-https://mangkyu.tistory.com/49
+1. Client는 URI 형식으로 웹 서비스에 요청을 보낸다.
+2. Mapping되는 Handler와 그 Type을 찾는 DispatcherServlet이 요청을 인터셉트한다.
+3. RestController는 해당 요청을 처리하고 데이터를 반환한다.
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F7bceC%2Fbtqx8K6BbxE%2FLVs4KK74mUj9CZ70uHTsjK%2Fimg.png)
+
+
+출처: https://mangkyu.tistory.com/49 [MangKyu's Diary]
