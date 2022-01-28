@@ -37,19 +37,19 @@ public class OrderSimpleApiController {
 
     /**
      * V1. 엔티티 직접 노출
-     * - Hibernate5Module 모듈 등록, LAZY=null 처리
-     * - 양방향 관계 문제 발생 -> @JsonIgnore
      */
     @GetMapping("/v1/simple-orders")
     public List<Order> orderV1() {
 
-        //문제1) Members 에도 Orders 에도 서로 있어서 무한루프 걸림
+        //문제1) json 리턴하면서 리턴 데이터를 조회하는데 Members 에도 Orders 에도 서로 있어서 무한루프 걸림
         //해결1) JsonIgnore 해줘야함
+        / 엔티티를 직접 노출할 때는 양방향 연관관계가 걸린 곳은 꼭! 한곳을 @JsonIgnore 처리 해야 한다. 안그러면 양쪽을 서로 호출하면서 무한 루프가 걸린다.
 
         //문제2) 에러남
-        //order member 와 order address 는 지연 로딩이다. 따라서 실제 엔티티 대신에 프록시(ByteBuddy) 존재
-        //jackson 라이브러리는 기본적으로 이 프록시 객체를 json으로 어떻게 생성해야 하는지 모름 예외 발생
+        //order member 와 order address 는 지연 로딩이다. 따라서 실제 엔티티 대신에 프록시(ByteBuddy) 존재.
+        //jackson 라이브러리는 기본적으로 이 프록시 객체를 json으로 어떻게 생성해야 하는지 모름 예외 발생.
         //해결2) Hibernate5Module 을 스프링 빈으로 등록하면 해결(스프링 부트 사용중)
+        //참고) 앞에서 계속 강조했듯이 정말 간단한 애플리케이션이 아니면 엔티티를 API 응답으로 외부로 노출하는 것은 좋지 않다. 따라서 Hibernate5Module 를 사용하기 보다는 DTO로 변환해서 반환하는 것이 더 좋은 방법이다
 
         List<Order> all = orderRepository.findAll(new OrderSearch());
 
@@ -58,11 +58,6 @@ public class OrderSimpleApiController {
             order.getMember().getName(); //Lazy 강제 초기화
             order.getDelivery().getAddress(); //Lazy 강제 초기화
         }
-
-        //주의: 엔티티를 직접 노출할 때는 양방향 연관관계가 걸린 곳은 꼭! 한곳을 @JsonIgnore 처리 해야 한다. 안그러면 양쪽을 서로 호출하면서 무한 루프가 걸린다.
-
-        //참고: 앞에서 계속 강조했듯이 정말 간단한 애플리케이션이 아니면 엔티티를 API 응답으로 외부로 노출하는 것은 좋지 않다.
-        // 따라서 Hibernate5Module 를 사용하기 보다는 DTO로 변환해서 반환하는 것이 더 좋은 방법이다
 
         //주의: 지연 로딩(LAZY)을 피하기 위해 즉시 로딩(EARGR)으로 설정하면 안된다!
         //즉시 로딩 때문에 연관관계가 필요 없는 경우에도 데이터를 항상 조회해서 성능 문제가 발생할 수 있다. 즉시 로딩으로 설정하면 성능 튜닝이 매우 어려워 진다.
