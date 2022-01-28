@@ -135,7 +135,7 @@ public class OrderSimpleApiController {
     }
 }
 ```
-```
+```java
 @Repository
 @RequiredArgsConstructor
 public class OrderQueryRepository {
