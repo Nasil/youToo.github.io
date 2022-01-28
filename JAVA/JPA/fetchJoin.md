@@ -135,3 +135,22 @@ public class OrderSimpleApiController {
     }
 }
 ```
+```
+@Repository
+@RequiredArgsConstructor
+public class OrderQueryRepository {
+
+    private final EntityManager em;
+
+    /**
+     * 1:N 관계(컬렉션)를 제외한 나머지를 한번에 조회
+     */
+    public List<OrderQueryDto> findOrders() {
+        return em.createQuery( // API 스펙이 repository 로 들어와 있기 때문에 개인적으로 비추
+                "select new jpabook.jpashop.dto.OrderQueryDto(o.id, m.name, o.orderDate, o.status, d.address)" +
+                        " from Order o" +
+                        " join o.member m" +
+                        " join o.delivery d", OrderQueryDto.class).getResultList();
+    }
+}
+```
