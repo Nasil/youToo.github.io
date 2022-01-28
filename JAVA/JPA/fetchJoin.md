@@ -40,6 +40,7 @@ public List<Order> findAllWithItem() {
 @RequestMapping("/api")
 public class OrderSimpleApiController {
     private final OrderRepository orderRepository;
+    private final OrderQueryRepository orderQueryRepository;
 
     /**
      * V1. 엔티티 직접 노출
@@ -49,7 +50,7 @@ public class OrderSimpleApiController {
 
         //문제1) json 리턴하면서 리턴 데이터를 조회하는데 Members 에도 Orders 에도 서로 있어서 무한루프 걸림
         //해결1) JsonIgnore 해줘야함
-        / 엔티티를 직접 노출할 때는 양방향 연관관계가 걸린 곳은 꼭! 한곳을 @JsonIgnore 처리 해야 한다. 안그러면 양쪽을 서로 호출하면서 무한 루프가 걸린다.
+        //엔티티를 직접 노출할 때는 양방향 연관관계가 걸린 곳은 꼭 !한곳을 @JsonIgnore 처리 해야 한다.안그러면 양쪽을 서로 호출하면서 무한 루프가 걸린다.
 
         //문제2) 에러남
         //order member 와 order address 는 지연 로딩이다. 따라서 실제 엔티티 대신에 프록시(ByteBuddy) 존재.
@@ -101,6 +102,12 @@ public class OrderSimpleApiController {
                 .collect(Collectors.toList());
 
         return new ListResponse(collect);
+    }
+
+    @GetMapping("/v4/simple-orders") // v3 보다는 쫌더 성능이 좋으나 그렇게 차이가 많이나지는 않음
+    public List<OrderQueryDto> orderV4() {
+        // API 스펙이 repository 로 들어와 있기 때문에 개인적으로 비추
+        return orderQueryRepository.findOrders();
     }
 
     @Data
