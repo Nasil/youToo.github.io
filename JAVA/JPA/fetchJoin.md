@@ -99,7 +99,7 @@ public class OrderSimpleApiController {
                 .map(order -> new SimpleOrderDto(order))
                 .collect(Collectors.toList());
 
-        return result;
+        return new ListResponse(collect);
     }
 
     @Data
