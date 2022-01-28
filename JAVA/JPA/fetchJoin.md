@@ -106,7 +106,8 @@ public class OrderSimpleApiController {
 
     @GetMapping("/v4/simple-orders") // v3 보다는 쫌더 성능이 좋으나 그렇게 차이가 많이나지는 않음
     public List<OrderQueryDto> orderV4() {
-        // API 스펙이 repository 로 들어와 있기 때문에 개인적으로 비추
+        // API 스펙이 repository 로 들어와 있기 때문에 
+        // 기본 entity 조회하는 OrderRepository 와 구별해서 새로 class 생성해서 구성
         return orderQueryRepository.findOrders();
     }
 
