@@ -18,7 +18,7 @@ public List<Order> findAllWithItem() {
 
         // 페이징 불가능
         return em.createQuery(
-                "select distinct o from Order o" +
+                "select distinct o from Order o" + // db distinct 를 해도 order 가 중복되는 경우 JPA에서 중복 order에 대한 부분만 제거해줌
                         " join fetch o.member m" +
                         " join fetch o.delivery d" +
                         " join fetch o.orderItems oi" +
