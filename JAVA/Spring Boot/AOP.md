@@ -1,15 +1,9 @@
 
 # AOP (Aspect Oriented Programming)
 
-```java
+프록시 패턴
+- https://refactoring.guru/design-patterns/proxy
 
-```
-
-```java
-```
-
-```java
-```
 
 
 [reference](https://engkimbs.tistory.com/746)
