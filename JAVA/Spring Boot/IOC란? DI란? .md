@@ -28,7 +28,7 @@
 
 ### 컴포넌트 스캔(Component Scan) ?
 - @Component를 가진 모든 대상을 가져와서 빈에 등록하기 위해 찾는 과정 (빈 설정파일 + @Bean을 통해 빈을 하나하나 지정할 필요가 없음)
-https://velog.io/@neity16/Spring-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8-6-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%8A%A4%EC%BA%94Component-Scan-DI
+- [참고](https://velog.io/@neity16/Spring-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8-6-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%8A%A4%EC%BA%94Component-Scan-DI)
 
  
 # 강한 결합 vs 느슨한 결합
