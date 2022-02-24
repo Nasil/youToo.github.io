@@ -28,6 +28,11 @@ public class StringTest
 - 하지만 문자열이 계속 변하는 상황에서 concat() 메서드 혹은 "+"을 계속 이용하면 1. 새로운 문자열을 만드는 오버헤드, 2. 기존 문자열이 가비지 컬렉터에 의해 제거되는 오버헤드가 추가적으로 발생하여 비효율적이다.
 - 이럴 때는 StringBuilder와 StringBuffer를 사용할 수 있다.
 
+### String
+- 짧은 문자열을 더할 경우만 사용 
+### StringBuffer
 - StringBuffer는 StringBuilder와 다르게 멀티 쓰레드프로그래밍에서 동기화(Synchronization)가 보장된다.
+- 클래스에 static으로 선언한 문자열을 변경하거나, singleton으로 선언된 클래스에 선언되 문자열일 경우 사용 
+### StringBuilder
 - StringBuilder는 oracle 문서(https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)에서 따르면 대부분의 환경에서 StringBuffer보다 빠르기 때문에 멀티 쓰레드 환경이 아니라면 해당 클래스를 사용하는 것이 좋다.
 
