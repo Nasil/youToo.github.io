@@ -82,6 +82,28 @@ public class CollectorsJoiningDemo {
 }
 ```
 
+## String length
+```java
+private void stringLengthCheck() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("ABC");
+    sb.append("DEF");
+
+    stringLength(sb); // 6
+
+    StringBuffer sbf = new StringBuffer();
+    sbf.append("AB");
+    sbf.append("C");
+
+    stringLength(sbf); // 3
+}
+
+private void stringLength(CharSequence cs) { // toString 보다는 CharSequence로 처리하는게 메모리상 효율적임
+    StringBuffer sb = new StringBuffer(cs);
+    System.out.println(sb.length());
+}
+```
+
 ## String replace
 ```java
 String str = "test programming";
