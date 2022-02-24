@@ -92,8 +92,8 @@ private void stringLengthCheck() {
     stringLength(sb); // 6
 
     StringBuffer sbf = new StringBuffer();
-    sbf.append("AB");
-    sbf.append("C");
+    sbf.append("AB")
+    .append("C");
 
     stringLength(sbf); // 3
 }
