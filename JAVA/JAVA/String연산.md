@@ -75,6 +75,24 @@ if (upperStr.equalsIgnoreCase(lowerStr)) {
 }
 ```
 
+## String Joiner = implode
+```java
+public class StringJoinerDemo {
+    public static void main(String[] args){
+        String[] strArr = new String[] {"서울","부산","대구","전주"};
+        StringJoiner joiner = new StringJoiner(" ,");
+        for(String str: strArr)
+            joiner.add(str);
+        System.out.println(joiner);
+        
+        StringJoiner joiner2 = new StringJoiner(" ,","(",")"); //prefix, suffix 지정
+        for(String str: strArr)
+            joiner2.add(str);
+        System.out.println(joiner2);
+    }
+}
+```
+
 ## String 찾기
 ```java
 String str = "자바 프로그래밍";
