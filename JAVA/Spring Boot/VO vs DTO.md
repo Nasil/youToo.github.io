@@ -33,7 +33,7 @@ public class OrderItem {
     private int orderPrice; // 주문당시의 가격
     private int count; // 주문 수량
 
-    // 생성 메서드 (객체가 가진 정보는 꺼내서 다른 객체가 처리할 것이 아니라 '객체 스스로 처리')
+    // static 생성 메서드 (객체가 가진 정보는 꺼내서 다른 객체가 처리할 것이 아니라 '객체 스스로 처리')
     public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
         OrderItem orderItem = new OrderItem();
         orderItem.item = item;
