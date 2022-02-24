@@ -17,5 +17,12 @@ public class EmployeeTO implements Serializable {
     public void setEmpName(String empName) {
         this.empName = empName;
     }
+
+    @Override
+    public String toString() { // 데이터 전송용인 경우 필수로 만들어두는 것이 좋음
+        return "EmployeeTO{" +
+                "empName='" + empName + '\'' +
+                '}';
+    }
 }
 ```
