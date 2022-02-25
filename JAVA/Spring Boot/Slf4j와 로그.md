@@ -53,7 +53,7 @@ System.out.format("Name=%s long value=%d float value=%f\n", "Format", 1, 2.2); /
 try {
 
 } catch (Exception e) {
-    // e.printStackTrace(); // Exception 클래스 외에도 여러 로그 섞여 있고, 해당 정보를 모두 콘솔에 보여주는데 성능 저하 발생됨
+    // e.printStackTrace(); // Exception 클래스 외에도 여러 로그 섞여 있어 알아보기 힘들고, 해당 정보를 모두 콘솔에 보여주는데 성능 저하 발생됨
     StackTraceElement[] ste = e.getstackTrace();
     String className = ste[0].getClassName();
     String methodNamae = ste[0].getMethodName();
