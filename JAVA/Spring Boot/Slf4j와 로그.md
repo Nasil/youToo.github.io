@@ -43,3 +43,7 @@ public class TestController {
 
 ### 주의
 - System.out.println 은 사용 금지 : CPU 점유율이 높아 성능 저하 발생 시킴
+- System.out.format JDK 5.0 추가됨
+```java
+System.out.format("Name=%s long value=%d float value=%f\n", "Format", 1, 2.2); // C 프린트 방식과 비슷
+```
