@@ -43,7 +43,7 @@ public class TestController {
 
 ### 주의
 - System.out.println 은 사용 금지 : CPU 점유율이 높아 성능 저하 발생 시킴
-- System.out.format JDK 5.0 추가됨
+- System.out.format JDK 5.0 추가됨. prinln 보다 성능이 높으며 디버깅 시에 사용 권장. 단 운영시에는 사용 하지 말것.
 ```java
 System.out.format("Name=%s long value=%d float value=%f\n", "Format", 1, 2.2); // C 프린트 방식과 비슷
 ```
