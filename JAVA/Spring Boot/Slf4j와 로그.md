@@ -47,3 +47,18 @@ public class TestController {
 ```java
 System.out.format("Name=%s long value=%d float value=%f\n", "Format", 1, 2.2); // C 프린트 방식과 비슷
 ```
+
+## Exception Log
+```java
+try {
+
+} catch (Exception e) {
+    StackTraceElement[] ste = e.getstackTrace();
+    String className = ste[0].getClassName();
+    String methodNamae = ste[0].getMethodName();
+    int lineNumber = ste[0].getLineNumber();
+    String fileName = ste[0].getFileName();
+    logger.severe("Exception : " + e.getMessage());
+    logger.severe(className + "." + methodName + " " + fileName + " " + lineNumber + "line");
+}
+```
