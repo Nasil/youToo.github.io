@@ -39,3 +39,7 @@ public class TestController {
 - logback과의 가장 큰 차이점은 Multi Thread 환경에서 비동기 로거(Async Logger)의 경우 log4j, logback 보다 처리량이 더 높고, 대기 시간이 훨씬 짧습니다. 
 - 추가적으로 람다 표현식과 사용자 정의 로그 레벨도 지원합니다.
 - spring boot에서 log4j2를 사용하기 위해서는 dependency에서 logback을 제거해주는 작업이 필요합니다. 스프링 부트는 기본 설정으로 logback을 사용하기 때문에 log4j2 의존성을 추가하더라도 기본 설정으로 잡힌 logback이 동작하게 됩니다.
+
+
+### 주의
+- System.out.println 은 사용 금지 : CPU 점유율이 높아 성능 저하 발생 시킴
