@@ -26,6 +26,7 @@
 - 셋팅
     - tdd live template https://github.com/Nasil/youToo.github.io/blob/master/JAVA/Spring%20Boot/tdd.md
     - 단축키: alt+insert(생성자,override 등 함수 자동 생성), ctrl+shift+t (find test class), ctrl+alt+m (extract class), ctrl+alt+p (set function value)
+    - lombok: Prefrences > plugin > lombok 검색 실행 (재시작) / Prefrences > Annotation Processors 검색 > Enable annotation processing 체크 (재시작)
 ```
 Preferences > Build, Execution, Deployment > Build Tools > Gradle
 
