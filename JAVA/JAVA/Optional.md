@@ -61,4 +61,9 @@ System.out.println("length: " + length);
 ### 함수형 null 체크
 ```java
 int length = Optional.ofNullable(getText()).map(String::length).orElse(0);
+
+Optional<String> maybeCity = getAsOptional(cities, 3); // Optional
+maybeCity.ifPresent(city -> {
+	System.out.println("length: " + city.length());
+});
 ```
