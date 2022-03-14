@@ -15,7 +15,7 @@ Optional<Member> maybeNotMember = Optional.ofNullable(null);
 ```
 
 ### null 체크
-```
+```java
 String text = getText();
 Optional<String> maybeText = Optional.ofNullable(text);
 int length;
