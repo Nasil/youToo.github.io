@@ -26,6 +26,12 @@
 - 셋팅
     - tdd live template https://github.com/Nasil/youToo.github.io/blob/master/JAVA/Spring%20Boot/tdd.md
     - 단축키: alt+insert(생성자,override 등 함수 자동 생성), ctrl+shift+t (find test class), ctrl+alt+m (extract class), ctrl+alt+p (set function value)
+```
+Preferences > Build, Execution, Deployment > Build Tools > Gradle
+
+Build and run using: Gradle IntelliJ IDEA
+Run tests using: Gradle IntelliJ IDEA
+```
 
 ### Spring boot
 - https://github.com/Nasil/youToo.github.io/blob/master/JAVA/Spring%20Boot/Starter.md
