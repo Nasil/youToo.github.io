@@ -63,3 +63,6 @@ try {
     logger.severe(className + "." + methodName + " " + fileName + " " + lineNumber + "line");
 }
 ```
+
+### 참조
+- jpa 공부할때 사용하면 좋음 sql ? 에 뭐가 들어가는지 알수 있음 https://github.com/gavlyukovskiy/spring-boot-data-source-decorator
