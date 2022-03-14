@@ -14,16 +14,45 @@ Optional<Member> maybeMember = Optional.ofNullable(aMember);
 Optional<Member> maybeNotMember = Optional.ofNullable(null);
 ```
 
-### null 체크
+### null-safe한 코드
+```java
+Optional<String> maybeCity = Optional.ofNullable(cities.get(4)); // Optional
+int length = maybeCity.map(String::length).orElse(0); // null-safe
+System.out.println("length: " + length);
+```
 ```java
 String text = getText();
 Optional<String> maybeText = Optional.ofNullable(text);
 int length;
 if (maybeText.isPresent()) {
-	length = maybeText.get().length();
+    length = maybeText.get().length();
 } else {
-	length = 0;
+    length = 0;
 }
+```
+
+```java
+List<String> cities = Arrays.asList("Seoul", "Busan", "Daejeon");
+
+// 기존 전통 방식
+String city = null;
+try {
+	city = cities.get(3); // throws exception
+} catch (ArrayIndexOutOfBoundsException e) {
+	// ignore
+}
+int length = city == null ? 0 : city.length(); // null check
+System.out.println(length);
+
+String city = null;
+try {
+	city = cities.get(3); // throws exception
+} catch (ArrayIndexOutOfBoundsException e) {
+	// ignore
+}
+int length = city == null ? 0 : city.length(); // null check
+System.out.println(length);
+
 ```
 
 ### 함수형 null 체크
