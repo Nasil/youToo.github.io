@@ -37,21 +37,24 @@ List<String> cities = Arrays.asList("Seoul", "Busan", "Daejeon");
 // 기존 전통 방식
 String city = null;
 try {
-	city = cities.get(3); // throws exception
+    city = cities.get(3); // throws exception
 } catch (ArrayIndexOutOfBoundsException e) {
-	// ignore
+    // ignore
 }
 int length = city == null ? 0 : city.length(); // null check
 System.out.println(length);
 
-String city = null;
-try {
-	city = cities.get(3); // throws exception
-} catch (ArrayIndexOutOfBoundsException e) {
-	// ignore
+// Optional 사용
+public static <T> Optional<T> getAsOptional(List<T> list, int index) {
+    try {
+        return Optional.of(list.get(index));
+    } catch (ArrayIndexOutOfBoundsException e) {
+        return Optional.empty();
+    }
 }
-int length = city == null ? 0 : city.length(); // null check
-System.out.println(length);
+Optional<String> maybeCity = getAsOptional(cities, 3); // Optional
+int length = maybeCity.map(String::length).orElse(0); // null-safe
+System.out.println("length: " + length);
 
 ```
 
