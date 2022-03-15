@@ -11,7 +11,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 ```
 
 ### JPA NamedQuery
-- 필요하면 전략을 변경할 수 있지만 권장하지 않는다.
+
 - 참고: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-lookup-strategies
 ```java
 @Entity
@@ -22,3 +22,10 @@ public class Member {
 
 }
 ```
+- 필요하면 전략을 변경할 수 있지만 권장하지 않는다.
+```java
+// 메서드에 JPQL 쿼리 작성
+@Query("select m from Staff m where m.username= :username and m.age = :age")
+List<Staff> findUser(@Param("username") String username, @Param("age") int age);
+```
+- 위에 있는 방법을 추천
