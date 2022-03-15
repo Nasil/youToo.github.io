@@ -11,7 +11,8 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 ```
 
 ### JPA NamedQuery
-- 실무에서는 잘 안씀
+- 필요하면 전략을 변경할 수 있지만 권장하지 않는다.
+- 참고: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-lookup-strategies
 ```java
 @Entity
 @NamedQuery(
