@@ -26,7 +26,6 @@ public class Member {
 ### @Query, 리포지토리 메소드에 쿼리 정의하기
 ```java
 // 메서드에 JPQL 쿼리 작성
-// 
 @Query("select m from Staff m where m.username= :username and m.age = :age")
 List<Staff> findUser(@Param("username") String username, @Param("age") int age);
 ```
