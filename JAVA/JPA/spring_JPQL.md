@@ -1,6 +1,6 @@
 # 스프링 데이터 JPA
 
-## 메소드 이름으로 쿼리 생성
+### 메소드 이름으로 쿼리 생성
 - 너무 길어지는 경우 비추. 두개 and 조건 정도만
 ```java
 public interface MemberRepository extends JpaRepository<Member, Long> {
