@@ -12,14 +12,21 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
 ### JPA NamedQuery
 - 참고: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-lookup-strategies
+- 필요하면 전략을 변경할 수 있지만 권장하지 않는 방법
 ```java
-// 필요하면 전략을 변경할 수 있지만 권장하지 않는 방법
+// 선언부
 @Entity
 @NamedQuery(
   name="Member.findByUsername",
   query="select m from Member m where m.username = :username")
 public class Member {
 
+}
+
+// 호출부 (repository)
+public interface MemberRepository extends JpaRepository<Member, Long> { //** 여기 선언한 Member 도메인 클래스
+  // @Query(name = "Member.findByUsername") // 생략가능
+  List<Member> findByUsername(@Param("username") String username);
 }
 ```
 
