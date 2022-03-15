@@ -24,6 +24,15 @@ public class Member {
 }
 
 // 호출부 (repository)
+public class MemberRepository {
+  public List<Member> findByUsername(String username) {
+  List<Member> resultList = em.createNamedQuery("Member.findByUsername", Member.class)
+    .setParameter("username", username)
+    .getResultList();
+  }
+}
+
+// 스프링 데이터 JPA로 호출부 (repository)
 public interface MemberRepository extends JpaRepository<Member, Long> { //** 여기 선언한 Member 도메인 클래스
   // @Query(name = "Member.findByUsername") // 생략가능
   List<Member> findByUsername(@Param("username") String username);
