@@ -40,6 +40,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> { //** 여
 ```
 
 ## @Query, 리포지토리 메소드에 쿼리 정의하기
+- JPA Named 쿼리처럼 애플리케이션 실행 시점에 문법 오류를 발견할 수 있음(매우 큰 장점!)
 ```java
 // 메서드에 JPQL 쿼리 작성
 @Query("select m from Staff m where m.username= :username and m.age = :age")
