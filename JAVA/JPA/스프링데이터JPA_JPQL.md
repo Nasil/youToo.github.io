@@ -1,6 +1,6 @@
 # 스프링 데이터 JPA
 
-## 메소드 이름으로 쿼리 생성
+### 메소드 이름으로 쿼리 생성
 - 스프링 데이터 JPA 공식 문서 참고: (https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
 - 너무 길어지는 경우 비추. 두개 and 조건 정도만
 ```java
@@ -10,7 +10,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 }
 ```
 
-## JPA NamedQuery
+### JPA NamedQuery
 - 참고: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-lookup-strategies
 - 필요하면 전략을 변경할 수 있지만 권장하지 않는 방법
 ```java
@@ -39,7 +39,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> { //** 여
 }
 ```
 
-## @Query, 리포지토리 메소드에 쿼리 정의하기
+### @Query, 리포지토리 메소드에 쿼리 정의하기
 - JPA Named 쿼리처럼 애플리케이션 실행 시점에 문법 오류를 발견할 수 있음(매우 큰 장점!)
 ```java
 // 메서드에 JPQL 쿼리 작성
