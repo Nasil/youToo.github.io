@@ -46,4 +46,4 @@ public interface MemberRepository extends JpaRepository<Member, Long> { //** 여
 @Query("select m from Staff m where m.username= :username and m.age = :age")
 List<Staff> findUser(@Param("username") String username, @Param("age") int age);
 ```
-
+- 동적 쿼리는 queryDSL 사용 권장
