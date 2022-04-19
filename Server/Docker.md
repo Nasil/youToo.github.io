@@ -57,12 +57,15 @@ docker run --rm -p 1234:6379 redis
 docker run --rm -p 5555:5678 hashicorp/http-echo -text="hello world"
 // detached mode(백그라운드 모드)로 실행하기 위해 -d 옵션을 추가하고 -p 옵션을 추가하여 컨테이너 포트를 호스트의 포트로 연결하였습니다. 
 // 브라우저를 열고 localhost:5555 접속하면 메시지를 볼 수 있습니다
-
+```
+```
 docker run -d -p 3306:3306 \ 
  -e MYSQL_ALLOW_EMPTY_PASSWORD=true \ 
  --name mysql \ 
  mysql:5.7
-docker exec -it mysql mysql 
+ 
+docker exec -it mysql mysql // exec 명령어는 run 명령어와 달리 실행중인 도커 컨테이너에 접속할 때 사용하며 컨테이너 안에 ssh server등을 설치하지 않고 exec 명령어로 접속합니다
+
 create database wp CHARACTER SET utf8; 
 grant all privileges on wp.* to wp@'%' identified by 'wp'; 
 flush privileges; 
@@ -70,7 +73,6 @@ quit
 
 ```
 ```
-exec // exec 명령어는 run 명령어와 달리 실행중인 도커 컨테이너에 접속할 때 사용하며 컨테이너 안에 ssh server등을 설치하지 않고 exec 명령어로 접속합니다
 docker ps // 실행중인 컨테이너 목록을 확인하는 명령어 입니다
 docker ps -a // 중지된 컨테이너도 확인하려면 -a 옵션을 붙입니다
 docker stop [OPTIONS] CONTAINER [CONTAINER... // 실행중인 컨테이너를 하나 또는 여러개 (띄어쓰기) 중지
