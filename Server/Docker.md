@@ -78,5 +78,5 @@ docker ps -a // 중지된 컨테이너도 확인하려면 -a 옵션을 붙입니
 docker stop [OPTIONS] CONTAINER [CONTAINER... // 실행중인 컨테이너를 하나 또는 여러개 (띄어쓰기) 중지
 docker rm [OPTIONS] CONTAINER [CONTAINER... // 종료된 컨테이너를 완전히 제거하는 명령어
 docker logs [OPTIONS] CONTAINER // 로그보기 ex) docker logs -f b8b3eac725c6 // tail
-
+docker images [OPTIONS] [REPOSITORY[:TAG]] // 다운로드 받은 이미지 
 ```
