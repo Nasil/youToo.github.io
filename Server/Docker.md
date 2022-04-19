@@ -81,6 +81,17 @@ docker logs [OPTIONS] CONTAINER // 로그보기 ex) docker logs -f b8b3eac725c6 
 docker images [OPTIONS] [REPOSITORY[:TAG]] // 다운로드 받은 이미지 보기
 docker pull [OPTIONS] NAME[:TAG|@DIGEST] // 이미지 다운로드 하기
 docker rmi [OPTIONS] IMAGE [IMAGE...] // 이미지 삭제하기 (images 명령어를 통해 얻는 이미지 목록에서 이미지 ID를 입력. 컨테이너가 실행중인 이미지는 삭제 안됨)
+```
+```
+docker network create [OPTIONS] NETWORK // 도커 컨테이너끼리 이름으로 통신할 수 있는 가상 네트워크 ex) docker network create app-network
+docker network connect [OPTIONS] NETWORK CONTAINER // 기존에 생성된 컨테이너에 네트워크를 추가 ex) docker network connect app-network mysql
 
-
+docker run -d -p 8080:80 \ 
+ --network=app-network \ 
+ -e WORDPRESS_DB_HOST=mysql \ 
+ -e WORDPRESS_DB_NAME=wp \ 
+ -e WORDPRESS_DB_USER=wp \ 
+ -e WORDPRESS_DB_PASSWORD=wp \ 
+ wordpress
+워드프레스를 app-network에 속하게 하고 mysql을 이름으로 접근
 ```
