@@ -53,7 +53,7 @@ docker run --rm -it ubuntu:20.04 /bin/sh
 // --rm 옵션이 없다면 컨테이너가 종료되더라도 삭제되지 않고 남아 있어 수동으로 삭제 해야 합니다
 ```
 ```
-docker run --rm -p 5678:5678 hashicorp/http-echo -text="hello world"
+docker run --rm -p 5555:5678 hashicorp/http-echo -text="hello world"
 // detached mode(백그라운드 모드)로 실행하기 위해 -d 옵션을 추가하고 -p 옵션을 추가하여 컨테이너 포트를 호스트의 포트로 연결하였습니다. 
-// 브라우저를 열고 localhost:5678에 접속하면 메시지를 볼 수 있습니다
+// 브라우저를 열고 localhost:5555 접속하면 메시지를 볼 수 있습니다
 ```
