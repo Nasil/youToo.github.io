@@ -75,8 +75,12 @@ quit
 ```
 docker ps // 실행중인 컨테이너 목록을 확인하는 명령어 입니다
 docker ps -a // 중지된 컨테이너도 확인하려면 -a 옵션을 붙입니다
-docker stop [OPTIONS] CONTAINER [CONTAINER... // 실행중인 컨테이너를 하나 또는 여러개 (띄어쓰기) 중지
-docker rm [OPTIONS] CONTAINER [CONTAINER... // 종료된 컨테이너를 완전히 제거하는 명령어
+docker stop [OPTIONS] CONTAINER [CONTAINER...] // 실행중인 컨테이너를 하나 또는 여러개 (띄어쓰기) 중지
+docker rm [OPTIONS] CONTAINER [CONTAINER...] // 종료된 컨테이너를 완전히 제거하는 명령어
 docker logs [OPTIONS] CONTAINER // 로그보기 ex) docker logs -f b8b3eac725c6 // tail
-docker images [OPTIONS] [REPOSITORY[:TAG]] // 다운로드 받은 이미지 
+docker images [OPTIONS] [REPOSITORY[:TAG]] // 다운로드 받은 이미지 보기
+docker pull [OPTIONS] NAME[:TAG|@DIGEST] // 이미지 다운로드 하기
+docker rmi [OPTIONS] IMAGE [IMAGE...] // 이미지 삭제하기 (images 명령어를 통해 얻는 이미지 목록에서 이미지 ID를 입력. 컨테이너가 실행중인 이미지는 삭제 안됨)
+
+
 ```
