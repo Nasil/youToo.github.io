@@ -95,3 +95,14 @@ docker run -d -p 8080:80 \
  wordpress
 워드프레스를 app-network에 속하게 하고 mysql을 이름으로 접근
 ```
+
+# 이미지 만들기
+```
+docker run -it --name git ubuntu:latest bash // 우분트 이미지 실행
+
+apt-get install -y git // git 다운로드
+
+docker commit git ubuntu:git // git 이 있는 ububtu 이미지 만들기
+
+docker run -it --name git2 ubuntu:git bash // 이미지 실행 
+```
