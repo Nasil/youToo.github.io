@@ -21,8 +21,8 @@
 ```
 Preferences > Build, Execution, Deployment > Build Tools > Gradle
 
-Build and run using: Gradle IntelliJ IDEA
-Run tests using: Gradle IntelliJ IDEA
+Build and run using: IntelliJ IDEA
+Run tests using: IntelliJ IDEA
 ```
 
 ## Compile 방법
