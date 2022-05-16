@@ -16,6 +16,10 @@
 - 인텔리J 컴파일 방법: 메뉴 build Recompile
 - restartedMain 으로 컴파일 실행시 로그에 뜨는 지 확인
 
+## lombok
+- lombok: Prefrences > plugin > lombok 검색 실행 (재시작)
+- Prefrences > Annotation Processors 검색 > Enable annotation processing 체크 (재시작)
+
 ## IntelliJ
 - 최근 IntelliJ 버전은 Gradle로 실행을 하는 것이 기본 설정이다. 이렇게 하면 실행속도가 느리다. 다음과 같이 변경하면 자바로 바로 실행해서 실행속도가 더 빠르다.
 ```
