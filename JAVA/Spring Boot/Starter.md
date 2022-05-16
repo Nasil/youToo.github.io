@@ -1,5 +1,6 @@
 ## Start
 - 스프링 부트 스타터(https://start.spring.io/)
+- intellij 에서 build.gradle import
 
 ## Java 가 안잡힐 경우
 - File > Project structure > Project 에 SDK 잘 잡혔는지 확인
