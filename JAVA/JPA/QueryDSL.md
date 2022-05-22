@@ -50,8 +50,9 @@ member.username.startsWith("member") //like ‘member%’ 검색
   - 결과가 없으면 : null
   - 결과가 둘 이상이면 : com.querydsl.core.NonUniqueResultException
 - fetchFirst() : limit(1).fetchOne()
-- fetchResults() : 페이징 정보 포함, total count 쿼리 추가 실행
+- fetchResults() : 페이징 정보 포함, total count 쿼리 추가 실행 (성능 중요시에는 따로 실행할것, 카운트 쿼리 계속 날리면 성능저하)
 - fetchCount() : count 쿼리로 변경해서 count 수 조회
+
 
 
 
