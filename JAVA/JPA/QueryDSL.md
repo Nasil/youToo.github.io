@@ -58,8 +58,7 @@ member.username.startsWith("member") //like ‘member%’ 검색
 /**
  * 예) 회원과 팀을 조인하면서, 팀 이름이 teamA인 팀만 조인, 회원은 모두 조회
  * JPQL: SELECT m, t FROM Member m LEFT JOIN m.team t on t.name = 'teamA'
- * SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.TEAM_ID=t.id and
- * t.name='teamA'
+ * SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.TEAM_ID=t.id and t.name='teamA'
  */
 @Test
 public void join_on_filtering() throws Exception {
