@@ -53,11 +53,29 @@ member.username.startsWith("member") //like ‘member%’ 검색
 - fetchResults() : 페이징 정보 포함, total count 쿼리 추가 실행 (성능 중요시에는 따로 실행할것, 카운트 쿼리 계속 날리면 성능저하)
 - fetchCount() : count 쿼리로 변경해서 count 수 조회
 
-
+### Join
+```java
+/**
+ * 예) 회원과 팀을 조인하면서, 팀 이름이 teamA인 팀만 조인, 회원은 모두 조회
+ * JPQL: SELECT m, t FROM Member m LEFT JOIN m.team t on t.name = 'teamA'
+ * SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.TEAM_ID=t.id and
+ * t.name='teamA'
+ */
+@Test
+public void join_on_filtering() throws Exception {
+    List<Tuple> result = queryFactory
+            .select(member, team)
+            .from(member)
+            .leftJoin(member.team, team).on(team.name.eq("teamA"))
+            .fetch();
+    for (Tuple tuple : result) {
+        System.out.println("tuple = " + tuple);
+    }
+}
+```
 
 
 # Setting
-- 
 ```
 buildscript {
 	ext {
