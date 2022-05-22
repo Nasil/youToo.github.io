@@ -27,7 +27,7 @@ List<Member> list =
 ```
 
 ### 조건 조회
-```
+```java
 member.username.eq("member1") // username = 'member1'
 member.username.ne("member1") //username != 'member1'
 member.username.eq("member1").not() // username != 'member1'
