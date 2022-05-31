@@ -5,7 +5,7 @@
 - Hashtable은 put, get과 같은 주요 메소드에 synchronized 키워드가 선언 되어 있습니다. 또한 key, value에 null을 허용하지 않습니다. 
 
 ### ConcurrentHashMap
-- HashMap을 thread-safe 하도록 만든 클래스가 ConcurrentHashMap입니다. 하지만 HashMap과는 다르게 key, value에 null을 허용하지 않습니다. 또한 putIfAbsent라는 메소드를 가지고 있습니다. 해당 부분은 아래 코드의 주석을 참고하시기 바랍니다.
+- HashMap을 thread-safe 하도록 만든 클래스가 ConcurrentHashMap입니다. 하지만 HashMap과는 다르게 key, value에 null을 허용하지 않습니다. 또한 putIfAbsent라는 메소드를 가지고 있습니다.
 
 ```java
 System.out.println("========== HASHMAP=========");
