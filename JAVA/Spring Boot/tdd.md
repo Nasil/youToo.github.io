@@ -79,3 +79,44 @@ class MemberRepositoryTest {
     }
 }
 ```
+
+# cont tdd
+```java
+
+@Slf4j
+@Transactional
+@SpringBootTest
+@RunWith(SpringRunner.class)
+class UserContTest {
+
+    private MockHttpSession session;
+    private MockHttpServletRequest request;
+
+    @Autowired
+    private UserController userController;
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @Test
+    public void findMallConfig() throws Exception {
+        session = new MockHttpSession();
+        session.setAttribute("user", "aaa");
+
+
+        // mockMvc 생성
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get("/user/front").session(session);
+        mockMvc.perform(builder).andDo(print());
+
+        //mockMvc.perform(MockMvcRequestBuilders.get("/front/config").session(session)).andDo(print());
+    }
+
+    @After
+    public void clean() {
+        session.clearAttributes();
+    }
+
+}
+```
