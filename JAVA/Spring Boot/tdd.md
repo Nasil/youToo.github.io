@@ -1,6 +1,7 @@
 ## spring-boot-starter-test
 - junit: 테스트 프레임워크, 스프링 부트 2.2부터 junit5( jupiter ) 사용
     - 과거 버전은 vintage
+    - https://www.jetbrains.com/ko-kr/lp/devecosystem-2021/java/ 
 - mockito: 목 라이브러리
 - assertj: 테스트 코드를 좀 더 편하게 작성하게 도와주는 라이브러리
     - https://joel-costigliola.github.io/assertj/index.html
