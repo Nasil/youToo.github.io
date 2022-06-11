@@ -1,5 +1,6 @@
 ### hashMap
 - HashMap은 주요 메소드에 synchronized 키워드가 없습니다. 또한 Hashtable과 다르게 key, value에 null을 입력할 수 있습니다.
+- https://needjarvis.tistory.com/636 // map loop 성능 비교 - iterator 별루 = entrySet 별루 < Keyset 심플&성능굿 / forEach 람다 cpu 점유율이 높음
 
 ### hashTable
 - Hashtable은 put, get과 같은 주요 메소드에 synchronized 키워드가 선언 되어 있습니다. 또한 key, value에 null을 허용하지 않습니다. 
