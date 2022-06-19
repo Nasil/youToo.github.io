@@ -46,6 +46,8 @@ member.username.contains("member") // like ‘%member%’ 검색
 member.username.startsWith("member") //like ‘member%’ 검색
 ```
 
+- queryDsl select 필드로 사용시 주의점 : https://jojoldu.tistory.com/518
+
 ### 결과 조회
 - fetch() : 리스트 조회, 데이터 없으면 빈 리스트 반환
 - fetchOne() : 단 건 조회
