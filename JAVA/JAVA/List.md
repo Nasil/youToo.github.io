@@ -1,3 +1,38 @@
+
+## Arrays.asList() vs List.of()
+```java
+
+// 변경 가능 여부
+List<Integer> list = Arrays.asList(1, 2, null);
+list.set(1, 10); // OK
+
+List<Integer> list = List.of(1, 2, 3);
+list.set(1, 10); // Fails with UnsupportedOperationException
+    
+// null 허용 여부    
+List<Integer> list = Arrays.asList(1, 2, null); // OK
+List<Integer> list = List.of(1, 2, null); // Fails with NullPointerException
+
+List<Integer> list = Arrays.asList(1, 2, 3);
+list.contains(null); // Returns false
+
+List<Integer> list = List.of(1, 2, 3);
+list.contains(null); // Fails with NullPointerException
+
+// 주소값 변경 불가 여부
+Integer[] array = {1,2,3};
+List<Integer> list = Arrays.asList(array);
+array[1] = 10;
+System.out.println(list); // Prints [1, 10, 3]
+
+Integer[] array = {1,2,3};
+List<Integer> list = List.of(array);
+array[1] = 10;
+System.out.println(list); // Prints [1, 2, 3]
+```
+
+
+
 ```java
 System.out.println("==========LIST 종류=========");
 List<String> list = new ArrayList<String>(30); // default 10
