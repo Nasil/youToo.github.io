@@ -31,7 +31,7 @@ array[1] = 10;
 System.out.println(list); // Prints [1, 2, 3]
 ```
 
-
+## List 
 
 ```java
 System.out.println("==========LIST 종류=========");
