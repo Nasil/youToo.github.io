@@ -10,3 +10,10 @@
 - enum 은 생성자를 가질수 있다.
 - enum 의 경우 == 로 비교
 
+
+
+# enumMap, enumSet
+
+
+
+- https://jojoldu.tistory.com/137
