@@ -42,7 +42,7 @@ emf.close();
 - 테이블이 아닌 객체를 대상으로 검색하는 객체 지향 쿼리
 - SQL을 추상화해서 특정 데이터베이스 SQL에 의존X
 
-```
+```java
 EntityManageFactory emf = persistence.createEntityManagerFactory("hello");
 EntityManager em = emf.createEntityManager();
 EntityTracsaction tx = em.getTransaction();
