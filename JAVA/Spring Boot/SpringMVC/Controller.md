@@ -15,7 +15,6 @@
 ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F7bceC%2Fbtqx8K6BbxE%2FLVs4KK74mUj9CZ70uHTsjK%2Fimg.png)
 
 
-출처: https://mangkyu.tistory.com/49 [MangKyu's Diary]
 
 
 
@@ -29,3 +28,11 @@
   - @ModelAttribute를 사용하면 HTTP 파라미터 데이터를 Java 객체에 맵핑한다.
   - 따라서 객체의 필드에 접근해 데이터를 바인딩할 수 있는 생성자 혹은 setter 메서드가 필요하다.
   - Query String 및 Form 형식이 아닌 데이터는 처리할 수 없다.
+  - 문제는 JsonProperty 가 안먹어서 원하는 컬럼명으로 바꿔서 pojo 처리 할수 없음 (https://github.com/spring-projects/spring-framework/issues/18012)
+
+
+
+참고
+- https://mangkyu.tistory.com/49 [MangKyu's Diary]
+- https://tecoble.techcourse.co.kr/post/2021-05-11-requestbody-modelattribute/
+
