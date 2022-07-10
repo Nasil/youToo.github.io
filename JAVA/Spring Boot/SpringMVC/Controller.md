@@ -16,3 +16,16 @@
 
 
 출처: https://mangkyu.tistory.com/49 [MangKyu's Diary]
+
+
+
+## Controller Annotation
+
+#### @RequestBody vs @ModelAttribute
+- @RequestBody : 
+  - @RequestBody를 사용하면 요청 본문의 JSON, XML, Text 등의 데이터가 적합한 HttpMessageConverter를 통해 파싱되어 Java 객체로 변환 된다.
+  - @RequestBody를 사용할 객체는 필드를 바인딩할 생성자나 setter 메서드가 필요없다. 다만 직렬화를 위해 기본 생성자는 필수다. 또한 데이터 바인딩을 위한 필드명을 알아내기 위해 getter나 setter 중 1가지는 정의되어 있어야 한다.
+- @ModelAttribute : 
+  - @ModelAttribute를 사용하면 HTTP 파라미터 데이터를 Java 객체에 맵핑한다.
+  - 따라서 객체의 필드에 접근해 데이터를 바인딩할 수 있는 생성자 혹은 setter 메서드가 필요하다.
+  - Query String 및 Form 형식이 아닌 데이터는 처리할 수 없다.
