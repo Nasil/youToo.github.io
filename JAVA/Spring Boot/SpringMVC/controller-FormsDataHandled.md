@@ -107,3 +107,11 @@ public class SlackSlashCommandConverterConfig extends WebMvcConfigurerAdapter {
     }
 }
 ```
+
+# 방안5) Controller 에서 objectMapping
+@RequestMapping(value = "/slack4", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody SlackSlashCommand slack4(@RequestBody MultiValueMap<String, String> reqMap, @RequestHeader("content-type") String contentType) {
+    ObjectMapper objectMapper = new ObjectMapper();
+    SlackSlashCommand slackSlashCommand = objectMapper.convertValue(reqMap.toSingleValueMap(), SlackSlashCommand.class);
+    return slackSlashCommand;
+}
