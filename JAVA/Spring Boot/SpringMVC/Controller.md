@@ -28,9 +28,6 @@
   - @ModelAttribute를 사용하면 HTTP 파라미터 데이터를 Java 객체에 맵핑한다.
   - 따라서 객체의 필드에 접근해 데이터를 바인딩할 수 있는 생성자 혹은 setter 메서드가 필요하다.
   - Query String 및 Form 형식이 아닌 데이터는 처리할 수 없다.
-  - 문제는 JsonProperty 가 안먹어서 원하는 컬럼명으로 바꿔서 pojo 처리 할수 없음 
-    - https://github.com/spring-projects/spring-framework/issues/18012
-    - https://afitnerd.com/2017/05/24/what-if-spring-boot-handled-forms-like-json/
 
 
 
