@@ -2,6 +2,7 @@
 - https://github.com/spring-projects/spring-framework/issues/18012 // spring 이슈
 - https://afitnerd.com/2017/05/24/what-if-spring-boot-handled-forms-like-json/ // 이슈들 정리한 부분들중에 방안 여러개
 - https://www.baeldung.com/sprint-boot-multipart-requests
+- https://e2e2e2.tistory.com/15#controller-%EA%B5%AC%ED%98%84
 
 # 방안1) HttpServletRequest 사용
 public @ResponseBody SlackSlashCommand slack(HttpServletRequest request) { 
