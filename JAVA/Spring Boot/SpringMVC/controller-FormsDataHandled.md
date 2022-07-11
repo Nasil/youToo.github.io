@@ -69,3 +69,40 @@ public class SlackSlashCommandMethodArgumentResolverConfig extends WebMvcConfigu
     }
 }
 ```
+ - 장점 : 알아서 타입캐스팅 됨.
+ - 단점 : 방안1처럼 하나씩 넣어줘야함
+
+## 방안4) Custom HttpMessageConverter
+```java
+public class SlackSlashCommandConverter extends AbstractHttpMessageConverter<SlackSlashCommand> {
+
+    // no need to reinvent the wheel for parsing the query string
+    private static final FormHttpMessageConverter formHttpMessageConverter = new FormHttpMessageConverter();
+    private static final ObjectMapper mapper = new ObjectMapper();
+
+    @Override
+    protected boolean supports(Class<?> clazz) {
+        return (SlackSlashCommand.class == clazz);
+    }
+
+    @Override
+    protected SlackSlashCommand readInternal(Class<? extends SlackSlashCommand> clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
+        Map<String, String> vals = formHttpMessageConverter.read(null, inputMessage).toSingleValueMap();
+        return mapper.convertValue(vals, SlackSlashCommand.class);
+    }
+}
+```
+```java
+@Configuration
+public class SlackSlashCommandConverterConfig extends WebMvcConfigurerAdapter {
+
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        SlackSlashCommandConverter slackSlashCommandConverter = new SlackSlashCommandConverter();
+        MediaType mediaType = new MediaType("application","x-www-form-urlencoded", Charset.forName("UTF-8"));
+        slackSlashCommandConverter.setSupportedMediaTypes(Arrays.asList(mediaType));
+        converters.add(slackSlashCommandConverter);
+        super.configureMessageConverters(converters);
+    }
+}
+```
