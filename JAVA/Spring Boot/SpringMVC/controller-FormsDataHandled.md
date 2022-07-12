@@ -5,7 +5,10 @@
 - https://e2e2e2.tistory.com/15#controller-%EA%B5%AC%ED%98%84
 
 # 방안1) HttpServletRequest 사용
+```java
+// controller
 public @ResponseBody SlackSlashCommand slack(HttpServletRequest request) { 
+```
 ```java
 this.teamId = rquest.getParameter("team_id"); // 하나씩 파라미터 셋팅해줘야함
 ```
