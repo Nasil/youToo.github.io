@@ -13,7 +13,7 @@
 
 # Spring Boot
 - CoC: Convention over Configuration : 일일히 관련 라이브러리를 찾아 추가할 필요 없이 spring-boot-starter-web을 추가하면 관련 라이브러리를 받아온다.
-- 내장 Tomcat, Jetty, Undertow: Tomcat, Jetty, Undertow와 같은 서버를 내장하고 있어 특별한 설정 없이 Web Starter의 의존성만 추가해주면 @SpringBootApplication 어노테이션이 선언되어 있는 클래스의 main() 메소드를 실행하는 것만으로 서버를 구동시킬 수 있다. 
+- 내장 서버 : Tomcat, Jetty, Undertow: Tomcat, Jetty, Undertow와 같은 서버를 내장하고 있어 특별한 설정 없이 Web Starter의 의존성만 추가해주면 @SpringBootApplication 어노테이션이 선언되어 있는 클래스의 main() 메소드를 실행하는 것만으로 서버를 구동시킬 수 있다. 
 - 설정의 자동화: 어노테이션을 선언하여 스프링에서 자주 사용했던 설정들을 자동으로 등록한다. 초기에는 @EnableAutoConfiguration 어노테이션, 현재는 @EnableAutiConfiguration + @SpringBootConfiguration + @ComponentScan으로 구성되어 있는 @SpringApplication 어노테이션을 사용한다.
 - 라이브러리 버전 자동 관리: pom.xml에 스프링 부트 버전을 입력하면 스프링 라이브러리뿐만 아니라 서드 파티 라이브러리들도 호환되는 버전으로 자동으로 다운된다.
 - 단독으로 실행이 가능한 JAR: WAR 파일로 패키징 해야하는 웹 프로젝트와 달리, 내장 Tomcat을 지원하기 때문에 JAR파일로 패키징 하여 웹 애플리케이션 실행 가능하다. 
