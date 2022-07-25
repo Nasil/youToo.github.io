@@ -1,3 +1,5 @@
+여러가지 디자인 패턴 예저 및 설명 : https://www.journaldev.com/1392/factory-design-pattern-in-java
+
 ## 옵저버 패턴
 - 행위가 일어났을때 알림
 
