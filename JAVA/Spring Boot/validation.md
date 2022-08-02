@@ -1,4 +1,6 @@
 
+- 참조 : https://meetup.toast.com/posts/223
+
 ## javax.validation
 ```
 implementation('org.hibernate.validator:hibernate-validator:6.1.2.Final')
