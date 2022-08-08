@@ -37,3 +37,6 @@ System.out.println("MS949 -> X-WINDOWS-949 : " + new String(msgName.getBytes("MS
 ```
 
 참조 : https://huskdoll.tistory.com/74
+
+
+인코딩 에러 케이스 : https://darusamu.tistory.com/48
