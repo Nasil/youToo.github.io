@@ -40,3 +40,5 @@ System.out.println("MS949 -> X-WINDOWS-949 : " + new String(msgName.getBytes("MS
 
 
 인코딩 에러 케이스 : https://darusamu.tistory.com/48
+
+인코딩 방법: https://www.baeldung.com/java-string-encode-utf-8
