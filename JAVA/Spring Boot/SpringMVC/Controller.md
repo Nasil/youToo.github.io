@@ -21,8 +21,8 @@
 ## Controller Annotation
 
 ### RequetParam
-1개의 HTTP 파라미터를 얻기 위해 사용되며 기본값을 지정할 수 있음
-필수 여부가 true이기 때문에 반드시 필요한 경우가 아니라면 required=false 설정이 필요함
+- 1개의 HTTP 파라미터를 얻기 위해 사용되며 기본값을 지정할 수 있음
+- 필수 여부가 true이기 때문에 반드시 필요한 경우가 아니라면 required=false 설정이 필요함
 
 ### RequestBody
 - Json 형태로 받은 HTTP Body 데이터를 MessageConverter를 통해 변환시킴
