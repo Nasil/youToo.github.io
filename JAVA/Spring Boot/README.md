@@ -12,6 +12,11 @@
 
 
 # Spring Boot
+### 스프링 부트의 등장
+- 스프링 부트는 서버를 내장
+- 과거에는 서버에 WAS를 직접 설치하고, 소스는 War 파일을 만들어서 설치한 WAS에 배포
+- 스프링 부트는 빌드 결과(Jar)에 WAS 서버 포함 -> 빌드 배포 단순화
+
 - CoC: Convention over Configuration : 일일히 관련 라이브러리를 찾아 추가할 필요 없이 spring-boot-starter-web을 추가하면 관련 라이브러리를 받아온다.
 - 내장 서버 : Tomcat, Jetty, Undertow: Tomcat, Jetty, Undertow와 같은 서버를 내장하고 있어 특별한 설정 없이 Web Starter의 의존성만 추가해주면 @SpringBootApplication 어노테이션이 선언되어 있는 클래스의 main() 메소드를 실행하는 것만으로 서버를 구동시킬 수 있다. 
 - 설정의 자동화: 어노테이션을 선언하여 스프링에서 자주 사용했던 설정들을 자동으로 등록한다. 초기에는 @EnableAutoConfiguration 어노테이션, 현재는 @EnableAutiConfiguration + @SpringBootConfiguration + @ComponentScan으로 구성되어 있는 @SpringApplication 어노테이션을 사용한다.
