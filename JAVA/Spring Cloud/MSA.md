@@ -19,11 +19,12 @@ hypervisor -> Container
 - https://12factor.net/
 - https://developer.ibm.com/articles/15-factor-applications/
 
-
 # Monolithic vs MSA
 ### Monolithic
 - 모든 업무 로직이 하나의 애플리케이션 형태로 패키징
 - 애플리케이션에서 사용하는 데이터가 한곳에 모여 참조되어 서비스 되는 형태
 ### MSA
-- The microservice architectural type is an approach to developing a single application as a suite of small service, each running in its own process and communicating with lightweight mechanisms, on an HTTP resource API. // 하나의 어플리케이션을 개발하되, 작은 서비스 단위가 각 프로세스에서 동작되며 HTTP로 api로 통신 될수 있다. 
+- The microservice architectural type is an approach to developing a single application as a suite of small service, each running in its own process and communicating with lightweight mechanisms, on an HTTP resource API. // 하나의 어플리케이션을 개발하되 그것은 작은 서비스 단위로 각 프로세스에서 동작되며 HTTP api로 통신 될수 있다. 
 - These services are built aroud business capabilities and independently deployable by fully automatied deployment machinery // 독립적 배포
+- There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies. // 최소 중앙 관리가 필요하며, 다른 언어 다른 storage 가 사용 될 수 있다.
+
