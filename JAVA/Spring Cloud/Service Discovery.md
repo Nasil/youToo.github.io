@@ -1,6 +1,6 @@
 # Cloud 설정
 - server
-```
+```java
 @SpringBootApplication
 @EnableEurekaServer
 public class DiscoveryserviceApplication {
@@ -10,7 +10,7 @@ public class DiscoveryserviceApplication {
 }
 ```
 - client
-```
+```java
 @SpringBootApplication
 @EnableDiscoveryClient
 public class UserserviceApplication {
@@ -24,12 +24,6 @@ public class UserserviceApplication {
 # application.yml
 - port: 0 // 랜덤포트 생성하여 client가 여러개 실행 가능하도록 설정
 - instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} # 실행시마다 실행될 instance
-
-# 실행
-```
-./gradlew bootRun
-./mvnw spring-boot:run
-```
  
 ```yml
 server:
@@ -48,4 +42,10 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
+```
+
+# command 실행
+```
+./gradlew bootRun
+./mvnw spring-boot:run
 ```
