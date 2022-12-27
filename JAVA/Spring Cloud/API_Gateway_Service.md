@@ -12,4 +12,4 @@
 # Spring Cloud 에서의 MSA 간 통신
 1) RetRemplate
 2) Feign client
-- spring cloud agteway : Netflix ribbon -> zuul
+- 버전 따라 Netflix ribbon -> zuul -> spring cloud gateway
