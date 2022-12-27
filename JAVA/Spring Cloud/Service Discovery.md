@@ -22,12 +22,9 @@ public class UserserviceApplication {
 
 
 # application.yml
-- port: 0 // 랜덤포트 생성하여 client가 여러개 실행 가능하도록 설정
-- instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} # 실행시마다 실행될 instance
- 
 ```yml
 server:
-  port: 0
+  port: 0 # 랜덤포트 생성하여 client가 여러개 실행 가능하도록 설정
 
 
 spring:
@@ -36,7 +33,7 @@ spring:
 
 eureka:
   instance:
-    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} # 실행시마다 실행될 instance
   client:
     register-with-eureka: true
     fetch-registry: true
