@@ -22,7 +22,7 @@ public class UserserviceApplication {
 
 
 # application.yml
-```yml
+```
 server:
   port: 0 # 랜덤포트 생성하여 client가 여러개 실행 가능하도록 설정
 
