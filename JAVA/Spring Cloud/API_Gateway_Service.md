@@ -13,3 +13,38 @@
 1) RetRemplate
 2) Feign client
 - 버전 따라 Netflix ribbon -> zuul -> spring cloud gateway
+
+
+# spring cloud gateway
+
+## 방법1) 
+- application.yml에 설정을 안하고 직접 자바 소스로 개발
+```
+package com.example.apigatewayservice.config;
+
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class FilterConfig {
+
+    @Bean
+    public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route(r -> r.path("/first-service/**")
+                        .filters(f -> f.addRequestHeader("first-request", "first-request-header")
+                                .addResponseHeader("first-response", "first-response-header"))
+                        .uri("http://localhost:8081")
+                )
+                .route(r -> r.path("/second-service/**")
+                        .filters(f -> f.addRequestHeader("second-request", "second-request-header")
+                                .addResponseHeader("second-response", "second-response-header"))
+                        .uri("http://localhost:8082")
+                )
+                .build();
+
+    }
+}
+```
