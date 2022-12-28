@@ -41,4 +41,4 @@ public class FilterConfig {
 }
 ```
 
-#### filter 방법2) application.yml에 설정
+#### filter 방법2) application.yml에 설정 custom filter
