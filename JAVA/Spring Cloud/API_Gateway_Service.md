@@ -18,7 +18,7 @@
 # Spring Cloud Gateway 활용
 
 #### filter 방법1) application.yml에 설정을 안하고 직접 자바 소스로 개발
-```
+```java
 package com.example.apigatewayservice.config;
 
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -32,9 +32,9 @@ public class FilterConfig {
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/first-service/**")
-                        .filters(f -> f.addRequestHeader("first-request", "first-request-header")
-                                .addResponseHeader("first-response", "first-response-header"))
+                .route(r -> r.path("/first-service/**") // router
+                        .filters(f -> f.addRequestHeader("first-request", "first-request-header") // pre filter
+                                .addResponseHeader("first-response", "first-response-header"))    // post filter
                         .uri("http://localhost:8081")
                 )
                 .route(r -> r.path("/second-service/**")
