@@ -139,7 +139,7 @@ public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Co
                     log.info("@Logging POST Filter : response code -> {}", response.getStatusCode());
                 }
             }));
-        }, Ordered.HIGHEST_PRECEDENCE);
+        }, Ordered.HIGHEST_PRECEDENCE); // 순서 조정
 
         return filter;
 
@@ -153,6 +153,16 @@ public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Co
 
     }
 }
+```
+```JAVA
+@Logging Filter baseMessage: Spring Cloud Gateway Logging // 제일먼저 실행
+@Logging PRE Filter: request id -> c4083c43-3
+@Global Filter baseMessage: Spring Cloud Gateway GlobalFilter
+@Global Filter Start: request id -> c4083c43-3
+@Custom PRE filter : request id -> c4083c43-3
+@Custom POST filter : response code -> 200 OK
+@Global Filter End : response code -> 200 OK
+@Logging POST Filter : response code -> 200 OK // 제일 마지막 실행
 ```
 
 
@@ -174,7 +184,7 @@ spring:
     name: apigateway-service
   cloud:
     gateway:
-      default-filters: #Global filter
+      default-filters:
         - name: GlobalFilter
           args:
             baseMessage: Spring Cloud Gateway GlobalFilter
@@ -194,7 +204,12 @@ spring:
           predicates:
             - Path=/second-service/**
           filters:
-            - CustomFilter
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: Spring Cloud Gateway Logging
+                preLogger: true
+                postLogger: true
 #            - AddRequestHeader=second-request, second-requests-header2
 #            - AddResponseHeader=second-response, second-response-header2
 ```
