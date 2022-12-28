@@ -18,7 +18,7 @@
 
 # Spring Cloud Gateway 활용
 
-#### filter 방법1) application.yml에 설정을 안하고 직접 자바 소스로 개발
+#### Filter 방법1) application.yml에 설정을 안하고 직접 자바 소스로 개발
 ```java
 @Configuration
 public class FilterConfig {
@@ -42,7 +42,7 @@ public class FilterConfig {
 }
 ```
 
-#### filter 방법2) application.yml에 설정 custom filter
+#### Filter 방법2) application.yml에 설정 custom filter
 ```java
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
@@ -76,7 +76,7 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
 }
 ```
 
-#### filter 방법2) application.yml에 설정 global filter
+#### Filter 방법3) application.yml에 설정 global filter
 ```java
 @Slf4j
 @Component
