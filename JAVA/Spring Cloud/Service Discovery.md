@@ -37,7 +37,7 @@ eureka:
 
 
 
-# 패키지 1개로 java 프로세스 여러개 실행하기
+# 패키지 1개로 java Client 여러개 실행하기
 #### 방안1) intellij vm option
 ```
 intellij > edit configuration > Modify options > add Vm options > -Dserver.port=9091 입력
@@ -54,7 +54,7 @@ intellij > gradle > Tasks > build > clean
 intellij > gradle > Tasks > build > bootJar // build > libs > {}.jar 파일 생성됨
 java -jar -Dserver.port=9092 {}.jar
 ```
-#### 방안3) command 실행
+#### 방안3) command 로 포트 지정하여 실행
 - maven
 ```
 mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=9003'
@@ -63,7 +63,7 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=9003'
 ```
 ./gradlew bootRun --args='--server.port=9092'
 ```
-#### 방안4) 랜덤 포트
+#### 방안4) 랜덤 포트 
 ```
 server:
   port: 0 # 랜덤포트 생성하여 client가 여러개 실행 가능하도록 설정
