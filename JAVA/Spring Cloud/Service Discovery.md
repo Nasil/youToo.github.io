@@ -64,7 +64,6 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=9003'
 ./gradlew bootRun --args='--server.port=9092'
 ```
 #### 방안4) 랜덤 포트
-- client yml
 ```
 server:
   port: 0 # 랜덤포트 생성하여 client가 여러개 실행 가능하도록 설정
@@ -83,12 +82,8 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
 ```
-- 실행시마다 랜텀 포트 
-- maven
+- COMMAND 실행
 ```
 mvn spring-boot:run
-```
-- gradle
-```
-./gradlew bootRun
+./gradlew bootRun // 
 ```
