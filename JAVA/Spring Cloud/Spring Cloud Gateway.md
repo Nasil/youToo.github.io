@@ -215,15 +215,17 @@ spring:
 #            - AddResponseHeader=second-response, second-response-header2
 ```
 
-#### cloud client service yml
+#### Cloud Client service yml
 ```
 server:
-  port: 8081
+  port: 0
 
 spring:
   application:
     name: my-first-service
 eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
   client:
     fetch-registry: true
     register-with-eureka: true
@@ -231,7 +233,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 ```
 
-### cloud server yml
+### Cloud Server yml
 ```
 server:
   port: 8761
@@ -245,3 +247,6 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
 ```
+
+
+- Load balance : https://happycloud-lee.tistory.com/221
