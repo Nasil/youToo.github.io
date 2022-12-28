@@ -20,8 +20,6 @@ public class UserserviceApplication {
 }
 ```
 
-
-# application.yml
 - server yml
 ```
 server:
@@ -37,25 +35,7 @@ eureka:
     fetch-registry: false
 ```
 
-- client yml
-```
-server:
-  port: 0 # 랜덤포트 생성하여 client가 여러개 실행 가능하도록 설정
 
-
-spring:
-  application:
-    name: user-service
-
-eureka:
-  instance:
-    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} # 실행시마다 실행될 instance
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka
-```
 
 # 패키지 1개로 java 프로세스 여러개 실행하기
 #### 방안1) intellij vm option
@@ -82,4 +62,24 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=9003'
 - gradle
 ```
 ./gradlew bootRun --args='--server.port=9092'
+```
+#### 방안4) 랜덤 포트
+- client yml
+```
+server:
+  port: 0 # 랜덤포트 생성하여 client가 여러개 실행 가능하도록 설정
+
+
+spring:
+  application:
+    name: user-service
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} # 실행시마다 실행될 instance
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
 ```
