@@ -57,7 +57,22 @@ eureka:
       defaultZone: http://127.0.0.1:8761/eureka
 ```
 
-# command 실행
+# 패키지 1개로 java 프로세스 여러개 실행하기
+#### 방안1) intellij vm option
+```
+intellij > edit configuration > Modify options > add Vm options > -Dserver.port=9091 입력
+```
+#### 방안2) command 실행
+```
+mvn clean compile package
+java -jar -Dserver.port=9092 ./target/{}.jar
+```
+```
+./gradlew bootRun
+./mvnw spring-boot:run
+```
+
+
 ```
 ./gradlew bootRun
 ./mvnw spring-boot:run
