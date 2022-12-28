@@ -117,7 +117,7 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Conf
 ```
 
 #### Filter 방법4) application.yml에 설정 custom filter > logging filter
-```
+```java
 @Slf4j
 @Component
 public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Config> {
