@@ -15,9 +15,9 @@
 - 버전 따라 Netflix ribbon -> zuul -> spring cloud gateway
 
 
-# spring cloud gateway
+# Spring Cloud Gateway 활용
 
-#### 방법1) application.yml에 설정을 안하고 직접 자바 소스로 개발
+#### filter 방법1) application.yml에 설정을 안하고 직접 자바 소스로 개발
 ```
 package com.example.apigatewayservice.config;
 
@@ -47,3 +47,5 @@ public class FilterConfig {
     }
 }
 ```
+
+#### filter 방법2) application.yml에 설정
