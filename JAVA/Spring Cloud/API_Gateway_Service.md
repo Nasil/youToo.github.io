@@ -42,3 +42,69 @@ public class FilterConfig {
 ```
 
 #### filter 방법2) application.yml에 설정 custom filter
+```java
+import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
+
+@Component
+@Slf4j
+public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Config> {
+    public CustomFilter() {
+        super(Config.class);
+    }
+
+    @Override
+    public GatewayFilter apply(Config config) {
+        // Custom pre Filter
+        return (exchange, chain) -> {
+            ServerHttpRequest request = exchange.getRequest();
+            ServerHttpResponse response = exchange.getResponse();
+            log.info("@Custom PRE filter : request id -> {}", request.getId());
+
+            // Custom post Filter
+            return chain.filter(exchange).then(Mono.fromRunnable(() -> {
+                log.info("@Custom POST filter : response code -> {}", response.getStatusCode());
+            }));
+        };
+    }
+
+    @Data
+    public static class Config {
+
+    }
+}
+```
+```
+server:
+  port: 8000
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: apigateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: first-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/first-service/**
+          filters:
+            - CustomFilter
+#            - AddRequestHeader=first-request, first-requests-header2
+#            - AddResponseHeader=first-response, first-response-header2
+        - id: second-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/second-service/**
+          filters:
+            - CustomFilter
+#            - AddRequestHeader=second-request, second-requests-header2
+#            - AddResponseHeader=second-response, second-response-header2
+```
