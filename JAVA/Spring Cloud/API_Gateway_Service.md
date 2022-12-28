@@ -9,7 +9,7 @@
 - 헤더, 쿼리 문자열 및 청구 변환
 - IP 허용 목록에 추가
 
-# Spring Cloud 에서의 MSA 간 통신
+## Spring Cloud 에서의 MSA 간 통신
 1) RetRemplate
 2) Feign client
 - 버전 따라 Netflix ribbon -> zuul -> spring cloud gateway
@@ -17,7 +17,7 @@
 
 # spring cloud gateway
 
-방법 1) application.yml에 설정을 안하고 직접 자바 소스로 개발
+#### 방법1) application.yml에 설정을 안하고 직접 자바 소스로 개발
 ```
 package com.example.apigatewayservice.config;
 
