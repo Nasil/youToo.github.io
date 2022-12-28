@@ -68,7 +68,6 @@ intellij > edit configuration > Modify options > add Vm options > -Dserver.port=
 mvn clean compile package // target 폴더에 {}.jar 파일 생성됨
 java -jar -Dserver.port=9092 {}.jar
 ```
-```
 - gradle
 ```
 intellij > gradle > Tasks > build > clean
