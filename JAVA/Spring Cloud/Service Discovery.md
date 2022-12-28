@@ -68,8 +68,9 @@ mvn clean compile package
 java -jar -Dserver.port=9092 ./target/{}.jar
 ```
 ```
-./gradlew bootRun
-./mvnw spring-boot:run
+intellij > gradle > Tasks > build > clean
+intellij > gradle > Tasks > build > bootJar // build > libs > {}.jar 파일 생성됨
+java -jar -Dserver.port=9092 ./target/{}.jar
 ```
 
 
