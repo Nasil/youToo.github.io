@@ -85,5 +85,5 @@ eureka:
 - COMMAND 실행
 ```
 mvn spring-boot:run
-./gradlew bootRun // 
+./gradlew bootRun
 ```
