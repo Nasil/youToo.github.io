@@ -83,3 +83,12 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
 ```
+- 실행시마다 랜텀 포트 
+- maven
+```
+mvn spring-boot:run
+```
+- gradle
+```
+./gradlew bootRun
+```
