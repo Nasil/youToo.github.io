@@ -75,6 +75,50 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
     }
 }
 ```
+
+#### filter 방법2) application.yml에 설정 global filter
+```java
+@Slf4j
+@Component
+public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Config> {
+    public GlobalFilter() {
+        super(Config.class);
+    }
+
+    @Override
+    public GatewayFilter apply(Config config) {
+        // Custom pre Filter
+        return (exchange, chain) -> {
+            ServerHttpRequest request = exchange.getRequest();
+            ServerHttpResponse response = exchange.getResponse();
+
+            log.info("@Global Filter baseMessage: {}", config.getBaseMessage());
+            if (config.isPreLogger()) {
+                log.info("@Global Filter Start: request id -> {}", request.getId());
+            }
+
+            // Custom post Filter
+            return chain.filter(exchange).then(Mono.fromRunnable(() -> {
+                if (config.postLogger) {
+                    log.info("@Global Filter End : response code -> {}", response.getStatusCode());
+                }
+            }));
+        };
+    }
+
+    @Data
+    public static class Config {
+        private String baseMessage;
+        private boolean preLogger;
+        private boolean postLogger;
+
+    }
+}
+```
+
+
+
+#### yml
 ```
 server:
   port: 8000
@@ -91,6 +135,12 @@ spring:
     name: apigateway-service
   cloud:
     gateway:
+      default-filters: #Global filter
+        - name: GlobalFilter
+          args:
+            baseMessage: Spring Cloud Gateway GlobalFilter
+            preLogger: true
+            postLogger: true
       routes:
         - id: first-service
           uri: http://localhost:8081
