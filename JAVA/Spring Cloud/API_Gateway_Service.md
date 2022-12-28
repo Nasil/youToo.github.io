@@ -19,13 +19,6 @@
 
 #### filter 방법1) application.yml에 설정을 안하고 직접 자바 소스로 개발
 ```java
-package com.example.apigatewayservice.config;
-
-import org.springframework.cloud.gateway.route.RouteLocator;
-import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 @Configuration
 public class FilterConfig {
 
