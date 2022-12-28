@@ -175,8 +175,8 @@ server:
 
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
 
@@ -193,7 +193,7 @@ spring:
             postLogger: true
       routes:
         - id: first-service
-          uri: http://localhost:8081
+          uri: lb://MY-FIST-SERVICE
           predicates:
             - Path=/first-service/**
           filters:
@@ -201,7 +201,7 @@ spring:
 #            - AddRequestHeader=first-request, first-requests-header2
 #            - AddResponseHeader=first-response, first-response-header2
         - id: second-service
-          uri: http://localhost:8082
+          uri: lb://MY-SECOND-SERVICE
           predicates:
             - Path=/second-service/**
           filters:
