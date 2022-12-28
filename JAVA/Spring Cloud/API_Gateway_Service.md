@@ -1,4 +1,5 @@
 # API Gateway Service
+#### Gateway?
 - 인증 및 권한 부여
 - 서비스 검색 통합
 - 응답 캐싱
@@ -9,7 +10,7 @@
 - 헤더, 쿼리 문자열 및 청구 변환
 - IP 허용 목록에 추가
 
-## Spring Cloud 에서의 MSA 간 통신
+#### Spring Cloud 에서의 MSA 간 통신
 1) RetRemplate
 2) Feign client
 - 버전 따라 Netflix ribbon -> zuul -> spring cloud gateway
