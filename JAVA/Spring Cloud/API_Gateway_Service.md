@@ -17,8 +17,7 @@
 
 # spring cloud gateway
 
-## 방법1) 
-- application.yml에 설정을 안하고 직접 자바 소스로 개발
+방법 1) application.yml에 설정을 안하고 직접 자바 소스로 개발
 ```
 package com.example.apigatewayservice.config;
 
