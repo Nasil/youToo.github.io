@@ -62,7 +62,7 @@ eureka:
 ```
 intellij > edit configuration > Modify options > add Vm options > -Dserver.port=9091 입력
 ```
-#### 방안2) command 실행
+#### 방안2) jar 생성 및 실행
 ```
 mvn clean compile package // target 폴더에 {}.jar 파일 생성됨
 java -jar -Dserver.port=9092 {}.jar
@@ -72,9 +72,8 @@ intellij > gradle > Tasks > build > clean
 intellij > gradle > Tasks > build > bootJar // build > libs > {}.jar 파일 생성됨
 java -jar -Dserver.port=9092 {}.jar
 ```
-
-
+#### 방안3) command 실행
 ```
-./gradlew bootRun
-./mvnw spring-boot:run
+./gradlew bootRun --args='--server.port=9092'
+mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=9003'
 ```
