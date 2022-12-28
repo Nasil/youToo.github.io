@@ -119,7 +119,7 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Conf
 
 
 #### yml
-```
+```java
 server:
   port: 8000
 
