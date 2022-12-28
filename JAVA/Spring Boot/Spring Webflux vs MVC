@@ -1,0 +1,3 @@
+# Spring WebFlux
+- Spring5에서 새롭게 추가된 모듈.
+- WebFlux는 클라이언트, 서버에서 reactive 스타일의 어플리케이션 개발을 도와주는 모듈이며, reactive-stack web framework이며 non-blocking에 reactive stream을 지원
