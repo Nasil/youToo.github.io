@@ -11,9 +11,10 @@
 - IP 허용 목록에 추가
 
 #### Spring Cloud 에서의 MSA 간 통신
-1) RetRemplate
+1) Rest Template
 2) Feign client
 - 버전 따라 Netflix ribbon -> zuul -> spring cloud gateway
+- https://velog.io/@jifrozen/Microservice-%EA%B0%84-%ED%86%B5%EC%8B%A0-resttemplate-vs-feign-client
 
 
 # Spring Cloud Gateway 활용
@@ -167,7 +168,7 @@ public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Co
 
 
 
-#### yml
+#### api-gateway yml
 ```
 server:
   port: 8000
@@ -212,4 +213,35 @@ spring:
                 postLogger: true
 #            - AddRequestHeader=second-request, second-requests-header2
 #            - AddResponseHeader=second-response, second-response-header2
+```
+
+#### cloud client service yml
+```
+server:
+  port: 8081
+
+spring:
+  application:
+    name: my-first-service
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+```
+
+### cloud server yml
+```
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discoveryservice
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
 ```
