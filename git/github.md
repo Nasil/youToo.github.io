@@ -26,13 +26,12 @@
 12. git push origin master // master 브랜치를 `origin' 서버에 Push
 
 
-git remote add origin https://github.com/Nasil/ReactSimple  -> 저장소를 github 가서 미리 만들어야 한다
-git remote -v // 확인하기
-git remote remove origin // origin 리포지토리 제거
+- git remote add origin https://github.com/Nasil/ReactSimple  -> 저장소를 github 가서 미리 만들어야 한다
+- git remote -v // 확인하기
+- git remote remove origin // origin 리포지토리 제거
 
 
 # 기타
-https://developer0809.tistory.com/148
-Personal access tokens 
-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
-// 처음 인증키 username 은 Nasil
+- https://developer0809.tistory.com/148
+- Personal access tokens : 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
+- 처음 인증키 username 은 Nasil
