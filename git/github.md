@@ -33,5 +33,4 @@
 
 # 기타
 - https://developer0809.tistory.com/148
-- Personal access tokens : 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
-- 처음 인증키 username 은 Nasil
+
