@@ -10,3 +10,6 @@
 ```
 implementation("org.springframework.boot:spring-boot-starter-actuator")
 ```
+
+
+http://172.30.1.61:8888/user-service/native
