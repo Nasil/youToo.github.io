@@ -8,6 +8,8 @@
 ### 해결방법2) message queing server 사용
 
 ### 해결방법2) db 를 하나 + message queing server 
+```
 order-service:60001
                       ==> MQ => DB
 order-service:6002 
+```
