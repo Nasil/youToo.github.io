@@ -42,15 +42,9 @@ public interface OrderServiceClient {
 }
 ```
 - user-service의 service 단에 주문 호출 추가
-```java
-/* MSA간 통신방법2)  Using a feignClient with feign exception handling */
-List<ResponseOrder> orderList = null;
-try {
-    orderList = orderServiceClient.getOrders(userId);
-} catch (FeignException.FeignClientException ex) {
-    log.error(ex.getMessage());
-}
-userDto.setOrders(orderList);
+```
+/*  MSA간 통신방법2)  Using a feignClient with feign error decoder */
+List<ResponseOrder> orderList = orderServiceClient.getOrders(userId);
 ```
 - Feign logger setting
 ```java
@@ -64,10 +58,7 @@ logging:
   level:
     com.example.userservice.client: DEBUG
 ```
-
-
-### Feign error decoder 사용 방법
-- Exception handler
+- Feign error decoder 사용 (Exception handler)
 ```
 public class FeignErrorDecoder implements ErrorDecoder {
     @Override
@@ -88,9 +79,4 @@ public class FeignErrorDecoder implements ErrorDecoder {
         return null;
     }
 }
-```
-- user-service의 service 단에 주문 호출 추가
-```
-/*  MSA간 통신방법2)  Using a feignClient with feign error decoder */
-List<ResponseOrder> orderList = orderServiceClient.getOrders(userId);
 ```
