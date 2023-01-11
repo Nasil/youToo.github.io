@@ -1,6 +1,6 @@
 # MSA간 통신
 
-1. restTemplate 을 이용한 통신
+## 1. restTemplate 을 이용한 통신
 - user-service 에 bean 등록
 ```java
 @Bean
@@ -25,3 +25,6 @@ List<ResponseOrder> orderList = orders.getBody();
 order-service:
   url: http://ORDER-SERVICE/order-service/%s/orders
 ```
+
+## 2. FeignClient -> HTTP Client
+- REST Call 을 추상화 한 Spring Cloud Netflix 라이브러리
