@@ -47,3 +47,10 @@ public interface OrderServiceClient {
 List<ResponseOrder> orderList = orderServiceClient.getOrders(userId);
 userDto.setOrders(orderList);
 ```
+- feign logger setting
+```
+@Bean
+public Logger.Level feignLoggerLevel() {
+	return Logger.Level.FULL;
+}
+```
