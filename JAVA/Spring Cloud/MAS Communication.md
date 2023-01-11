@@ -60,7 +60,11 @@ logging:
 ```
 - Feign error decoder 사용 (Exception handler)
 ```
+@RequiredArgsConstructor
+@Component
 public class FeignErrorDecoder implements ErrorDecoder {
+
+    private final Environment env;
     @Override
     public Exception decode(String methodKey, Response response) {
         switch (response.status()) {
@@ -69,7 +73,7 @@ public class FeignErrorDecoder implements ErrorDecoder {
             case 404:
                 if (methodKey.contains("getOrders")) {
                     return new ResponseStatusException(HttpStatusCode.valueOf(response.status()),
-                    "User's order is empty.");
+                            env.getProperty("order-service.exception.orders_is_empty"));
                 }
                 break;
             default:
