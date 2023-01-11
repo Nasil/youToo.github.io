@@ -64,3 +64,33 @@ logging:
   level:
     com.example.userservice.client: DEBUG
 ```
+
+
+### Feign error decoder 사용 방법
+- Exception handler
+```
+public class FeignErrorDecoder implements ErrorDecoder {
+    @Override
+    public Exception decode(String methodKey, Response response) {
+        switch (response.status()) {
+            case 400:
+                break;
+            case 404:
+                if (methodKey.contains("getOrders")) {
+                    return new ResponseStatusException(HttpStatusCode.valueOf(response.status()),
+                    "User's order is empty.");
+                }
+                break;
+            default:
+                return new Exception(response.reason());
+        }
+
+        return null;
+    }
+}
+```
+- user-service의 service 단에 주문 호출 추가
+```
+/*  MSA간 통신방법2)  Using a feignClient with feign error decoder */
+List<ResponseOrder> orderList = orderServiceClient.getOrders(userId);
+```
