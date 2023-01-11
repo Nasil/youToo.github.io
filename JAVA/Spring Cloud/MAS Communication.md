@@ -34,4 +34,16 @@ order-service:
 public class UserServiceApplication {
 ```
 ```JAVA
+@FeignClient(name="order-service")
+public interface OrderServiceClient {
+
+    @GetMapping("/order-service/{userId}/orders")
+    List<ResponseOrder> getOrders(@PathVariable String userId);
+}
+```
+- user-service의 service 단에 주문 호출 추가
+```java
+ /* MSA간 통신방법2)  Using a feignClient */
+List<ResponseOrder> orderList = orderServiceClient.getOrders(userId);
+userDto.setOrders(orderList);
 ```
