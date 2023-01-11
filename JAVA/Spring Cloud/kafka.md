@@ -5,6 +5,7 @@
 - 다양한 3rd party lib 존재
     - https://cwiki.apache.org/confluence/display/KAFKA/Clients
  
+ # 간단 명령어 (for Window)
 
 - 실행
 ```
