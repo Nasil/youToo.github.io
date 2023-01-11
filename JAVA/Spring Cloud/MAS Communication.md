@@ -33,18 +33,23 @@ order-service:
 @EnableFeignClients
 public class UserServiceApplication {
 ```
+- user-service의 interface 
 ```JAVA
 @FeignClient(name="order-service")
 public interface OrderServiceClient {
-
     @GetMapping("/order-service/{userId}/orders")
     List<ResponseOrder> getOrders(@PathVariable String userId);
 }
 ```
 - user-service의 service 단에 주문 호출 추가
 ```java
- /* MSA간 통신방법2)  Using a feignClient */
-List<ResponseOrder> orderList = orderServiceClient.getOrders(userId);
+/* MSA간 통신방법2)  Using a feignClient with feign exception handling */
+List<ResponseOrder> orderList = null;
+try {
+    orderList = orderServiceClient.getOrders(userId);
+} catch (FeignException.FeignClientException ex) {
+    log.error(ex.getMessage());
+}
 userDto.setOrders(orderList);
 ```
 - Feign logger setting
