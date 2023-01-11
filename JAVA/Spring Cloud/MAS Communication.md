@@ -9,7 +9,7 @@ public RestTemplate getRestTemplate() {
 	return new RestTemplate();
 }
 ```
-- 호출할 MSA 주소
+- user-service의 service 단에 주문 호출 추가
 ```java
 UserDto userDto = new ModelMapper().map(userEntity, UserDto.class);
 String envOrderUrl = env.getProperty("order-service.url"); // http://order-service/order-service/%s/orders
@@ -17,7 +17,6 @@ String orderUrl = String.format(envOrderUrl, userId);
 ResponseEntity<List<ResponseOrder>> orders = restTemplate.exchange(orderUrl, HttpMethod.GET, null,
 	new ParameterizedTypeReference<List<ResponseOrder>>() {
 });
-
 List<ResponseOrder> orderList = orders.getBody();
 ```
 - config yml 에 설정
