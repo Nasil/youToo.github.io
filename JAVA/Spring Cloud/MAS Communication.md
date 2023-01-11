@@ -20,3 +20,8 @@ ResponseEntity<List<ResponseOrder>> orders = restTemplate.exchange(orderUrl, Htt
 
 List<ResponseOrder> orderList = orders.getBody();
 ```
+- config yml 에 설정
+```java
+order-service:
+  url: http://ORDER-SERVICE/order-service/%s/orders
+```
