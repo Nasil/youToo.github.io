@@ -4,12 +4,22 @@
 
 
 ### 해결방법1) db 를 하나로 쓴다
+```
+order-service:60001
+                     <=> DB
+order-service:60002
+```
 
 ### 해결방법2) message queing server 사용
+```
+order-service:60001  => DB1  
+                             <=> kafka
+order-service:60002   => DB2
+```
 
 ### 해결방법2) db 를 하나 + message queing server 
 ```
 order-service:60001
-                      ==> MQ => DB
-order-service:6002 
+                      ==> kafka => DB
+order-service:60002 
 ```
