@@ -28,3 +28,11 @@ order-service:
 
 ## 2. FeignClient -> HTTP Client
 - REST Call 을 추상화 한 Spring Cloud Netflix 라이브러리
+```JAVA
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableFeignClients
+public class UserServiceApplication {
+```
+```JAVA
+```
