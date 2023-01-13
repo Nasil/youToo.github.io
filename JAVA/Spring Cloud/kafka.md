@@ -5,6 +5,10 @@
 - 카프카 설치 및 커넥터 연동 참조)
     - https://cjw-awdsd.tistory.com/53
     - https://conkjh032.tistory.com/458 (윈도우 설치 에러 팁)
+    - gradle 의 경우 implementation 후 java 실행시 나오는 첫줄에 mariadb-java-client-3.0.9.jar 위치 나오는것 참조
+    ```
+    implementation 'org.mariadb.jdbc:mariadb-java-client'
+    ```
  
  
  # 간단 명령어 (for Window)
