@@ -24,3 +24,4 @@ hypervisor -> Container
 - There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies. // 최소 중앙 관리가 필요하며, 다른 언어 다른 storage 가 사용 될 수 있다.
 
 
+강의자료 참조) https://github.com/joneconsulting/msa_with_spring_cloud/tree/main/pdf
