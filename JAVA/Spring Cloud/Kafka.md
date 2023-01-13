@@ -11,6 +11,23 @@
     ```
     - http://localhost:8083/connector-plugins 로 설치된 플러그인 확인 가능
     - jdbc 에러 발생시 : https://wecandev.tistory.com/111
+    - [post] 127.0.0.1:8083/connectors
+    ```
+    {
+    "name": "my-source-connect",
+    "config": {
+        "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+        "connection.url": "jdbc:mariadb://localhost:3306/mydb",
+        "connection.user": "root",
+        "connection.password": "비번입력",
+        "mode": "incrementing",
+        "incrementing.column.name": "id",
+        "table.whitelist": "mydb.users", // 에러 발생되어 추가
+        "topic.prefix": "my_topic_",
+        "tasks.max": "1"
+        }
+    }
+    ```
  
  
  # 간단 명령어 (for Window)
