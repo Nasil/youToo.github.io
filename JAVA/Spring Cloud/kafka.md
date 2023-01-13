@@ -1,35 +1,35 @@
 # 카프카
 - 카프카 설치 : https://kafka.apache.org/downloads
-- Kafka와 데이터를 주고받기 위해 사용하는 java lib
-    - https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
-- 다양한 3rd party lib 존재
-    - https://cwiki.apache.org/confluence/display/KAFKA/Clients
-
-- 카프카 커넥터 설치 :
+- Kafka와 데이터를 주고받기 위해 사용하는 java lib : https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+- 다양한 3rd party lib 존재 : https://cwiki.apache.org/confluence/display/KAFKA/Clients
+- 카프카 설치 및 커넥터 연동 참조)
     - https://cjw-awdsd.tistory.com/53
     - https://conkjh032.tistory.com/458
  
  
  # 간단 명령어 (for Window)
-
-- 실행
+- Zookeeper 및 kafka 서버 구동
 ```
-./zookeeper-server-start.bat ../../config/zookeeper.properties
-./kafka-server-start.bat ../../config/server.properties
+./bin/windows/zookeeper-server-start.bat ./config/zookeeper.properties
+./bin/windows/kafka-server-start.bat ./config/server.properties
 ```
-
-- 토픽 실행
+- Topic 생성
 ```
-./kafka-topics.bat --bootstrap-server localhost:9092 --list
-./kafka-topics.bat --bootstrap-server localhost:9092 --create --topic quick-event --partitions 1
-./kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic quick-event
+./bin/windows/kafka-topics.bat --create --topic quickstart-events --bootstrap-server localhost:9092 --partitions 1
 ```
-
-- producer 실행
+- Topic 목록 확인
 ```
- ./kafka-console-producer.bat --broker-list localhost:9092 --topic quick-event
+./bin/windows/kafka-topics.bat --bootstrap-server localhost:9092 --list
 ```
-- consumer 실행
+- Topic 정보 확인
 ```
-./kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic quick-event --from-beginning
+./bin/windows/kafka-topics.bat --describe --topic quickstart-events --bootstrap-sever localhost:9092
+```
+- 메시지 생산 테스트
+```
+./bin/windows/kafka-console-producer.bat --broker-list localhost:9092 --topic quickstart-events
+```
+- 메시지 소비 테스트 
+```
+./bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic quickstart-events --from-beginning
 ```
