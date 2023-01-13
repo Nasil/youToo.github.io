@@ -41,7 +41,7 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
 
 # Kafka connection
 ![connect](https://blog.kakaocdn.net/dn/zjEmA/btrp5zR8tDs/Bz9NYoKNgHJQknIjJGLaQK/img.png)
-### Kafka source 등록
+### Kafka coonect source 등록
 - 카프카 소스는 소스 시스템(예: 마리아DB의) 변경 내용을 카프카 토픽에게 전달.
 -  [post] 127.0.0.1:8083/connectors
 ```
@@ -60,7 +60,7 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
     }
 }
 ```
-### Kafka sink 등록
+### Kafka coonect sink 등록
 ```
 {
     "name": "my-sink-connect",
@@ -77,3 +77,4 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
     }
 }
 ```
+- users 라는 테이블에 데이터가 my_topic_users 에 카프카에 의해 항상 싱크가 맞춰지게 됨.
