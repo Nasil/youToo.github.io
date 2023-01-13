@@ -4,7 +4,7 @@
 - 다양한 3rd party lib 존재 : https://cwiki.apache.org/confluence/display/KAFKA/Clients
 - 카프카 설치 및 커넥터 연동 참조)
     - https://cjw-awdsd.tistory.com/53
-    - https://conkjh032.tistory.com/458
+    - https://conkjh032.tistory.com/458 (윈도우 설치 에러 팁)
  
  
  # 간단 명령어 (for Window)
