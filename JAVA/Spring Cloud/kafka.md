@@ -9,6 +9,7 @@
     ```
     implementation 'org.mariadb.jdbc:mariadb-java-client'
     ```
+    - http://localhost:8083/connector-plugins 로 설치된 플러그인 확인 가능
  
  
  # 간단 명령어 (for Window)
