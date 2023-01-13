@@ -9,24 +9,6 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
 ```
 - http://localhost:8083/connector-plugins 로 설치된 플러그인 확인 가능
 - jdbc 에러 발생시 : https://wecandev.tistory.com/111
-- Kafka source 등록. 카프카 소스는 소스 시스템(예: 마리아DB의) 변경 내용을 카프카 토픽에게 전달.
--  [post] 127.0.0.1:8083/connectors
-```
-{
-"name": "my-source-connect",
-"config": {
-    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
-    "connection.url": "jdbc:mariadb://localhost:3306/mydb",
-    "connection.user": "root",
-    "connection.password": "비번입력",
-    "mode": "incrementing",
-    "incrementing.column.name": "id",
-    "table.whitelist": "mydb.users", // 에러 발생되어 추가
-    "topic.prefix": "my_topic_",
-    "tasks.max": "1"
-    }
-}
-```
  
  
  # 간단 명령어 (for Window)
@@ -59,3 +41,39 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
 
 # Kafka connection
 ![connect](https://blog.kakaocdn.net/dn/zjEmA/btrp5zR8tDs/Bz9NYoKNgHJQknIjJGLaQK/img.png)
+### Kafka source 등록
+- 카프카 소스는 소스 시스템(예: 마리아DB의) 변경 내용을 카프카 토픽에게 전달.
+-  [post] 127.0.0.1:8083/connectors
+```
+{
+"name": "my-source-connect",
+"config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "connection.url": "jdbc:mariadb://localhost:3306/mydb",
+    "connection.user": "root",
+    "connection.password": "비번입력",
+    "mode": "incrementing",
+    "incrementing.column.name": "id",
+    "table.whitelist": "mydb.users", // 에러 발생되어 추가
+    "topic.prefix": "my_topic_",
+    "tasks.max": "1"
+    }
+}
+```
+### Kafka sink 등록
+```
+{
+    "name": "my-sink-connect",
+    "config": {
+        "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+        "connection.url": "jdbc:mariadb://localhost:3306/mydb",
+        "connection.user": "root",
+        "connection.password": "비번입력",
+        "auto.create": "true",
+        "auto.evolve": "true",
+        "delete.enabled": "false",
+        "tasks.max": "1",
+        "topics": "my_topic_users"
+    }
+}
+```
