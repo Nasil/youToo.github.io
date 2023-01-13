@@ -27,7 +27,7 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
 ```
 - Topic 정보 확인
 ```
-./bin/windows/kafka-topics.bat --describe --topic quickstart-events --bootstrap-sever localhost:9092
+ ./bin/windows/kafka-topics.bat --describe --bootstrap-server localhost:9092 --topic quickstart-events
 ```
 - 메시지 생산 테스트
 ```
@@ -36,6 +36,12 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
 - 메시지 소비 테스트 
 ```
 ./bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic quickstart-events --from-beginning
+```
+- 토픽 삭제
+- delete.topic.enable=true
+```
+bin/kafka-topics.sh --zookeeper localhost:2181 
+> delteall or delete
 ```
 
 
