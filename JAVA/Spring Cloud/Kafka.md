@@ -55,3 +55,7 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
 ```
 ./bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic quickstart-events --from-beginning
 ```
+
+
+# Kafka connection
+![connect](https://blog.kakaocdn.net/dn/zjEmA/btrp5zR8tDs/Bz9NYoKNgHJQknIjJGLaQK/img.png)
