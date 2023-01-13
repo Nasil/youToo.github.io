@@ -9,7 +9,8 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
 ```
 - http://localhost:8083/connector-plugins 로 설치된 플러그인 확인 가능
 - jdbc 에러 발생시 : https://wecandev.tistory.com/111
-- [post] 127.0.0.1:8083/connectors
+- Kafka source 등록. 카프카 소스는 소스 시스템(예: 마리아DB의) 변경 내용을 카프카 토픽에게 전달.
+-  [post] 127.0.0.1:8083/connectors
 ```
 {
 "name": "my-source-connect",
