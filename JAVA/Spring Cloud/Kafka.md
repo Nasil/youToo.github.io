@@ -1,33 +1,31 @@
-# 카프카
-- 카프카 설치 : https://kafka.apache.org/downloads
-- Kafka와 데이터를 주고받기 위해 사용하는 java lib : https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
-- 다양한 3rd party lib 존재 : https://cwiki.apache.org/confluence/display/KAFKA/Clients
-- 카프카 설치 및 커넥터 연동 참조)
-    - https://cjw-awdsd.tistory.com/53
-    - https://conkjh032.tistory.com/458 (윈도우 설치 에러 팁)
-    - gradle 의 경우 implementation 후 java 실행시 나오는 첫줄에 mariadb-java-client-3.0.9.jar 위치 나오는것 참조
-    ```
-    implementation 'org.mariadb.jdbc:mariadb-java-client'
-    ```
-    - http://localhost:8083/connector-plugins 로 설치된 플러그인 확인 가능
-    - jdbc 에러 발생시 : https://wecandev.tistory.com/111
-    - [post] 127.0.0.1:8083/connectors
-    ```
-    {
-    "name": "my-source-connect",
-    "config": {
-        "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
-        "connection.url": "jdbc:mariadb://localhost:3306/mydb",
-        "connection.user": "root",
-        "connection.password": "비번입력",
-        "mode": "incrementing",
-        "incrementing.column.name": "id",
-        "table.whitelist": "mydb.users", // 에러 발생되어 추가
-        "topic.prefix": "my_topic_",
-        "tasks.max": "1"
-        }
+# 카프카 설치 및 커넥터 연동
+### 참조
+- https://cjw-awdsd.tistory.com/53
+- https://conkjh032.tistory.com/458 (윈도우 설치 에러 팁)
+### 에러 해결
+- gradle 의 경우 implementation 후 java 실행시 나오는 첫줄에 mariadb-java-client-3.0.9.jar 위치 나오는것 참조
+```
+implementation 'org.mariadb.jdbc:mariadb-java-client'
+```
+- http://localhost:8083/connector-plugins 로 설치된 플러그인 확인 가능
+- jdbc 에러 발생시 : https://wecandev.tistory.com/111
+- [post] 127.0.0.1:8083/connectors
+```
+{
+"name": "my-source-connect",
+"config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "connection.url": "jdbc:mariadb://localhost:3306/mydb",
+    "connection.user": "root",
+    "connection.password": "비번입력",
+    "mode": "incrementing",
+    "incrementing.column.name": "id",
+    "table.whitelist": "mydb.users", // 에러 발생되어 추가
+    "topic.prefix": "my_topic_",
+    "tasks.max": "1"
     }
-    ```
+}
+```
  
  
  # 간단 명령어 (for Window)
