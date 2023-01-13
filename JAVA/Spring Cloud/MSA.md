@@ -1,5 +1,5 @@
-강의 요약 : https://intrepidgeeks.com/tutorial/springcloud-msa-introduction-to-microservice-and-springcloud
-강의 자료 : https://github.com/joneconsulting/msa_with_spring_cloud/tree/main/pdf
+- 강의 요약 : https://intrepidgeeks.com/tutorial/springcloud-msa-introduction-to-microservice-and-springcloud
+- 강의 자료 : https://github.com/joneconsulting/msa_with_spring_cloud/tree/main/pdf
 
 # 스케일업 VS 스케일아웃
 - Scale-up : 수직 스케일링(vertical scaling) 하드웨어 사양 높이는 것 (비용부담 큼)
