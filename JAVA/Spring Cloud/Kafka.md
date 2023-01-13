@@ -61,7 +61,7 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
 }
 ```
 ### Kafka coonect sink 등록
-- 카프카 싱크는 카프카 토픽에 쌓인 데이터를 타겟에 전달.
+- 카프카 싱크는 카프카 토픽에 쌓인 데이터를 타겟에 반영.
 ```
 {
     "name": "my-sink-connect",
