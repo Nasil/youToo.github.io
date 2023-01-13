@@ -25,4 +25,5 @@ hypervisor -> Container
 - There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies. // 최소 중앙 관리가 필요하며, 다른 언어 다른 storage 가 사용 될 수 있다.
 
 
-![msa](https://docs.vmware.com/en/Spring-Cloud-Gateway-for-VMware-Tanzu/images/GUID-40D4C7DE-8278-4CF3-914A-7C0AE05EAE1B-low.png)
+
+![img](https://docs.vmware.com/en/Spring-Cloud-Gateway-for-VMware-Tanzu/images/GUID-40D4C7DE-8278-4CF3-914A-7C0AE05EAE1B-low.png)
