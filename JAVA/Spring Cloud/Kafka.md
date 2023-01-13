@@ -2,7 +2,7 @@
 ### 참조
 - https://cjw-awdsd.tistory.com/53
 - https://conkjh032.tistory.com/458 (윈도우 설치 에러 팁)
-### 에러 해결
+### 설치시 에러 해결 한 내용
 - gradle 의 경우 implementation 후 java 실행시 나오는 첫줄에 mariadb-java-client-3.0.9.jar 위치 나오는것 참조
 ```
 implementation 'org.mariadb.jdbc:mariadb-java-client'
