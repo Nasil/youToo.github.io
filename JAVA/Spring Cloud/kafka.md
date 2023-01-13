@@ -5,7 +5,7 @@
 - 다양한 3rd party lib 존재
     - https://cwiki.apache.org/confluence/display/KAFKA/Clients
 
- - 카프카 커넥터 : https://cjw-awdsd.tistory.com/53
+ - 카프카 커넥터 설치 : https://cjw-awdsd.tistory.com/53
  
  
  # 간단 명령어 (for Window)
