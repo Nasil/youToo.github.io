@@ -11,14 +11,14 @@
 ```
 implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
 ```
-```
+```javasse
 /*  MSA간 통신방법2 with Error decode) Using a feignClient with feign error decoder */
 CircuitBreaker circuitBreaker = circuitBreakerFactory.create("circuitbreaker");
 List<ResponseOrder> orderList = circuitBreaker.run(() -> orderServiceClient.getOrders(userId),
     throwable -> new ArrayList<>());
 ```
 
-```
+```java
 @Configuration
 public class Resilience4JConfig {
 
