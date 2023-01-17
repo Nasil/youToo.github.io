@@ -16,4 +16,4 @@
 * Trace ID : 클라이언트의 호출이 시작되는 시점 부터 그 호출이 끝날 때 까지 동일한 ID 사용
 * Span ID : 마이크로서비스당 1개의 ID가 부여됨.
 
- 
+- 공식) https://zipkin.io/pages/quickstart.html
