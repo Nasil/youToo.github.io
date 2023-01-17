@@ -19,6 +19,6 @@
 - 공식) https://zipkin.io/pages/quickstart.html
 
 ```
-implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
-implementation("org.springframework.cloud:spring-cloud-starter-zipkin")
+implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+implementation 'org.springframework.cloud:spring-cloud-starter-zipkin:2.2.3.RELEASE'
 ```
