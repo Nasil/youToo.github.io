@@ -43,7 +43,10 @@ implementation 'org.mariadb.jdbc:mariadb-java-client'
 bin/kafka-topics.sh --zookeeper localhost:2181 
 > delteall or delete
 ```
-
+- 카프카 커넥션 실행
+```
+./bin/windows/connect-distributed.bat ./etc/kafka/connect-distributed.properties
+```
 
 # Kafka connection
 ![connect](https://blog.kakaocdn.net/dn/zjEmA/btrp5zR8tDs/Bz9NYoKNgHJQknIjJGLaQK/img.png)
