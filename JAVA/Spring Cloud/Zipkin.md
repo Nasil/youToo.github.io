@@ -17,3 +17,8 @@
 * Span ID : 마이크로서비스당 1개의 ID가 부여됨.
 
 - 공식) https://zipkin.io/pages/quickstart.html
+
+```
+implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
+implementation("org.springframework.cloud:spring-cloud-starter-zipkin")
+```
