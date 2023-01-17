@@ -8,7 +8,7 @@
 2) Zipkin Server: 
 - Collector -> Storage -> API -> Web UI (dashboard) 로 구성.
 - Storage에는 in-memory방식과, ES 방식 등이 있는데, 규모가 커진다면 ES(ElasticSearch)방식이 더 적합.
-- 
+
 # Spring Cloud Sleuth 란 ?
 - 여러 서비스를 거쳐서 호출이 일어나기 때문에 추적이 어렵다..! 그래서 추적을 위한 연관된 ID가 필요합니다.
 - 이 ID를 생성해 주는 것이 바로 Spring Cloud Sleuth입니다.
