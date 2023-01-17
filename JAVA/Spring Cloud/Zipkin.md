@@ -2,10 +2,10 @@
 - Zipkin은 분산환경에서 로그 트레이싱을 제공해주는 오픈 소스입니다.
 
 # zipkin의 구성 
-1 ) Zipkin Client Library: 
+1) Zipkin Client Library: 
 - 정보수집을 담당하고, 수집한 것들을 Collector 모듈로 전송. 
 - http를 사용하고 java, javascript, go 언어등을 지원.
-2 ) Zipkin Server: 
+2) Zipkin Server: 
 - Collector -> Storage -> API -> Web UI (dashboard) 로 구성.
 - Storage에는 in-memory방식과, ES 방식 등이 있는데, 규모가 커진다면 ES(ElasticSearch)방식이 더 적합.
 - 
