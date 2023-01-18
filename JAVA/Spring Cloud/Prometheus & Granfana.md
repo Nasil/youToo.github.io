@@ -16,11 +16,19 @@ implementation 'io.micrometer:micrometer-registry-prometheus'
 
 prometheus > prometheus.yml
 ```
-static_configs:
-  - targets: ["localhost:9090"]
-- job_name: 'user-service'
-  scrape_interval: 15s
-  metrics_path: '/user-service/actuator/prometheus'
+- job_name: 'user-service'  # 생성할 job의 이름
+  scrape_interval: 15s      # 15초 마다 정보 파싱
+  metrics_path: '/user-service/actuator/prometheus' # 정보를 파싱해올 url
   static_configs:
-  - targets: ['localhost:8000']
+    - targets: ['localhost:8000'] # url host
+- job_name: 'order-service'
+  scrape_interval: 15s
+  metrics_path: '/order-service/actuator/prometheus' # 정보를 파싱해올 url
+  static_configs:
+    - targets: ['localhost:8000'] # url host
+- job_name: 'gateway'
+  scrape_interval: 15s
+  metrics_path: '/actuator/prometheus' # 정보를 파싱해올 url
+  static_configs:
+    - targets: ['localhost:8000'] # url host
 ```
