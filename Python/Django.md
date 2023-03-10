@@ -7,12 +7,11 @@ pip install django
 pip install djangorestframework
 django-admin --version
 ```
-
-## 실행
+- 패키지 생성
 ```
 django-admin startproject myproject // 패키지 생성
 ./manage.py startapp myapp // 앱 만들기
-./manage.py createsuperuser
+./manage.py createsuperuser // 유저 셋팅
 ```
 - 가상환경 실행
 ```
