@@ -1,9 +1,11 @@
 # Django
 
+
+## MVT 패턴
 ![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpdQ3m%2FbtqwhTpC3gU%2FvXB2IGfXViX7cGFQgXjlR1%2Fimg.png)
+- 장고 프레임워크에서는 View를 Template, Controller는 View라고 표현하며, MVC를 MVT 패턴이라고 한다.
 
-
-# 장고에서 URL을 분석하는 순서
+## 장고에서 URL을 분석하는 순서
 - 웹 클라이언트가 웹 서버에 페이지 요청시, 장고에서 URL을 분석하는 순서를 간단히 요약하면 아래와 같다.
 1. setting.py 파일의 ROOT_URLCONF 항목을 읽어 최상위 URLconf (urls.py)의 위치를 알아낸다.
 2. URLconf를 로딩하여 urlpatterns 변수에 지정되어있는 URL 리스트를 검사한다.
