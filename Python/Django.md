@@ -15,9 +15,10 @@ deactivate // To leave your virtual environment, you need to issue the deactivat
 ```
 django-admin startproject myproject // 패키지 생성
 python manage.py startapp myapp // 앱 만들기
-
-
-
+./manage.py migrate // db
+./manage.py createsuperuser
+./manage.py runserver 8080
+./manage.py makemigrations community
 
 ```
 
