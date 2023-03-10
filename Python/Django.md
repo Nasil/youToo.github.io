@@ -1,14 +1,24 @@
 # Django
 
 
+## 설치
 ```
-django-admin startproject myproject
-python manage.py startapp myapp
+sudo pip3 install virtualenv
+virtualenv newenv
+source newenv/bin/activate // To install packages into the isolated environment, you must activate it by typing
+pip install django
+django-admin --version
+deactivate // To leave your virtual environment, you need to issue the deactivate command from anywhere on the system
+```
 
-python3 -m venv env
-source env/bin/activate
-pip install -r ./requirements.txt
-python3 ./manage.py runserver
+## 실행
+```
+django-admin startproject myproject // 패키지 생성
+python manage.py startapp myapp // 앱 만들기
+
+
+
+
 ```
 
 ## MVT 패턴
