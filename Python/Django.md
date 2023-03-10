@@ -3,8 +3,6 @@
 
 ## 설치
 ```
-
-
 sudo pip3 install virtualenv
 virtualenv newenv
 source newenv/bin/activate // To install packages into the isolated environment, you must activate it by typing
@@ -20,15 +18,20 @@ django-admin startproject myproject // 패키지 생성
 ./manage.py startapp myapp // 앱 만들기
 ./manage.py createsuperuser
 ```
+- 가상환경 실행
 ```
 $ phtyon3 -m venv env
 $ source env/bin/activate
-
 $ python manage.py makemigrations
-$ python manage.py migrate
-$ python manage.py runserver
-
+$ python manage.py migrate // DB 반영
+$ python manage.py runserver // 서버 실행
 ```
+- 서브 폴더 생성
+```
+mkdir apps/myapp
+python manage.py startapp myapp  apps/myapp
+```
+
 
 ## MVT 패턴
 ![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpdQ3m%2FbtqwhTpC3gU%2FvXB2IGfXViX7cGFQgXjlR1%2Fimg.png)
