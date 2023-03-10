@@ -1,15 +1,11 @@
 # Django
 
 
-## 설치
+## django 설치
 ```
-sudo pip3 install virtualenv
-virtualenv newenv
-source newenv/bin/activate // To install packages into the isolated environment, you must activate it by typing
 pip install django
 pip install djangorestframework
 django-admin --version
-deactivate // To leave your virtual environment, you need to issue the deactivate command from anywhere on the system
 ```
 
 ## 실행
