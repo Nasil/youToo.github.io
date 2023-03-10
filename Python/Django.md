@@ -1,7 +1,9 @@
 # Django
 
 
-## django 설치
+## django 시작하기
+
+- 
 ```
 pip install django
 pip install djangorestframework
