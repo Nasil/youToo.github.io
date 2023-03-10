@@ -20,6 +20,9 @@ django-admin startproject myproject // 패키지 생성
 $ phtyon3 -m venv env
 $ source env/bin/activate
 $ python manage.py makemigrations
+```
+- DB 
+```
 $ python manage.py migrate // DB 반영
 $ python manage.py runserver // 서버 실행
 ```
