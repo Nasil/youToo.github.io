@@ -12,7 +12,7 @@ django-admin --version
 - 패키지 생성
 ```
 django-admin startproject myproject // 패키지 생성
-./manage.py startapp myapp // 앱 만들기
+./manage.py startapp myapp // 앱 만들기 -> INSTALLED_APPS 에 
 ./manage.py createsuperuser // 유저 셋팅
 ```
 - 가상환경 실행
