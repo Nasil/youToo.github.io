@@ -3,10 +3,13 @@
 
 ## 설치
 ```
+
+
 sudo pip3 install virtualenv
 virtualenv newenv
 source newenv/bin/activate // To install packages into the isolated environment, you must activate it by typing
 pip install django
+pip install djangorestframework
 django-admin --version
 deactivate // To leave your virtual environment, you need to issue the deactivate command from anywhere on the system
 ```
@@ -14,11 +17,16 @@ deactivate // To leave your virtual environment, you need to issue the deactivat
 ## 실행
 ```
 django-admin startproject myproject // 패키지 생성
-python manage.py startapp myapp // 앱 만들기
-./manage.py migrate // db
+./manage.py startapp myapp // 앱 만들기
 ./manage.py createsuperuser
-./manage.py runserver 8080
-./manage.py makemigrations community
+```
+```
+$ phtyon3 -m venv env
+$ source env/bin/activate
+
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
 
 ```
 
