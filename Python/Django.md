@@ -29,6 +29,19 @@ mkdir apps/myapp
 python manage.py startapp myapp  apps/myapp
 ```
 
+- 쉘
+```
+python manage.py shell
+>>> from elections.models import Candidate
+>>> Candidate.objects.all()
+<QuerySet [<Candidate: test>, <Candidate: mandy>]>
+>>> new_candidate = Candidate(name="루루")
+>>> Candidate.objects.all()
+<QuerySet [<Candidate: test>, <Candidate: mandy>]>
+>>> new_candidate.save()
+>>> Candidate.objects.all()
+<QuerySet [<Candidate: test>, <Candidate: mandy>, <Candidate: 루루>]>
+```
 
 ## MVT 패턴
 ![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpdQ3m%2FbtqwhTpC3gU%2FvXB2IGfXViX7cGFQgXjlR1%2Fimg.png)
