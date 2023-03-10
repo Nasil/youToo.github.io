@@ -46,6 +46,10 @@ python manage.py shell
 ## MVT 패턴
 ![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpdQ3m%2FbtqwhTpC3gU%2FvXB2IGfXViX7cGFQgXjlR1%2Fimg.png)
 - 장고 프레임워크에서는 View를 Template, Controller는 View라고 표현하며, MVC를 MVT 패턴이라고 한다.
+- Model(데이터) - models.py
+- View(화면) - templates // 화면에 어떤 장면을 보여줄지를 결정
+- Controller(조율) - views
+    - Django에서는 controller(조율)를 views.py에서 담당하고, View(화면)를 templates에서 담당합니다. 헷갈리지 않게 주의하세요.
 
 ## 장고에서 URL을 분석하는 순서
 - 웹 클라이언트가 웹 서버에 페이지 요청시, 장고에서 URL을 분석하는 순서를 간단히 요약하면 아래와 같다.
