@@ -43,6 +43,13 @@ python manage.py shell
 <QuerySet [<Candidate: test>, <Candidate: mandy>, <Candidate: 루루>]>
 ```
 
+```
+phtyon3 -m venv env
+source env/bin/activate
+pip install -r ./xxx.txt
+python3 ./manage.py runserver
+```
+
 ## MVT 패턴
 ![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpdQ3m%2FbtqwhTpC3gU%2FvXB2IGfXViX7cGFQgXjlR1%2Fimg.png)
 - 장고 프레임워크에서는 View를 Template, Controller는 View라고 표현하며, MVC를 MVT 패턴이라고 한다.
