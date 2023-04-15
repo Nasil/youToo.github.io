@@ -2,19 +2,18 @@
 - 통계에 기반한 전통적인 언어 모델(Statistical Languagel Model)
 - 언어 모델(Languagel Model)이란 단어 시퀀스(문장)에 확률을 할당하는 모델
 
-# Tokenization
+## Tokenization
 - 형태소 분석기를 이용해 토큰화 하는 방법 : 단어 단위로 쪼개는게 가능
 - 공백 단위로 토큰화 하는 방법 : 단어 단위라고는 할 수 없음
 
-# Bag of word(BoW)
+## Bag of word(BoW)
 - Bag of Words란 단어들의 순서는 전혀 고려하지 않고, 단어들의 출현 빈도(frequency)에만 집중하는 텍스트 데이터의 수치화 표현 방법
 
-# N-Gram
+## N-Gram
 - n-gram은 n개의 연속적인 단어 나열을 의미합니다. 갖고 있는 코퍼스에서 n개의 단어 뭉치 단위로 끊어서 이를 하나의 토큰으로 간주
 - 2~3 개의 말뭉치를 묶는다.
 
-
-# TF-IDF
+## TF-IDF
 - Term Frequency - Inverse Document Frequency
 - 문장 d에 토큰t가 나온 횟수 - 흔하면 작은값 & 희소한 토큰이면 큰값
 - 중요하지 않은 토큰이 빈도수가 높은 경우 (ex, 조사) 중요도 고려 할 순 없을까?
