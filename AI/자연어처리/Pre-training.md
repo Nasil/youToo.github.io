@@ -9,3 +9,5 @@
 
 ## 사전훈련된 언어모델
 - ELMo
+- BERT는 기존 Transformer에서 Encoder
+- GPT는 기존 Transformer에서 Masked Multi-Head Attention 
