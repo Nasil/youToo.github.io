@@ -10,6 +10,7 @@
 - 문서(Document) : 비구조화된 데이터 조각이며, Page_content(데이터내용)과 Metadata(데이터 속성을 설명하는 부가정보)로 이루어짐
 
 ## 모델
+https://python.langchain.com/en/latest/modules/models.html
 - 텍스트 문자열 -> 대규모 언어 모델 LLMs -> 텍스트 문자열
 - 채팅 메세지 목록 -> 채팅 모델 -> 채팅 메세지
 - 텍스트 입력 -> 텍스트 임베딜 모델 -> 실수 목록
