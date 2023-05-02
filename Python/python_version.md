@@ -3,6 +3,9 @@
 brew update
 pyenv install --list
 pyenv install 3.11.2
+
+pyenv versions
+pyenv global 3.11.2
 ```
 
 ## 파이썬 가상환경으로 실행
