@@ -8,6 +8,12 @@ pyenv versions
 pyenv global 3.11.2
 ```
 
+## 파이썬 설치 경로
+```
+which python
+which -a python
+```
+
 ## 파이썬 가상환경으로 실행
 ```
 python3 -m venv env
