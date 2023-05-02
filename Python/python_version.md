@@ -12,6 +12,7 @@ pyenv global 3.11.2
 ```
 which python
 which -a python
+which -a python3
 ```
 
 ## 파이썬 가상환경으로 실행
