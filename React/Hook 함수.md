@@ -184,3 +184,19 @@ const [{ username, email }, onChange, reset] = UseInputs({
   email: ''
 });
 ```
+```js
+const onCreate = useCallback(() => {
+  dispatch(
+    {
+      type: 'CREATE_USER',
+      user: {
+        id: nextId.current,
+        username,
+        email
+      }
+    }
+  );
+  reset();
+  nextId.current += 1;
+}, [username, email, reset]);
+```
