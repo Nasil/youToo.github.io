@@ -117,6 +117,19 @@ const count = useMemo(() => countActiveUsers(users), [users]);
 ```
 
 # useCallback
+```js
+// 함수 안에서 사용하는 상태 혹은 props 가 있다면 꼭, deps 배열안에 포함
+ const onChange = useCallback(
+   e => {
+     const { name, value } = e.target;
+     setInputs(inputs => ({
+       ...inputs,
+       [name]: value
+     }));
+   },
+   []  // [inputs] 
+ );
+```
 
 
 # useRef
