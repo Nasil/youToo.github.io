@@ -133,5 +133,8 @@ const count = useMemo(() => countActiveUsers(users), [users]);
 
 
 # useRef
+```
+const nextId = useRef(4);
+```
 
 # usePromise
