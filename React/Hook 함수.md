@@ -1,7 +1,7 @@
 ## useState
 - 함수형 컴포넌트에서도 가변적인 상태를 지니고 있을 수 있게 해줌
  
-```
+```js
 const [inputs, setInputs] = useState({
   username: '',
   email: ''
