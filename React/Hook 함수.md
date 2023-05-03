@@ -59,7 +59,10 @@ setUsers(users => users.concat(user));
 
 
 # useReducer
+- reducer 는 현재 상태와 액션 객체를 파라미터로 받아와서 새로운 상태를 반환해주는 함수
+```
 
+```
 
 # useMemo
 
