@@ -55,8 +55,72 @@ setUsers(users => users.concat(user));
 - 클래스형 컴포넌트의 componentDidMount 와 componentDidUpdate 를 합친 형태로 보아도 무방합니다.
 
 # useContext
+```js
+import React, { useEffect, useContext } from 'react';
+import { UserDispatch } from './App';
 
+const User = React.memo(function User({ user }) {
+  const dispatch = useContext(UserDispatch); // useContext 사용
 
+    useEffect(() => {
+        console.log('user 값이 설정됨');
+        console.log(user);
+        return () => {
+          console.log('user 가 바뀌기 전..');
+          console.log(user);
+        };
+      }, [user]);
+      return (
+        <div>
+          <b
+            style={{cursor: 'pointer', color: user.active ? 'green' : 'black'}}
+            onClick={() => {
+              dispatch({ type: 'TOGGLE_USER', id: user.id });
+            }}
+          >
+            {user.username}
+          </b>
+          &nbsp;
+          <span>({user.email})</span>
+          <button
+            onClick={() => {
+              dispatch({ type: 'REMOVE_USER', id: user.id });
+            }}
+          >
+            삭제
+          </button>
+        </div>
+      );
+    });
+
+const UserList = ({ users }) => {
+  return (
+    <div>
+      {users.map(user => (
+        <User user={user} key={user.id}/>
+      ))}
+    </div>
+  );
+}
+
+export default React.memo(UserList);
+```
+```js
+// dispath
+const [state, dispatch] = useReducer(reducer, initialState);
+
+// UserDispatch 라는 이름으로 내보내줍니다.
+export const UserDispatch = React.createContext(null);
+
+return (
+   <UserDispatch.Provider value={dispatch}>
+     <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
+     <UserList users={users}/>
+     <div>활성사용자 수 : {count}</div>
+   </UserDispatch.Provider>
+ );
+
+```
 
 # useReducer
 - reducer 는 현재 상태와 액션 객체를 파라미터로 받아와서 새로운 상태를 반환해주는 함수
