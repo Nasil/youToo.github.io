@@ -55,6 +55,9 @@ setUsers(users => users.concat(user));
 - 클래스형 컴포넌트의 componentDidMount 와 componentDidUpdate 를 합친 형태로 보아도 무방합니다.
 
 # useContext
+- dispatch 를 Context API 를 사용해서 전역적으로 사용 할 수 있게 해주면 컴포넌트에게 함수를 전달해줘야 하는 상황에서 코드의 구조가 훨씬 깔끔해질 수 있습니다.
+- 만약에 깊은 곳에 위치하는 컴포넌트에게 여러 컴포넌트를 거쳐서 함수를 전달해야 하는 일이 있다면 이렇게 Context API 를 사용하시면 됩니다.
+
 ```js
 import React, { useEffect, useContext } from 'react';
 import { UserDispatch } from './App';
@@ -264,3 +267,6 @@ const onCreate = useCallback(() => {
   nextId.current += 1;
 }, [username, email, reset]);
 ```
+
+
+참조) https://react.vlpt.us/
