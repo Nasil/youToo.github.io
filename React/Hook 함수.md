@@ -61,7 +61,7 @@ setUsers(users => users.concat(user));
 # useReducer
 - reducer 는 현재 상태와 액션 객체를 파라미터로 받아와서 새로운 상태를 반환해주는 함수
 - 컴포넌트의 상태 업데이트 로직을 컴포넌트에서 분리시킬 수 있고, 상태 업데이트 로직을 컴포넌트 바깥에 작성 할 수도 있고, 심지어 다른 파일에 작성 후 불러와서 사용 할 수도 있음.
-```
+```js
 import React, { useReducer } from 'react';
 
 function reducer(state, action) {
@@ -103,7 +103,7 @@ function Counter() {
 ```
 
 # useMemo
-```
+```js
 function countActiveUsers(users) {
   console.log('활성 사용자 수를 세는중 ...');
   return users.filter(user => user.active).length;
