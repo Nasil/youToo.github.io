@@ -133,8 +133,26 @@ const count = useMemo(() => countActiveUsers(users), [users]);
 
 
 # useRef
-```
+- useRef() 를 사용하여 Ref 객체를 만들고, 이 객체를 우리가 선택하고 싶은 DOM 에 ref 값으로 설정해주어야 합니다.
+- 그러면, Ref 객체의 .current 값은 우리가 원하는 DOM 을 가르키게 됩니다.
+```js
+// 예제1)
+const nameInput = useRef();
+const onReset = () => {
+   setInputs({
+     name: '',
+     nickname: ''
+   });
+   nameInput.current.focus();
+ };
+
+// 예제2)
 const nextId = useRef(4);
+const user = {
+  id: nextId.current,
+  username,
+  email
+};
 ```
 
 # usePromise
