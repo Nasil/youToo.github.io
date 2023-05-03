@@ -4,33 +4,36 @@
 const todos = [
   {
     id: 1,
-    text: '할 일 #1',
+    text: "할 일 #1",
     done: true
   },
   {
     id: 2,
-    text: '할 일 #2',
+    text: "할 일 #2",
     done: false
   }
 ];
 
 // 배열 끝에 추가하기
-const inserted = todos.concat({ 
+const inserted = todos.concat({
   id: 3,
-  text: '할 일 #3',
+  text: "할 일 #3",
   done: false
 });
+console.log("inserted", inserted);
 
 // 필터하기
-const filtered = todos.filter(todo => todo.id !== 2);
+const filtered = todos.filter((todo) => todo.id !== 2);
+console.log("filtered", filtered);
 
-// 
-const toggled = todos.map(
-  todo => todo.id === 2
+// 찾아서 업데이트하기
+const toggled = todos.map((todo) =>
+  todo.id === 2
     ? {
-      ...todo,
-      done: !todo.done,
-    }
+        ...todo,
+        done: !todo.done
+      }
     : todo
 );
+console.log("toggled", toggled);
 ```
