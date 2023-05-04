@@ -53,6 +53,11 @@ setUsers(users => users.concat(user));
 # useEffect
 - useEffect 는 리액트 컴포넌트가 렌더링 될 때마다 특정 작업을 수행하도록 설정 할 수 있는 Hook 입니다. 
 - 클래스형 컴포넌트의 componentDidMount 와 componentDidUpdate 를 합친 형태로 보아도 무방합니다.
+```js
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+```
 
 # useContext
 - dispatch 를 Context API 를 사용해서 전역적으로 사용 할 수 있게 해주면 컴포넌트에게 함수를 전달해줘야 하는 상황에서 코드의 구조가 훨씬 깔끔해질 수 있습니다.
