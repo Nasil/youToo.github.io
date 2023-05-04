@@ -2,7 +2,7 @@
 https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
 
 - Promise 함수
-```
+```js
 function getData() {
   return new Promise(function (resolve, reject) {
     $.get('url 주소/products/1', function (response) {
@@ -23,7 +23,7 @@ getData().then(function (data) {
 ```
 
 - Promis 체인
-```
+```js
 getData(userInfo)
   .then(parseValue)
   .then(auth)
@@ -53,7 +53,7 @@ function display() {
 ```
 
 - Primis 에러 처리
-```
+```js
 // catch()로 오류를 감지하는 코드
 function getData() {
   return new Promise(function (resolve, reject) {
