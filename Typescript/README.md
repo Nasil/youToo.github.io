@@ -4,3 +4,9 @@
 
 # 장점
 - 객체 지향 프로그래밍 지원 : ES6에서 새롭게 사용된 문법을 포함하고 있으며 클래스, 인터페이스, 상속, 모듈 등과 같은 객체 지향 프로그래밍 패턴을 제공
+
+```
+npm init -y
+npm install -g typescript
+tsc --init // tsconfig.json 파일이 자동생성
+```
