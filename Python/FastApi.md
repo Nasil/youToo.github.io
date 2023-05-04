@@ -8,3 +8,8 @@
 - Asynchronous Server Gateway Interface의 약자
 - 비동기 web server를 의미함
     - async / await 구문을 사용
+
+실행
+```
+uvicorn main:app --reload
+```
