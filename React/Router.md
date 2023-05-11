@@ -132,3 +132,39 @@ searchParams.get(key) : hi
 searchParams.getAll(key) : hi
 searchParams.toString() : search=hi&test=true
 ```
+
+# Profile.js
+```
+import React from 'react';
+import { useParams } from 'react-router-dom';
+
+const profileData = {
+    kim: {
+        name: '김철수',
+        description: 'test 김철수'
+    },
+    gildong: {
+        name: '홍길동',
+        description: 'test 홍길동'
+    }
+}
+
+const Profile = () => {
+    const username = useParams().username; // const { username } = useParams(); 같은 의미
+    console.log(username);
+    const profile = profileData[username];
+    if (!profile) {
+        return <div>존재하지 않는 유저입니다.</div>;
+    }
+    return (
+        <div>
+            <h2>
+                {username} ({profile.name})
+            </h2>
+            <p>{profile.description}</p>
+        </div>
+    );
+};
+
+export default Profile;
+```
