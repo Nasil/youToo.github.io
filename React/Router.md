@@ -150,7 +150,7 @@ const profileData = {
 }
 
 const Profile = () => {
-    const username = useParams().username; // const { username } = useParams(); 같은 의미
+    const { username } = useParams();
     console.log(username);
     const profile = profileData[username];
     if (!profile) {
