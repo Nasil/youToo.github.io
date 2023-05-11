@@ -70,7 +70,7 @@ import { useLocation } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 
 const About = () => {
-    const pathParam = useParams().id;
+    const {pathParam} = useParams(); // const pathParam = useParams().id; 같은 의미
     const location = useLocation();
     let [searchParams] = useSearchParams();
     // const keyWord = searchParams.get("prd_name");
