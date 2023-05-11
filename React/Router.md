@@ -31,10 +31,13 @@ reportWebVitals();
 
 # app.js
 ```js
-import { Route, Link, Routes } from "react-router-dom";
+import { Route, Link, Routes, NavLink } from "react-router-dom";
 import About from './About';
 import Home from './Home';
 import Profile from './Profile';
+import NotFound from './Notfound';
+import HistorySample from './HistorySample';
+
 
 function App() {
   return (
@@ -44,15 +47,34 @@ function App() {
           <Link to="/">홈</Link>
         </li>
         <li>
-          <Link to="/about">소개</Link>
+          <Link to="/about/1?search=name&test=123">소개</Link>
+        </li>
+        <li>
+          <Link to="/profiles">목록</Link>
+        </li>
+        <li>
+          <Link to="/history">예제</Link>
         </li>
       </ul>
+      <h3>유저 목록:</h3>
+        <ul>
+          <li>
+            <Link to="/profiles/kim">kim</Link>
+          </li>
+          <li>
+            <NavLink to="/profiles/gildong" activeStyle={{ background: 'black', color: 'white' }}>gildong</NavLink>
+            {/* <Link to="/profiles/gildong">gildong</Link> */}
+          </li>
+        </ul>
       <div>
       <Routes>
           <Route path="/" exact={true} element={<Home />} />
           <Route path="/about/:id" element={<About />} />
           <Route path="/profiles/:username" element={<Profile />} />
-        </Routes>
+          <Route path="/history" element={<HistorySample />} />
+          <Route path={"*"} element={<NotFound/>}/>
+        />
+      </Routes>
       </div>
     </div>
   );
