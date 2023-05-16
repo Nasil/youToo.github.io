@@ -14,10 +14,62 @@
 
 
 # Action
+```js
+/* 액션 타입 정의 */
+// Ducks 패턴을 따를땐 액션의 이름에 접두사를 넣어주세요. 다른 모듈과 액션 이름이 중복되는 것을 방지 할 수 있습니다.
+const SET_DIFF = 'counter/SET_DIFF';
+const INCREASE = 'counter/INCREASE';
+const DECREASE = 'counter/DECREASE';
+```
 # Action Createor
 # Reducer
 - 변화를 일으키는 함수
+```js
+/* 리듀서 선언 */
+export default function counter(state = initialState, action) {
+    switch (action.type) {
+        case SET_DIFF:
+            return {
+                ...state,
+                diff: action.diff
+            }
+        case INCREASE:
+            return {
+                ...state,
+                number: state.number + state.diff
+            }
+        case DECREASE:
+            return {
+                ...state,
+                number: state.number - state.diff
+            }
+        default:
+            return state
+    }
+}
+```
 # Store
+```js
+import { legacy_createStore as createStore } from 'redux';
+import rootReducer from './modules';
+import { Provider } from 'react-redux'
+
+const store = createStore(rootReducer);
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+)
+```
 # Dispatch
 - 스토어의 내장 함수 중 하나. 액션을 발생시킨다
+```js
+const onIncrease = () => dispatch(increase());
+const onDecrease = () => dispatch(decrease());
+const onSetDiff = diff => dispatch(setDiff(diff));
+```
 # Subscribe
