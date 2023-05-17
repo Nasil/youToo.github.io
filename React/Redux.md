@@ -1,3 +1,5 @@
+# 공식 문서가 제일 잘 되어 있음
+https://redux.js.org/tutorials/index
 
 
 # 리덕스의 3가지 규칙
