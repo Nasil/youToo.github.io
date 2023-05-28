@@ -36,3 +36,30 @@ shpapes.forEach(shape => {
     console.log(shape.getArea());
 });
 ```
+
+```js
+interface Person {
+    name: string,
+    age? : number // 옵셔널한 값
+}
+
+// interface 상속
+interface Developer extends Person {
+    skills: string[]
+}
+
+const person: Person = {
+    name: '홍길동',
+    age: 20
+}
+
+const expert: Developer = {
+    name: '김개발',
+    skills: ['js', 'react']
+}
+```
+
+
+```js
+
+```
