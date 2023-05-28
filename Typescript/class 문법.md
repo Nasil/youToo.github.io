@@ -1,0 +1,38 @@
+
+
+```js
+interface Shpape {
+    getArea(): number; // 해당 인터페이스에서는 getArea 라는 함수가 있어야하며 리턴 값은 숫자
+}
+
+class Circle implements Shpape {
+    // constructor 의 파라미터 쪽에 public 또는 private accessor 를 사용하면 직접 하나하나 설정해주는 작업을 생략
+    //radius: number; // 멤버 변수 radius 값을 설정합니다.
+
+    constructor(private radius: number) {
+        this.radius = radius;
+    }
+
+    getArea(): number {
+        return this.radius * this.radius * Math.PI;
+    }
+}
+
+class Rectangle implements Shpape {
+    //width: number;
+    //height: number;
+    constructor(private width: number, private height:number) {
+        this.width = width;
+        this.height = height;
+    }
+    getArea(): number {
+        return this.width * this.height;
+    }
+}
+
+const shpapes: Shpape[] = [new Circle(5), new Rectangle(10, 5)];
+
+shpapes.forEach(shape => {
+    console.log(shape.getArea());
+});
+```
