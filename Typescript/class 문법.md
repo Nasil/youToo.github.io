@@ -60,7 +60,27 @@ const expert: Developer = {
 }
 ```
 
-
+# Interface -> Type
 ```js
+type Person {
+    name: string,
+    age? : number // 옵셔널한 값
+}
 
+// & 는 Intersection 으로서 두개 이상의 타입들을 합쳐줍니다.
+type Developer = Person & {
+    skills: string[]
+}
+
+const person: Person = {
+    name: '홍길동',
+}
+
+const expert: Developer = {
+    name: '김개발',
+    skills: ['js', 'react']
+}
+
+type People = Person[];
+const peole: People = [person, expert];
 ```
