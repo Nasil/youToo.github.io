@@ -21,4 +21,8 @@ console.log(message);
 ```json
 "outDir": "./dist"
 ```
-- terminal 에서 tsc 입력하면 dist 경로에 컴파일 생성됨
+- terminal
+```
+>> tsc // dist 경로에 컴파일 생성됨
+>> node dist/practice.js // js 실행
+```
