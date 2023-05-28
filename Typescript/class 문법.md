@@ -1,5 +1,5 @@
 
-
+# Class 
 ```js
 interface Shpape {
     getArea(): number; // 해당 인터페이스에서는 getArea 라는 함수가 있어야하며 리턴 값은 숫자
@@ -37,6 +37,7 @@ shpapes.forEach(shape => {
 });
 ```
 
+# Interface
 ```js
 interface Person {
     name: string,
