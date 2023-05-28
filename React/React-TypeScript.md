@@ -2,3 +2,4 @@
 ```
 npx create-react-app ts-react-tutorial --typescript
 ```
+- https://create-react-app.dev/docs/adding-typescript/
