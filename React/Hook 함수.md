@@ -131,6 +131,9 @@ return (
 ```
 
 # useReducer
+- "to change something into a simpler or more general form"
+- 리덕스 공식홈페이지에서의 설명은 "여러분이 이 형태의 함수를 Array.prototype.reduce(reducer, ?initialValue)로 넘길 것이기 때문에 리듀서라고 부릅니다"
+- 다시말해, 리듀서라고 불리는 이유는 리듀서가 reduce()함수에서 사용하는 콜백함수이기때문에 리듀서라고 불립니다
 - reducer 는 현재 상태와 액션 객체를 파라미터로 받아와서 새로운 상태를 반환해주는 함수
 - 컴포넌트의 상태 업데이트 로직을 컴포넌트에서 분리시킬 수 있고, 상태 업데이트 로직을 컴포넌트 바깥에 작성 할 수도 있고, 심지어 다른 파일에 작성 후 불러와서 사용 할 수도 있음.
 - useReducer 로 구현했을 때의 장점은 useState 의 setState 함수를 여러번 사용하지 않아도 된다는점과, 리듀서로 로직을 분리했으니 다른곳에서도 쉽게 재사용을 할 수 있다.
