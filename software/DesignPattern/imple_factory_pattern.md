@@ -16,3 +16,19 @@ public class ViewerFactory {
     }
 }
 ```
+
+```java
+@Component
+public class ViewerFactory {
+    private final Map<ViewerType, Viewer> viewerMap;
+
+    @Autowired
+    private ViewerFactory(List<Viewer> viewers) {
+        viewerMap =    viewers.stream().collect(Collectors.toUnmodifiableMap(Viewer::getType, Function.identity()));
+    }
+
+    public Viewer getViewer(ViewerType viewerType) {
+        return   Optional.ofNullable(viewerMap.get(viewerType)).orElseThrow(IllegalArgumentException::new);
+    }
+}
+```
