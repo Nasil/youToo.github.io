@@ -65,3 +65,29 @@ python3 ./manage.py runserver
 3. 위에서부터 순서대로 URL 리스트의 내용을 검사하면서 URL 패턴이 매치되면 검사를 종료한다.
 4. 매치된 URL의 뷰를 호출한다. 여기서 뷰는 함수 또는 클래스의 메소드다. 호출시 HttpRequest 객체와 매칭할 때 추출된 단어들을 뷰에 인자로 넘겨준다.
 5. URL 리스트 끝까지 검사했는데도 매칭에 실패하면 에러를 처리하는 뷰를 호출한다.
+
+## DI (의존성 주입)
+- 의존성 주입(Dependency Injection, DI)은 코드의 유연성, 테스트 용이성, 결합도 감소 등을 위한 소프트웨어 개발 패턴
+- injector는 파이썬에서 사용하는 의존성 주입 프레임워크 중 하나
+```python
+from injector import inject, Module, provider, singleton
+
+class MyService:
+    def __init__(self, dependency):
+        self.dependency = dependency
+
+class MyModule(Module):
+    @singleton
+    @provider
+    def provide_my_service(self) -> MyService:
+        return MyService(dependency)
+```
+```python
+from injector import inject
+
+class MyController:
+    @inject
+    def __init__(self, my_service: MyService):
+        self.my_service = my_service
+```
+- MyController 클래스의 인스턴스가 생성될 때, MyService 인스턴스가 자동으로 주입
