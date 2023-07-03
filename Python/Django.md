@@ -1,5 +1,7 @@
 # Django
 
+#### 튜토리얼 따라하기
+- https://docs.djangoproject.com/ko/4.0/intro/tutorial01/
 
 ## django 시작하기
 
