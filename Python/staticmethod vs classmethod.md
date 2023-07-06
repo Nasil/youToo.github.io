@@ -30,4 +30,23 @@ print(blog.name)
 Blog.to_uppper(blog.name)
 ```
 
+## util 함수를 모듈 형으로 개발
+- 유틸리티 함수를 작성할 때는 해당 함수가 어디서든 재사용 가능하도록 일반적인 로직을 구현하고,
+- 프로젝트 전반에 걸쳐 동일한 패턴이 반복되는 경우 이를 줄이는데 주로 사용
+- 이렇게 하면 코드의 중복성을 줄이고 유지보수성을 높일 수 있음
+```python
+# utils.py
+def custom_utility_function(arg1, arg2):
+    # 구현...
+    return result
+```
+```python
+from .utils import custom_utility_function
+
+def some_view(request):
+    # ...
+    result = custom_utility_function(arg1, arg2)
+    # ...
+```
+
 # static 
