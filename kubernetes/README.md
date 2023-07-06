@@ -1,5 +1,3 @@
-# 컨테이너란?
-- 
 
 # 컨테이너 vs 가상머신
 - 가상머신 : Infrastructure > Hypervisor(ex, vmware) > Virture Machine 여러개 (Host Operating system + Application) 
