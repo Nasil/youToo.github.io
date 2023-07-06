@@ -12,4 +12,6 @@
 ## 컨테이너 오케스트레이션
 - Physical Infrastructure > Virtual Infrastructure (ex ec2, azure) > OS > Orchestration Service Model (ex, Kubernetes) > Development Workflow Opinionated Containers (ex Docker)
  
-
+# 모니터링
+- Prometheus 로 모니터링 하면서 Grafana 같은 대시보드 시스템에서 그래프로 만들어서 표현
+- PromQL 쿼리 언어를 사용하여 간단하게 경고와 Ruleset을 정의 가능
