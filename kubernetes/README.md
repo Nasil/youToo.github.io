@@ -7,7 +7,7 @@
 
 ## 멀티 호스트 도커 플랫폼
 - Doker 시스템을 여러개 두어서 분산 처리하여서 시스템이 다운 되었을때에도 서비스가 유지되도록 함
-- 단, 유지보수 관리가 너무 어려워서 컨테이너 오케스트레이션 사용
+- 단, 유지보수 관리가 너무 어려워서 컨테이너 오케스트레이션 (ex 쿠버네티스) 사용
 
 ## 컨테이너 오케스트레이션
 - Physical Infrastructure > Virtual Infrastructure (ex ec2, azure) > OS > Orchestration Service Model (ex, Kubernetes) > Development Workflow Opinionated Containers (ex Docker)
