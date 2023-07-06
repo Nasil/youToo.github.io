@@ -93,3 +93,4 @@ class MyController:
         self.my_service = my_service
 ```
 - MyController 클래스의 인스턴스가 생성될 때, MyService 인스턴스가 자동으로 주입
+- 의존성 주입? 객체가 필요로 하는 의존성을 직접 생성하지 않고, 외부에서 주입 받는 디자인 패턴. 코드의 재사용성과 테스트 용이성을 높인다.
