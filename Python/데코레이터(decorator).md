@@ -21,7 +21,7 @@ def say_hello():
 say_hello()
 ```
 
-```
+```console
 Something is happening before the function is called.
 Hello!
 Something is happening after the function is called.
