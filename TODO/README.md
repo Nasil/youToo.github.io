@@ -7,3 +7,4 @@
 # Back-end
 - Python
 - Django
+- FastAPI
