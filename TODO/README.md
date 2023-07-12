@@ -9,6 +9,6 @@
 # Back-end
 - Python
 - Django
-    - [저프투장고] (https://wikidocs.net/book/4223)https://wikidocs.net/book/4223
-    -  
+    - [점프투장고] https://wikidocs.net/book/4223
+    - 공식문서 : https://docs.djangoproject.com/ko/4.2/topics/
 - FastAPI
