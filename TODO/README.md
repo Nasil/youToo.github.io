@@ -9,4 +9,6 @@
 # Back-end
 - Python
 - Django
+    - [저프투장고] (https://wikidocs.net/book/4223)https://wikidocs.net/book/4223
+    -  
 - FastAPI
