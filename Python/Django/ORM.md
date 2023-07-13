@@ -66,3 +66,9 @@ one_entry = Entry.objects.get(pk=1) # return object
 Entry.objects.all()[:5] # LIMIT 5
 Entry.objects.all()[5:10] # OFFSET 5 LIMIT 5
 ```
+
+## DELETE
+```python
+>>> q = Question.objects.get(id=1)
+>>> q.delete()
+```
