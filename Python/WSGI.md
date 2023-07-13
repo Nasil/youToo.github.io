@@ -4,6 +4,5 @@
 ## WSGI 어플리케이션?
 - 장고(Django), 플라스크(Flask) 등이 있음
 
-## Gunicorn
-
-## uwsgi
+## Gunicorn vs uWSGI
+- 요새는 Gunicorn 도 빨라져서 많이 사용
