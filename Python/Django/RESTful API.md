@@ -9,9 +9,11 @@ app_name = 'pybo'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('question', views.QuestionUpsert.as_view(), name='question_post'),
+    path('question/<int:id>', views.QuestionDetail.as_view(), name='question_get'),
     path('question/<int:id>', views.QuestionUpsert.as_view(), name='question_put'),
     path('question/<int:id>', views.QuestionUpsert.as_view(), name='question_delete'),
     path('answer/<int:question_id>', views.AnswerUpsert.as_view(), name='answer_save'),
+    path('answer/<int:answer_id>', views.AnswerDetail.as_view(), name='answer_get'),
 ]
 ```
 
@@ -77,6 +79,58 @@ class IndexView(generic.ListView):
             })
         return JsonResponse(response, safe=False)
 
+class QuestionDetail(View):
+    @inject
+    def __init__(self, model_question:Question) -> None:
+        self._model_question = model_question
+        super().__init__()
+
+    def get(self, request, id):
+        try:
+            question = self._model_question.get_questions_with_answers(id)
+        except Question.DoesNotExist:
+            return JsonResponse({'status': 'error', 'message': 'Question not found'})
+        
+        answers = question.answer_set.all()
+        answers_list = []
+        for answer in answers:
+            answers_list.append({
+                "id": answer.id,
+                "question": answer.question.id,  # question의 id 또는 다른 필드를 사용할 수 있습니다.
+                "content": answer.content,
+                "create_date": answer.create_date,
+            })
+        response = {
+            "id": question.id,
+            "subject": question.subject,
+            "content": question.content,
+            "create_date": question.create_date,
+            "answer": answers_list
+        }
+        return JsonResponse(response)
+    
+class AnswerDetail(View):
+    @inject
+    def __init__(self, model_answer:Answer) -> None:
+        self._model_answer = model_answer
+        super().__init__()
+
+    def get(self, request, answer_id):
+        try:
+            answer = self._model_answer.get_answers_with_questions(answer_id)
+        except Answer.DoesNotExist:
+            return JsonResponse({'status': 'error', 'message': 'Answer not found'})
+        
+        response = {
+            "question_id": answer.question.id,
+            "question_subject": answer.question.subject,
+            "question_content": answer.question.content,
+            "question_create_date": answer.question.create_date,
+            "answer_id": answer.id,
+            "answer_content": answer.content,
+            "answer_create_date": answer.create_date,
+        }
+        return JsonResponse(response)
 
 @method_decorator(csrf_exempt, name='dispatch')
 class QuestionUpsert(View):
@@ -156,13 +210,12 @@ class Question(models.Model):
     def get_all_question(self):
         return Question.objects.all().order_by('-create_date')
     
+    # parent -> child
     def get_all_questions_with_answers(self):
         return Question.objects.prefetch_related('answer_set').all().order_by('-create_date')
     
-    def create_question(self, data_dict):
-        instance = Question(**data_dict)
-        instance.save()
-        return instance
+    def get_questions_with_answers(self, id):
+        return Question.objects.prefetch_related('answer_set').get(id=id)
 
     def update_question(self, update_dict):
         for key, value in update_dict.items():
@@ -178,6 +231,10 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.subject
+    
+    # child -> parent
+    def get_answers_with_questions(self, answer_id):
+        return Answer.objects.select_related('question').get(id=answer_id)
     
     def create_answer(self, question_id, content):
         try:
