@@ -19,3 +19,5 @@
 from django import db
 db.connections.close_all()
 ```
+
+- 참조 : https://docs.djangoproject.com/en/4.2/ref/databases/
