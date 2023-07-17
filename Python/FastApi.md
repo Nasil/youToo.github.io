@@ -1,6 +1,6 @@
 # FastAPI?
 - 데이터 타입을 엔드포인트로 명시하지 않아도 된다(알아서 알맞게 바꾸어 준다)
-- Uvicorn ASGI Server 를 사용한다
+- Uvicorn ASGI Server 를 사용한다 (gunicorn (+Uvicorn))
 - 파이썬은 프로세스 기반
 - [ASGI Framework] FAST API - starlette - [ASGI Server] uvicorn - uvloop(cython) - libuv(cpp)
 - 파이썬은 race condition 문제가 발생하는것을 방지하기 위해 GIL을 이용. 멀티쓰레드 환경을 정상적으로 지원 못함.
