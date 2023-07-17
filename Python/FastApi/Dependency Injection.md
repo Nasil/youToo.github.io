@@ -20,3 +20,5 @@ def question_list(db: Session = Depends(get_db)):
     _question_list = db.query(Question).order_by(Question.create_date.desc()).all()
     return _question_list
 ```
+
+- 공식문서 : https://fastapi.tiangolo.com/tutorial/dependencies/
