@@ -134,3 +134,16 @@ def create_answer(answer: AnswerBase, db: Session = Depends(get_db)):
     return db_answer
 
 ```
+
+- main.py
+```python
+from fastapi import FastAPI
+from starlette.middleware.cors import CORSMiddleware
+from routers import question_router, answer_router
+
+app = FastAPI()
+
+app.include_router(question_router.router)
+app.include_router(answer_router.router)
+
+```
