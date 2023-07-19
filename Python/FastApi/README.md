@@ -14,3 +14,7 @@
 ```
 uvicorn main:app --reload
 ```
+
+
+참고 : 
+https://github.com/nsidnev/fastapi-realworld-example-app
