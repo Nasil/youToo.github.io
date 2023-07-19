@@ -10,6 +10,12 @@
 - I/O-bound 작업의 예로는 HTTP 요청, 데이터베이스 쿼리, 파일 읽기/쓰기 등
 - 즉, 파이썬의 GIL 때문에 동일한 시간에 여러 스레드가 CPU를 사용할 수는 없지만, 비동기 프로그래밍을 통해 I/O-bound 작업들이 병렬적으로 실행될 수 있도록 하는 것은 가능
 
+- 설치
+```
+pip install fastapi
+pip install uvicorn
+```
+
 - 실행
 ```
 uvicorn main:app --reload
