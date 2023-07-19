@@ -21,6 +21,12 @@ pip install uvicorn
 uvicorn main:app --reload
 ```
 
+- requirements 생성 및 실행
+```
+pip freeze > requirements.txt
+pip install -r requirements.txt
+```
+
 
 참고 : 
 https://github.com/nsidnev/fastapi-realworld-example-app
