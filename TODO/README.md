@@ -13,4 +13,4 @@
     - 공식문서 : https://docs.djangoproject.com/ko/4.2/topics/
 - FastAPI
     - 공식문서 : https://fastapi.tiangolo.com/
-    -  
+    - https://github.com/mjhea0/awesome-fastapi
