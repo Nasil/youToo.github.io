@@ -21,11 +21,11 @@ ENTRYPOINT [ "node", "index.js" ]
 # 도커 실행하기
 ```
 1. 도커 데몬 띄우기
-2. 빌드 : docker build -f Dockerfile -t fun-docker .      
+2. 빌드 : docker build -f Dockerfile -t ns-docker .      
    -f 로 도커 파일 지정
    -t 로 도커 이미지 name 지정
 2.확인하기 : docker images
-3.실행 : docker run -d -p 80:80 func-docker
+3.실행 : docker run -d -p 8080:8081 --name my-node-app ns-docker
   -p 포트로 로컬포트와 도커의 포트로 연결해줌
 ```
 
