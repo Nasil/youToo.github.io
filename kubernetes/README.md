@@ -30,3 +30,12 @@
 6. Service: 클러스터 내부 또는 외부에서 Pod에 접근하기 위한 로드 밸런싱을 제공하는 추상화된 리소스. 서비스는 Pod의 IP와 포트를 유지하며, Pod의 동적인 변화에도 안정적인 접근을 가능하게 함.
 7. Namespace: 클러스터의 가상 클러스터를 생성하는데 사용되며, 리소스의 범위를 제한하는 데 도움을 줌.
 8. ConfigMap과 Secret: 환경 변수, 설정 파일, 비밀 정보 등을 관리하는 리소스.
+
+
+## 실행
+```terminal
+# 서비스 실행
+kubectl apply -f web-app-service.yaml
+# 웹 애플리케이션 확인
+kubectl get services
+```
