@@ -15,5 +15,4 @@
     - 공식문서 : https://fastapi.tiangolo.com/
     - https://github.com/mjhea0/awesome-fastapi # 도움되는 문서
     - https://github.com/fastapi-mvc/fastapi-mvc/tree/master # 제너레이터
-    - https://github.com/iam-abbas/FastAPI-Production-Boilerplate
-    - https://github.com/Hunnyjain7/fastapi-production-boilerplate
+    - https://github.com/nsidnev/fastapi-realworld-example-app/tree/master
