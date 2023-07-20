@@ -40,4 +40,5 @@ ENTRYPOINT [ "node", "index.js" ]
 # 강제삭제 : docker rm -f a00f4f3a898a
 # 이미지 확인 : docker images
 # 이미지 삭제 : docker rmi 531a82b041f1
+# 컨테이너 접속 : docker exec -it c83827ab44f9 /bin/bash
 ```
