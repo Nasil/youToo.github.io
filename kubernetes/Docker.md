@@ -41,4 +41,5 @@ ENTRYPOINT [ "node", "index.js" ]
 # 이미지 확인 : docker images
 # 이미지 삭제 : docker rmi 531a82b041f1
 # 컨테이너 접속 : docker exec -it c83827ab44f9 /bin/bash
+# 컨테이너 접속 : docker exec -it c83827ab44f9 /bin/ash 
 ```
