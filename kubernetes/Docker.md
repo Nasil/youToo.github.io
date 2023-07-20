@@ -34,6 +34,7 @@ ENTRYPOINT [ "node", "index.js" ]
 # 실행 중인 컨테이너만 출력 : docker ps
 # 모든 컨테이너 출력(정지 컨테이너 포함) : docker ps -a
 # 도커 로그 확인 : docker logs 531a82b041f1
+# 재시작 : docker restart a00f4f3a898a
 # 프로세스 중지 : docker stop a00f4f3a898a
 # 삭제 : docker rm a00f4f3a898a
 # 강제삭제 : docker rm -f a00f4f3a898a
