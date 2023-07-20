@@ -17,7 +17,7 @@ COPY index.js .
 # node 실행하기
 ENTRYPOINT [ "node", "index.js" ]
 ```
-
+```
 1. 도커 데몬 띄우기
 2. 빌드 : docker build -f Dockerfile -t fun-docker .      
    -f 로 도커 파일 지정
@@ -25,7 +25,7 @@ ENTRYPOINT [ "node", "index.js" ]
 2.확인하기 : docker images
 3.실행 : docker run -d -p 80:80 func-docker
   -p 포트로 로컬포트와 도커의 포트로 연결해줌
-
+```
 ```
 # 실행 중인 컨테이너만 출력 : docker ps
 # 모든 컨테이너 출력(정지 컨테이너 포함) : docker ps -a
