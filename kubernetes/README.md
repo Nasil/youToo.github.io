@@ -33,7 +33,7 @@
 
 
 ## 실행
-```terminal
+```bash
 # 서비스 실행
 kubectl apply -f web-app-service.yaml
 # 웹 애플리케이션 확인
