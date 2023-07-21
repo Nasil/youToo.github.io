@@ -4,3 +4,7 @@
 
 
 - React.js는 라이브러리이고, Next.js는 React.js의 프레임워크이다. 
+
+```
+npx create-next-app@latest
+```
