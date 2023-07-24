@@ -10,8 +10,11 @@ npm run dev
 ### Nex.js 컴포넌트 종류
 - server component
   - HTML에 자바스크립트 기능넣기 불가능
-  - useState, useEffect 사용불가 
+  - useState, useEffect 사용불가
+  - 로딩 속도가 매우 빠름
+  - SEO 노출에 이점
 - client componet // 'use client'
   - HTML에 자바스크립트 기능넣기 가능
   - useState, useEffect 가능
+  - 로딩 느림 (hydration 필요)
 
