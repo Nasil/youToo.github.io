@@ -1,7 +1,7 @@
 # Promise
 - Promise 는 JavaScript의 비동기 처리에 사용되는 객체로써 비동기로 처리되는 결과를 동기처럼 반환한다. 
 - 실제로 동기처럼 처리되는 것이 아니라 미래의 데이터 처리가 완료된 시점에 결과를 제공하겠다는 ‘약속(프로미스)’를 반환한다.
-```
+```js
 function getData() {
     return new Promise((resolve, reject) => {
 	    // 비동기작업
