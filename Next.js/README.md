@@ -16,5 +16,5 @@ npm run dev
 - client componet // 'use client'
   - HTML에 자바스크립트 기능넣기 가능
   - useState, useEffect 가능
-  - 로딩 느림 (hydration 필요)
+  - 로딩 느림 (hydration 필요) : html 유저에게 보낸후에 자바스크립트로 html 다시 읽고 분석하는시간이 걸림
 
