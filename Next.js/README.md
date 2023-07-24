@@ -9,5 +9,9 @@ npm run dev
 
 ### Nex.js 컴포넌트 종류
 - server component
-- client componet // 'use client' 
+  - HTML에 자바스크립트 기능넣기 불가능
+  - useState, useEffect 사용불가 
+- client componet // 'use client'
+  - HTML에 자바스크립트 기능넣기 가능
+  - useState, useEffect 가능
 
