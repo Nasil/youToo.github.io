@@ -8,7 +8,7 @@ def foo(*args):
     print(a)
 ```
 
-## **kwargs Python double asterisk operator (dictionary unpacking).
+## Python double asterisk operator (dictionary unpacking).
 - 키워드 인수를 dict 로 제공
 ```python
 def bar(**kwargs):
