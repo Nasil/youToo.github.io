@@ -215,3 +215,35 @@ def get_application() -> FastAPI:
 app = get_application()
 
 ```
+- schemas.py
+```python
+import datetime
+
+from typing import List
+from pydantic import BaseModel, Field
+
+class QuestionBase(BaseModel):
+    id: int = Field(..., gt=0, description="Question Id must be greater than zero.")
+    subject: str | None = None
+    content: str
+    create_date: datetime.datetime
+
+    class Config:
+        orm_mode = True
+
+class AnswerQuestionBase(BaseModel):
+    id: int
+    content: str
+    create_date: datetime.datetime
+    question: QuestionBase
+
+    class Config:
+        orm_mode = True
+
+class AnswerBase(BaseModel):
+    question_id: int
+    content: str
+
+    class Config:
+        orm_mode = True
+```
