@@ -52,7 +52,7 @@ def get_db():
 - routers/quetion_router.py
 ```python
 from typing import List
-from fastapi import APIRouter, HTTPException, Depends, Query
+from fastapi import APIRouter, HTTPException, Depends, Query, Path, Body
 from sqlalchemy.orm import Session
 from database import SessionLocal
 from models import Question
@@ -76,7 +76,15 @@ def read_questions(skip: Union[int, None] = 0, limit: Union[int, None] = 20, db:
 
 
 @router.post("/question/", response_model=QuestionBase)
-async def create_question(question: QuestionBase, db: Session = Depends(get_db)):
+async def create_question(question: QuestionBase, importance: int = Body(...), db: Session = Depends(get_db)):
+# async def create_question(question: QuestionBase, db: Session = Depends(get_db)):
+# async def create_question(question: QuestionBase = Body(..., embed=True), db: Session = Depends(get_db)):
+    """
+        - importance 는 schama로 만들지 않고 body 안에 넣을수 있다. 단 question 이 parent key 로 잡히게됨
+        - question 만 있는 경우 parent key 만들고 싶으면 embed=True 넣으면 됨
+    """
+    if importance:
+        print(f'@importance = {importance}')
     db_question = Question(**question.dict())
     db.add(db_question)
     db.commit()
@@ -87,7 +95,8 @@ async def create_question(question: QuestionBase, db: Session = Depends(get_db))
 @router.get("/question/{question_id}", response_model=QuestionBase)
 async def read_question(
     question_id: int,
-    q: str | None = Query(None, max_length=10, title="Sample query string", description="This is a sample query string.", deprecated=True, alias="q-str"),
+    q: str | None = Query(None, max_length=10, title="Sample query string",
+                          description="This is a sample query string.", deprecated=True, alias="q-str"),
     show: bool = False,
     type: str | None = Query(None, include_in_schema=False),
     db: Session = Depends(get_db)
@@ -101,11 +110,12 @@ async def read_question(
         - hidden query 가 숨겨져 있습니다 type을 넣으면 됩니다.
     """
     if type:
-        print(f'@type={type}');
+        print(f'@type={type}')
     if q:
         print(f'@q = {q}')
     if (show == False):
-        raise HTTPException(status_code=404, detail="No show. If you want view then add type show true.")
+        raise HTTPException(
+            status_code=404, detail="No show. If you want view then add type show true.")
     db_question = db.query(Question).filter(Question.id == question_id).first()
     if db_question is None:
         raise HTTPException(status_code=404, detail="Question not found")
@@ -113,7 +123,7 @@ async def read_question(
 
 
 @router.get("/question2/{question_id}", response_model=QuestionBase)
-async def read_question2(question_id: int, q: list[str] | None = Query(None), db: Session = Depends(get_db)):
+async def read_question2(question_id: int = Path(..., lt=10000, title="This is question_id", description="This is a question_id"), q: list[str] | None = Query(None), db: Session = Depends(get_db)):
     db_question = db.query(Question).filter(Question.id == question_id).first()
     if db_question is None:
         raise HTTPException(status_code=404, detail="Question not found")
@@ -140,7 +150,6 @@ async def delete_question(question_id: int, db: Session = Depends(get_db)):
     db.delete(db_question)
     db.commit()
     return {"detail": "Question deleted"}
-
 ```
 
 - routers/answer_router.py
