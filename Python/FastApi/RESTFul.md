@@ -139,12 +139,44 @@ def create_answer(answer: AnswerBase, db: Session = Depends(get_db)):
 - main.py
 ```python
 from fastapi import FastAPI
+from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
+from starlette.exceptions import HTTPException
 from starlette.middleware.cors import CORSMiddleware
 from routers import question_router, answer_router
 
-app = FastAPI()
+from errors.http_error import http_error_handler
+from errors.validation_error import http422_error_handler
 
-app.include_router(question_router.router)
-app.include_router(answer_router.router)
+def get_application() -> FastAPI:
+    application = FastAPI()
+
+    application.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    # application.add_event_handler(
+    #     "startup",
+    #     create_start_app_handler(application, settings),
+    # )
+    # application.add_event_handler(
+    #     "shutdown",
+    #     create_stop_app_handler(application),
+    # )
+
+    application.add_exception_handler(HTTPException, http_error_handler)
+    application.add_exception_handler(RequestValidationError, http422_error_handler)
+    
+    application.include_router(question_router.router)
+    application.include_router(answer_router.router)
+
+    return application
+
+
+app = get_application()
 
 ```
