@@ -29,3 +29,5 @@ async def work_result(task_id: str):
     result = divide.AsyncResult(task_id)
     return {"message": result.info}
 ```
+
+참조 : https://medium.com/cuddle-ai/async-architecture-with-fastapi-celery-and-rabbitmq-c7d029030377
