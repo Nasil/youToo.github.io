@@ -16,3 +16,4 @@
     - https://github.com/mjhea0/awesome-fastapi # 도움되는 문서
     - https://github.com/fastapi-mvc/fastapi-mvc/tree/master # 제너레이터
     - https://github.com/nsidnev/fastapi-realworld-example-app/tree/master
+- Python + celery + rabbitmq
