@@ -16,6 +16,8 @@ alembic upgrade head # 테이블 생성
 
 SQLAlchemy 공식 문서: https://docs.sqlalchemy.org/en/14/orm/query.html
 
+# Pandastic
+- https://docs.pydantic.dev/latest/
 
 # Session 객체
 - Holding zone : Session 객체는 ORM 으로 맵핑된 객체들을 지속적 관리해주는 역할
