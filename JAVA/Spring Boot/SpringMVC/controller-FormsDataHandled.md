@@ -121,3 +121,24 @@ public @ResponseBody SlackSlashCommand slack4(@RequestBody MultiValueMap<String,
     return slackSlashCommand;
 }
 ```
+
+# 방안6) 스프링 6.1 에서 제공 
+- For 6.1, we've added enhanced support for constructor binding in DataBinder including nested constructors (#20806) the option to customize the bind value name with an @BindParam annotation (#30947). 
+```java
+public class SlackSlashCommand {
+
+    private String token;
+    private String command;
+    private String text;
+    private String teamId;
+    private String teamDomain;
+
+    public SlackSlashCommand(
+            String token, String command, String text, 
+            @BindParam("team_id") String teamId, @BindParam("team_domain") String teamDomain) {
+
+        // ...
+    }
+
+}
+```
