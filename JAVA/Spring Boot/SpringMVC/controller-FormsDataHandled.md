@@ -15,8 +15,9 @@ this.teamId = rquest.getParameter("team_id"); // 하나씩 파라미터 셋팅�
 - 단점 : 파라미터 추가할때마다 일일히 추가 해야함, 타입캐스팅도 걸어줘야함
 
 # 방안2) ModelAttribute 사용
+ ```java
  public @ResponseBody FormSlackSlashCommand slack3(@ModelAttribute FormSlackSlashCommand slackSlashCommand) {
-  ```java
+
  @Getter
  @Setter // 필수
  public class FormSlackSlashCommand extends AbstractFormSlackSlashCommand {
