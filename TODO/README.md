@@ -16,7 +16,7 @@
     - https://github.com/mjhea0/awesome-fastapi # 도움되는 문서
     - https://github.com/fastapi-mvc/fastapi-mvc/tree/master # 제너레이터
     - https://github.com/nsidnev/fastapi-realworld-example-app/tree/master
- 
-    공부
-      - https://wikidocs.net/book/8531
+    - 공부
+        - https://wikidocs.net/book/8531 // 점프 투 FastAPI
+  
 - Python + celery + rabbitmq
