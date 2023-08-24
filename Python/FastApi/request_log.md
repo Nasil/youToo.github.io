@@ -38,3 +38,7 @@ def requestlog(fn: Callable):
   
     return wrapper
 ```
+
+# 방안2
+- logging 모듈을 사용하여 requests 라이브러리로 발생하는 HTTP 요청 및 응답을 로깅하는 기능을 구현
+- https://secariolabs.com/logging-raw-http-requests-in-python/
